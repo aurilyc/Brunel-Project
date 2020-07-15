@@ -37,7 +37,7 @@ A third cmsearch was carried out using Human chromosome 14 DNA sequence BAC R-90
 
 ![Alt text](images/Cmsearch_AL132709.5-pt3.png)
 
-
+A total of 68 CM hits were reported, of which 47 had an E-value of 0.01 or less. The coordinates for each sequence are found in the columns within the red box.
 
 References
 
