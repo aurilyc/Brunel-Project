@@ -11,76 +11,74 @@ Using open source computational tools we will model the snoRNA 2D and 3D structu
 
 Infernal search
 
-mv SNO.sto.txt SNO.sto
-cmbuild SNO.cm SNO.sto
-
-cmbuild :: covariance model construction from multiple sequence alignments
-INFERNAL 1.1.1 (July 2014)
-Copyright (C) 2014 Howard Hughes Medical Institute.
-Freely distributed under the GNU General Public License (GPLv3).
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- CM file:                                            SNO.cm
- alignment file:                                     SNO.sto
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-                                                                      rel entropy
-                                                                      -----------
- idx    name                     nseq eff_nseq   alen  clen  bps bifs    CM   HMM description
- ------ -------------------- -------- -------- ------ ----- ---- ---- ----- ----- -----------
-       1 SNORD113                   59     9.32    109    75    5    0 0.753 0.716 Small nucleolar RNA SNORD113/SNORD114 family
-
-CPU time: 0.30u 0.00s 00:00:00.30 Elapsed: 00:00:00.31
-
+to.txt SNO.sto
+aurilyconstantino@ctr-web:~/Cambridge project/infernal-1.1.3$ cmbuild SNO.cm SNO.sto
+# cmbuild :: covariance model construction from multiple sequence alignments
+# INFERNAL 1.1.1 (July 2014)
+# Copyright (C) 2014 Howard Hughes Medical Institute.
+# Freely distributed under the GNU General Public License (GPLv3).
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# CM file:                                            SNO.cm
+# alignment file:                                     SNO.sto
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#                                                                      rel entropy
+#                                                                      -----------
+# idx    name                     nseq eff_nseq   alen  clen  bps bifs    CM   HMM description
+# ------ -------------------- -------- -------- ------ ----- ---- ---- ----- ----- -----------
+       1 SNORD113                   59     9.32    109    75    5    0 0.753 0.716 Smallnucleolar RNA SNORD113/SNORD114 family
+#
+# CPU time: 0.30u 0.00s 00:00:00.30 Elapsed: 00:00:00.31
 aurilyconstantino@ctr-web:~/Cambridge project/infernal-1.1.3$ cmcalibrate SNO.cm
-
-cmcalibrate :: fit exponential tails for CM E-values
-INFERNAL 1.1.1 (July 2014)
-Copyright (C) 2014 Howard Hughes Medical Institute.
-Freely distributed under the GNU General Public License (GPLv3).
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-CM file:                                     SNO.cm
-number of worker threads:                    12
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
- Calibrating CM(s):
-
-                        predicted                                                   actual
-                       running time              percent complete                running time
- model name            (hr:min:sec)  [........25........50........75..........]  (hr:min:sec)
- --------------------  ------------  ------------------------------------------  ------------
-  SNORD113                  00:03:59  [==Error: Unable to establish connection with R session
-============
+# cmcalibrate :: fit exponential tails for CM E-values
+# INFERNAL 1.1.1 (July 2014)
+# Copyright (C) 2014 Howard Hughes Medical Institute.
+# Freely distributed under the GNU General Public License (GPLv3).
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# CM file:                                     SNO.cm
+# number of worker threads:                    12
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+# Calibrating CM(s):
+#
+#                        predicted                                                   actual
+#                       running time              percent complete                running time
+# model name            (hr:min:sec)  [........25........50........75..........]  (hr:min:sec)
+# --------------------  ------------  ------------------------------------------  ------------
+  SNORD113                  00:03:59  [==============
 ======
 ====================]      00:04:19
-
- Calibration summary statistics:
-
-                           exponential tail fit mu        exponential tail fit lambda         total number of hits
-                       -------------------------------  -------------------------------  -------------------------------
- model name            glc cyk glc ins loc cyk loc ins  glc cyk glc ins loc cyk loc ins  glc cyk glc ins loc cyk loc ins
---------------------  ------- ------- ------- -------  ------- ------- ------- -------  ------- ------- ------- -------
-  SNORD113                -3.79   -0.70    3.21    4.78    0.368   0.400   0.646   0.609    94621   72278  382510  251093
-
- CPU time: 2956.77u 6.25s 00:49:23.02 Elapsed: 00:04:19.63
+#
+# Calibration summary statistics:
+#
+#                           exponential tail fit mu        exponential tail fit lambda      total number of hits
+#                       -------------------------------  ------------------------------- -------------------------------
+# model name            glc cyk glc ins loc cyk loc ins  glc cyk glc ins loc cyk loc ins glc cyk glc ins loc cyk loc ins
+# --------------------  ------- ------- ------- -------  ------- ------- ------- ------- ------- ------- ------- -------
+  SNORD113                -3.79   -0.70    3.21    4.78    0.368   0.400   0.646   0.609   94621   72278  382510  251093
+#
+# CPU time: 2956.77u 6.25s 00:49:23.02 Elapsed: 00:04:19.63
 [ok]
 
 aurilyconstantino@ctr-web:~/Cambridge project/infernal-1.1.3$ mv Dlk1.rtf Dlk1.fa
 aurilyconstantino@ctr-web:~/Cambridge project/infernal-1.1.3$ cmsearch SNO.cm Dlk1.fa
- cmsearch :: search CM(s) against a sequence database
- INFERNAL 1.1.1 (July 2014)
- Copyright (C) 2014 Howard Hughes Medical Institute.
-Freely distributed under the GNU General Public License (GPLv3).
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-query CM file:                         SNO.cm
- target sequence database:              Dlk1.fa
- number of worker threads:              12
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# cmsearch :: search CM(s) against a sequence database
+# INFERNAL 1.1.1 (July 2014)
+# Copyright (C) 2014 Howard Hughes Medical Institute.
+# Freely distributed under the GNU General Public License (GPLv3).
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query CM file:                         SNO.cm
+# target sequence database:              Dlk1.fa
+# number of worker threads:              12
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+Line 1: unexpected char {; expected FASTA to start with >
 
 aurilyconstantino@ctr-web:~/Cambridge project/infernal-1.1.3$ cmsearch SNO.cm Dlk1.fa
-
- cmsearch :: search CM(s) against a sequence database
- INFERNAL 1.1.1 (July 2014)
- Copyright (C) 2014 Howard Hughes Medical Institute.
+# cmsearch :: search CM(s) against a sequence database
+# INFERNAL 1.1.1 (July 2014)
+# Copyright (C) 2014 Howard Hughes Medical Institute.
 # Freely distributed under the GNU General Public License (GPLv3).
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # query CM file:                         SNO.cm
@@ -120,6 +118,52 @@ Envelopes passing  local CM  CYK           filter:               0  (0); expecte
 Total CM hits reported:                                          0  (0); includes 0 truncated hit(s)
 
 # CPU time: 0.02u 0.02s 00:00:00.04 Elapsed: 00:00:00.03
+//
+[ok]
+aurilyconstantino@ctr-web:~/Cambridge project/infernal-1.1.3$ aurilyconstantino@ctr-web:~aurilyconstantino@ctr-web:~/Cambridge project/infernal-1.1.3$ mv Homo_sapiens_DLK1_sequence.fa DLK1.fa
+aurilyconstantino@ctr-web:~/Cambridge project/infernal-1.1.3$ cmsearch SNO.cm DLK1.fa
+# cmsearch :: search CM(s) against a sequence database
+# INFERNAL 1.1.1 (July 2014)
+# Copyright (C) 2014 Howard Hughes Medical Institute.
+# Freely distributed under the GNU General Public License (GPLv3).
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query CM file:                         SNO.cm
+# target sequence database:              DLK1.fa
+# number of worker threads:              12
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       SNORD113  [CLEN=75]
+Accession:   RF00181
+Description: Small nucleolar RNA SNORD113/SNORD114 family
+Hit scores:
+ rank     E-value  score  bias  sequence  start    end   mdl trunc   gc  description
+ ----   --------- ------ -----  -------- ------ ------   --- ----- ----  -----------
+
+   [No hits detected that satisfy reporting thresholds]
+
+
+Hit alignments:
+
+   [No hits detected that satisfy reporting thresholds]
+
+
+Internal CM pipeline statistics summary:
+----------------------------------------
+Query model(s):                                                  1  (75 consensus positions)
+Target sequences:                                                1  (27440 residues searched)
+Target sequences re-searched for truncated hits:                 1  (712 residues re-searched)
+Windows   passing  local HMM SSV           filter:              51  (0.3962); expected (0.35)
+Windows   passing  local HMM Viterbi       filter:                  (off)
+Windows   passing  local HMM Viterbi  bias filter:                  (off)
+Windows   passing  local HMM Forward       filter:               5  (0.0454); expected (0.02)
+Windows   passing  local HMM Forward  bias filter:               4  (0.03275); expected (0.02)
+Windows   passing glocal HMM Forward       filter:               0  (0); expected (0.02)
+Windows   passing glocal HMM Forward  bias filter:               0  (0); expected (0.02)
+Envelopes passing glocal HMM envelope defn filter:               0  (0); expected (0.02)
+Envelopes passing  local CM  CYK           filter:               0  (0); expected (0.0001)
+Total CM hits reported:                                          0  (0); includes 0 truncated hit(s)
+
+# CPU time: 0.03u 0.01s 00:00:00.04 Elapsed: 00:00:00.03
 //
 [ok]
 
