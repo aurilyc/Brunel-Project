@@ -29,6 +29,15 @@ GenBank: AL132711.5
 
 ![Alt text](images/Infernal-search-pt5.png)
 
+A third cmsearch was carried out using Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 from chromosome 14 of Homo sapiens (Human), complete sequence. GeneBank:AL132709.
+
+![Alt text](images/Cmsearch_AL132709.png)
+
+![Alt text](images/Cmsearch_AL132709.5-pt2.png)
+
+![Alt text](images/Cmsearch_AL132709.5-pt3.png)
+
+
 
 References
 
