@@ -20,6 +20,16 @@ Infernal search
 
 ##Please note: although the covariation model and its subsequent calibration ran smoothly, the cmsearch using Dlk1 and the .sto file of the SNORD113/114 family did not find similarities between the codes. Have to check Dlk1 file and run search again. 
 
+15.07.2020 Second cmsearch
+
+A second cmsearch was carried out using Human chromosome 14 DNA sequence BAC R-566J3 of library RPCI-11 from chromosome 14 of Homo sapiens (Human). 
+GenBank: AL132711.5
+
+![Alt text](images/Infernal-search-pt4.png)
+
+![Alt text](images/Infernal-search-pt5.png)
+
+
 References
 
 Barlow, D.P., Stoger, R., Herrmann, B.G., Saito, K. and Schweifer, N. (1991) 'The mouse insulin-like growth factor type-2 receptor is imprinted and closely linked to the Tme locus', Nature, 349(6304), pp. 84-87. doi: 10.1038/349084a0 [doi].
