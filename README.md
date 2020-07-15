@@ -9,6 +9,17 @@ The epigenetic phenomenon of genomic imprinting leads to specific genes being ex
 
 Using open source computational tools we will model the snoRNA 2D and 3D structures of the Dlk1-Dio3 region (10.7490/f1000research.1117078.1). Transcribed as a precursor long non-coding RNA, Rian/MEG8, the C/D box motif containing snoRNAs have been shown to be directed by genomic imprinting and, unusually for snoRNAs, to have brain specific expression. snoRNA have previously been shown to contain Ca2+ sensitive kink-turn (KT) motifs. In low Ca2+, the KTs are in an extended confirmation, but with increased Ca2+ develop a pronounced 60o kink, opening up the nucleotide bases for sequence specific recognition. KT motifs can therefore act as a Ca2+ sensitive switch for mediating protein or tertiary RNA interactions. The brain specific expression of these C/D snoRNAs and demonstration of the existence of calcium sensitive KT motifs would provide valuable insight into these enigmatic snoRNAs and their role in the nervous system. 
 
+Infernal search
+
+![Alt text](images/infernal-search-pt1.jpg)
+
+![Alt text](images/infernal-search-pt2.png)
+
+![Alt text](images/infernal-search-pt3.png)
+
+
+##Please note: although the covariation model and its subsequent calibration ran smoothly, the cmsearch using Dlk1 and the .sto file of the SNORD113/114 family did not find similarities between the codes. Have to check Dlk1 file and run search again. 
+
 References
 
 Barlow, D.P., Stoger, R., Herrmann, B.G., Saito, K. and Schweifer, N. (1991) 'The mouse insulin-like growth factor type-2 receptor is imprinted and closely linked to the Tme locus', Nature, 349(6304), pp. 84-87. doi: 10.1038/349084a0 [doi].
