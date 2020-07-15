@@ -11,11 +11,11 @@ Using open source computational tools we will model the snoRNA 2D and 3D structu
 
 Infernal search
 
-!Alt text[images/infernal-search-pt1.jpg]
+![Alt text](images/infernal-search-pt1.jpg)
 
-!Alt text[images/infernal-search-pt2.png]
+![Alt text](images/infernal-search-pt2.png)
 
-!Alt text[images/infernal-search-pt3.png]
+![Alt text](images/infernal-search-pt3.png)
 
 
 ##Please note: although the covariation model and its subsequent calibration ran smoothly, the cmsearch using Dlk1 and the .sto file of the SNORD113/114 family did not find similarities between the codes. Have to check Dlk1 file and run search again. 
