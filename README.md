@@ -25,9 +25,9 @@ Infernal search
 A second cmsearch was carried out using Human chromosome 14 DNA sequence BAC R-566J3 of library RPCI-11 from chromosome 14 of Homo sapiens (Human). 
 GenBank: AL132711.5
 
-![Alt text](images/infernal-search-pt4.png)
+![Alt text](images/Infernal-search-pt4.png)
 
-![Alt text](images/infernal-search-pt5.png)
+![Alt text](images/Infernal-search-pt5.png)
 
 
 References
