@@ -42,7 +42,7 @@ A total of 68 CM hits were reported, of which 47 had an E-value of 0.01 or less.
 #17.07.2020
 The coordinates obatined in cmsearch were used to extract the sequences. 
 
-![Alt text](seq/Hitseq MSA.pdf)
+[file.pdf](seq/Hitseq MSA.pdf)
 
 TO DO: in order to carry out the MSA a FASTA file containing the 47 sequences is rquired. This will allow us to compare the sequences and find out how the copies that make up each snoRNA might differ. 
 
