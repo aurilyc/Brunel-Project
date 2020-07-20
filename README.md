@@ -46,6 +46,20 @@ The coordinates obatined in cmsearch were used to extract the sequences.
 
 TO DO: in order to carry out the MSA a FASTA file containing the 47 sequences is rquired. This will allow us to compare the sequences and find out how the copies that make up each snoRNA might differ. 
 
+#20.07.2020
+
+Since the sequences obtained with the coordinates were made up by individual objects, the command c2s was used to transform them into a string of characters in order to create the fasta file that would later be employed to conduct the cmalign. 
+
+cmalign SNO.sto all_SNO.fa RESULTS
+
+![Alt text](images/cmalign1.png)
+
+![Alt text](images/cmalign2.png)
+
+![Alt text](images/cmalign3.png)
+
+
+
 References
 
 Barlow, D.P., Stoger, R., Herrmann, B.G., Saito, K. and Schweifer, N. (1991) 'The mouse insulin-like growth factor type-2 receptor is imprinted and closely linked to the Tme locus', Nature, 349(6304), pp. 84-87. doi: 10.1038/349084a0 [doi].
