@@ -1604,7 +1604,7 @@ mytree <- njs(sno.bin.dist)
 
 
 
-![alt text](images/Rooted_tree_SNO.png)
+![alt text](images/Rplot.jpg)
 
 
 References
