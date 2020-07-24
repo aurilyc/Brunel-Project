@@ -912,15 +912,12 @@ H47          -------.-------------------UAUC.----------------------..-----------
 #=GC RF      UGGAccA.aUGAUGACcACUGGUGGCgUaUG.AGUCAUacAUGAUGAaUAcAac..gUGUCUGGAAcUCUGA~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ggUCCAa
 //
 ```
-
 ##Phylogenetic analysis
 
 A group of ten species was selected from the RF00181 Rfam entry, corresponding to sequences from the Small nucleolar RNQ SNORD113/SNORD114 family, to explore the conservation of the snoRNAs.
 - Species: Homo sapiens, Mus musculus, Rattus norvegigus, Equus caballus, Sus scrofa, Loxodonta africana, Gorilla gorilla gorilla, Camelus ferus Canis lupus familiaris, and Felis catus.
 Each sequence was extracted individually, all ten were later gathered in a fasta file that was converted into Clustal format using Clustal Omega. 
 Before plotting the phylogenetic trees, the CLustal alig. file was uploaded to R to conduct a multiple sequence alignment. The installation of package ```seqinr``` was required. 
-
-
 ```R
 > sno.alig <- read.alignment("Clustal_MSA.txt",format ="clustal")
 > head(sno.alig)
@@ -998,9 +995,7 @@ $com
 [[10]]
 [1] "acaagacacataatgacaatgatctcatatctgtgagtactcactgtaaacgtcaatggc\ta--tagatgctccaatcaaaagacacaaggtaacagggtggggaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaa-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaa-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-\t--aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaa-aaaa--aaaaaa-aaaaa-aaaaaaaaaaaaaaaaaaaaaaaaaaaaa--aaaaa\taaaaaaaaaaaaaaaaaaa----aaaaaaaaaaaaaaaaaaaaaaaaaaaa----aaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa--aaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa--a\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-aaa--a\taaaaaaaaaaaaaaaaaaaaaaaaaaa-aaaaaa-----aaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaa--a-----aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taa-aaaaaaaaaaaaaaaaaaaaaaaaaaa--aaaa-aaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaggaatgaatgggtgaa------ccaagaagttaaagagaaaattaaaa----a\tgtacatggaagccaatgaaacggataacaccacacccctaaacctct---g--------g\tgattcagcaa--aggtagtcataagaggaagtttatagcaatccaggccttccaaaagag\tgtaagaaggtctcagatacacagcccaactttatacct---taaagagctggaaaaa---\t---gaacaa---------caaataaaaccaaaaccagcagaa------------------\tgacaa---------g-aaa-tgataaagattacagcaa--aaatcaatgctat-----tg\taaactgaaaa-caaaaacaaaaacacacacagaaaaaaaaa----aaaaaaaaaaaaaaa\taaaaaaaaaaaaaa--------aaaaaaaaaaaaaaaaaaaaacaatgga--------ag\ta---atggataaagaagatatatatatatatatat-------atatatata---tatat-\tatatatata-tatatatatatata---t-atatatatatatat-atatatatatatatat\tatatatatatatatatatata--tatatatatat--atatatatatatatatatatatat\tatatatatatatatatatatatatatatatatatatatatatatatatatatatatatat\ta--tatatatatata-------tatatatatatatatatatatatatatatatatat--a\ttatatatatatatatatatatatatatatatat-----------------------atat\tatatatatatatatatatatatatatatatatatatatatatatat-------------a\ttata---tatatatatatatatatatatatatatatatatatatatatatatatatatat\tatatat-----atatatatat-----atatatatatatatatatatatatatatata--t\tatatatatat---ata------tatatatatatatatatatatatatatatatatatata\ttatatatatat---atata----tatatatatatatatatatatatatatatata-----\t-tatatatatat-------\t"
 ```
-
 As the output is a long alignment, the function found below was employed to faciliatate the visualization of the alignment by dividing it into smaller readable chunks of 60 that were printed in a more organized manner.
-
 ```R
 > printMultipleAlignment <- function(alignment, chunksize=60) 
 + {
@@ -1565,11 +1560,9 @@ As the output is a long alignment, the function found below was employed to faci
 [1] "-----\t 2621"
 [1] " "
 ```
-
 A common first step in performing a phylogenetic analysis is to calculate the pairwise genetic distances between sequences. The genetic distance is an estimate of the divergence between two sequences, and is usually measured in quantity of evolutionary change (an estimate of the number of mutations that have occurred since the two sequences shared a common ancestor).
 We will calculate this using the dist.alignment function from seqinr. This function takes as input an DNA/RNA or protein alignment and calculates a pairwise distance between any two sequences based on their similarity using an input matrix to quantify similarity between sequences. The output score is the squared root of the pairwise distances.
 The smaller the number, the less genetic distance and higher similarity.
-
 ```R
 > sno.dist<-dist.alignment(sno.alig)
 > sno.dist
@@ -1594,9 +1587,7 @@ Camelus_ferus                         0.7701661          0.7848659
 Canis_lupus_familiaris                0.7817090          0.7695218     0.7504673                       
 Felis_catus                           0.8053042          0.7857797     0.7450924              
 ```
-
 Once the Pairwise distances between the sequences were calculated, a phylogenetic tree was build using the data from the distance matrix. Homo sapiens was assigned as the ```Root``` for the phylogenetic tree. 
-
 ```R
 mytree <- njs(sno.bin.dist)
 > plot.phylo(mytree,type="u")
@@ -1606,7 +1597,6 @@ mytree <- njs(sno.bin.dist)
 
 
 ![alt text](images/Phylo_tree_SNO.png)
-
 
 
 ![alt text](images/Rplot.jpg)
