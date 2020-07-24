@@ -1600,6 +1600,12 @@ mytree <- njs(sno.bin.dist)
 ```
 
 
+![Alt text](images/Rooted_tree_SNO.png)
+
+
+
+![Alt text](images/Phylo_tree_sno.png)
+
 
 References
 
