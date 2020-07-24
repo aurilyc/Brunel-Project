@@ -709,6 +709,7 @@ Example
 H1<-AL132709seq[168250:168176]
 ```
 These sequences correspond to the snoRNAs and their respective copies. Knowing SNORD113/SNORD114 contain 9 and 31 copies a cmalign will search for similarity between the sequences, allowing to understand how this copies might differ from each other.
+
 ```R
 > H1
 acctggttactactggtgaccaccgcaaactcagtacctgctacttatgatgcacagactttgagactccaggtt
@@ -918,6 +919,8 @@ A group of ten species was selected from the RF00181 Rfam entry, corresponding t
 - Species: Homo sapiens, Mus musculus, Rattus norvegigus, Equus caballus, Sus scrofa, Loxodonta africana, Gorilla gorilla gorilla, Camelus ferus Canis lupus familiaris, and Felis catus.
 Each sequence was extracted individually, all ten were later gathered in a fasta file that was converted into Clustal format using Clustal Omega. 
 Before plotting the phylogenetic trees, the CLustal alig. file was uploaded to R to conduct a multiple sequence alignment. The installation of package ```seqinr``` was required. 
+
+
 ```R
 > sno.alig <- read.alignment("Clustal_MSA.txt",format ="clustal")
 > head(sno.alig)
@@ -995,6 +998,7 @@ $com
 [[10]]
 [1] "acaagacacataatgacaatgatctcatatctgtgagtactcactgtaaacgtcaatggc\ta--tagatgctccaatcaaaagacacaaggtaacagggtggggaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaa-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaa-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-\t--aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaa-aaaa--aaaaaa-aaaaa-aaaaaaaaaaaaaaaaaaaaaaaaaaaaa--aaaaa\taaaaaaaaaaaaaaaaaaa----aaaaaaaaaaaaaaaaaaaaaaaaaaaa----aaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa--aaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa--a\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-aaa--a\taaaaaaaaaaaaaaaaaaaaaaaaaaa-aaaaaa-----aaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaa--a-----aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taa-aaaaaaaaaaaaaaaaaaaaaaaaaaa--aaaa-aaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaggaatgaatgggtgaa------ccaagaagttaaagagaaaattaaaa----a\tgtacatggaagccaatgaaacggataacaccacacccctaaacctct---g--------g\tgattcagcaa--aggtagtcataagaggaagtttatagcaatccaggccttccaaaagag\tgtaagaaggtctcagatacacagcccaactttatacct---taaagagctggaaaaa---\t---gaacaa---------caaataaaaccaaaaccagcagaa------------------\tgacaa---------g-aaa-tgataaagattacagcaa--aaatcaatgctat-----tg\taaactgaaaa-caaaaacaaaaacacacacagaaaaaaaaa----aaaaaaaaaaaaaaa\taaaaaaaaaaaaaa--------aaaaaaaaaaaaaaaaaaaaacaatgga--------ag\ta---atggataaagaagatatatatatatatatat-------atatatata---tatat-\tatatatata-tatatatatatata---t-atatatatatatat-atatatatatatatat\tatatatatatatatatatata--tatatatatat--atatatatatatatatatatatat\tatatatatatatatatatatatatatatatatatatatatatatatatatatatatatat\ta--tatatatatata-------tatatatatatatatatatatatatatatatatat--a\ttatatatatatatatatatatatatatatatat-----------------------atat\tatatatatatatatatatatatatatatatatatatatatatatat-------------a\ttata---tatatatatatatatatatatatatatatatatatatatatatatatatatat\tatatat-----atatatatat-----atatatatatatatatatatatatatatata--t\tatatatatat---ata------tatatatatatatatatatatatatatatatatatata\ttatatatatat---atata----tatatatatatatatatatatatatatatata-----\t-tatatatatat-------\t"
 ```
+
 As the output is a long alignment, the function found below was employed to faciliatate the visualization of the alignment by dividing it into smaller readable chunks of 60 that were printed in a more organized manner.
 
 ```R
@@ -1561,6 +1565,7 @@ As the output is a long alignment, the function found below was employed to faci
 [1] "-----\t 2621"
 [1] " "
 ```
+
 A common first step in performing a phylogenetic analysis is to calculate the pairwise genetic distances between sequences. The genetic distance is an estimate of the divergence between two sequences, and is usually measured in quantity of evolutionary change (an estimate of the number of mutations that have occurred since the two sequences shared a common ancestor).
 We will calculate this using the dist.alignment function from seqinr. This function takes as input an DNA/RNA or protein alignment and calculates a pairwise distance between any two sequences based on their similarity using an input matrix to quantify similarity between sequences. The output score is the squared root of the pairwise distances.
 The smaller the number, the less genetic distance and higher similarity.
