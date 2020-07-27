@@ -709,6 +709,7 @@ Example
 H1<-AL132709seq[168250:168176]
 ```
 These sequences correspond to the snoRNAs and their respective copies. Knowing SNORD113/SNORD114 contain 9 and 31 copies a cmalign will search for similarity between the sequences, allowing to understand how this copies might differ from each other.
+
 ```R
 > H1
 acctggttactactggtgaccaccgcaaactcagtacctgctacttatgatgcacagactttgagactccaggtt
@@ -911,6 +912,697 @@ H47          -------.-------------------UAUC.----------------------..-----------
 #=GC RF      UGGAccA.aUGAUGACcACUGGUGGCgUaUG.AGUCAUacAUGAUGAaUAcAac..gUGUCUGGAAcUCUGA~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ggUCCAa
 //
 ```
+
+##Phylogenetic analysis
+
+A group of ten species was selected from the RF00181 Rfam entry, corresponding to sequences from the Small nucleolar RNQ SNORD113/SNORD114 family, to explore the conservation of the snoRNAs.
+- Species: Homo sapiens, Mus musculus, Rattus norvegigus, Equus caballus, Sus scrofa, Loxodonta africana, Gorilla gorilla gorilla, Camelus ferus Canis lupus familiaris, and Felis catus.
+Each sequence was extracted individually, all ten were later gathered in a fasta file that was converted into Clustal format using Clustal Omega. 
+Before plotting the phylogenetic trees, the CLustal alig. file was uploaded to R to conduct a multiple sequence alignment. The installation of package ```seqinr``` was required. 
+```R
+> sno.alig <- read.alignment("Clustal_MSA.txt",format ="clustal")
+> head(sno.alig)
+$nb
+[1] 10
+
+$nam
+ [1] "Sus_scrofa"              "Homo_sapiens"            "Mus_musculus"            "Rattus_norvegicus"      
+ [5] "Equus_caballus"          "Gorilla_gorilla_gorilla" "Loxodonta_africana"      "Camelus_ferus"          
+ [9] "Canis_lupus_familiaris"  "Felis_catus"            
+
+$seq
+$seq[[1]]
+[1] "------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\taaaggatgagtga-----------gctgagagtccgaccgtggt---cagaagattgcca\tggttaacgctgaaggaagcctc---aaatccaggctctctccttgaggccacgtcgtctc\tagaggtgaagacgacatggt-tgcagttcttggatgct---tgcagtctaatcccagct-\t-tttggagaagaaatgaactcactgatcaatatgatcaggaggga----gtatcacatgt\tccttcatgaccaaacatcaaaacccccagtccctaaactctcgctgatcaact--gcctg\tccccatgcccccgcccttttctcctccctgctaagcagaggagagggcccg----ggcct\tggcagaaagccctccccttgcccgtttccccg-c---atc-----------------tct\tgtactttgaagagaggggccctcctgcctgaactgaggttccaga-----atcaaagcaa\tcttgagccgtgagatttgaaaaccccctcatcaga------ggcggcaagtgtgtgtgtg\tatcat-gtgtggtgtggcgggagatgcccttt--cagcccagcccacatagtc-------\t-----cagg---gaggctgcagcagctcaccgccctgagggactgaaagg----gg----\t--caggagggctgg------------------tcctgagctccc----------------\t--ct--gggggagggtgttggcccatg-gttttgt----gctgatctgttgacctg-aga\taacaatgaatgtgggacaccaactttgcttaagactcttccctgggttactttctgaggg\ttt-taacctgga--agaaaggaccagactg-gaagaaagaggggcctctggtgcctacat\tgggaggcccattaatagactatagaaccagaagcaaccttggagatttagtcaactcacc\tctctcagcttacgcgtaaagagacta-aggcccggaggaggggcat----g----cctac\tgaccacacagccagctaacgtggggacccga-ctctcttagcggcagttcaacac---tc\ttttctcccacatcaagaca-ctgcacaatgcattacagccgtgacgggaagtgaggagcc\tcgaggcagccgtgaaaccccagaccctcttcgcagatgccaagtcctccccttcccagcc\ttggaggagtgacttaatgcgtcagcatccctgcaaagaagacccgcgtgttgt--tcaca\ttctgtgc------cttggccagtcctgcttctctcctgtcaa---gcatcacgcccttcg\tgggaatggggaatg-----g-gtgctgcggccgtgggttgctatgatgggcccagtatga\ttgagttaactgagcaaatgaaaagtgaaagaataa-------atgaataaa---ttgcct\ta--tatttactgtttacaactt-----aaactaatatcctccctaactcataaaatgagt\tgagcctttaaaag-ataaacagaagaaaaaatttgcatctgttcactcttataatgatac\tataactgt----tttcatgtattca--gattgttttgtatatccttaaatattcctg---\t----------------------tatccttgttcataaaagccctatattttagttaaatt\ttattcctaagtatctttcccaattaaaaa------------------------------a\tatttcaaagcc-------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t-------------------\t"
+
+$seq[[2]]
+[1] "------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------gaattc\taatcatttg-tcaaggggaggggattctcaatcagctcacttaggattctctgctaaaat\ttgagttcagcaggccgtggtggagtctcgtggagaagagctcagagagaagggcccaact\tgaagggca----------------gccagggaggga--tccctgt----------tcagc\tcacacggagggccccttgtcctgaacttcctctcg--------------gattcactgct\tcgctt-cagcccag-ttgccctcgttggctcccctagcacagctgacgtagccctgagac\tt--tcctcaa--acccgtttaaaagctgggggacaaaggggaaggaaacgcagtgagcac\taccagcaggcttct----gtccccagccagggcccgttcctctgggtggccctggctcgg\tgcctccggtggagcctcctgctctgcggatcttctggtttctcatctgccctcccctgag\tccctgggaggacggcgctcac-----cgacacactggagctgcgcagtttcaggccactg\tt---tcccaga-----------cttgcact--gact-ccatgatgatcaactctgcccag\tgaagttgtctcagagggtcacca------ggaagtgcacggtccaggtggg-cat---tg\tggtcatcccagccccagaaaggcttc-agcatcagagggctgca--------------aa\taatctgtgtcccctggcccccacgggacacagttctgcagatacagggcttccc------\t---agcagggccccagttc----cagccctccttgcttccaggcacaggcacaagct---\t--tcttctc---------aaaaagactgtgagtggaagggaagtgggccacttccgggct\tgaggtttctgagata-gggctgggccatccccctggcc--actttccttcttt-----gc\tcagctgcac----acagagggctctgactctccctgaacagca--gagccacaggggtcc\tctgagtcagccaggaagagggccacctgcccaccagaagcaccacatgga--------gc\ttgttcaggaagcaagaattaacggtgttacatgaa-------gccactgaa---------\t-----------------at----------------gcggaggt-tttgcttgttaga---\t------------------------------------------------------------\t---------------------------tgctattataagttccctaatatggcatgttat\ta----------aatcatctctggctgcctctgaatacagtgtgttttcta-aaccaa--a\tagtcgcagagtttattcccgccttctttaaacctccgcagtgcatggctttccctcctgg\tatgtcacgcac--ctgccggtcccc-------tgagctttgagtac---tgtctccctga\tgccg--cacgggat---ggtcacgcagggtcagggcccgtctggc--c--atcgctgtgt\ttcttgggcccagcacaggctgtcccccggtggctgtttag--------------------\t--aagagggg---cagg-----gctaatagatcctaattgtctctgccatgctcctcctg\t-------tc------tgt-----tctgggatcagtggacgcctcgttcctct--t---gt\tttttcattc--g-------\t"
+
+$seq[[3]]
+[1] "------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t-----------------------gaattcagaggaaaacaaaggaaaagagccaaacagg\taaagcagcgttgggaaagttgccccctccctgtccccccaccctcccacccagggtgggt\tggtgttttcctgaggcaactttagcttttttatggggatgtcttcaggctgtttcgacct\tggaagtaaccctaaactgcagggcaagcacagggagtgtccatctgaatattgcttttta\ttttttttaaaaaaatcatatacattatatatgtcataaaaatattttgcatttgtgaaat\tccttgcctgttccccaaggtcttcgcaggtacaggagcccactcc--acaaatcgtgtgg\tgctaaagagctgaacctcaagtgattacagaccagccataaaggcaacaca----gtgct\ttaatgctcctca----ggttttattttcccctgcctaaagtcatggcaggagactagtct\tgcatttcttcagagaagacagttacccagtaaatgaaacagcagctttgcaacggcagaa\taaaggtggatgagtcttcagac-----tgctgagtttagaaagggttaattttttttttg\tgttct-gagggtctctgagcatcaagtgcttct-ctgaagacgtgggtgtaatcatatta\ttctttgtcacacactcagccct---atgcgcagtctgagatcctgacagcccctgacagc\ttgcagagggactcactagctaggtctgaagctcaggatgcaagccagacttgg-gg---t\taccttgaagagaaaggggtcttctgag-gagtcc-------------agtgtgcagtgcg\tctacttggatgatttagt-----------gatgctgatgccaggaccctctgcgttag--\t----accct----------------gaagg--taca-cagtaatagtgtgggttgctcaa\tgagtcaagctgtcagggcacgta------gcatggcctcggctcgttaccagcaa----g\tcaggctgcacagttgagacacataccacttctgtgtttatttctctagaggaccgtgtcc\tcctgtgccag-catctatctcaagtcacattcccctggagttcccattccatac----ag\tctaatcccctagaacacgg----gccagcgcattagct--------ttct-gggcct---\t--cttaagg---------accaaagaggaaaatgttcccccatgggtacattgcagacgt\ttgagggtcggat-tg-gaagtgaaatcacagcctaggc--tcacacctgctagctgcatg\ttcactgacag-gctgagcggactgcggcgtcagcgcagaagcacagaaaataaaaattaa\tatttaaaaaaaaaaaa-----aaaggaagagaaaaaaatataaaccttga-ct-----cc\tccttttgagtccctttgtgctgagaatttgttttgggcacccacaactttaatcgaattt\tgttttttgattattccctttgcttgtttatttgtttgtttgtttgttgtttggccagtaa\taatcctccaaaagaataaacaacaaccataacaa-agagccattaaaaaaaaaaccccat\tgcaaaatatttattgtaattgtacagcaaaagt---------actgctaattaatttggt\tg----gttggtaaaa--------gtccatgtggttgtagg-----------actgag--c\tccctccctcatctatagccccctcctcaatttagctgctgtggtcctcctgggctcctgc\tatttttctgtacatttgcacacctctataaacacacctttccagagtccctgactttttt\ttctttcgtgcggaggctgtttcagagctagcgttcttcctttagcattttgtatcagctt\tgttttcctcccctccagaatt-----gcttggccataacaaagatccattgcctttctga\ttgacacccagcacctcggattctgtatacacgggaggtgatttaagcatcttactgccac\tcctgaaatctg----gggtcctttatcctggcaggtgtaagtaattgctgagtgccttgg\tatctggggagagagctccc\t"
+
+$seq[[4]]
+[1] "------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t-----------------------------------------------------ggatcat\ttgatgaccataaaagatgtgggagtcgtctga----------------------------\t---------------------------------aac-----atgc------atgatgacc\tacaacattgcgagtctgaggtccaca----tcataatctatgcactgcatgctgggatcc\ttggtg--agagatgttaggaacagtgtact----ttgagcatggagtttacat-----gt\tagattaatta--atatttggaaatcgtgtctactgacacataatcccata-agtag----\t---agtgcaaatcattttgaccggggagg------tctgagcca----------gaaacg\tatgacagaagaatccccataagtcatg-gaaaat-------------catt---------\t------gtctatactcct--g-----gatgacgtcagaatcatgggttttgatgtgtc--\ta--ggaagacccatccaatgggattgatag-----------ctcaagca-----------\t---------agggattggatag--------------------------------------\t-------------aggagaagtgatcaaggcagata-------gat----g------taa\tattatggatg-------agta-aagagaaagtttatctttttgtcatttt---------t\ttttctacattttactctcagaa-------tagatacctccaaggtgatctccaagtt---\t--cttcctc---------agtcttgaggtttgggatttccgg----tttttgtccgtaga\tattgt---------g-agagtgtgagttcatcctattt--tctcaagaacgat-----tt\tttt------------------ttcttgcatgtattccctct----tccggtatgaattta\tgtatcttgggagag--------caactgtag-acagtagttcaataagga-ac---gcat\tacgaaaaaaaaatatgttcaaaacgattcctatga-------agagtatgc---aatgat\ta----------------------------------caggtagt-taccactgccaaa-ga\ttgctctagagttt-aaagtcc--actcaagcatc--tggtagttaatgttagttttaaat\t------------ggaaatctaaccag-cactactagtgatcagcggctcaataaat--gc\ta----gcacaatttagaacctggggggatgatgttggatcattgatgaccaaa-------\t----------------------------aaaaa------------------a-a--aaac\tatctgggagtcctctgagacatcca--tga---------tgac----------------c\tacaa---cattg------------ggagtctgaggtccacatcat--a--atctatacac\ttgcatg-ctgggatactggttagagatgttagatatagtccaatttcaa-caaggag--t\tttacatgtag---atta-----attaatatttggaaatcgtgtctactgacacataatcc\tcataagtagagtgcaaatcattttgaccggggagatctgagcc-----------------\t-------------------\t"
+
+$seq[[5]]
+[1] "------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t--atctcccaaagatgggtatcattcctgtgt----------------------------\t---------------------------------ggccatatcaga------aagcattcc\tcccaggttgtaatgattgggtcatgt-ttctattagcaaataagatgcagtctcagtgct\ttttct--tgaactattgagaaaagtcttttttttttcctaatagagtttctga-----g-\t-----agtac--agatgtggaactcctc--------ataatcttaccatg-agtgg----\t---agaaagcctgattgaaaagggaaccaagacaaaatgaagcagaggcaactgacaagc\tagaagaaagggattctcataatagaat-tccaactgtagaattcacccatttccaa-act\tttcttactgtgttttatt--t-----gatgcattttatattattgccttttacattta--\tt--ttaaataatataatgaatatttgtaagcttactactatcccaagatggtatctacat\taccattgccaataattgaatcaa------tttttaaccttctccatctcct--------g\tccccctgcctcaccctaaagataatcaataccctgattttttaatt----g------tac\taattatcttg----cttcctaaaaacatatctttatcacatacgtatttttttag---tt\ttttcctggttctgaacttagcgtactatctgcagacttctaggaattgtttttattt---\t--tttcatc---------cacattaatgttactaactt---------ttatatcagttgt\ttgaat---------a-tagttgtagattcatgttcact--tgtataatactct-----at\ttgtgtgataa---tttcaaaattttttcatccattatcctc----tcaat-tagtatttc\tcctactatggatag--------taattatga-acatttt-taaacacgtc-ct---ctag\taaatgtaattgatatgttccaggatgtggcaatat-------tcaacttta---caagat\taatgtaata-tatttccacaaggagtccagaaattgcagtcta-aaccaaaaaaggagag\tgactggaatattt-ataaaca--gatcaaaaaac--taatgatgagtgaag-gattaagt\t------------agatgaatgttctg-tactgttttaattaagaacatgaataaatttgt\ta----atacacaaaacaacctgggtttatatttt-ttagcatgaatttaaaaatgtc--a\tattctcagcaactttatctatatcacactggga------------------ata--aaat\tttttgtacgctaaaatggactcacg--tcc---------tgtg----------------a\taagg---aagagagtttctttgaggcaggaagacgtccctttagt--t--atcaattatc\tacta-----acatatgtggtttagaaagttagatatgagg----tttat-gattatg--c\tttatattaat---gaga-----agcatatttataaaaagatttccatatactcctacata\tcctacattaattgaagataagttgcaggggtcaagagtggcatggcaatgaagaagttaa\tgagtattgcatgacatcat\t"
+
+$seq[[6]]
+[1] "------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t---------------------------------------------------ttgtggcag\taattccttt--aaagaaaaacat-ccatttacagataactttttaaccaaaatatacctt\ttctgtctctctaacatgctcatgcttctaaatcggcctctggggtgtcctggaatataat\ttcttctacgtgaaatcttt--tagctatttaaagatagaatcaagtcc---------atc\tcaagttcc-----------tctgttccattttatgcattttctat---tctcaactataa\tctcacgtgatacggcttcaattcactcttctctgaatata----ctccagta-----gat\tca-----ttcattttcaaaatgtgacacccagaattaaacataatccaccaca-----ta\ttgttttacagggaatagaggatatcacttcctttgtgatatgatcaatgtttgcatt---\tatgagtttaagggatttttgtcagggggtgttttgttt---gtttttgc-----aac--c\tacatcacact--gtcacctattttaag--tttac-----agtcaaca--gtacccctaag\tatgttaccgcatgtgcta--c-----attatacattatg-cacgggtttgttgatggttg\tttgtttagtcacctaaaaaaaaagaaaaag--aaaaagaaagaaaagaaaaaagcagca-\t--ctttaactctagtggtcaaaa-------aatttcattctcttaaatttagccttctat\ttcctgttccagctaatcaggatcacttagattttaatgctatcatct---g-acatatta\tgctatgtctcccagcttcatcatttgccaatttaatgagtatgtcattttaacaa-----\t---aataattttaaaatgttgaacccaacttttcaaag---acacattactagagat---\t--atacctt---------aggcactatttgaatactgcct--------------------\ttcaaa---------c-taggtacaaatccag--ttcct--gcatttttaatgt-----ac\ttatgcctt----gaaagcat-gtttatattttagtgtgaaa----gctttaaaagatcaa\taa--gcctgcaagg--------ccaatagaaattaatttctaaagatgaaatt---tttg\tagttgtgagagaaagtgttctgccaggagagttct-------tctattgta---ggtgt-\t-----------------ctgac-------tgttctgtctatat-agccagtata------\t-agcctatactgg-ctaatca--catccttacct--aggtttttaatttcttctttccac\taatggtgattgaattgtgctga------aaatttattaaaagtattgtcttgagtgaaat\ttgatctggagagata-------tgacctgctgatttc--------------ttttaa--a\taataaattctaatatatatcatttctcatgcaaatatccgtggtg------aacagctcc\tatgtaaacagtctcaaagggttccaggtaa---------tcaagagcactgtaacaatac\taata---ttaaaat---gat------------ttattcatgtaaa---atctagaagaag\ttcagagcttccaga------------tattaggcttgatt--tttagcatgcacaagtta\tctatgatcat---cttca----tttcagattcagcaattttatttccatttttacaactc\ttcctatgtcattgaatcttccctggaatctacagccctgactcagtgaaaacaaa-----\t--gtgaatcacaa------\t"
+
+$seq[[7]]
+[1] "------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t-------------------------ttttgtacttataatatataataacattctctact\ttataa-tattctctacttataatattacataatattctataatgataatataa-----ta\t-------------tattatagtatagtgtagagtagtatagtataatataatatata--t\taaaaatagtatagtataatag--agtataatataatatcctagaatttaatat-tct--g\tgcat----------gtaatattctatg-ctatgc-----tatactataatattgtatact\tacactacactactgtaca--------ctatactatagtacactacactactctatgct--\t----atact-----------------attc--tata-ccattctatactatactattct-\tatattatagtatactacactgca------ctatactattctattctatactgcactacac\ttgagctgcactatactatattatactacgctatacgacactaca-c----t--------a\ttgttacacta--cactatactgtagta-----ta---------ctatggtttaatatcgt\tttaatacagtttaatataaca--taccataccatacca---tgccatgccatgccat---\t----gccat---------agca----tgccatgccatgccat----gccatgcca-----\ttacca---------t-actacactataatatactctag--tatagtatactat-----aa\ttatactatcatataatacaatattttactacacta-taata----ta-------------\t----ctattc---t--------ataatagaatattctataatatactaga--------gt\tataatagactagactagac--------taatctat-------actatacta---ttgtat\tattatacta-taatataatatcta---a-ggagttggacagct-tccttttgcaggagaa\tgtttaggtaaagg-ttgga----caccattgtag--agctgttactggggaaattcaagc\taacaga------tggaggctggcctcctatagttatcattagacaggtcaccaatgttct\tgcttctctaactggacacactgtataatcgtactttccaccctctttgaagttaggc--a\tccaacatgtgattggttttgactaaagaaacattaagc-------------agaagtgac\tatgtgtcacttcctagtagaagctataagagctattgtgtgatttgcaccttccctttcc\tgctg---ctttcatcatcatggaagtaacatggaggttatgcctc------tgtcagcct\tgacacagtagcccctctgctgacacacgttagacatgtagtgtgagaaataagtttt--g\tttgtgttaag---cta------gtgagatctggtgattgttttcacaatataaccctatc\tttgactggaactgctactatgctcccatcctaagtcgtgattctgtgcctct--c-----\t---taaagata--------\t"
+
+$seq[[8]]
+[1] "------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t---------------------------------------------------ttgtggtag\tctcacagag--aaaaaa-aaggt-gacgatgaatatatctatgtt-catgtat--aactg\taaaaattg--tgctctacg----ctggaatttgacacgacattgtaaaatg----attat\taactcaataaaaaaaaggttaaaattttttaaaa---aaatgtaaaacaaca--acaaca\taaaaaccaacaagaaagaaccagaccaaaaaaaaaaaaaaacaaa----aaacccaaaca\tcatagataaatggaatagaata-----gagaatccagaaataggcacaaatatatgtgat\tca-----attaatttatgacaaaggagccaagactacacaacggggaaaggag---agtc\ttcttcaataaa-cggtgctgggaaaagctggac---agccacatgcaaaagagtaca---\t---actcaaccagtatcttacaacagacactaaaattaactcaaattgg-----------\t--actaaaga--tctgaat--gttaag-acctgc-----aatcatcaaatttctgg-aag\taaaatagaaccagtgact--c-----cttga---------catggagttggtgatgattt\ttt-aaaaatcatgccaa---------aagc--aaaa-gcaagaaaagcaaaaataaaca-\t---ggtgggactacatcaaacta------aaaagctccttcacagtaaagg--------c\taaccat-gcacagaatgagaaagcaacctactgaacggaggaaa----------------\ttatttggaaa--ccatatatctgataaagggttaatatccaaaatatatgaagaattcat\tataacccaatagccaaaatac-aaataacctgatccaa----aaataggcagaggac---\t--ctgaata---------cacgtttttcccgaagaagactca----gagatgacc-----\tgacag---------g-cacgtgaaaaaagtgctcgacg--tcactcttcatct-----ag\tgacttgtaaatcaaaaccactgtgaggtatcgcctcatacc----tgttaggatggtta-\t----gtatc----a--------aaagacaagagacaagtcttggcaagga--------tg\ttgaagggaatccttgtgcactgttggtgagaattt-------attttttta---tttttt\tatcatagta-tagttgatttac-------aatgttgtgttagt-ttccaatgtacagcaa\tagtgatttgattatacata----tacacatatgt--gtatttttcagactattttccatt\tataggttattataagatagtaag----------------------tgtagttccttgtgc\tt------atacacta-------ggtccttgtttatc----------ta---ttttat--a\ttatagtgatgtatctatttcaatccacactcct--------------------------a\tatttatccttccccaactctttcccctttggtaacagtaagtt-----------------\t--------t--------cttttctatgtctgtgaatctatctctggttt-gtaaataagt\ttcatttgtaccatgtctttta-----gattccacgtataagagaagtcataggatgtttt\tttctgtctga---ctta-----cttcacttaatatgataatttctccatccatccatgtt\tgctgcaaatgg---catta---tttcattcttatttgtggctaagtaata-t--t-----\t---tca--tt-g-------\t"
+
+$seq[[9]]
+[1] "-nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn\tnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnncgaaaagaattgaatcaaa\ttcaaatcgcattgtaacg-------aatcga-aaagaat-gaaatca-aaaagaa-taga\tatc-gaatcaaaa-agaatcg-aatagaata-gcatcgata-agaatcatat-cgaatcg\tagaa-gatcgaatc-gaatcgaatca-atttgaaaag-aatagaatc-gaattgaaa-aa\tatcgaa-tcgaatcta-atcgaatcga-caagaatcc-aatcgaatc-aaatcgaa-tcg\taaaaga-atccaatc-gaatcaaa-tcgaatcga-aaagaat-cgaatcga-atcgaaag\tg-aatcgaat-cgaataaaa-aaaat----------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t--------------------------------------------------------gaat\tcga-atcgaatcaaaaagaatc-a-aattgtatcgaaaaaatttgaatcga-atcaaatc\ttaaaagaatcgaatggaa-t-tgaatcgaattgaatcgaaaataa-tcaaatcgaatcg-\t--atttgaatcgaatcgaatcaa-atcgaatgaaatcgaaa-agaatcgaattgaaaaga\tatc--agat--tgaaaa-gaata-gaat-tgaataaaaacaattgaattgaat---agaa\ttcgaatcgaaaagaat-ca----aatcgaatcgagaagatcgaatcaaatc-----gaat\tgaatttgaagagaatcgaatcgaatt-gaaaagaatcaaatcaaatcg-aaa--tcaatc\tgaatcgaatcgaaa-agaatcgaatcgaaacgaaaag-aatcgaatcgaatcgaatcgaa\taagaatcaaatcgaattgaatcgagttgagtcgaaaagaatcgaatcgagaagatcgaat\tcaaatcgaatccatttgaagagaatcgaatcaaattgaaaaaatcgaatcgaatttaatc\ttaattgacaagaatccaatcgaatcaaatcgaattgaaaagaatcaaatagaattga--a\taggaatcgaattgaatcgaaaagaaaccaattgaattgaatcgaaatgaatcg-aat--c\tgaatcgaaaagaatcgaatcgaatcag-gacgaa-----aagaatcaaattgaaacgaaa\tagaatcgaatcgaatcga--------atagaaaagaatcgaatcgaattgaattgaatcg\taa-aagaatcaaatcgaacagtatcgaatc--aaat-cgaaaagaatcgaatctaatcaa\tatcgaaaagaatcgaagtgaaaa------gaatggaatcgaaacgaaaaca--------a\ttcgaatacaatctaatggaatagaaaagaattgaatcgaatcgaaa--------------\t----------------agaattgaatcgaatctaattgaaaagaa-tcgtatcgaatcga\tatcgaaaagaatcgaatgaatcgaatcac-----atcg---aaaagagtcgaaacga---\t--atcgaaa---------agaatcgaatcgaatcatatcgaa------------------\ttaaaa---------a-gaa-tcgaatcgaatataatcg--aaaagaatcgaat-----ag\taatcgaatca---aaaacaa----tcgaatcgaatcgaaat----ga-------------\t-------------------------atcgagtagaatcaaatcgaatgga--------ag\tggaaaagaatcaaatcgaaaagaatagaaatgaat-------agaattgaa---tcgaat\tcgaattgaa-tagaaaagaataga---a-tcaaatcgaataga-attgaatcgaaaagat\tatgaatcgaattg-atcgaaa--caagaaaaaac--gaatcgaatcgaaaagaatcaaat\tcaaaatgaatcgaaaataatcgaatcgaatcgattcgaatcgaatcgtatcgaattgaat\tc--aaaaaggatcga-------a-tcgaattgagtctaatcgaatcgaaa-agaatc--a\taatagattcgaatcgaattgaatcgaaaagaat------------------------caa\tatcgaacagtatcgaatcgaatccaaaagaatcgaattgaatcaa--------------a\ttcga---aaagaatcg-aatcgaaacgaaaa-gaatcga-atcga-atc-gaatcgaaa-\tagaatc-----aaatcaattc-----gaatggagttgaaaagaattgaatcgaaaag--a\tatcgaattga---att------gaaaa--gaatcgaatcgaaagt--atcgaatcgaatc\tc--aaaagaat----tgaa----tc--gaatcaa--atgg--aaa--at--a--a-----\t---t----c--a-------\t"
+
+$seq[[10]]
+[1] "acaagacacataatgacaatgatctcatatctgtgagtactcactgtaaacgtcaatggc\ta--tagatgctccaatcaaaagacacaaggtaacagggtggggaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaa-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaa-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-\t--aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaa-aaaa--aaaaaa-aaaaa-aaaaaaaaaaaaaaaaaaaaaaaaaaaaa--aaaaa\taaaaaaaaaaaaaaaaaaa----aaaaaaaaaaaaaaaaaaaaaaaaaaaa----aaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa--aaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa--a\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-aaa--a\taaaaaaaaaaaaaaaaaaaaaaaaaaa-aaaaaa-----aaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaa--a-----aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taa-aaaaaaaaaaaaaaaaaaaaaaaaaaa--aaaa-aaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaggaatgaatgggtgaa------ccaagaagttaaagagaaaattaaaa----a\tgtacatggaagccaatgaaacggataacaccacacccctaaacctct---g--------g\tgattcagcaa--aggtagtcataagaggaagtttatagcaatccaggccttccaaaagag\tgtaagaaggtctcagatacacagcccaactttatacct---taaagagctggaaaaa---\t---gaacaa---------caaataaaaccaaaaccagcagaa------------------\tgacaa---------g-aaa-tgataaagattacagcaa--aaatcaatgctat-----tg\taaactgaaaa-caaaaacaaaaacacacacagaaaaaaaaa----aaaaaaaaaaaaaaa\taaaaaaaaaaaaaa--------aaaaaaaaaaaaaaaaaaaaacaatgga--------ag\ta---atggataaagaagatatatatatatatatat-------atatatata---tatat-\tatatatata-tatatatatatata---t-atatatatatatat-atatatatatatatat\tatatatatatatatatatata--tatatatatat--atatatatatatatatatatatat\tatatatatatatatatatatatatatatatatatatatatatatatatatatatatatat\ta--tatatatatata-------tatatatatatatatatatatatatatatatatat--a\ttatatatatatatatatatatatatatatatat-----------------------atat\tatatatatatatatatatatatatatatatatatatatatatatat-------------a\ttata---tatatatatatatatatatatatatatatatatatatatatatatatatatat\tatatat-----atatatatat-----atatatatatatatatatatatatatatata--t\tatatatatat---ata------tatatatatatatatatatatatatatatatatatata\ttatatatatat---atata----tatatatatatatatatatatatatatatata-----\t-tatatatatat-------\t"
+
+
+$com
+[1] NA
+
+> sno.alig$seq
+[[1]]
+[1] "------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\taaaggatgagtga-----------gctgagagtccgaccgtggt---cagaagattgcca\tggttaacgctgaaggaagcctc---aaatccaggctctctccttgaggccacgtcgtctc\tagaggtgaagacgacatggt-tgcagttcttggatgct---tgcagtctaatcccagct-\t-tttggagaagaaatgaactcactgatcaatatgatcaggaggga----gtatcacatgt\tccttcatgaccaaacatcaaaacccccagtccctaaactctcgctgatcaact--gcctg\tccccatgcccccgcccttttctcctccctgctaagcagaggagagggcccg----ggcct\tggcagaaagccctccccttgcccgtttccccg-c---atc-----------------tct\tgtactttgaagagaggggccctcctgcctgaactgaggttccaga-----atcaaagcaa\tcttgagccgtgagatttgaaaaccccctcatcaga------ggcggcaagtgtgtgtgtg\tatcat-gtgtggtgtggcgggagatgcccttt--cagcccagcccacatagtc-------\t-----cagg---gaggctgcagcagctcaccgccctgagggactgaaagg----gg----\t--caggagggctgg------------------tcctgagctccc----------------\t--ct--gggggagggtgttggcccatg-gttttgt----gctgatctgttgacctg-aga\taacaatgaatgtgggacaccaactttgcttaagactcttccctgggttactttctgaggg\ttt-taacctgga--agaaaggaccagactg-gaagaaagaggggcctctggtgcctacat\tgggaggcccattaatagactatagaaccagaagcaaccttggagatttagtcaactcacc\tctctcagcttacgcgtaaagagacta-aggcccggaggaggggcat----g----cctac\tgaccacacagccagctaacgtggggacccga-ctctcttagcggcagttcaacac---tc\ttttctcccacatcaagaca-ctgcacaatgcattacagccgtgacgggaagtgaggagcc\tcgaggcagccgtgaaaccccagaccctcttcgcagatgccaagtcctccccttcccagcc\ttggaggagtgacttaatgcgtcagcatccctgcaaagaagacccgcgtgttgt--tcaca\ttctgtgc------cttggccagtcctgcttctctcctgtcaa---gcatcacgcccttcg\tgggaatggggaatg-----g-gtgctgcggccgtgggttgctatgatgggcccagtatga\ttgagttaactgagcaaatgaaaagtgaaagaataa-------atgaataaa---ttgcct\ta--tatttactgtttacaactt-----aaactaatatcctccctaactcataaaatgagt\tgagcctttaaaag-ataaacagaagaaaaaatttgcatctgttcactcttataatgatac\tataactgt----tttcatgtattca--gattgttttgtatatccttaaatattcctg---\t----------------------tatccttgttcataaaagccctatattttagttaaatt\ttattcctaagtatctttcccaattaaaaa------------------------------a\tatttcaaagcc-------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t-------------------\t"
+
+[[2]]
+[1] "------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------gaattc\taatcatttg-tcaaggggaggggattctcaatcagctcacttaggattctctgctaaaat\ttgagttcagcaggccgtggtggagtctcgtggagaagagctcagagagaagggcccaact\tgaagggca----------------gccagggaggga--tccctgt----------tcagc\tcacacggagggccccttgtcctgaacttcctctcg--------------gattcactgct\tcgctt-cagcccag-ttgccctcgttggctcccctagcacagctgacgtagccctgagac\tt--tcctcaa--acccgtttaaaagctgggggacaaaggggaaggaaacgcagtgagcac\taccagcaggcttct----gtccccagccagggcccgttcctctgggtggccctggctcgg\tgcctccggtggagcctcctgctctgcggatcttctggtttctcatctgccctcccctgag\tccctgggaggacggcgctcac-----cgacacactggagctgcgcagtttcaggccactg\tt---tcccaga-----------cttgcact--gact-ccatgatgatcaactctgcccag\tgaagttgtctcagagggtcacca------ggaagtgcacggtccaggtggg-cat---tg\tggtcatcccagccccagaaaggcttc-agcatcagagggctgca--------------aa\taatctgtgtcccctggcccccacgggacacagttctgcagatacagggcttccc------\t---agcagggccccagttc----cagccctccttgcttccaggcacaggcacaagct---\t--tcttctc---------aaaaagactgtgagtggaagggaagtgggccacttccgggct\tgaggtttctgagata-gggctgggccatccccctggcc--actttccttcttt-----gc\tcagctgcac----acagagggctctgactctccctgaacagca--gagccacaggggtcc\tctgagtcagccaggaagagggccacctgcccaccagaagcaccacatgga--------gc\ttgttcaggaagcaagaattaacggtgttacatgaa-------gccactgaa---------\t-----------------at----------------gcggaggt-tttgcttgttaga---\t------------------------------------------------------------\t---------------------------tgctattataagttccctaatatggcatgttat\ta----------aatcatctctggctgcctctgaatacagtgtgttttcta-aaccaa--a\tagtcgcagagtttattcccgccttctttaaacctccgcagtgcatggctttccctcctgg\tatgtcacgcac--ctgccggtcccc-------tgagctttgagtac---tgtctccctga\tgccg--cacgggat---ggtcacgcagggtcagggcccgtctggc--c--atcgctgtgt\ttcttgggcccagcacaggctgtcccccggtggctgtttag--------------------\t--aagagggg---cagg-----gctaatagatcctaattgtctctgccatgctcctcctg\t-------tc------tgt-----tctgggatcagtggacgcctcgttcctct--t---gt\tttttcattc--g-------\t"
+
+[[3]]
+[1] "------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t-----------------------gaattcagaggaaaacaaaggaaaagagccaaacagg\taaagcagcgttgggaaagttgccccctccctgtccccccaccctcccacccagggtgggt\tggtgttttcctgaggcaactttagcttttttatggggatgtcttcaggctgtttcgacct\tggaagtaaccctaaactgcagggcaagcacagggagtgtccatctgaatattgcttttta\ttttttttaaaaaaatcatatacattatatatgtcataaaaatattttgcatttgtgaaat\tccttgcctgttccccaaggtcttcgcaggtacaggagcccactcc--acaaatcgtgtgg\tgctaaagagctgaacctcaagtgattacagaccagccataaaggcaacaca----gtgct\ttaatgctcctca----ggttttattttcccctgcctaaagtcatggcaggagactagtct\tgcatttcttcagagaagacagttacccagtaaatgaaacagcagctttgcaacggcagaa\taaaggtggatgagtcttcagac-----tgctgagtttagaaagggttaattttttttttg\tgttct-gagggtctctgagcatcaagtgcttct-ctgaagacgtgggtgtaatcatatta\ttctttgtcacacactcagccct---atgcgcagtctgagatcctgacagcccctgacagc\ttgcagagggactcactagctaggtctgaagctcaggatgcaagccagacttgg-gg---t\taccttgaagagaaaggggtcttctgag-gagtcc-------------agtgtgcagtgcg\tctacttggatgatttagt-----------gatgctgatgccaggaccctctgcgttag--\t----accct----------------gaagg--taca-cagtaatagtgtgggttgctcaa\tgagtcaagctgtcagggcacgta------gcatggcctcggctcgttaccagcaa----g\tcaggctgcacagttgagacacataccacttctgtgtttatttctctagaggaccgtgtcc\tcctgtgccag-catctatctcaagtcacattcccctggagttcccattccatac----ag\tctaatcccctagaacacgg----gccagcgcattagct--------ttct-gggcct---\t--cttaagg---------accaaagaggaaaatgttcccccatgggtacattgcagacgt\ttgagggtcggat-tg-gaagtgaaatcacagcctaggc--tcacacctgctagctgcatg\ttcactgacag-gctgagcggactgcggcgtcagcgcagaagcacagaaaataaaaattaa\tatttaaaaaaaaaaaa-----aaaggaagagaaaaaaatataaaccttga-ct-----cc\tccttttgagtccctttgtgctgagaatttgttttgggcacccacaactttaatcgaattt\tgttttttgattattccctttgcttgtttatttgtttgtttgtttgttgtttggccagtaa\taatcctccaaaagaataaacaacaaccataacaa-agagccattaaaaaaaaaaccccat\tgcaaaatatttattgtaattgtacagcaaaagt---------actgctaattaatttggt\tg----gttggtaaaa--------gtccatgtggttgtagg-----------actgag--c\tccctccctcatctatagccccctcctcaatttagctgctgtggtcctcctgggctcctgc\tatttttctgtacatttgcacacctctataaacacacctttccagagtccctgactttttt\ttctttcgtgcggaggctgtttcagagctagcgttcttcctttagcattttgtatcagctt\tgttttcctcccctccagaatt-----gcttggccataacaaagatccattgcctttctga\ttgacacccagcacctcggattctgtatacacgggaggtgatttaagcatcttactgccac\tcctgaaatctg----gggtcctttatcctggcaggtgtaagtaattgctgagtgccttgg\tatctggggagagagctccc\t"
+
+[[4]]
+[1] "------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t-----------------------------------------------------ggatcat\ttgatgaccataaaagatgtgggagtcgtctga----------------------------\t---------------------------------aac-----atgc------atgatgacc\tacaacattgcgagtctgaggtccaca----tcataatctatgcactgcatgctgggatcc\ttggtg--agagatgttaggaacagtgtact----ttgagcatggagtttacat-----gt\tagattaatta--atatttggaaatcgtgtctactgacacataatcccata-agtag----\t---agtgcaaatcattttgaccggggagg------tctgagcca----------gaaacg\tatgacagaagaatccccataagtcatg-gaaaat-------------catt---------\t------gtctatactcct--g-----gatgacgtcagaatcatgggttttgatgtgtc--\ta--ggaagacccatccaatgggattgatag-----------ctcaagca-----------\t---------agggattggatag--------------------------------------\t-------------aggagaagtgatcaaggcagata-------gat----g------taa\tattatggatg-------agta-aagagaaagtttatctttttgtcatttt---------t\ttttctacattttactctcagaa-------tagatacctccaaggtgatctccaagtt---\t--cttcctc---------agtcttgaggtttgggatttccgg----tttttgtccgtaga\tattgt---------g-agagtgtgagttcatcctattt--tctcaagaacgat-----tt\tttt------------------ttcttgcatgtattccctct----tccggtatgaattta\tgtatcttgggagag--------caactgtag-acagtagttcaataagga-ac---gcat\tacgaaaaaaaaatatgttcaaaacgattcctatga-------agagtatgc---aatgat\ta----------------------------------caggtagt-taccactgccaaa-ga\ttgctctagagttt-aaagtcc--actcaagcatc--tggtagttaatgttagttttaaat\t------------ggaaatctaaccag-cactactagtgatcagcggctcaataaat--gc\ta----gcacaatttagaacctggggggatgatgttggatcattgatgaccaaa-------\t----------------------------aaaaa------------------a-a--aaac\tatctgggagtcctctgagacatcca--tga---------tgac----------------c\tacaa---cattg------------ggagtctgaggtccacatcat--a--atctatacac\ttgcatg-ctgggatactggttagagatgttagatatagtccaatttcaa-caaggag--t\tttacatgtag---atta-----attaatatttggaaatcgtgtctactgacacataatcc\tcataagtagagtgcaaatcattttgaccggggagatctgagcc-----------------\t-------------------\t"
+
+[[5]]
+[1] "------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t--atctcccaaagatgggtatcattcctgtgt----------------------------\t---------------------------------ggccatatcaga------aagcattcc\tcccaggttgtaatgattgggtcatgt-ttctattagcaaataagatgcagtctcagtgct\ttttct--tgaactattgagaaaagtcttttttttttcctaatagagtttctga-----g-\t-----agtac--agatgtggaactcctc--------ataatcttaccatg-agtgg----\t---agaaagcctgattgaaaagggaaccaagacaaaatgaagcagaggcaactgacaagc\tagaagaaagggattctcataatagaat-tccaactgtagaattcacccatttccaa-act\tttcttactgtgttttatt--t-----gatgcattttatattattgccttttacattta--\tt--ttaaataatataatgaatatttgtaagcttactactatcccaagatggtatctacat\taccattgccaataattgaatcaa------tttttaaccttctccatctcct--------g\tccccctgcctcaccctaaagataatcaataccctgattttttaatt----g------tac\taattatcttg----cttcctaaaaacatatctttatcacatacgtatttttttag---tt\ttttcctggttctgaacttagcgtactatctgcagacttctaggaattgtttttattt---\t--tttcatc---------cacattaatgttactaactt---------ttatatcagttgt\ttgaat---------a-tagttgtagattcatgttcact--tgtataatactct-----at\ttgtgtgataa---tttcaaaattttttcatccattatcctc----tcaat-tagtatttc\tcctactatggatag--------taattatga-acatttt-taaacacgtc-ct---ctag\taaatgtaattgatatgttccaggatgtggcaatat-------tcaacttta---caagat\taatgtaata-tatttccacaaggagtccagaaattgcagtcta-aaccaaaaaaggagag\tgactggaatattt-ataaaca--gatcaaaaaac--taatgatgagtgaag-gattaagt\t------------agatgaatgttctg-tactgttttaattaagaacatgaataaatttgt\ta----atacacaaaacaacctgggtttatatttt-ttagcatgaatttaaaaatgtc--a\tattctcagcaactttatctatatcacactggga------------------ata--aaat\tttttgtacgctaaaatggactcacg--tcc---------tgtg----------------a\taagg---aagagagtttctttgaggcaggaagacgtccctttagt--t--atcaattatc\tacta-----acatatgtggtttagaaagttagatatgagg----tttat-gattatg--c\tttatattaat---gaga-----agcatatttataaaaagatttccatatactcctacata\tcctacattaattgaagataagttgcaggggtcaagagtggcatggcaatgaagaagttaa\tgagtattgcatgacatcat\t"
+
+[[6]]
+[1] "------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t---------------------------------------------------ttgtggcag\taattccttt--aaagaaaaacat-ccatttacagataactttttaaccaaaatatacctt\ttctgtctctctaacatgctcatgcttctaaatcggcctctggggtgtcctggaatataat\ttcttctacgtgaaatcttt--tagctatttaaagatagaatcaagtcc---------atc\tcaagttcc-----------tctgttccattttatgcattttctat---tctcaactataa\tctcacgtgatacggcttcaattcactcttctctgaatata----ctccagta-----gat\tca-----ttcattttcaaaatgtgacacccagaattaaacataatccaccaca-----ta\ttgttttacagggaatagaggatatcacttcctttgtgatatgatcaatgtttgcatt---\tatgagtttaagggatttttgtcagggggtgttttgttt---gtttttgc-----aac--c\tacatcacact--gtcacctattttaag--tttac-----agtcaaca--gtacccctaag\tatgttaccgcatgtgcta--c-----attatacattatg-cacgggtttgttgatggttg\tttgtttagtcacctaaaaaaaaagaaaaag--aaaaagaaagaaaagaaaaaagcagca-\t--ctttaactctagtggtcaaaa-------aatttcattctcttaaatttagccttctat\ttcctgttccagctaatcaggatcacttagattttaatgctatcatct---g-acatatta\tgctatgtctcccagcttcatcatttgccaatttaatgagtatgtcattttaacaa-----\t---aataattttaaaatgttgaacccaacttttcaaag---acacattactagagat---\t--atacctt---------aggcactatttgaatactgcct--------------------\ttcaaa---------c-taggtacaaatccag--ttcct--gcatttttaatgt-----ac\ttatgcctt----gaaagcat-gtttatattttagtgtgaaa----gctttaaaagatcaa\taa--gcctgcaagg--------ccaatagaaattaatttctaaagatgaaatt---tttg\tagttgtgagagaaagtgttctgccaggagagttct-------tctattgta---ggtgt-\t-----------------ctgac-------tgttctgtctatat-agccagtata------\t-agcctatactgg-ctaatca--catccttacct--aggtttttaatttcttctttccac\taatggtgattgaattgtgctga------aaatttattaaaagtattgtcttgagtgaaat\ttgatctggagagata-------tgacctgctgatttc--------------ttttaa--a\taataaattctaatatatatcatttctcatgcaaatatccgtggtg------aacagctcc\tatgtaaacagtctcaaagggttccaggtaa---------tcaagagcactgtaacaatac\taata---ttaaaat---gat------------ttattcatgtaaa---atctagaagaag\ttcagagcttccaga------------tattaggcttgatt--tttagcatgcacaagtta\tctatgatcat---cttca----tttcagattcagcaattttatttccatttttacaactc\ttcctatgtcattgaatcttccctggaatctacagccctgactcagtgaaaacaaa-----\t--gtgaatcacaa------\t"
+
+[[7]]
+[1] "------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t-------------------------ttttgtacttataatatataataacattctctact\ttataa-tattctctacttataatattacataatattctataatgataatataa-----ta\t-------------tattatagtatagtgtagagtagtatagtataatataatatata--t\taaaaatagtatagtataatag--agtataatataatatcctagaatttaatat-tct--g\tgcat----------gtaatattctatg-ctatgc-----tatactataatattgtatact\tacactacactactgtaca--------ctatactatagtacactacactactctatgct--\t----atact-----------------attc--tata-ccattctatactatactattct-\tatattatagtatactacactgca------ctatactattctattctatactgcactacac\ttgagctgcactatactatattatactacgctatacgacactaca-c----t--------a\ttgttacacta--cactatactgtagta-----ta---------ctatggtttaatatcgt\tttaatacagtttaatataaca--taccataccatacca---tgccatgccatgccat---\t----gccat---------agca----tgccatgccatgccat----gccatgcca-----\ttacca---------t-actacactataatatactctag--tatagtatactat-----aa\ttatactatcatataatacaatattttactacacta-taata----ta-------------\t----ctattc---t--------ataatagaatattctataatatactaga--------gt\tataatagactagactagac--------taatctat-------actatacta---ttgtat\tattatacta-taatataatatcta---a-ggagttggacagct-tccttttgcaggagaa\tgtttaggtaaagg-ttgga----caccattgtag--agctgttactggggaaattcaagc\taacaga------tggaggctggcctcctatagttatcattagacaggtcaccaatgttct\tgcttctctaactggacacactgtataatcgtactttccaccctctttgaagttaggc--a\tccaacatgtgattggttttgactaaagaaacattaagc-------------agaagtgac\tatgtgtcacttcctagtagaagctataagagctattgtgtgatttgcaccttccctttcc\tgctg---ctttcatcatcatggaagtaacatggaggttatgcctc------tgtcagcct\tgacacagtagcccctctgctgacacacgttagacatgtagtgtgagaaataagtttt--g\tttgtgttaag---cta------gtgagatctggtgattgttttcacaatataaccctatc\tttgactggaactgctactatgctcccatcctaagtcgtgattctgtgcctct--c-----\t---taaagata--------\t"
+
+[[8]]
+[1] "------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t---------------------------------------------------ttgtggtag\tctcacagag--aaaaaa-aaggt-gacgatgaatatatctatgtt-catgtat--aactg\taaaaattg--tgctctacg----ctggaatttgacacgacattgtaaaatg----attat\taactcaataaaaaaaaggttaaaattttttaaaa---aaatgtaaaacaaca--acaaca\taaaaaccaacaagaaagaaccagaccaaaaaaaaaaaaaaacaaa----aaacccaaaca\tcatagataaatggaatagaata-----gagaatccagaaataggcacaaatatatgtgat\tca-----attaatttatgacaaaggagccaagactacacaacggggaaaggag---agtc\ttcttcaataaa-cggtgctgggaaaagctggac---agccacatgcaaaagagtaca---\t---actcaaccagtatcttacaacagacactaaaattaactcaaattgg-----------\t--actaaaga--tctgaat--gttaag-acctgc-----aatcatcaaatttctgg-aag\taaaatagaaccagtgact--c-----cttga---------catggagttggtgatgattt\ttt-aaaaatcatgccaa---------aagc--aaaa-gcaagaaaagcaaaaataaaca-\t---ggtgggactacatcaaacta------aaaagctccttcacagtaaagg--------c\taaccat-gcacagaatgagaaagcaacctactgaacggaggaaa----------------\ttatttggaaa--ccatatatctgataaagggttaatatccaaaatatatgaagaattcat\tataacccaatagccaaaatac-aaataacctgatccaa----aaataggcagaggac---\t--ctgaata---------cacgtttttcccgaagaagactca----gagatgacc-----\tgacag---------g-cacgtgaaaaaagtgctcgacg--tcactcttcatct-----ag\tgacttgtaaatcaaaaccactgtgaggtatcgcctcatacc----tgttaggatggtta-\t----gtatc----a--------aaagacaagagacaagtcttggcaagga--------tg\ttgaagggaatccttgtgcactgttggtgagaattt-------attttttta---tttttt\tatcatagta-tagttgatttac-------aatgttgtgttagt-ttccaatgtacagcaa\tagtgatttgattatacata----tacacatatgt--gtatttttcagactattttccatt\tataggttattataagatagtaag----------------------tgtagttccttgtgc\tt------atacacta-------ggtccttgtttatc----------ta---ttttat--a\ttatagtgatgtatctatttcaatccacactcct--------------------------a\tatttatccttccccaactctttcccctttggtaacagtaagtt-----------------\t--------t--------cttttctatgtctgtgaatctatctctggttt-gtaaataagt\ttcatttgtaccatgtctttta-----gattccacgtataagagaagtcataggatgtttt\tttctgtctga---ctta-----cttcacttaatatgataatttctccatccatccatgtt\tgctgcaaatgg---catta---tttcattcttatttgtggctaagtaata-t--t-----\t---tca--tt-g-------\t"
+
+[[9]]
+[1] "-nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn\tnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnncgaaaagaattgaatcaaa\ttcaaatcgcattgtaacg-------aatcga-aaagaat-gaaatca-aaaagaa-taga\tatc-gaatcaaaa-agaatcg-aatagaata-gcatcgata-agaatcatat-cgaatcg\tagaa-gatcgaatc-gaatcgaatca-atttgaaaag-aatagaatc-gaattgaaa-aa\tatcgaa-tcgaatcta-atcgaatcga-caagaatcc-aatcgaatc-aaatcgaa-tcg\taaaaga-atccaatc-gaatcaaa-tcgaatcga-aaagaat-cgaatcga-atcgaaag\tg-aatcgaat-cgaataaaa-aaaat----------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t------------------------------------------------------------\t--------------------------------------------------------gaat\tcga-atcgaatcaaaaagaatc-a-aattgtatcgaaaaaatttgaatcga-atcaaatc\ttaaaagaatcgaatggaa-t-tgaatcgaattgaatcgaaaataa-tcaaatcgaatcg-\t--atttgaatcgaatcgaatcaa-atcgaatgaaatcgaaa-agaatcgaattgaaaaga\tatc--agat--tgaaaa-gaata-gaat-tgaataaaaacaattgaattgaat---agaa\ttcgaatcgaaaagaat-ca----aatcgaatcgagaagatcgaatcaaatc-----gaat\tgaatttgaagagaatcgaatcgaatt-gaaaagaatcaaatcaaatcg-aaa--tcaatc\tgaatcgaatcgaaa-agaatcgaatcgaaacgaaaag-aatcgaatcgaatcgaatcgaa\taagaatcaaatcgaattgaatcgagttgagtcgaaaagaatcgaatcgagaagatcgaat\tcaaatcgaatccatttgaagagaatcgaatcaaattgaaaaaatcgaatcgaatttaatc\ttaattgacaagaatccaatcgaatcaaatcgaattgaaaagaatcaaatagaattga--a\taggaatcgaattgaatcgaaaagaaaccaattgaattgaatcgaaatgaatcg-aat--c\tgaatcgaaaagaatcgaatcgaatcag-gacgaa-----aagaatcaaattgaaacgaaa\tagaatcgaatcgaatcga--------atagaaaagaatcgaatcgaattgaattgaatcg\taa-aagaatcaaatcgaacagtatcgaatc--aaat-cgaaaagaatcgaatctaatcaa\tatcgaaaagaatcgaagtgaaaa------gaatggaatcgaaacgaaaaca--------a\ttcgaatacaatctaatggaatagaaaagaattgaatcgaatcgaaa--------------\t----------------agaattgaatcgaatctaattgaaaagaa-tcgtatcgaatcga\tatcgaaaagaatcgaatgaatcgaatcac-----atcg---aaaagagtcgaaacga---\t--atcgaaa---------agaatcgaatcgaatcatatcgaa------------------\ttaaaa---------a-gaa-tcgaatcgaatataatcg--aaaagaatcgaat-----ag\taatcgaatca---aaaacaa----tcgaatcgaatcgaaat----ga-------------\t-------------------------atcgagtagaatcaaatcgaatgga--------ag\tggaaaagaatcaaatcgaaaagaatagaaatgaat-------agaattgaa---tcgaat\tcgaattgaa-tagaaaagaataga---a-tcaaatcgaataga-attgaatcgaaaagat\tatgaatcgaattg-atcgaaa--caagaaaaaac--gaatcgaatcgaaaagaatcaaat\tcaaaatgaatcgaaaataatcgaatcgaatcgattcgaatcgaatcgtatcgaattgaat\tc--aaaaaggatcga-------a-tcgaattgagtctaatcgaatcgaaa-agaatc--a\taatagattcgaatcgaattgaatcgaaaagaat------------------------caa\tatcgaacagtatcgaatcgaatccaaaagaatcgaattgaatcaa--------------a\ttcga---aaagaatcg-aatcgaaacgaaaa-gaatcga-atcga-atc-gaatcgaaa-\tagaatc-----aaatcaattc-----gaatggagttgaaaagaattgaatcgaaaag--a\tatcgaattga---att------gaaaa--gaatcgaatcgaaagt--atcgaatcgaatc\tc--aaaagaat----tgaa----tc--gaatcaa--atgg--aaa--at--a--a-----\t---t----c--a-------\t"
+
+[[10]]
+[1] "acaagacacataatgacaatgatctcatatctgtgagtactcactgtaaacgtcaatggc\ta--tagatgctccaatcaaaagacacaaggtaacagggtggggaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaa-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaa-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-\t--aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaa-aaaa--aaaaaa-aaaaa-aaaaaaaaaaaaaaaaaaaaaaaaaaaaa--aaaaa\taaaaaaaaaaaaaaaaaaa----aaaaaaaaaaaaaaaaaaaaaaaaaaaa----aaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa--aaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa--a\taaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-aaa--a\taaaaaaaaaaaaaaaaaaaaaaaaaaa-aaaaaa-----aaaaaaaaaaaaaaaaaaaaa\taaaaaaaaaaaaaaaaaa--a-----aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\taa-aaaaaaaaaaaaaaaaaaaaaaaaaaa--aaaa-aaaaaaaaaaaaaaaaaaaaaaa\taaaaaaaggaatgaatgggtgaa------ccaagaagttaaagagaaaattaaaa----a\tgtacatggaagccaatgaaacggataacaccacacccctaaacctct---g--------g\tgattcagcaa--aggtagtcataagaggaagtttatagcaatccaggccttccaaaagag\tgtaagaaggtctcagatacacagcccaactttatacct---taaagagctggaaaaa---\t---gaacaa---------caaataaaaccaaaaccagcagaa------------------\tgacaa---------g-aaa-tgataaagattacagcaa--aaatcaatgctat-----tg\taaactgaaaa-caaaaacaaaaacacacacagaaaaaaaaa----aaaaaaaaaaaaaaa\taaaaaaaaaaaaaa--------aaaaaaaaaaaaaaaaaaaaacaatgga--------ag\ta---atggataaagaagatatatatatatatatat-------atatatata---tatat-\tatatatata-tatatatatatata---t-atatatatatatat-atatatatatatatat\tatatatatatatatatatata--tatatatatat--atatatatatatatatatatatat\tatatatatatatatatatatatatatatatatatatatatatatatatatatatatatat\ta--tatatatatata-------tatatatatatatatatatatatatatatatatat--a\ttatatatatatatatatatatatatatatatat-----------------------atat\tatatatatatatatatatatatatatatatatatatatatatatat-------------a\ttata---tatatatatatatatatatatatatatatatatatatatatatatatatatat\tatatat-----atatatatat-----atatatatatatatatatatatatatatata--t\tatatatatat---ata------tatatatatatatatatatatatatatatatatatata\ttatatatatat---atata----tatatatatatatatatatatatatatatata-----\t-tatatatatat-------\t"
+```
+As the output is a long alignment, the function found below was employed to faciliatate the visualization of the alignment by dividing it into smaller readable chunks of 60 that were printed in a more organized manner.
+```R
+> printMultipleAlignment <- function(alignment, chunksize=60) 
++ {
++   # this function requires the Biostrings package
++   require("Biostrings")
++   # find the number of sequences in the alignment 
++   numseqs <- alignment$nb
++   # find the length of the alignment
++   alignmentlen <- nchar(alignment$seq[[1]]) 
++   starts <- seq(1, alignmentlen, by=chunksize)
++   n <- length(starts)
++   # get the alignment for each of the sequences: 
++   aln <- vector()
++   lettersprinted <- vector()
++   for (j in 1:numseqs) {
++     alignmentj <- alignment$seq[[j]] 
++     aln[j] <- alignmentj 
++     lettersprinted[j] <- 0
++   }
++   # print out the alignment in blocks of 'chunksize' columns: 
++   for (i in 1:n) { # for each of n chunks
++     for (j in 1:numseqs) {
++       alnj <- aln[j]
++       chunkseqjaln <- substring(alnj, starts[i], starts[i]+chunksize-1) 
++       chunkseqjaln <- toupper(chunkseqjaln)
++       # Find out how many gaps there are in chunkseqjaln:
++       gapsj <- countPattern("-",chunkseqjaln) # countPattern() is from ,!Biostrings package
++       # Calculate how many residues of the first sequence we have printed so,!far in the alignment:
++       lettersprinted[j] <- lettersprinted[j] + chunksize - gapsj 
++       print(paste(chunkseqjaln,lettersprinted[j]))
++     }
++     print(paste(' '))
++   }
++ }
+> printMultipleAlignment(sno.alig,60)
+[1] "------------------------------------------------------------ 0"
+[1] "------------------------------------------------------------ 0"
+[1] "------------------------------------------------------------ 0"
+[1] "------------------------------------------------------------ 0"
+[1] "------------------------------------------------------------ 0"
+[1] "------------------------------------------------------------ 0"
+[1] "------------------------------------------------------------ 0"
+[1] "------------------------------------------------------------ 0"
+[1] "-NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN 59"
+[1] "ACAAGACACATAATGACAATGATCTCATATCTGTGAGTACTCACTGTAAACGTCAATGGC 60"
+[1] " "
+[1] "\t----------------------------------------------------------- 1"
+[1] "\t----------------------------------------------------------- 1"
+[1] "\t----------------------------------------------------------- 1"
+[1] "\t----------------------------------------------------------- 1"
+[1] "\t----------------------------------------------------------- 1"
+[1] "\t----------------------------------------------------------- 1"
+[1] "\t----------------------------------------------------------- 1"
+[1] "\t----------------------------------------------------------- 1"
+[1] "\tNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNCGAAAAGAATTGAATCAA 119"
+[1] "\tA--TAGATGCTCCAATCAAAAGACACAAGGTAACAGGGTGGGGAAAAAAAAAAAAAAAA 118"
+[1] " "
+[1] "-\t---------------------------------------------------------- 2"
+[1] "-\t---------------------------------------------------------- 2"
+[1] "-\t---------------------------------------------------------- 2"
+[1] "-\t---------------------------------------------------------- 2"
+[1] "-\t---------------------------------------------------------- 2"
+[1] "-\t---------------------------------------------------------- 2"
+[1] "-\t---------------------------------------------------------- 2"
+[1] "-\t---------------------------------------------------------- 2"
+[1] "A\tTCAAATCGCATTGTAACG-------AATCGA-AAAGAAT-GAAATCA-AAAAGAA-TA 168"
+[1] "A\tAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 178"
+[1] " "
+[1] "--\t--------------------------------------------------------- 3"
+[1] "--\t--------------------------------------------------------- 3"
+[1] "--\t--------------------------------------------------------- 3"
+[1] "--\t--------------------------------------------------------- 3"
+[1] "--\t--------------------------------------------------------- 3"
+[1] "--\t--------------------------------------------------------- 3"
+[1] "--\t--------------------------------------------------------- 3"
+[1] "--\t--------------------------------------------------------- 3"
+[1] "GA\tATC-GAATCAAAA-AGAATCG-AATAGAATA-GCATCGATA-AGAATCATAT-CGAA 222"
+[1] "AA\tAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 238"
+[1] " "
+[1] "---\t-------------------------------------------------------- 4"
+[1] "---\t-------------------------------------------------------- 4"
+[1] "---\t-------------------------------------------------------- 4"
+[1] "---\t-------------------------------------------------------- 4"
+[1] "---\t-------------------------------------------------------- 4"
+[1] "---\t-------------------------------------------------------- 4"
+[1] "---\t-------------------------------------------------------- 4"
+[1] "---\t-------------------------------------------------------- 4"
+[1] "TCG\tAGAA-GATCGAATC-GAATCGAATCA-ATTTGAAAAG-AATAGAATC-GAATTGAA 277"
+[1] "AAA\tAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 298"
+[1] " "
+[1] "----\t------------------------------------------------------- 5"
+[1] "----\t------------------------------------------------------- 5"
+[1] "----\t------------------------------------------------------- 5"
+[1] "----\t------------------------------------------------------- 5"
+[1] "----\t------------------------------------------------------- 5"
+[1] "----\t------------------------------------------------------- 5"
+[1] "----\t------------------------------------------------------- 5"
+[1] "----\t------------------------------------------------------- 5"
+[1] "A-AA\tATCGAA-TCGAATCTA-ATCGAATCGA-CAAGAATCC-AATCGAATC-AAATCGA 331"
+[1] "AAAA\tAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 358"
+[1] " "
+[1] "-----\t------------------------------------------------------ 6"
+[1] "-----\t------------------------------------------------------ 6"
+[1] "-----\t------------------------------------------------------ 6"
+[1] "-----\t------------------------------------------------------ 6"
+[1] "-----\t------------------------------------------------------ 6"
+[1] "-----\t------------------------------------------------------ 6"
+[1] "-----\t------------------------------------------------------ 6"
+[1] "-----\t------------------------------------------------------ 6"
+[1] "A-TCG\tAAAAGA-ATCCAATC-GAATCAAA-TCGAATCGA-AAAGAAT-CGAATCGA-AT 384"
+[1] "AAAAA\tAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 418"
+[1] " "
+[1] "------\t----------------------------------------------------- 7"
+[1] "------\t----------------------------------------------------- 7"
+[1] "------\t----------------------------------------------------- 7"
+[1] "------\t----------------------------------------------------- 7"
+[1] "------\t----------------------------------------------------- 7"
+[1] "------\t----------------------------------------------------- 7"
+[1] "------\t----------------------------------------------------- 7"
+[1] "------\t----------------------------------------------------- 7"
+[1] "CGAAAG\tG-AATCGAAT-CGAATAAAA-AAAAT--------------------------- 414"
+[1] "AAAAAA\tAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 478"
+[1] " "
+[1] "-------\t---------------------------------------------------- 8"
+[1] "-------\t---------------------------------------------------- 8"
+[1] "-------\t---------------------------------------------------- 8"
+[1] "-------\t---------------------------------------------------- 8"
+[1] "-------\t---------------------------------------------------- 8"
+[1] "-------\t---------------------------------------------------- 8"
+[1] "-------\t---------------------------------------------------- 8"
+[1] "-------\t---------------------------------------------------- 8"
+[1] "-------\t---------------------------------------------------- 415"
+[1] "AAAAAAA\tAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 538"
+[1] " "
+[1] "--------\t--------------------------------------------------- 9"
+[1] "--------\t--------------------------------------------------- 9"
+[1] "--------\t--------------------------------------------------- 9"
+[1] "--------\t--------------------------------------------------- 9"
+[1] "--------\t--------------------------------------------------- 9"
+[1] "--------\t--------------------------------------------------- 9"
+[1] "--------\t--------------------------------------------------- 9"
+[1] "--------\t--------------------------------------------------- 9"
+[1] "--------\t--------------------------------------------------- 416"
+[1] "AAAAAAAA\tAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 598"
+[1] " "
+[1] "---------\t-------------------------------------------------- 10"
+[1] "---------\t-------------------------------------------------- 10"
+[1] "---------\t-------------------------------------------------- 10"
+[1] "---------\t-------------------------------------------------- 10"
+[1] "---------\t-------------------------------------------------- 10"
+[1] "---------\t-------------------------------------------------- 10"
+[1] "---------\t-------------------------------------------------- 10"
+[1] "---------\t-------------------------------------------------- 10"
+[1] "---------\t-------------------------------------------------- 417"
+[1] "AAAAAAAAA\tAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 658"
+[1] " "
+[1] "----------\t------------------------------------------------- 11"
+[1] "----------\t------------------------------------------------- 11"
+[1] "----------\t-----------------------GAATTCAGAGGAAAACAAAGGAAAAG 37"
+[1] "----------\t------------------------------------------------- 11"
+[1] "----------\t------------------------------------------------- 11"
+[1] "----------\t------------------------------------------------- 11"
+[1] "----------\t------------------------------------------------- 11"
+[1] "----------\t------------------------------------------------- 11"
+[1] "----------\t------------------------------------------------- 418"
+[1] "AAAAAAAAAA\tAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 718"
+[1] " "
+[1] "-----------\tAAAGGATGAGTGA-----------GCTGAGAGTCCGACCGTGGT---C 46"
+[1] "-----------\t------------------------------------------------ 12"
+[1] "AGCCAAACAGG\tAAAGCAGCGTTGGGAAAGTTGCCCCCTCCCTGTCCCCCCACCCTCCCA 97"
+[1] "-----------\t------------------------------------------------ 12"
+[1] "-----------\t------------------------------------------------ 12"
+[1] "-----------\t------------------------------------------------ 12"
+[1] "-----------\t------------------------------------------------ 12"
+[1] "-----------\t------------------------------------------------ 12"
+[1] "-----------\t------------------------------------------------ 419"
+[1] "AAAAAAAAAAA\tAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 778"
+[1] " "
+[1] "AGAAGATTGCCA\tGGTTAACGCTGAAGGAAGCCTC---AAATCCAGGCTCTCTCCTTGAG 103"
+[1] "------------\t----------------------------------------------- 13"
+[1] "CCCAGGGTGGGT\tGGTGTTTTCCTGAGGCAACTTTAGCTTTTTTATGGGGATGTCTTCAG 157"
+[1] "------------\t----------------------------------------------- 13"
+[1] "------------\t----------------------------------------------- 13"
+[1] "------------\t----------------------------------------------- 13"
+[1] "------------\t----------------------------------------------- 13"
+[1] "------------\t----------------------------------------------- 13"
+[1] "--------GAAT\tCGA-ATCGAATCAAAAAGAATC-A-AATTGTATCGAAAAAATTTGAA 468"
+[1] "AAAAAAAAAAAA\tAAAAAAAAAAAAAAAAAAAAAAAA-AAAAAAAAAAAAAAAAAAAAAA 837"
+[1] " "
+[1] "GCCACGTCGTCTC\tAGAGGTGAAGACGACATGGT-TGCAGTTCTTGGATGCT---TGCAG 159"
+[1] "-------------\t---------------------------------------------- 14"
+[1] "GCTGTTTCGACCT\tGGAAGTAACCCTAAACTGCAGGGCAAGCACAGGGAGTGTCCATCTG 217"
+[1] "-------------\t---------------------------------------------- 14"
+[1] "-------------\t---------------------------------------------- 14"
+[1] "-------------\t---------------------------------------------- 14"
+[1] "-------------\t---------------------------------------------- 14"
+[1] "-------------\t---------------------------------------------- 14"
+[1] "TCGA-ATCAAATC\tTAAAAGAATCGAATGGAA-T-TGAATCGAATTGAATCGAAAATAA- 524"
+[1] "AAAAAAAAAAAAA\tAAAAAAAAAAAAAAAAAA-AAAAAAAAAAAAAAAAAAAAAAAAAAA 896"
+[1] " "
+[1] "TCTAATCCCAGCT-\t-TTTGGAGAAGAAATGAACTCACTGATCAATATGATCAGGAGGGA 217"
+[1] "--------------\t--------------------------------------------- 15"
+[1] "AATATTGCTTTTTA\tTTTTTTTAAAAAAATCATATACATTATATATGTCATAAAAATATT 277"
+[1] "--------------\t--------------------------------------------- 15"
+[1] "--------------\t--------------------------------------------- 15"
+[1] "--------------\t--------------------------------------------- 15"
+[1] "--------------\t--------------------------------------------- 15"
+[1] "--------------\t--------------------------------------------- 15"
+[1] "TCAAATCGAATCG-\t--ATTTGAATCGAATCGAATCAA-ATCGAATGAAATCGAAA-AGA 579"
+[1] "AAAAAAAAAAAAA-\t--AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 953"
+[1] " "
+[1] "----GTATCACATGT\tCCTTCATGACCAAACATCAAAACCCCCAGTCCCTAAACTCTCGC 273"
+[1] "---------------\t-------------------------------------------- 16"
+[1] "TTGCATTTGTGAAAT\tCCTTGCCTGTTCCCCAAGGTCTTCGCAGGTACAGGAGCCCACTC 337"
+[1] "---------------\t-------------------------------------------- 16"
+[1] "---------------\t-------------------------------------------- 16"
+[1] "------TTGTGGCAG\tAATTCCTTT--AAAGAAAAACAT-CCATTTACAGATAACTTTTT 66"
+[1] "---------------\t-------------------------------------------- 16"
+[1] "------TTGTGGTAG\tCTCACAGAG--AAAAAA-AAGGT-GACGATGAATATATCTATGT 65"
+[1] "ATCGAATTGAAAAGA\tATC--AGAT--TGAAAA-GAATA-GAAT-TGAATAAAAACAATT 632"
+[1] "AAAAAAAAAAAAAAA\tAAAA-AAAA--AAAAAA-AAAAA-AAAAAAAAAAAAAAAAAAAA 1008"
+[1] " "
+[1] "TGATCAACT--GCCTG\tCCCCATGCCCCCGCCCTTTTCTCCTCCCTGCTAAGCAGAGGAG 331"
+[1] "----------GAATTC\tAATCATTTG-TCAAGGGGAGGGGATTCTCAATCAGCTCACTTA 65"
+[1] "C--ACAAATCGTGTGG\tGCTAAAGAGCTGAACCTCAAGTGATTACAGACCAGCCATAAAG 395"
+[1] "----------------\t------------------------------------------- 17"
+[1] "----------------\t------------------------------------------- 17"
+[1] "AACCAAAATATACCTT\tTCTGTCTCTCTAACATGCTCATGCTTCTAAATCGGCCTCTGGG 126"
+[1] "----------------\t------------------------------------------- 17"
+[1] "T-CATGTAT--AACTG\tAAAAATTG--TGCTCTACG----CTGGAATTTGACACGACATT 116"
+[1] "GAATTGAAT---AGAA\tTCGAATCGAAAAGAAT-CA----AATCGAATCGAGAAGATCGA 684"
+[1] "AAAAAAAAA--AAAAA\tAAAAAAAAAAAAAAAAAAA----AAAAAAAAAAAAAAAAAAAA 1062"
+[1] " "
+[1] "AGGGCCCG----GGCCT\tGGCAGAAAGCCCTCCCCTTGCCCGTTTCCCCG-C---ATC-- 381"
+[1] "GGATTCTCTGCTAAAAT\tTGAGTTCAGCAGGCCGTGGTGGAGTCTCGTGGAGAAGAGCTC 125"
+[1] "GCAACACA----GTGCT\tTAATGCTCCTCA----GGTTTTATTTTCCCCTGCCTAAAGTC 447"
+[1] "----------GGATCAT\tTGATGACCATAAAAGATGTGGGAGTCGTCTGA---------- 57"
+[1] "-----------------\t--ATCTCCCAAAGATGGGTATCATTCCTGTGT---------- 48"
+[1] "GTGTCCTGGAATATAAT\tTCTTCTACGTGAAATCTTT--TAGCTATTTAAAGATAGAATC 184"
+[1] "-----------------\t------------------------------------------ 18"
+[1] "GTAAAATG----ATTAT\tAACTCAATAAAAAAAAGGTTAAAATTTTTTAAAA---AAATG 169"
+[1] "ATCAAATC-----GAAT\tGAATTTGAAGAGAATCGAATCGAATT-GAAAAGAATCAAATC 738"
+[1] "AAAAAAAA----AAAAA\tAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1118"
+[1] " "
+[1] "---------------TCT\tGTACTTTGAAGAGAGGGGCCCTCCTGCCTGAACTGAGGTTC 426"
+[1] "AGAGAGAAGGGCCCAACT\tGAAGGGCA----------------GCCAGGGAGGGA--TCC 167"
+[1] "ATGGCAGGAGACTAGTCT\tGCATTTCTTCAGAGAAGACAGTTACCCAGTAAATGAAACAG 507"
+[1] "------------------\t---------------------------------AAC----- 61"
+[1] "------------------\t---------------------------------GGCCATAT 57"
+[1] "AAGTCC---------ATC\tCAAGTTCC-----------TCTGTTCCATTTTATGCATTTT 224"
+[1] "------------------\t----------------------------------------- 19"
+[1] "TAAAACAACA--ACAACA\tAAAAACCAACAAGAAAGAACCAGACCAAAAAAAAAAAAAAA 227"
+[1] "AAATCG-AAA--TCAATC\tGAATCGAATCGAAA-AGAATCGAATCGAAACGAAAAG-AAT 793"
+[1] "AAAAAAAAAA--AAAAAA\tAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1176"
+[1] " "
+[1] "CAGA-----ATCAAAGCAA\tCTTGAGCCGTGAGATTTGAAAACCCCCTCATCAGA----- 476"
+[1] "CTGT----------TCAGC\tCACACGGAGGGCCCCTTGTCCTGAACTTCCTCTCG----- 212"
+[1] "CAGCTTTGCAACGGCAGAA\tAAAGGTGGATGAGTCTTCAGAC-----TGCTGAGTTTAGA 562"
+[1] "ATGC------ATGATGACC\tACAACATTGCGAGTCTGAGGTCCACA----TCATAATCTA 111"
+[1] "CAGA------AAGCATTCC\tCCCAGGTTGTAATGATTGGGTCATGT-TTCTATTAGCAAA 110"
+[1] "CTAT---TCTCAACTATAA\tCTCACGTGATACGGCTTCAATTCACTCTTCTCTGAATATA 281"
+[1] "-------------------\t-------------------------TTTTGTACTTATAAT 35"
+[1] "CAAA----AAACCCAAACA\tCATAGATAAATGGAATAGAATA-----GAGAATCCAGAAA 278"
+[1] "CGAATCGAATCGAATCGAA\tAAGAATCAAATCGAATTGAATCGAGTTGAGTCGAAAAGAA 853"
+[1] "AAAAAAAAAAAAAAAAAAA\tAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1236"
+[1] " "
+[1] "-GGCGGCAAGTGTGTGTGTG\tATCAT-GTGTGGTGTGGCGGGAGATGCCCTTT--CAGCC 532"
+[1] "---------GATTCACTGCT\tCGCTT-CAGCCCAG-TTGCCCTCGTTGGCTCCCCTAGCA 261"
+[1] "AAGGGTTAATTTTTTTTTTG\tGTTCT-GAGGGTCTCTGAGCATCAAGTGCTTCT-CTGAA 620"
+[1] "TGCACTGCATGCTGGGATCC\tTGGTG--AGAGATGTTAGGAACAGTGTACT----TTGAG 165"
+[1] "TAAGATGCAGTCTCAGTGCT\tTTTCT--TGAACTATTGAGAAAAGTCTTTTTTTTTTCCT 168"
+[1] "----CTCCAGTA-----GAT\tCA-----TTCATTTTCAAAATGTGACACCCAGAATTAAA 327"
+[1] "ATATAATAACATTCTCTACT\tTATAA-TATTCTCTACTTATAATATTACATAATATTCTA 94"
+[1] "TAGGCACAAATATATGTGAT\tCA-----ATTAATTTATGACAAAGGAGCCAAGACTACAC 333"
+[1] "TCGAATCGAGAAGATCGAAT\tCAAATCGAATCCATTTGAAGAGAATCGAATCAAATTGAA 913"
+[1] "AAAAAAAAAAAAAAAAAAAA\tAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1296"
+[1] " "
+[1] "CAGCCCACATAGTC-------\t-----CAGG---GAGGCTGCAGCAGCTCACCGCCCTGA 577"
+[1] "CAGCTGACGTAGCCCTGAGAC\tT--TCCTCAA--ACCCGTTTAAAAGCTGGGGGACAAAG 317"
+[1] "GACGTGGGTGTAATCATATTA\tTCTTTGTCACACACTCAGCCCT---ATGCGCAGTCTGA 677"
+[1] "CATGGAGTTTACAT-----GT\tAGATTAATTA--ATATTTGGAAATCGTGTCTACTGACA 218"
+[1] "AATAGAGTTTCTGA-----G-\t-----AGTAC--AGATGTGGAACTCCTC--------AT 207"
+[1] "CATAATCCACCACA-----TA\tTGTTTTACAGGGAATAGAGGATATCACTTCCTTTGTGA 382"
+[1] "TAATGATAATATAA-----TA\t-------------TATTATAGTATAGTGTAGAGTAGTA 136"
+[1] "AACGGGGAAAGGAG---AGTC\tTCTTCAATAAA-CGGTGCTGGGAAAAGCTGGAC---AG 386"
+[1] "AAAATCGAATCGAATTTAATC\tTAATTGACAAGAATCCAATCGAATCAAATCGAATTGAA 973"
+[1] "AAAAAAAAAAAAAAAAAAAAA\tAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1356"
+[1] " "
+[1] "GGGACTGAAAGG----GG----\t--CAGGAGGGCTGG------------------TCCTG 609"
+[1] "GGGAAGGAAACGCAGTGAGCAC\tACCAGCAGGCTTCT----GTCCCCAGCCAGGGCCCGT 373"
+[1] "GATCCTGACAGCCCCTGACAGC\tTGCAGAGGGACTCACTAGCTAGGTCTGAAGCTCAGGA 737"
+[1] "CATAATCCCATA-AGTAG----\t---AGTGCAAATCATTTTGACCGGGGAGG------TC 264"
+[1] "AATCTTACCATG-AGTGG----\t---AGAAAGCCTGATTGAAAAGGGAACCAAGACAAAA 259"
+[1] "TATGATCAATGTTTGCATT---\tATGAGTTTAAGGGATTTTTGTCAGGGGGTGTTTTGTT 439"
+[1] "TAGTATAATATAATATATA--T\tAAAAATAGTATAGTATAATAG--AGTATAATATAATA 192"
+[1] "CCACATGCAAAAGAGTACA---\t---ACTCAACCAGTATCTTACAACAGACACTAAAATT 440"
+[1] "AAGAATCAAATAGAATTGA--A\tAGGAATCGAATTGAATCGAAAAGAAACCAATTGAATT 1031"
+[1] "AAAAAAAAAAAAAAAAAAA--A\tAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1414"
+[1] " "
+[1] "AGCTCCC----------------\t--CT--GGGGGAGGGTGTTGGCCCATG-GTTTTGT- 647"
+[1] "TCCTCTGGGTGGCCCTGGCTCGG\tGCCTCCGGTGGAGCCTCCTGCTCTGCGGATCTTCTG 433"
+[1] "TGCAAGCCAGACTTGG-GG---T\tACCTTGAAGAGAAAGGGGTCTTCTGAG-GAGTCC-- 790"
+[1] "TGAGCCA----------GAAACG\tATGACAGAAGAATCCCCATAAGTCATG-GAAAAT-- 311"
+[1] "TGAAGCAGAGGCAACTGACAAGC\tAGAAGAAAGGGATTCTCATAATAGAAT-TCCAACTG 318"
+[1] "T---GTTTTTGC-----AAC--C\tACATCACACT--GTCACCTATTTTAAG--TTTAC-- 483"
+[1] "TCCTAGAATTTAATAT-TCT--G\tGCAT----------GTAATATTCTATG-CTATGC-- 236"
+[1] "AACTCAAATTGG-----------\t--ACTAAAGA--TCTGAAT--GTTAAG-ACCTGC-- 480"
+[1] "GAATCGAAATGAATCG-AAT--C\tGAATCGAAAAGAATCGAATCGAATCAG-GACGAA-- 1085"
+[1] "AAAAAAAAAAAAAAAA-AAA--A\tAAAAAAAAAAAAAAAAAAAAAAAAAAA-AAAAAA-- 1468"
+[1] " "
+[1] "---GCTGATCTGTTGACCTG-AGA\tAACAATGAATGTGGGACACCAACTTTGCTTAAGAC 703"
+[1] "GTTTCTCATCTGCCCTCCCCTGAG\tCCCTGGGAGGACGGCGCTCAC-----CGACACACT 488"
+[1] "-----------AGTGTGCAGTGCG\tCTACTTGGATGATTTAGT-----------GATGCT 828"
+[1] "-----------CATT---------\t------GTCTATACTCCT--G-----GATGACGTC 338"
+[1] "TAGAATTCACCCATTTCCAA-ACT\tTTCTTACTGTGTTTTATT--T-----GATGCATTT 370"
+[1] "---AGTCAACA--GTACCCCTAAG\tATGTTACCGCATGTGCTA--C-----ATTATACAT 531"
+[1] "---TATACTATAATATTGTATACT\tACACTACACTACTGTACA--------CTATACTAT 285"
+[1] "---AATCATCAAATTTCTGG-AAG\tAAAATAGAACCAGTGACT--C-----CTTGA---- 525"
+[1] "---AAGAATCAAATTGAAACGAAA\tAGAATCGAATCGAATCGA--------ATAGAAAAG 1134"
+[1] "---AAAAAAAAAAAAAAAAAAAAA\tAAAAAAAAAAAAAAAAAA--A-----AAAAAAAAA 1518"
+[1] " "
+[1] "TCTTCCCTGGGTTACTTTCTGAGGG\tTT-TAACCTGGA--AGAAAGGACCAGACTG-GAA 759"
+[1] "GGAGCTGCGCAGTTTCAGGCCACTG\tT---TCCCAGA-----------CTTGCACT--GA 532"
+[1] "GATGCCAGGACCCTCTGCGTTAG--\t----ACCCT----------------GAAGG--TA 864"
+[1] "AGAATCATGGGTTTTGATGTGTC--\tA--GGAAGACCCATCCAATGGGATTGATAG---- 390"
+[1] "TATATTATTGCCTTTTACATTTA--\tT--TTAAATAATATAATGAATATTTGTAAGCTTA 426"
+[1] "TATG-CACGGGTTTGTTGATGGTTG\tTTGTTTAGTCACCTAAAAAAAAAGAAAAAG--AA 588"
+[1] "AGTACACTACACTACTCTATGCT--\t----ATACT-----------------ATTC--TA 320"
+[1] "-----CATGGAGTTGGTGATGATTT\tTT-AAAAATCATGCCAA---------AAGC--AA 568"
+[1] "AATCGAATCGAATTGAATTGAATCG\tAA-AAGAATCAAATCGAACAGTATCGAATC--AA 1191"
+[1] "AAAAAAAAAAAAAAAAAAAAAAAAA\tAA-AAAAAAAAAAAAAAAAAAAAAAAAAAA--AA 1575"
+[1] " "
+[1] "GAAAGAGGGGCCTCTGGTGCCTACAT\tGGGAGGCCCATTAATAGACTATAGAACCAGAAG 819"
+[1] "CT-CCATGATGATCAACTCTGCCCAG\tGAAGTTGTCTCAGAGGGTCACCA------GGAA 585"
+[1] "CA-CAGTAATAGTGTGGGTTGCTCAA\tGAGTCAAGCTGTCAGGGCACGTA------GCAT 917"
+[1] "-------CTCAAGCA-----------\t---------AGGGATTGGATAG----------- 412"
+[1] "CTACTATCCCAAGATGGTATCTACAT\tACCATTGCCAATAATTGAATCAA------TTTT 480"
+[1] "AAAGAAAGAAAAGAAAAAAGCAGCA-\t--CTTTAACTCTAGTGGTCAAAA-------AAT 638"
+[1] "TA-CCATTCTATACTATACTATTCT-\tATATTATAGTATACTACACTGCA------CTAT 372"
+[1] "AA-GCAAGAAAAGCAAAAATAAACA-\t---GGTGGGACTACATCAAACTA------AAAA 617"
+[1] "AT-CGAAAAGAATCGAATCTAATCAA\tATCGAAAAGAATCGAAGTGAAAA------GAAT 1244"
+[1] "AA-AAAAAAAAAAAAAAAAAAAAAAA\tAAAAAAAGGAATGAATGGGTGAA------CCAA 1628"
+[1] " "
+[1] "CAACCTTGGAGATTTAGTCAACTCACC\tCTCTCAGCTTACGCGTAAAGAGACTA-AGGCC 878"
+[1] "GTGCACGGTCCAGGTGGG-CAT---TG\tGGTCATCCCAGCCCCAGAAAGGCTTC-AGCAT 640"
+[1] "GGCCTCGGCTCGTTACCAGCAA----G\tCAGGCTGCACAGTTGAGACACATACCACTTCT 973"
+[1] "---------------------------\t-------------AGGAGAAGTGATCAAGGCA 432"
+[1] "TAACCTTCTCCATCTCCT--------G\tCCCCCTGCCTCACCCTAAAGATAATCAATACC 532"
+[1] "TTCATTCTCTTAAATTTAGCCTTCTAT\tTCCTGTTCCAGCTAATCAGGATCACTTAGATT 698"
+[1] "ACTATTCTATTCTATACTGCACTACAC\tTGAGCTGCACTATACTATATTATACTACGCTA 432"
+[1] "GCTCCTTCACAGTAAAGG--------C\tAACCAT-GCACAGAATGAGAAAGCAACCTACT 668"
+[1] "GGAATCGAAACGAAAACA--------A\tTCGAATACAATCTAATGGAATAGAAAAGAATT 1296"
+[1] "GAAGTTAAAGAGAAAATTAAAA----A\tGTACATGGAAGCCAATGAAACGGATAACACCA 1684"
+[1] " "
+[1] "CGGAGGAGGGGCAT----G----CCTAC\tGACCACACAGCCAGCTAACGTGGGGACCCGA 930"
+[1] "CAGAGGGCTGCA--------------AA\tAATCTGTGTCCCCTGGCCCCCACGGGACACA 686"
+[1] "GTGTTTATTTCTCTAGAGGACCGTGTCC\tCCTGTGCCAG-CATCTATCTCAAGTCACATT 1032"
+[1] "GATA-------GAT----G------TAA\tATTATGGATG-------AGTA-AAGAGAAAG 467"
+[1] "CTGATTTTTTAATT----G------TAC\tAATTATCTTG----CTTCCTAAAAACATATC 578"
+[1] "TTAATGCTATCATCT---G-ACATATTA\tGCTATGTCTCCCAGCTTCATCATTTGCCAAT 754"
+[1] "TACGACACTACA-C----T--------A\tTGTTACACTA--CACTATACTGTAGTA---- 473"
+[1] "GAACGGAGGAAA----------------\tTATTTGGAAA--CCATATATCTGATAAAGGG 710"
+[1] "GAATCGAATCGAAA--------------\t----------------AGAATTGAATCGAAT 1326"
+[1] "CACCCCTAAACCTCT---G--------G\tGATTCAGCAA--AGGTAGTCATAAGAGGAAG 1731"
+[1] " "
+[1] "-CTCTCTTAGCGGCAGTTCAACAC---TC\tTTTCTCCCACATCAAGACA-CTGCACAATG 985"
+[1] "GTTCTGCAGATACAGGGCTTCCC------\t---AGCAGGGCCCCAGTTC----CAGCCCT 733"
+[1] "CCCCTGGAGTTCCCATTCCATAC----AG\tCTAATCCCCTAGAACACGG----GCCAGCG 1084"
+[1] "TTTATCTTTTTGTCATTTT---------T\tTTTCTACATTTTACTCTCAGAA-------T 511"
+[1] "TTTATCACATACGTATTTTTTTAG---TT\tTTTCCTGGTTCTGAACTTAGCGTACTATCT 635"
+[1] "TTAATGAGTATGTCATTTTAACAA-----\t---AATAATTTTAAAATGTTGAACCCAACT 806"
+[1] "-TA---------CTATGGTTTAATATCGT\tTTAATACAGTTTAATATAACA--TACCATA 521"
+[1] "TTAATATCCAAAATATATGAAGAATTCAT\tATAACCCAATAGCCAAAATAC-AAATAACC 769"
+[1] "CTAATTGAAAAGAA-TCGTATCGAATCGA\tATCGAAAAGAATCGAATGAATCGAATCAC- 1384"
+[1] "TTTATAGCAATCCAGGCCTTCCAAAAGAG\tGTAAGAAGGTCTCAGATACACAGCCCAACT 1791"
+[1] " "
+[1] "CATTACAGCCGTGACGGGAAGTGAGGAGCC\tCGAGGCAGCCGTGAAACCCCAGACCCTCT 1045"
+[1] "CCTTGCTTCCAGGCACAGGCACAAGCT---\t--TCTTCTC---------AAAAAGACTGT 779"
+[1] "CATTAGCT--------TTCT-GGGCCT---\t--CTTAAGG---------ACCAAAGAGGA 1121"
+[1] "AGATACCTCCAAGGTGATCTCCAAGTT---\t--CTTCCTC---------AGTCTTGAGGT 557"
+[1] "GCAGACTTCTAGGAATTGTTTTTATTT---\t--TTTCATC---------CACATTAATGT 681"
+[1] "TTTCAAAG---ACACATTACTAGAGAT---\t--ATACCTT---------AGGCACTATTT 849"
+[1] "CCATACCA---TGCCATGCCATGCCAT---\t----GCCAT---------AGCA----TGC 558"
+[1] "TGATCCAA----AAATAGGCAGAGGAC---\t--CTGAATA---------CACGTTTTTCC 811"
+[1] "----ATCG---AAAAGAGTCGAAACGA---\t--ATCGAAA---------AGAATCGAATC 1423"
+[1] "TTATACCT---TAAAGAGCTGGAAAAA---\t---GAACAA---------CAAATAAAACC 1833"
+[1] " "
+[1] "TCGCAGATGCCAAGTCCTCCCCTTCCCAGCC\tTGGAGGAGTGACTTAATGCGTCAGCATC 1105"
+[1] "GAGTGGAAGGGAAGTGGGCCACTTCCGGGCT\tGAGGTTTCTGAGATA-GGGCTGGGCCAT 838"
+[1] "AAATGTTCCCCCATGGGTACATTGCAGACGT\tTGAGGGTCGGAT-TG-GAAGTGAAATCA 1179"
+[1] "TTGGGATTTCCGG----TTTTTGTCCGTAGA\tATTGT---------G-AGAGTGTGAGTT 603"
+[1] "TACTAACTT---------TTATATCAGTTGT\tTGAAT---------A-TAGTTGTAGATT 722"
+[1] "GAATACTGCCT--------------------\tTCAAA---------C-TAGGTACAAATC 879"
+[1] "CATGCCATGCCAT----GCCATGCCA-----\tTACCA---------T-ACTACACTATAA 599"
+[1] "CGAAGAAGACTCA----GAGATGACC-----\tGACAG---------G-CACGTGAAAAAA 852"
+[1] "GAATCATATCGAA------------------\tTAAAA---------A-GAA-TCGAATCG 1454"
+[1] "AAAACCAGCAGAA------------------\tGACAA---------G-AAA-TGATAAAG 1864"
+[1] " "
+[1] "CCTGCAAAGAAGACCCGCGTGTTGT--TCACA\tTCTGTGC------CTTGGCCAGTCCTG 1157"
+[1] "CCCCCTGGCC--ACTTTCCTTCTTT-----GC\tCAGCTGCAC----ACAGAGGGCTCTGA 887"
+[1] "CAGCCTAGGC--TCACACCTGCTAGCTGCATG\tTCACTGACAG-GCTGAGCGGACTGCGG 1236"
+[1] "CATCCTATTT--TCTCAAGAACGAT-----TT\tTTT------------------TTCTTG 638"
+[1] "CATGTTCACT--TGTATAATACTCT-----AT\tTGTGTGATAA---TTTCAAAATTTTTT 772"
+[1] "CAG--TTCCT--GCATTTTTAATGT-----AC\tTATGCCTT----GAAAGCAT-GTTTAT 925"
+[1] "TATACTCTAG--TATAGTATACTAT-----AA\tTATACTATCATATAATACAATATTTTA 652"
+[1] "GTGCTCGACG--TCACTCTTCATCT-----AG\tGACTTGTAAATCAAAACCACTGTGAGG 905"
+[1] "AATATAATCG--AAAAGAATCGAAT-----AG\tAATCGAATCA---AAAACAA----TCG 1500"
+[1] "ATTACAGCAA--AAATCAATGCTAT-----TG\tAAACTGAAAA-CAAAAACAAAAACACA 1916"
+[1] " "
+[1] "CTTCTCTCCTGTCAA---GCATCACGCCCTTCG\tGGGAATGGGGAATG-----G-GTGCT 1208"
+[1] "CTCTCCCTGAACAGCA--GAGCCACAGGGGTCC\tCTGAGTCAGCCAGGAAGAGGGCCACC 945"
+[1] "CGTCAGCGCAGAAGCACAGAAAATAAAAATTAA\tATTTAAAAAAAAAAAA-----AAAGG 1291"
+[1] "CATGTATTCCCTCT----TCCGGTATGAATTTA\tGTATCTTGGGAGAG--------CAAC 686"
+[1] "CATCCATTATCCTC----TCAAT-TAGTATTTC\tCCTACTATGGATAG--------TAAT 819"
+[1] "ATTTTAGTGTGAAA----GCTTTAAAAGATCAA\tAA--GCCTGCAAGG--------CCAA 971"
+[1] "CTACACTA-TAATA----TA-------------\t----CTATTC---T--------ATAA 679"
+[1] "TATCGCCTCATACC----TGTTAGGATGGTTA-\t----GTATC----A--------AAAG 944"
+[1] "AATCGAATCGAAAT----GA-------------\t-------------------------A 1518"
+[1] "CACAGAAAAAAAAA----AAAAAAAAAAAAAAA\tAAAAAAAAAAAAAA--------AAAA 1964"
+[1] " "
+[1] "GCGGCCGTGGGTTGCTATGATGGGCCCAGTATGA\tTGAGTTAACTGAGCAAATGAAAAGT 1268"
+[1] "TGCCCACCAGAAGCACCACATGGA--------GC\tTGTTCAGGAAGCAAGAATTAACGGT 997"
+[1] "AAGAGAAAAAAATATAAACCTTGA-CT-----CC\tCCTTTTGAGTCCCTTTGTGCTGAGA 1345"
+[1] "TGTAG-ACAGTAGTTCAATAAGGA-AC---GCAT\tACGAAAAAAAAATATGTTCAAAACG 741"
+[1] "TATGA-ACATTTT-TAAACACGTC-CT---CTAG\tAAATGTAATTGATATGTTCCAGGAT 873"
+[1] "TAGAAATTAATTTCTAAAGATGAAATT---TTTG\tAGTTGTGAGAGAAAGTGTTCTGCCA 1028"
+[1] "TAGAATATTCTATAATATACTAGA--------GT\tATAATAGACTAGACTAGAC------ 725"
+[1] "ACAAGAGACAAGTCTTGGCAAGGA--------TG\tTGAAGGGAATCCTTGTGCACTGTTG 996"
+[1] "TCGAGTAGAATCAAATCGAATGGA--------AG\tGGAAAAGAATCAAATCGAAAAGAAT 1570"
+[1] "AAAAAAAAAAAAAAAAACAATGGA--------AG\tA---ATGGATAAAGAAGATATATAT 2013"
+[1] " "
+[1] "GAAAGAATAA-------ATGAATAAA---TTGCCT\tA--TATTTACTGTTTACAACTT-- 1314"
+[1] "GTTACATGAA-------GCCACTGAA---------\t-----------------AT----- 1019"
+[1] "ATTTGTTTTGGGCACCCACAACTTTAATCGAATTT\tGTTTTTTGATTATTCCCTTTGCTT 1405"
+[1] "ATTCCTATGA-------AGAGTATGC---AATGAT\tA----------------------- 768"
+[1] "GTGGCAATAT-------TCAACTTTA---CAAGAT\tAATGTAATA-TATTTCCACAAGGA 922"
+[1] "GGAGAGTTCT-------TCTATTGTA---GGTGT-\t-----------------CTGAC-- 1058"
+[1] "--TAATCTAT-------ACTATACTA---TTGTAT\tATTATACTA-TAATATAATATCTA 772"
+[1] "GTGAGAATTT-------ATTTTTTTA---TTTTTT\tATCATAGTA-TAGTTGATTTAC-- 1043"
+[1] "AGAAATGAAT-------AGAATTGAA---TCGAAT\tCGAATTGAA-TAGAAAAGAATAGA 1619"
+[1] "ATATATATAT-------ATATATATA---TATAT-\tATATATATA-TATATATATATATA 2061"
+[1] " "
+[1] "---AAACTAATATCCTCCCTAACTCATAAAATGAGT\tGAGCCTTTAAAAG-ATAAACAGA 1370"
+[1] "-----------GCGGAGGT-TTTGCTTGTTAGA---\t----------------------- 1041"
+[1] "GTTTATTTGTTTGTTTGTTTGTTGTTTGGCCAGTAA\tAATCCTCCAAAAGAATAAACAAC 1465"
+[1] "-----------CAGGTAGT-TACCACTGCCAAA-GA\tTGCTCTAGAGTTT-AAAGTCC-- 812"
+[1] "GTCCAGAAATTGCAGTCTA-AACCAAAAAAGGAGAG\tGACTGGAATATTT-ATAAACA-- 978"
+[1] "-----TGTTCTGTCTATAT-AGCCAGTATA------\t-AGCCTATACTGG-CTAATCA-- 1102"
+[1] "---A-GGAGTTGGACAGCT-TCCTTTTGCAGGAGAA\tGTTTAGGTAAAGG-TTGGA---- 822"
+[1] "-----AATGTTGTGTTAGT-TTCCAATGTACAGCAA\tAGTGATTTGATTATACATA---- 1093"
+[1] "---A-TCAAATCGAATAGA-ATTGAATCGAAAAGAT\tATGAATCGAATTG-ATCGAAA-- 1671"
+[1] "---T-ATATATATATATAT-ATATATATATATATAT\tATATATATATATATATATATA-- 2114"
+[1] " "
+[1] "AGAAAAAATTTGCATCTGTTCACTCTTATAATGATAC\tATAACTGT----TTTCATGTAT 1426"
+[1] "-------------------------------------\t---------------------- 1042"
+[1] "AACCATAACAA-AGAGCCATTAAAAAAAAAACCCCAT\tGCAAAATATTTATTGTAATTGT 1524"
+[1] "ACTCAAGCATC--TGGTAGTTAATGTTAGTTTTAAAT\t------------GGAAATCTAA 858"
+[1] "GATCAAAAAAC--TAATGATGAGTGAAG-GATTAAGT\t------------AGATGAATGT 1023"
+[1] "CATCCTTACCT--AGGTTTTTAATTTCTTCTTTCCAC\tAATGGTGATTGAATTGTGCTGA 1160"
+[1] "CACCATTGTAG--AGCTGTTACTGGGGAAATTCAAGC\tAACAGA------TGGAGGCTGG 874"
+[1] "TACACATATGT--GTATTTTTCAGACTATTTTCCATT\tATAGGTTATTATAAGATAGTAA 1151"
+[1] "CAAGAAAAAAC--GAATCGAATCGAAAAGAATCAAAT\tCAAAATGAATCGAAAATAATCG 1729"
+[1] "TATATATATAT--ATATATATATATATATATATATAT\tATATATATATATATATATATAT 2172"
+[1] " "
+[1] "TCA--GATTGTTTTGTATATCCTTAAATATTCCTG---\t--------------------- 1460"
+[1] "-----TGCTATTATAAGTTCCCTAATATGGCATGTTAT\tA----------AATCATCTCT 1087"
+[1] "ACAGCAAAAGT---------ACTGCTAATTAATTTGGT\tG----GTTGGTAAAA------ 1565"
+[1] "CCAG-CACTACTAGTGATCAGCGGCTCAATAAAT--GC\tA----GCACAATTTAGAACCT 911"
+[1] "TCTG-TACTGTTTTAATTAAGAACATGAATAAATTTGT\tA----ATACACAAAACAACCT 1078"
+[1] "------AAATTTATTAAAAGTATTGTCTTGAGTGAAAT\tTGATCTGGAGAGATA------ 1208"
+[1] "CCTCCTATAGTTATCATTAGACAGGTCACCAATGTTCT\tGCTTCTCTAACTGGACACACT 934"
+[1] "G----------------------TGTAGTTCCTTGTGC\tT------ATACACTA------ 1177"
+[1] "AATCGAATCGATTCGAATCGAATCGTATCGAATTGAAT\tC--AAAAAGGATCGA------ 1781"
+[1] "ATATATATATATATATATATATATATATATATATATAT\tA--TATATATATATA------ 2224"
+[1] " "
+[1] "-TATCCTTGTTCATAAAAGCCCTATATTTTAGTTAAATT\tTATTCCTAAGTATCTTTCCC 1519"
+[1] "GGCTGCCTCTGAATACAGTGTGTTTTCTA-AACCAA--A\tAGTCGCAGAGTTTATTCCCG 1144"
+[1] "--GTCCATGTGGTTGTAGG-----------ACTGAG--C\tCCCTCCCTCATCTATAGCCC 1610"
+[1] "GGGGGGATGATGTTGGATCATTGATGACCAAA-------\t-------------------- 944"
+[1] "GGGTTTATATTTT-TTAGCATGAATTTAAAAATGTC--A\tATTCTCAGCAACTTTATCTA 1135"
+[1] "-TGACCTGCTGATTTC--------------TTTTAA--A\tAATAAATTCTAATATATATC 1251"
+[1] "GTATAATCGTACTTTCCACCCTCTTTGAAGTTAGGC--A\tCCAACATGTGATTGGTTTTG 992"
+[1] "-GGTCCTTGTTTATC----------TA---TTTTAT--A\tTATAGTGATGTATCTATTTC 1221"
+[1] "-A-TCGAATTGAGTCTAATCGAATCGAAA-AGAATC--A\tAATAGATTCGAATCGAATTG 1836"
+[1] "-TATATATATATATATATATATATATATATATATAT--A\tTATATATATATATATATATA 2281"
+[1] " "
+[1] "AATTAAAAA------------------------------A\tATTTCAAAGCC-------- 1541"
+[1] "CCTTCTTTAAACCTCCGCAGTGCATGGCTTTCCCTCCTGG\tATGTCACGCAC--CTGCCG 1202"
+[1] "CCTCCTCAATTTAGCTGCTGTGGTCCTCCTGGGCTCCTGC\tATTTTTCTGTACATTTGCA 1670"
+[1] "--------AAAAA------------------A-A--AAAC\tATCTGGGAGTCCTCTGAGA 975"
+[1] "TATCACACTGGGA------------------ATA--AAAT\tTTTTGTACGCTAAAATGGA 1175"
+[1] "ATTTCTCATGCAAATATCCGTGGTG------AACAGCTCC\tATGTAAACAGTCTCAAAGG 1305"
+[1] "ACTAAAGAAACATTAAGC-------------AGAAGTGAC\tATGTGTCACTTCCTAGTAG 1039"
+[1] "AATCCACACTCCT--------------------------A\tATTTATCCTTCCCCAACTC 1255"
+[1] "AATCGAAAAGAAT------------------------CAA\tATCGAACAGTATCGAATCG 1872"
+[1] "TATATATATATAT-----------------------ATAT\tATATATATATATATATATA 2318"
+[1] " "
+[1] "-----------------------------------------\t------------------ 1542"
+[1] "GTCCCC-------TGAGCTTTGAGTAC---TGTCTCCCTGA\tGCCG--CACGGGAT---G 1247"
+[1] "CACCTCTATAAACACACCTTTCCAGAGTCCCTGACTTTTTT\tTCTTTCGTGCGGAGGCTG 1730"
+[1] "CATCCA--TGA---------TGAC----------------C\tACAA---CATTG------ 999"
+[1] "CTCACG--TCC---------TGTG----------------A\tAAGG---AAGAGAGTTTC 1205"
+[1] "GTTCCAGGTAA---------TCAAGAGCACTGTAACAATAC\tAATA---TTAAAAT---G 1350"
+[1] "AAGCTATAAGAGCTATTGTGTGATTTGCACCTTCCCTTTCC\tGCTG---CTTTCATCATC 1096"
+[1] "TTTCCCCTTTGGTAACAGTAAGTT-----------------\t--------T--------C 1282"
+[1] "AATCCAAAAGAATCGAATTGAATCAA--------------A\tTCGA---AAAGAATCG-A 1914"
+[1] "TATATATATATATATATATATATATAT-------------A\tTATA---TATATATATAT 2362"
+[1] " "
+[1] "------------------------------------------\t----------------- 1543"
+[1] "GTCACGCAGGGTCAGGGCCCGTCTGGC--C--ATCGCTGTGT\tTCTTGGGCCCAGCACAG 1303"
+[1] "TTTCAGAGCTAGCGTTCTTCCTTTAGCATTTTGTATCAGCTT\tGTTTTCCTCCCCTCCAG 1790"
+[1] "------GGAGTCTGAGGTCCACATCAT--A--ATCTATACAC\tTGCATG-CTGGGATACT 1048"
+[1] "TTTGAGGCAGGAAGACGTCCCTTTAGT--T--ATCAATTATC\tACTA-----ACATATGT 1256"
+[1] "AT------------TTATTCATGTAAA---ATCTAGAAGAAG\tTCAGAGCTTCCAGA--- 1392"
+[1] "ATGGAAGTAACATGGAGGTTATGCCTC------TGTCAGCCT\tGACACAGTAGCCCCTCT 1150"
+[1] "TTTTCTATGTCTGTGAATCTATCTCTGGTTT-GTAAATAAGT\tTCATTTGTACCATGTCT 1341"
+[1] "ATCGAAACGAAAA-GAATCGA-ATCGA-ATC-GAATCGAAA-\tAGAATC-----AAATCA 1964"
+[1] "ATATATATATATATATATATATATATATATATATATATATAT\tATATAT-----ATATAT 2417"
+[1] " "
+[1] "-------------------------------------------\t---------------- 1544"
+[1] "GCTGTCCCCCGGTGGCTGTTTAG--------------------\t--AAGAGGGG---CAG 1338"
+[1] "AATT-----GCTTGGCCATAACAAAGATCCATTGCCTTTCTGA\tTGACACCCAGCACCTC 1845"
+[1] "GGTTAGAGATGTTAGATATAGTCCAATTTCAA-CAAGGAG--T\tTTACATGTAG---ATT 1102"
+[1] "GGTTTAGAAAGTTAGATATGAGG----TTTAT-GATTATG--C\tTTATATTAAT---GAG 1306"
+[1] "---------TATTAGGCTTGATT--TTTAGCATGCACAAGTTA\tCTATGATCAT---CTT 1438"
+[1] "GCTGACACACGTTAGACATGTAGTGTGAGAAATAAGTTTT--G\tTTGTGTTAAG---CTA 1205"
+[1] "TTTA-----GATTCCACGTATAAGAGAAGTCATAGGATGTTTT\tTTCTGTCTGA---CTT 1393"
+[1] "ATTC-----GAATGGAGTTGAAAAGAATTGAATCGAAAAG--A\tATCGAATTGA---ATT 2014"
+[1] "ATAT-----ATATATATATATATATATATATATATATATA--T\tATATATATAT---ATA 2467"
+[1] " "
+[1] "--------------------------------------------\t--------------- 1545"
+[1] "G-----GCTAATAGATCCTAATTGTCTCTGCCATGCTCCTCCTG\t-------TC------ 1380"
+[1] "GGATTCTGTATACACGGGAGGTGATTTAAGCATCTTACTGCCAC\tCCTGAAATCTG---- 1901"
+[1] "A-----ATTAATATTTGGAAATCGTGTCTACTGACACATAATCC\tCATAAGTAGAGTGCA 1157"
+[1] "A-----AGCATATTTATAAAAAGATTTCCATATACTCCTACATA\tCCTACATTAATTGAA 1361"
+[1] "CA----TTTCAGATTCAGCAATTTTATTTCCATTTTTACAACTC\tTCCTATGTCATTGAA 1494"
+[1] "------GTGAGATCTGGTGATTGTTTTCACAATATAACCCTATC\tTTGACTGGAACTGCT 1259"
+[1] "A-----CTTCACTTAATATGATAATTTCTCCATCCATCCATGTT\tGCTGCAAATGG---C 1445"
+[1] "------GAAAA--GAATCGAATCGAAAGT--ATCGAATCGAATC\tC--AAAAGAAT---- 2058"
+[1] "------TATATATATATATATATATATATATATATATATATATA\tTATATATATAT---A 2518"
+[1] " "
+[1] "---------------------------------------------\t-------------- 1546"
+[1] "TGT-----TCTGGGATCAGTGGACGCCTCGTTCCTCT--T---GT\tTTTTCATTC--G-- 1426"
+[1] "GGGTCCTTTATCCTGGCAGGTGTAAGTAATTGCTGAGTGCCTTGG\tATCTGGGGAGAGAG 1961"
+[1] "AATCATTTTGACCGGGGAGATCTGAGCC-----------------\t-------------- 1186"
+[1] "GATAAGTTGCAGGGGTCAAGAGTGGCATGGCAATGAAGAAGTTAA\tGAGTATTGCATGAC 1421"
+[1] "TCTTCCCTGGAATCTACAGCCCTGACTCAGTGAAAACAAA-----\t--GTGAATCACAA- 1546"
+[1] "ACTATGCTCCCATCCTAAGTCGTGATTCTGTGCCTCT--C-----\t---TAAAGATA--- 1306"
+[1] "ATTA---TTTCATTCTTATTTGTGGCTAAGTAATA-T--T-----\t---TCA--TT-G-- 1486"
+[1] "TGAA----TC--GAATCAA--ATGG--AAA--AT--A--A-----\t---T----C--A-- 2086"
+[1] "TATA----TATATATATATATATATATATATATATATATA-----\t-TATATATATAT-- 2566"
+[1] " "
+[1] "-----\t 1601"
+[1] "-----\t 1481"
+[1] "CTCCC\t 2021"
+[1] "-----\t 1241"
+[1] "ATCAT\t 1481"
+[1] "-----\t 1601"
+[1] "-----\t 1361"
+[1] "-----\t 1541"
+[1] "-----\t 2141"
+[1] "-----\t 2621"
+[1] " "
+```
+A common first step in performing a phylogenetic analysis is to calculate the pairwise genetic distances between sequences. The genetic distance is an estimate of the divergence between two sequences, and is usually measured in quantity of evolutionary change (an estimate of the number of mutations that have occurred since the two sequences shared a common ancestor).
+We will calculate this using the dist.alignment function from seqinr. This function takes as input an DNA/RNA or protein alignment and calculates a pairwise distance between any two sequences based on their similarity using an input matrix to quantify similarity between sequences. The output score is the squared root of the pairwise distances.
+The smaller the number, the less genetic distance and higher similarity.
+```R
+> sno.dist<-dist.alignment(sno.alig)
+> sno.dist
+                        Sus_scrofa Homo_sapiens Mus_musculus Rattus_norvegicus Equus_caballus
+Homo_sapiens             0.8024443                                                           
+Mus_musculus             0.7949366    0.8075309                                              
+Rattus_norvegicus        0.8203435    0.8215838    0.8137730                                 
+Equus_caballus           0.8026106    0.8116858    0.7912523         0.7292587               
+Gorilla_gorilla_gorilla  0.8126671    0.8114157    0.7977240         0.7958427      0.7847474
+Loxodonta_africana       0.8280003    0.8277806    0.8116550         0.8080285      0.7974788
+Camelus_ferus            0.8152001    0.8145417    0.8053993         0.8121943      0.7984885
+Canis_lupus_familiaris   0.8258956    0.8262420    0.8117356         0.8065624      0.8082156
+Felis_catus              0.8418574    0.8558201    0.8257700         0.8161188      0.8017494
+                        Gorilla_gorilla_gorilla Loxodonta_africana Camelus_ferus Canis_lupus_familiaris
+Homo_sapiens                                                                                           
+Mus_musculus                                                                                           
+Rattus_norvegicus                                                                                      
+Equus_caballus                                                                                         
+Gorilla_gorilla_gorilla                                                                                
+Loxodonta_africana                    0.7909951                                                        
+Camelus_ferus                         0.7701661          0.7848659                                     
+Canis_lupus_familiaris                0.7817090          0.7695218     0.7504673                       
+Felis_catus                           0.8053042          0.7857797     0.7450924              
+```
+Once the Pairwise distances between the sequences were calculated, a phylogenetic tree was build using the data from the distance matrix. Homo sapiens was assigned as the ```Root``` for the phylogenetic tree. 
+```R
+mytree <- njs(sno.bin.dist)
+> plot.phylo(mytree,type="u")
+> myrootedtree <- root(mytree, "Homo_sapiens", r=TRUE)
+> plot.phylo(myrootedtree)
+```
+
+
+![alt text](images/Phylo_tree_SNO.png)
+
+
+![alt text](images/Rplot.jpg)
+
+
 References
 
 Barlow, D.P., Stoger, R., Herrmann, B.G., Saito, K. and Schweifer, N. (1991) 'The mouse insulin-like growth factor type-2 receptor is imprinted and closely linked to the Tme locus', Nature, 349(6304), pp. 84-87. doi: 10.1038/349084a0 [doi].
