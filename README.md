@@ -912,6 +912,7 @@ H47          -------.-------------------UAUC.----------------------..-----------
 #=GC RF      UGGAccA.aUGAUGACcACUGGUGGCgUaUG.AGUCAUacAUGAUGAaUAcAac..gUGUCUGGAAcUCUGA~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ggUCCAa
 //
 ```
+
 ##Phylogenetic analysis
 
 A group of ten species was selected from the RF00181 Rfam entry, corresponding to sequences from the Small nucleolar RNQ SNORD113/SNORD114 family, to explore the conservation of the snoRNAs.
