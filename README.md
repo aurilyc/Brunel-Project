@@ -1603,11 +1603,11 @@ mytree <- njs(sno.bin.dist)
 ![alt text](images/Rplot.jpg)
 
 
-## 2D STRUCTURE PREDICTION OF snoRNA
+# 2D STRUCTURE PREDICTION OF snoRNA
 
 The snoRNA sequences obtained from the search were introduced into the RNAFold server from RNAVienna to predict their 2D structures.
 
-# SNORD113 
+## SNORD113 
 
 
 ![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-1.png) ![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-2.png) 
@@ -1620,7 +1620,7 @@ The snoRNA sequences obtained from the search were introduced into the RNAFold s
 
 ![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-9.png)
 
-# SNORD114
+## SNORD114
 
 ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-1.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-2.png)
 
