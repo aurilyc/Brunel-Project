@@ -1603,6 +1603,20 @@ mytree <- njs(sno.bin.dist)
 ![alt text](images/Rplot.jpg)
 
 
+##2D STRUCTURE PREDICTION OF snoRNA
+
+The snoRNA sequences obtained from the search were introduced into the RNAFold server from RNAVienna to predict their 2D structures.
+
+#SNORD113 
+
+
+![alt text](images/2DSTRUCTURES/SNORD113/SNORD113-1.png)
+
+
+
+
+
+
 References
 
 Barlow, D.P., Stoger, R., Herrmann, B.G., Saito, K. and Schweifer, N. (1991) 'The mouse insulin-like growth factor type-2 receptor is imprinted and closely linked to the Tme locus', Nature, 349(6304), pp. 84-87. doi: 10.1038/349084a0 [doi].
