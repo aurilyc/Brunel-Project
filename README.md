@@ -1603,7 +1603,58 @@ mytree <- njs(sno.bin.dist)
 ![alt text](images/Rplot.jpg)
 
 
-References
+# 2D STRUCTURE PREDICTION OF snoRNA
+
+The snoRNA sequences obtained from the search were introduced into the RNAFold server from RNAVienna to predict their 2D structures.
+
+## SNORD113 
+
+
+![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-1.png) ![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-2.png) 
+
+![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-3.png) ![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-4.png)
+
+![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-5.png) ![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-6.png)
+
+![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-7.png) ![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-8.png)
+
+![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-9.png)
+
+## SNORD114
+
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-1.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-2.png)
+
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-3.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-4.png)
+
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-5.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-6.png)
+
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-7.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-9.png)
+
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-10.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-11.png)
+
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-12.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-13.png)
+
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-14.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-15.png)
+
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-16.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-17.png)
+
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-18.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-19.png)
+
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-20.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-21.png)
+
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-22.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-23.png)
+
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-24.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-25.png)
+
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-26.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-27.png)
+
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-28.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-29.png)
+
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-30.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-31.png)
+
+
+
+# References
 
 Barlow, D.P., Stoger, R., Herrmann, B.G., Saito, K. and Schweifer, N. (1991) 'The mouse insulin-like growth factor type-2 receptor is imprinted and closely linked to the Tme locus', Nature, 349(6304), pp. 84-87. doi: 10.1038/349084a0 [doi].
 
