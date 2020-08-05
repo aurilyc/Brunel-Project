@@ -1844,47 +1844,394 @@ The snoRNA sequences obtained from the search were introduced into the RNAFold s
 ## SNORD113 
 
 
-![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-1.png) ![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-2.png) 
+![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-1.png) 
+```R
+>SNORD113-1
 
-![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-3.png) ![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-4.png)
+AAAGUGAGUGAUGAAUAGUUCUGUGGCAUAUGAAUCAUUAAUUUUGAUUAAACCCUAAACUCUGAAGUCC
+(((((.((((((..((((((....))).)))..)))))).))))).........................
+ minimum free energy =  -7.10 kcal/mol
+ ```
+![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-2.png) 
+```R
+>SNORD113-2
 
-![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-5.png) ![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-6.png)
+AUAGCCAAUCAUUAGUAUUCUGAGCUGUAGGAAUCAAAGAUUUUGAUUAGAUUCUGUAACUCAGAGGUUUA
+..((((............((((((.....((((((.((........)).))))))....))))))))))..
+ minimum free energy = -13.50 kcal/mol
+```
+![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-3.png) 
+```R
+>SNORD113-3
 
-![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-7.png) ![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-8.png)
+length = 71
 
+UAGACCAAUGAUGAGUAUUCUGGGGUGUCUGAAUCAAUGAUUUUGAUUAAACCCUGUAACUCUGAGGUCCA
+..((((......((((....((((((.....((((((.....))))))..))))))..))))...))))..
+```
+![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-4.png)
+```R
+>SNORD113-4
+length = 74
+
+UGGACCAAUGAUGAGUACCAUGGGGUAUCUGAAACAGGAUUUUUGAUUAAACCCAUAUGCAAUUCUGAGGUCCA
+((((((...((...(((..(((((..(((.((((.....)))).)))....))))).)))...))...))))))
+```
+![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-5.png)
+```R
+>SNORD113-5
+
+length = 77
+
+UGGAUCAAUGAUGAGUAUUGGUGGAGGUGUCUGAAUCAACACUUUUGAUUAAGCCCUCUGUGUAACUCUGAGAUCUG
+.(((((......((((......(((((.(.((.((((((.....)))))).)))))))).....))))...))))).
+ minimum free energy = -17.90 kcal/mol
+ ```
+![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-6.png)
+```R
+>SNORD113-6
+
+length = 74
+
+UGGACCAGUGAUGAAUAUCAUGGGGUUUCUGAAACAACAUUUUUGAUUAAACCCAUCUGCAACUCUGAGGUCCA
+((((((.(((((....))))).((((((.(((((......)))))...))))))..............))))))
+ minimum free energy = -15.30 kcal/mol
+ ```
+![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-7.png) 
+```R
+>SNORD113-7
+
+length = 76
+
+UGGAUCAAUGAUGAGUAUGCGUGGGGCAUCUGAAUCAAAUAUUCUGAUUAUACCCUGUCUGUAUCUCUGAGGUCCA
+((((((......(((.(((((.((((.(((.((((.....)))).)))....))))...))))))))...))))))
+ minimum free energy = -18.00 kcal/mol
+ ```
+![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-8.png)
+```R
+>SNORD113-8
+
+length = 73
+
+UGGACCAAUGAUGAGAUUGGAGGGUGUCUGAAUCAAAAAUUUUGAUUAAAGCCAUCUGUAACUCUGAGGUCCA
+((((((......(((.(((..(((((.((.(((((((...)))))))..)).))))).))))))...))))))
+```
 ![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-9.png)
+```R
+length = 71
+
+UGGAUCAAUGAUGAGUACCCUGGGGUGUCUGAAUCUUGGAUUUUGAUUAAACCCUAUAACUCUGAGGUCCA
+((((((......((((....(((((((((.(((((...))))).)))...))))))..))))...))))))
+ minimum free energy = -19.40 kcal/mol
+```
 
 ## SNORD114
 
-![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-1.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-2.png)
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-1.png) 
+```R
+>SNORD114-1
+length = 71
 
-![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-3.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-4.png)
+UGGACCUAUGAUGAUGACUGGUGGCGUAUGAGUCAUUGACGGUGAAUACAGGUCUGGAAGUCUGAGGUCCA
+(((((((..((((((((((.(((...))).)))))))(((...........))).....)))..)))))))
+ minimum free energy = -22.20 kcal/mol
+ ```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-2.png)
+```R
+>SNORD114-2
 
-![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-5.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-6.png)
+length = 77
 
-![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-7.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-9.png)
+GGGACCAAUGAUAAUGACUGUUGGGGUAUGAGUCAGUGAGGUUGAAUAACAGUUUGUAUCUGGAAAUCUGAGGUCCA
+.(((((...((((..((((((((....((...........))....))))))))..))))...........))))).
+ minimum free energy = -15.50 kcal/mol
+ ```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-3.png)
+```R
+>SNORD114-3
 
-![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-10.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-11.png)
+length = 74
 
-![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-12.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-13.png)
+UGGACCAAUGAUGACCACUGGUGGCGUUUGAGUCAUGGACGAUGAAUACUACGUGUCUGAAACUCUGAGGUCCA
+((((((.......(((...)))((.((((.((.((((..............)))).)).)))).))..))))))
+ minimum free energy = -18.80 kcal/mol
+ ```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-4.png)
+```R
+>SNORD114-4
 
-![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-14.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-15.png)
+length = 104
 
-![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-16.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-17.png)
+UUCAAAUGAGAAUUAAGCUAAACAGUCCUAAGCCUGAGCCAGUGAUGAAAACUGGUGGCAUAGAAGUCAAGGAUGCUGAAUAAUGUGUGUCUAGAACUCUGAGG
+((((...(((......(((....))).(((.(((...((((((.......))))))))).))).......((((((..........))))))....))))))).
+ minimum free energy = -19.70 kcal/mol
+ ```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-5.png) 
+```R
+>SNORD114-5
 
-![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-18.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-19.png)
+length = 73
 
-![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-20.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-21.png)
+UUCAUGGAUUGAUGAUGACCACUGGUGGCCUAUGAGUCAUACAAUGAAUACGUGUCUAGAACUCUGAGGUCCA
+.((((......))))..(((...)))(((((..((((..((..(((....)))...))..))))..)))))..
+ minimum free energy = -15.10 kcal/mol
+ ```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-6.png)
+```R
+>SNORD114-6
 
-![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-22.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-23.png)
+length = 71
 
-![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-24.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-25.png)
+UGGAUCAAUGAUGUCCACUGGUGGCGUAUAAAUCAUAUUUGGUGAAUAUAUGUCUGGAACUCUGAGGUCCA
+((((((...((..((((.....((((((((..((((.....)))).))))))))))))..))...))))))
+ minimum free energy = -19.50 kcal/mol
+```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-7.png) 
+```R
+>SNORD114-7
 
-![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-26.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-27.png)
+length = 76
 
-![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-28.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-29.png)
+UGAACUAGUGGUGAUGGCUUGUGGCAUAUUUAGUCACAGAUGAUGAAUAAAUACAUGCCUGAGACUCUGAGGUUAG
+..((((((.(((...(((.((((...((((((.(((....)))))))))..)))).)))....)))))..))))..
+ minimum free energy = -14.50 kcal/mol
+ ```
+ ```R
+ >SNORD114-8
 
-![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-30.png) ![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-31.png)
+>>>>
+```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-9.png)
+```>SNORD114-9
+
+length = 71
+
+UGGAUCGAUGAUGACUGCUGGUGGCGUAUGAGUCUUACAUGAUGAAUACGUGUCUGGAACUCUGAGGUCCA
+((((((...((.(....((((..((((((..(((......)))..))))))..))))..)))...))))))
+ minimum free energy = -20.50 kcal/mol
+```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-10.png)
+```R
+>SNORD114-10
+
+length = 71
+
+AAGAUCAAUGAUGACUACUGUUAGUGUAUGAGUUACACAUGAUGAAUACAUGUCUGAAACUCUGAGGUCCA
+..((((.((..((((....))))..))..(((((.((((((.......)))))..).)))))...))))..
+ minimum free energy =  -9.50 kcal/mol
+```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-11.png)
+```R
+>SNORD114-11
+
+length = 74
+
+UGGACCAGUGAUGGUGACUGGUGGUGUGUGAGUCAUGCACAGUGAAUAUCAUGUGUCUGGAACUCUGAGGUCCA
+.((((..((((((.(.((((...(((((.....))))).)))).).))))))..))))(((.((....))))).
+ minimum free energy = -20.50 kcal/mol
+ ```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-12.png)
+```R
+>SNORD114-12
+
+length = 74
+
+UGGACCAAUGAUGACAAAUACCGGCGUAUGAGUCUUGGAUGAUGAAUAAUACGUGUCUGGAACUCUGAGGUCCA
+((((((...(((..((.((((.(...(((..(((......)))..)))...))))).))..).))...))))))
+ minimum free energy = -17.00 kcal/mol
+ ```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-13.png)
+```R
+>SNORD114-13
+
+length = 73
+
+UGGACCAGUGAUGACCACUGGUGGCAUAUGAGUCAUACACAUGAACACCAUGUUUCUAGAACUCUGAGGUCCA
+...(((((((.....)))))))(((....((((..((.(((((.....)))))...))..))))....)))..
+ minimum free energy = -20.90 kcal/mol
+ ```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-14.png) 
+```R
+>SNORD114-14
+
+length = 74
+
+UGGACCAAUGAUGACAACUGCCGGCGUAUGAGUGUUGGGUGAUGAAUAAUACGUGUCUAGAACUCUGAGGUCCA
+((((((...((.(....(((...((((((...((((.(....).))))))))))...)))..)))...))))))
+ minimum free energy = -14.30 kcal/mol
+ ```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-15.png)
+```R
+>SNORD114-15
+
+length = 71
+
+UGGAUCGAUGAUGACCACUGGUGGCGUAUGAGUCAUACAUGAUGAAUAUGUGUCUGGAACUCUGAGGUCCU
+.(((((...((...(((..((..((((((..((((....))))..)))))).)))))...))...))))).
+ minimum free energy = -17.80 kcal/mol
+```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-16.png)
+```R
+>SNORD114-16
+
+length = 69
+
+UGGACCAAUUAUGACUACUGGUGUGAGUCACGCAUAAUGAACACCACGUGUCUGGAACUCUGAGGUCCA
+((((((......(((.((((((((..((........))..)))))).)))))...........))))))
+ minimum free energy = -18.30 kcal/mol
+ ```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-17.png)
+```R
+>SNORD114-17
+
+length = 74
+
+UGGACCAAUGAUGACAAAUGGUGGCAUUGGAGUUAUGGACGAUGAAUGAUAUGUGUCUGAAACUCUGAGGUCCA
+((((((((((.(.((.....)).)))))((((((.(((((((((.....))).)))))).))))))..))))))
+ minimum free energy = -19.00 kcal/mol
+ ```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-18.png)
+```R
+>SNORD114-18
+
+length = 71
+
+UAGAUCAGUGAUGACUACUGUUGGUGUAUGAGUCAUAUACGAUGAAUACAUGUCUGAAAUUCUGAGGUCCA
+((((((((((.....)))))...((((((..(((......)))..)))))))))))...............
+ minimum free energy = -11.40 kcal/mol
+ ```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-19.png)
+```R
+>SNORD114-19
+
+length = 74
+
+UGGAUCAAUGAUAAAACUUGCUGGCAUAUGAAUCUUGGAUAAUGGAUGAUACGUGUGUGGAACUCUGAGGUCCA
+((((((...((..........(.(((((((.(((.............))).))))))).)...))...))))))
+ minimum free energy = -12.10 kcal/mol
+ ```
+
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-20.png)
+```R
+>SNORD114-20
+
+length = 71
+
+UGGAUCGAUGAUGACUACUGGUGGCGUAUGAGUCAUCUACAGUGAAUACGUCUCUGGAACUCUGAGGUCUG
+.(((((...((.(....((((.(((((((...((((.....))))))))))).))))..)))...))))).
+ minimum free energy = -16.00 kcal/mol
+ ```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-21.png)
+```R
+>SNORD114-21
+
+length = 71
+
+UGGAUCAAUGAUGACCACUGGUGGCGUAUGAGUCAUAUGUGAUGAAUACGUGUCUGGAACUCUGAGGUCCA
+((((((...((...(((..((..((((((..((((....))))..)))))).)))))...))...))))))
+ minimum free energy = -19.00 kcal/mol
+```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-22.png)
+```R
+>SNORD114-22
+
+length = 71
+
+UGGAUCGAUGAUGACUACCGGUGGCGUAUGAGUCAUAUGUGAUGAAUACGUGUUUGGAACUCUGAGGUCCA
+((((((...((.(....(((...((((((..((((....))))..))))))...)))..)))...))))))
+ minimum free energy = -19.10 kcal/mol
+ ```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-23.png)
+```R
+>SNORD114-23
+
+length = 71
+
+UGGAUCGAUGAUGACUACUGGUGGCGUAUGAGUCAUAGACAAUGAAUACGUGUCUGGAACUCUGAGGUCCA
+((((((.(((.(.(((...))).))))..((((..((((((.((....))))))))..))))...))))))
+ minimum free energy = -16.60 kcal/mol
+```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-24.png)
+```R
+>SNORD114-24
+
+length = 71
+
+UGGAUCGAUGGUGACUGUUGAUGGCAUAUGACUCACAUAUGAUGAGUACGUAUCUGGAACUCUGAGGUCUG
+.(((((...(((..(.......((.(((((((((((....).))))).))))))))..)))....))))).
+ minimum free energy = -13.00 kcal/mol
+ ```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-25.png)
+```R
+>SNORD114-25
+
+length = 71
+
+UGGAUCGAUGAUGACUACUGGUGGCGUAUGAGUCUUUUGCGAUGAAUACGUGUCUAGAACUCUGAGGUCCG
+.(((((...((.(....((((..((((((..(((......)))..))))))..))))..)))...))))).
+ minimum free energy = -20.20 kcal/mol
+```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-26.png)
+```R
+>SNORD114-26
+
+length = 71
+
+UGGAUCGAUGAUGAGCACUGGUGGAGUAUGAGUCACAUACGAUGAAUACGUGUCUGGAACUCUGAGGUCCA
+((((((......(((..((((....((((..(((......)))..))))....))))..)))...))))))
+ minimum free energy = -18.20 kcal/mol
+ ```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-27.png)
+```R
+>SNORD114-27
+
+length = 69
+
+UGGUUCAGUGUUGACUACUGGUGUCGUGUGAGUCAUACAAUGAAUACAUGUCUGGAACUCUGAGGCCCA
+.(((((((.(((....((..((((((((((.....))).))).))))..))....))).)))).)))..
+ minimum free energy = -14.80 kcal/mol
+ ```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-28.png)
+```R
+>SNORD114-28
+
+length = 71
+
+UGGAUCGAUGAUGACUGCUGGUGGCGUAUGAGUCAUAUGCGAUGAAUACGUGUCUAGAACUCUGAGGUCCA
+((((((...((.(....((((..((((((..(((......)))..))))))..))))..)))...))))))
+ minimum free energy = -21.20 kcal/mol
+ ```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-29.png)
+```R
+>SNORD114-29
+
+length = 69
+
+UGGAUCGAUGAUGACUACUGGUAGCAUGAGUCAUAUACAGUGAAUACAUGUCUGGAACUCUGAGGUCUG
+.(((((...((.(....((((..((((((.((((.....)))).).)))))))))..)))...))))).
+ minimum free energy = -10.60 kcal/mol
+ ```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-30.png) 
+```R
+>SNORD114-30
+
+length = 71
+
+UGGAUCAAUCAUGACUACUGGUAUUGGAUGGGUCUUCGUCAGUGAAUGCCUAUCUGGAACUCUGAGGUCCA
+((((((..(((.((......((.((((((((((.(((......))).)))))))))).)))))))))))))
+ minimum free energy = -19.70 kcal/mol
+ ```
+![alt text](images/2D_STRUCTURES/SNORD114/SNORD114-31.png)
+```R
+>SNORD114-31
+
+length = 74
+
+UGAGCAAGCGAUGACAGCCGGUGGUGUGUGAGUCAUGGAGGAUGAAUACUAAGUGCCUGGAACUCUGAGGUUCA
+(((((....(((..(((.((.(...((((..(((......)))..))))..).)).)))..).))....)))))
+ minimum free energy = -14.10 kcal/mol
+ ```
+
 
 
 
