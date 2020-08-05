@@ -1843,7 +1843,6 @@ The snoRNA sequences obtained from the search were introduced into the RNAFold s
 
 ## SNORD113 
 
-
 ![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-1.png) 
 ```R
 >SNORD113-1
@@ -2231,9 +2230,6 @@ UGAGCAAGCGAUGACAGCCGGUGGUGUGUGAGUCAUGGAGGAUGAAUACUAAGUGCCUGGAACUCUGAGGUUCA
 (((((....(((..(((.((.(...((((..(((......)))..))))..).)).)))..).))....)))))
  minimum free energy = -14.10 kcal/mol
  ```
-
-
-
 
 # References
 
