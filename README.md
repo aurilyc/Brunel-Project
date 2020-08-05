@@ -701,6 +701,61 @@ A total of 68 CM hits were reported, of which 47 had an E-value of 0.01 or less.
 | (46)!|     5e-06 |  34.2|   0.0|  AL132709.5| 150469 |150399  |-  cm|    no |0.39|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|
 | (47)!|   0.00017 |  28.4|   0.0|  AL132709.5| 194257 |194186  |-  cm|    no |0.32|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|
 
+##### BED File
+
+The dataset obatined from cmsearch was organized into a BED format. The sequences were ordered taking into account the coordinates, as a result the snoRNAs were listed in a successive order. 
+```R 
+| n | Description                                                        | Start  | End    | Sequence   | Score | Bias| trunc | Bias | mdl| gc |
+|1|----------------------------------------------------------------------|--------|--------|------------|------|------|-------|------|----|----|
+|2 | Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro | 123132 |123058  |  AL132709.5|  38.2|   0.0|   no  |   0.0|- cm|0.36|
+|3 | Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro | 127342 |127269  |  AL132709.5|  36.5|   0.0|    no |   0.0|- cm|0.47|
+|4 |  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro | 128363 |128289  | AL132709.5 | 67.0 |  0.0 |    no |  0.0 |- cm|0.51|
+|5 |Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro  |129680  |129609  | AL132709.5 |  61.7|  0.0 |    no |  0.0 |- cm|0.46|
+|6 | Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro |131508  | 131439 | AL132709.5 | 71.0 |  0.0 |   no  |  0.0 |- cm|0.43|
+|7 | Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro |132469  |132398  | AL132709.5 |82.5  | 0.0  |  no   | 0.0  |- cm|0.47|
+|8 | Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro |133438  |133369  | AL132709.5 |  66.9|  0.0 |    no |  0.0 |- cm|0.46|
+|9 | Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro |134553  |134482  | AL132709.5 | 82.9 |  0.0 |  no   |  0.0 |- cm|0.47|
+|10|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|135542  | 135471 | AL132709.5 |80.6  | 0.0  |  no   | 0.0  |- cm|0.47|
+|11|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|136822  |136751  | AL132709.5 | 68.2 |  0.0 |    no |  0.0 |- cm|0.44|
+|12| Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro | 137723 | 137652 | AL132709.5 | 88.3 |  0.0 |  no   |  0.0 |- cm|0.46|
+|13| Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro |138673  |138602  | AL132709.5 | 85.0 |  0.0 |  no   |  0.0 |- cm|0.46|
+|14| Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro |139624  |139553  | AL132709.5 | 89.7 |  0.0 |  no   |  0.0 |- cm|0.47|
+|15|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|140595  |140524  | AL132709.5 | 78.7 |  0.0 |   no  |  0.0 |- cm|0.47|
+|16|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 141607 |141533  |  AL132709.5|  47.3|   0.0|    no |   0.0|- cm|0.36|
+|17|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|142597  |142509  | AL132709.5 |  64.5|  0.0 |    no |  0.0 |- cm|0.38|
+|18|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 144210 |144134  |  AL132709.5|  47.5|   0.1|    no |   0.1|- cm|0.40|
+|19|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|145122  |145048  | AL132709.5 | 70.9 |  0.0 |   no  |  0.0 |- cm|0.40|
+|20|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|145774  |145703  | AL132709.5 | 80.3 |  0.0 |  no   |  0.0 |- cm|0.38|
+|21|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|146793  |146719  | AL132709.5 | 82.9 |  0.0 |  no   |  0.0 |- cm|0.43|
+|22|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 148004 |147935  | AL132709.5 | 70.5 |  0.0 |   no  |  0.0 |- cm|0.47|
+|23| Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro |148929  |148858  |AL132709.5  | 88.3 |  0.0 |  no   |  0.0 |- cm|0.46|
+|24|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|149496  |149422  | AL132709.5 | 79.8 |  0.0 |  no   |  0.0 |- cm|0.47|
+|25|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 150469 |150399  |  AL132709.5|  34.2|   0.0|    no |   0.0|- cm|0.39|
+|26|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|151720  | 151647 | AL132709.5 | 80.2 |  0.0 |  no   |  0.0 |- cm|0.46|
+|27| Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro | 152651 | 152577 | AL132709.5 | 83.4 |  0.0 |  no   |  0.0 |- cm|0.44|
+|28|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|153488  |153414  | AL132709.5 |80.4  | 0.0  |  no   | 0.0  |- cm|0.49|
+|29|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|154547  |154476  | AL132709.5 | 77.2 |  0.0 |   no  |  0.0 |- cm|0.36|
+|30| Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro | 155570 |155499  | AL132709.5 | 88.3 |  0.0 |  no   |  0.0 |- cm|0.47|
+|31|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|156819  |156747  | AL132709.5 |  64.0|  0.0 |    no |  0.0 |- cm|0.40|
+|32|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 158545 |158469  |  AL132709.5|  54.6|   0.0|    no |   0.0|- cm|0.40|
+|33|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|164433  |164362  | AL132709.5 | 80.2 |  0.0 |  no   |  0.0 |- cm|0.40|
+|34|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 165359 |165287  |  AL132709.5|  47.6|   0.0|    no |   0.0|- cm|0.36|
+|35|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|166229  |166160  | AL132709.5 | 77.4 |  0.0 |   no  |  0.0 |- cm|0.47|
+|36|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|167225  |167151  | AL132709.5 | 70.9 |  0.0 |   no  |  0.0 |- cm|0.43|
+|37| Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro |168250  |168176  | AL132709.5 | 93.3 |  0.0 |  no   |  0.0 |- cm|0.48|
+|38|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 169743 |169666  |  AL132709.5|  64.0|   0.0|    no |   0.0|- cm|0.42|
+|39|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 171766 |171695  | AL132709.5 | 81.9 |  0.0 |  no   |  0.0 |- cm|0.49|
+|40|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 175950 |175879  |  AL132709.5|  60.0|   0.0|    no |   0.0|- cm|0.42|
+|41|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|178148  |178075  | AL132709.5 |  64.2|  0.0 |    no |  0.0 |- cm|0.39|
+|42|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 180473 |180397  |  AL132709.5|  66.0|   0.0|    no |   0.0|- cm|0.42|
+|43|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 182043 |181969  |  AL132709.5|  56.8|   0.0|    no |   0.0|- cm|0.40|
+|44|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 183412 |183335  |  AL132709.5|  56.4|   0.0|    no |   0.0|- cm|0.41|
+|45|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 185108 |185034  |  AL132709.5|  55.3|   0.0|    no |   0.0|- cm|0.40|
+|46|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 191680 | 191609 |  AL132709.5|  57.5|   0.0|    no |   0.0|- cm|0.39|
+|47|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 194257 |194186  |  AL132709.5|  28.4|   0.0|    no |   0.0|- cm|0.32|
+|48|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 196778 |196707  |  AL132709.5|  35.3|   0.0|    no |   0.0|- cm|0.32|
+```
+
 Command used to retrieve sequences from AL132709 using coordinates:
 
 ```R
@@ -912,8 +967,187 @@ H47          -------.-------------------UAUC.----------------------..-----------
 #=GC RF      UGGAccA.aUGAUGACcACUGGUGGCgUaUG.AGUCAUacAUGAUGAaUAcAac..gUGUCUGGAAcUCUGA~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ggUCCAa
 //
 ```
+## UCSC Genome Browser snoRNA sequence retrieval 
 
-##Phylogenetic analysis
+UCSC Genome Browser Gateway is a graphical viewer that allows access to genome sequence data from a variety of vertebrate and invertebrate species and major model organisms, integrated with a large collection of aligned annotations. The snoRNA clusters were found by entering the position 14q32 of GRCh38 and extracted manually by accessing each copy and downloading the sequence. The sequences were then gathered into two files taking into account the cluster they belonged to. 
+
+#### SNORD113
+```R
+>SNORD113-1=hg38_refGene_NR_003229 range=chr14:100924821-100924890 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+AAAGTGAGTGATGAATAGTTCTGTGGCATATGAATCATTAATTTTGATTAAACCCTAAACTCTGAAGTCC
+
+>SNORD113-2=hg38_refGene_NR_003230 range=chr14:100927342-100927412 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+ATAGCCAATCATTAGTATTCTGAGCTGTAGGAATCAAAGATTTTGATTAGATTCTGTAACTCAGAGGTTTA
+ 
+>SNORD113-3=hg38_refGene_NR_003231 range=chr14:100929919-100929989 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TAGACCAATGATGAGTATTCTGGGGTGTCTGAATCAATGATTTTGATTAAACCCTGTAACTCTGAGGTCCA
+
+>SNORD113-4=hg38_refGene_NR_003232 range=chr14:100936491-100936564 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGACCAATGATGAGTACCATGGGGTATCTGAAACAGGATTTTTGATTAAACCCATATGCAATTCTGAGGTCCA
+
+>SNORD113-5=hg38_refGene_NR_003233 range=chr14:100938187-100938263 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGATCAATGATGAGTATTGGTGGAGGTGTCTGAATCAACACTTTTGATTAAGCCCTCTGTGTAACTCTGAGATCTG
+
+>SNORD113-6=hg38_refGene_NR_003234 range=chr14:100939556-100939629 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGACCAGTGATGAATATCATGGGGTTTCTGAAACAACATTTTTGATTAAACCCATCTGCAACTCTGAGGTCCA
+	
+>SNORD113-7=hg38_refGene_NR_003235 range=chr14:100941126-100941201 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGATCAATGATGAGTATGCGTGGGGCATCTGAATCAAATATTCTGATTATACCCTGTCTGTATCTCTGAGGTCCA
+ 	
+>SNORD113-8=hg38_refGene_NR_003236 range=chr14:100943451-100943523 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGACCAATGATGAGATTGGAGGGTGTCTGAATCAAAAATTTTGATTAAAGCCATCTGTAACTCTGAGGTCCA
+ 	
+>SNORD113-9=hg38_refGene_NR_003237 range=chr14:100945649-100945719 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGATCAATGATGAGTACCCTGGGGTGTCTGAATCTTGGATTTTGATTAAACCCTATAACTCTGAGGTCCA
+```
+
+#### SNORD114
+
+```R 
+>SNORD114-1=NR_003193. hg38_refGene_NR_003193 range=chr14:100949833-100949903 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGACCTATGATGATGACTGGTGGCGTATGAGTCATTGACGGTGAATACAGGTCTGGAAGTCTGAGGTCCA
+
+	
+>SNORD114-2=NR_003194. hg38_refGene_NR_003194 range=chr14:100951856-100951932 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+GGGACCAATGATAATGACTGTTGGGGTATGAGTCAGTGAGGTTGAATAACAGTTTGTATCTGGAAATCTGAGGTCCA
+
+ 	
+>SNORD114-3=NR_003195. hg38_refGene_NR_003195 range=chr14:100953349-100953422 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGACCAATGATGACCACTGGTGGCGTTTGAGTCATGGACGATGAATACTACGTGTCTGAAACTCTGAGGTCCA
+
+ 	
+>SNORD114-4=NR_003196. hg38_refGene_NR_003196 range=chr14:100954344-100954447 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+AATGAGAATTAAGCTAAACAGTCCTAAGCCTGAGCCAGTGATGAAAACTGGTGGCATAGAAGTCAAGGATGCTGAATAATGTGTGTCTAGAACTCTGAGG
+TTCA
+
+ 	
+>SNORD114-5=NR_003197. hg38_refGene_NR_003197 range=chr14:100955370-100955438 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGATTGATGATGACCACTGGTGGCCTATGAGTCATACAATGAATACGTGTCTAGAACTCTGAGGTCCA
+ 	
+>SNORD114-6=NR_003198. hg38_refGene_NR_003198 range=chr14:100957166-100957236 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGATCAATGATGTCCACTGGTGGCGTATAAATCATATTTGGTGAATATATGTCTGGAACTCTGAGGTCCA
+
+>SNORD114-7=NR_003199. hg38_refGene_NR_003199 range=chr14:100963054-100963129 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGAACTAGTGGTGATGGCTTGTGGCATATTTAGTCACAGATGATGAATAAATACATGCCTGAGACTCTGAGGTTAG
+
+>>>>>
+
+ 	
+>SNORD114-9=NR_003201. hg38_refGene_NR_003201 range=chr14:100966029-100966099 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGATCGATGATGACTGCTGGTGGCGTATGAGTCTTACATGATGAATACGTGTCTGGAACTCTGAGGTCCA
+
+ 	
+>SNORD114-10=NR_003203. hg38_refGene_NR_003203 range=chr14:100967052-100967122 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+AAGATCAATGATGACTACTGTTAGTGTATGAGTTACACATGATGAATACATGTCTGAAACTCTGAGGTCCA
+
+ 	
+>SNORD114-11=NR_003204. hg38_refGene_NR_003204 range=chr14:100968111-100968184 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGACCAGTGATGGTGACTGGTGGTGTGTGAGTCATGCACAGTGAATATCATGTGTCTGGAACTCTGAGGTCCA
+ 	
+>SNORD114-12=NR_003205. hg38_refGene_NR_003205 range=chr14:100968948-100969021 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGACCAATGATGACAAATACCGGCGTATGAGTCTTGGATGATGAATAATACGTGTCTGGAACTCTGAGGTCCA
+ 	
+>SNORD114-13=NR_003206. hg38_refGene_NR_003206 range=chr14:100969879-100969951 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGACCAGTGATGACCACTGGTGGCATATGAGTCATACACATGAACACCATGTTTCTAGAACTCTGAGGTCCA
+	
+>SNORD114-14=NR_003207. hg38_refGene_NR_003207 range=chr14:100972103-100972176 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGACCAATGATGACAACTGCCGGCGTATGAGTGTTGGGTGATGAATAATACGTGTCTAGAACTCTGAGGTCCA
+
+>SNORD114-15=NR_003208. hg38_refGene_NR_003208 range=chr14:100972670-100972740 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGATCGATGATGACCACTGGTGGCGTATGAGTCATACATGATGAATATGTGTCTGGAACTCTGAGGTCCT
+ 	
+>SNORD114-16=NR_003209. hg38_refGene_NR_003209 range=chr14:100973595-100973663 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGACCAATTATGACTACTGGTGTGAGTCACGCATAATGAACACCACGTGTCTGGAACTCTGAGGTCCA
+	
+>SNORD114-17=hg38_refGene_NR_003210 range=chr14:100974806-100974879 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGACCAATGATGACAAATGGTGGCATTGGAGTTATGGACGATGAATGATATGTGTCTGAAACTCTGAGGTCCA
+	
+>SNORD114-18=hg38_refGene_NR_003211 range=chr14:100975825-100975895 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TAGATCAGTGATGACTACTGTTGGTGTATGAGTCATATACGATGAATACATGTCTGAAATTCTGAGGTCCA
+ 	
+>SNORD114-19=hg38_refGene_NR_003212 range=chr14:100976477-100976550 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGATCAATGATAAAACTTGCTGGCATATGAATCTTGGATAATGGATGATACGTGTGTGGAACTCTGAGGTCCA
+ 	
+>SNORD114-20=hg38_refGene_NR_003213 range=chr14:100981004-100981074 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGATCGATGATGACTACTGGTGGCGTATGAGTCATCTACAGTGAATACGTCTCTGGAACTCTGAGGTCTG
+ 	
+>SNORD114-21=hg38_refGene_NR_003214 range=chr14:100981975-100982045 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGATCAATGATGACCACTGGTGGCGTATGAGTCATATGTGATGAATACGTGTCTGGAACTCTGAGGTCCA
+
+>SNORD114-22=hg38_refGene_NR_003215 range=chr14:100982926-100982996 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGATCGATGATGACTACCGGTGGCGTATGAGTCATATGTGATGAATACGTGTTTGGAACTCTGAGGTCCA
+ 	
+>SNORD114-23=hg38_refGene_NR_003216 range=chr14:100983876-100983946 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGATCGATGATGACTACTGGTGGCGTATGAGTCATAGACAATGAATACGTGTCTGGAACTCTGAGGTCCA
+	
+>SNORD114-24=hg38_refGene_NR_003217 range=chr14:100984777-100984847 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGATCGATGGTGACTGTTGATGGCATATGACTCACATATGATGAGTACGTATCTGGAACTCTGAGGTCTG
+ 	
+>SNORD114-25=hg38_refGene_NR_003218 range=chr14:100986057-100986127 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGATCGATGATGACTACTGGTGGCGTATGAGTCTTTTGCGATGAATACGTGTCTAGAACTCTGAGGTCCG
+
+>SNORD114-26=hg38_refGene_NR_003219 range=chr14:100987046-100987116 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGATCGATGATGAGCACTGGTGGAGTATGAGTCACATACGATGAATACGTGTCTGGAACTCTGAGGTCCA
+
+>SNORD114-27=hg38_refGene_NR_003220 range=chr14:100988161-100988229 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGTTCAGTGTTGACTACTGGTGTCGTGTGAGTCATACAATGAATACATGTCTGGAACTCTGAGGCCCA
+
+>SNORD114-28=hg38_refGene_NR_003221 range=chr14:100989130-100989200 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGATCGATGATGACTGCTGGTGGCGTATGAGTCATATGCGATGAATACGTGTCTAGAACTCTGAGGTCCA
+ 	
+>SNORD114-29=hg38_refGene_NR_003222 range=chr14:100990091-100990159 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGATCGATGATGACTACTGGTAGCATGAGTCATATACAGTGAATACATGTCTGGAACTCTGAGGTCTG
+
+>SNORD114-30=hg38_refGene_NR_003223 range=chr14:100991919-100991989 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGGATCAATCATGACTACTGGTATTGGATGGGTCTTCGTCAGTGAATGCCTATCTGGAACTCTGAGGTCCA
+ 	
+>SNORD114-31=hg38_refGene_NR_003224 range=chr14:100993236-100993309 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+TGAGCAAGCGATGACAGCCGGTGGTGTGTGAGTCATGGAGGATGAATACTAAGTGCCTGGAACTCTGAGGTTCA
+```
+
+
+
+
+## Phylogenetic analysis
 
 A group of ten species was selected from the RF00181 Rfam entry, corresponding to sequences from the Small nucleolar RNQ SNORD113/SNORD114 family, to explore the conservation of the snoRNAs.
 - Species: Homo sapiens, Mus musculus, Rattus norvegigus, Equus caballus, Sus scrofa, Loxodonta africana, Gorilla gorilla gorilla, Camelus ferus Canis lupus familiaris, and Felis catus.
