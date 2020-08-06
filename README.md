@@ -1836,6 +1836,390 @@ mytree <- njs(sno.bin.dist)
 
 ![alt text](images/Rplot.jpg)
 
+# Human/Mouse Pairwise ALignment
+
+Conservation of MEG8/Rian was observed between mouse and human by conducting a pairwise alignment between the respective sequences. Both of the sequences were obatined from Genbank: 
+- NR_146000 (Refseq): Homo sapiens maternally expressed 8, small nucleolar RNA host gene (MEG8), long non-coding RNA.
+- EU43919 (Genbank): Mus musculus Meg8 noncoding RNA, complete sequence.
+
+Rstudio was employed to carry out the first alignment. The sequences were retrieved by accessing the Genbank database with the command ```choosebank()``` and using the accession number to query each sequence. This function allows to select one of the databases structured under ACNUC and located on the web. Called without arguments, choosebank(), will return the list of available databases. 
+
+
+```R
+where.is.this.acc("NR_146000")
+choosebank("refseq")
+q1<-query("Homo sapiens","AC=NR_146000")
+
+head(q1)
+closebank()
+
+choosebank("genbank")
+q2<-query("Mus musculus","AC=EU434919")
+head(q2)
+closebank()
+```
+### Alignment 2D structure prediction with RNAalifold
+
+RNAalifold predicts consensus secondary structures from an alignment of several related RNA or DNA sequences. It is part of RNAVienna and requires the alignment in a ClustalW format, as seen below. The two DNA sequences were entered into EMBOSS Needle, which reads two input sequences and writes their optimal global sequence alignment to ClustalW file.
+
+```R
+CLUSTAL W (1.83) multiple sequence alignment
+
+
+NR_146000.1     GCACGGTGCTCGATCCCCAATGGAAGGAAATGGAGGCAGACCCATCTTGCAGGTCATCAC
+EU434919.1      ------------------------------------------------------------
+                                                                            
+
+NR_146000.1     CAGGAAGGAGATGAGACTCATGTCCTGGAGACGAATACCCCACTGGAGGTGGCGTGAAGG
+EU434919.1      ------------------------------------------------------------
+                                                                            
+
+NR_146000.1     GGAGATGGCTGCTTTCTCCTGGGAAGGGAGCAGATGCCTGGCCCAGGACCAAATCAAAAG
+EU434919.1      ------------------------------------------------------------
+                                                                            
+
+NR_146000.1     CTGAGGCTCACTGCCCCCAGTGGGCAGTGGGTCCAGGGGGTTTCTGAGGACAGGGCATGA
+EU434919.1      --------------------------------------GATTCCTGAGG-----------
+                                                                            
+
+NR_146000.1     CCCAGCCCTGCTGCCC---CCAAGATGGCACCTGGCTTGGAGGGGTGAGGGGCCCTGTT-
+EU434919.1      --GAGCCCTGC--CCCCTTCCA--------------------GGGTGA------ATTTTC
+                                                                            
+
+NR_146000.1     ---AGTCTGACTTTGAAGAAGACCAGCCTTCCAGACTCGCTTGGTGCCCTGACAGCAGCT
+EU434919.1      CTAAGTC--ACCATGGAGA--ACCAGCAGCCCAGAATC----AGTGCCCTGCCAG--GC-
+                                                                            
+
+NR_146000.1     TGTGTTTCTTCCTTCAAGAGTCTGCTTAGAGATAATAAAGATCAACACT--ATTCCTTAT
+EU434919.1      ----------------AGAAT-TGCTTGGCCATAACAAAGATC--CATTGCCTTTCTGAT
+                                                                            
+
+NR_146000.1     AA----CAACACCTCAGTATCCTGCGAGCTGTACACACCAGAGTTTATTTAACCACCTTG
+EU434919.1      GACACCCAGCACCTCGGATT--------CTGTATACACGGGAGGTGATTTAAGCATCTTA
+                                                                            
+
+NR_146000.1     CTGCTGGCATGAAAGCCTCAGGAGCCCTGGGCTCCCCCAGTGTTGCCTGGGTCTGACTTT
+EU434919.1      CTGCCACCCTGAAA-----------TCTGGGGTC----------------------CTTT
+                                                                            
+
+NR_146000.1     GCCTCAGTGAAAACTGCCTCGAATTCTTTCTTGCACCGATGGGCAGATGGGCAGTGTCGG
+EU434919.1      ----------------------ATCCT--------------GGCAG--------------
+                                                                            
+
+NR_146000.1     AGGATCGTGTCATCT-GTCCCGTGGCGCTGGTTGGCTTGGTCAAGTCAGTGTTCAAACTA
+EU434919.1      --------GTCATCTAGACCCGTAACGC------------CCACTTCAG-----------
+                                                                            
+
+NR_146000.1     TCTCCTGCTCTTTCAAGGGGATCTGGGGCTCTAGAAGATTAGAGGACTTGGAGAGGTTAG
+EU434919.1      --------------AATGGGA---GG---------------GAGGA--------------
+                                                                            
+
+NR_146000.1     TGACT--TGCTCGAGGTCGGCTAGGAAGCAAGACCC-AGGATTCCAACTCAG---GTCTG
+EU434919.1      TGTCTGCTGCCC--TGTCGTCT------CCACACCCGAGGA----ATGTCCGTGTGTGTG
+                                                                            
+
+NR_146000.1     TGTGATTCCTCTGCAAAATGG---------AG---------AGGTGGAAGGATGGATGTC
+EU434919.1      TGTGTGTGGTGTGCACAGCGGGCTGCACACAGCGGGCTCCACGGTGCTCGAATGGAGGCC
+                                                                            
+
+NR_146000.1     AGGTCTGATGGATGGATGGATGCCTACATCAAGATACATGCATAGATGG-AGAGATGGCT
+EU434919.1      ----CTAATG--TGAATGGA-GACTA-------------GCCT-GCTGGTAGAG------
+                                                                            
+
+NR_146000.1     GGCTACCTCATGAATGCTG-GACTGTTGTGAG-AAT----------CAAACGAGATAATG
+EU434919.1      ----ACCT--TG---GCAGTGACCGCTGTGGGCAATGAGCCATGGGCCAACAA-------
+                                                                            
+
+NR_146000.1     TATGCTGAGGCATGCTGTGAACACTACGT----GCTGGGTACAG---GAGAATGGAGGCT
+EU434919.1      TATTC-----AATGCTGTG-----TACCTGATGGATGGTTACTGTCTGAGACT-GAGGCT
+                                                                            
+
+NR_146000.1     -------CCA-GAGTGAAATTAATGACACTTTGTCGATGAAGATCTTGATTGTGACCTCT
+EU434919.1      TTTTGGGCCAGGAGTAAAA------GGACTTGGT--TTGTA---CTTGATTGCGTC--CT
+                                                                            
+
+NR_146000.1     GTGGAAAATGAGCCATGAACCAACCAA-TGATAAGTCTACTTTTCTTCC--ACGTAACAA
+EU434919.1      GTGG---ATG---CTTG--CCTACCAACTGA-----------CTCATCCTGACGT----G
+                                                                            
+
+NR_146000.1     CCACAGGATAGATGACATTCATTTTCTAAGAAACAAAATCTTGGCAGTTAGATCC---GT
+EU434919.1      CCAAAGG-------------------------------TCCTGGC--TT---TCCCCTGT
+                                                                            
+
+NR_146000.1     G-GGGTA----AAGAATATAGATACTAATAATGAAAACCATGTAGCTGGTCTTATTATTC
+EU434919.1      GTGGGTAAGGGAAGAAGAGAG-TTCT-----------CCATGT---TTGTCCCA------
+                                                                            
+
+NR_146000.1     TCTAATCATGAAGACCATTATT--------GTTATTTGTGGACT--AAGGAGCAGAAAGA
+EU434919.1      ----------CAGAGCATCACTATCAAACAGTTCACTGTGGACTCCTCGTAGCAGAAGTA
+                                                                            
+
+NR_146000.1     CTGATAGTGGACA-----------------TAGGCCAGCTGATTTAATAATTTAAGAAAG
+EU434919.1      CAG-TAGGGGACAGCAAGTGTCAGCTCCATCAGGACCCCTGATTTAATTATTTACTGTGG
+                                                                            
+
+NR_146000.1     AACTGTTATCCTGAGTAAGGAGCATAGA-GACAAATATAAAATGAACGC----------A
+EU434919.1      AACCATTGTCCTGAGTCAGGAGGATAGATGAGGAA---AGAATGAGAGCGTGGCTGGCAT
+                                                                            
+
+NR_146000.1     CTCTACCTGATTTAATTATAGTCTTCTGGTGAAGATCTTG-CTGTT-ATCTCTGTGAATC
+EU434919.1      CGCTTCATGATTACA--------TTCTGGGAAAGATCTTGCCTGTTAACCTCT-------
+                                                                            
+
+NR_146000.1     AGGAGAGAAGAGATTGATAAGGAATAGACGAGATTGGATTTGGTCATTTCCCCAAGGTGA
+EU434919.1      ---AGAGAAG--------GAGG----GACGATA---------------------------
+                                                                            
+
+NR_146000.1     AGAGCATGGCGATTTCTTCTGTGGTAAGGAGCA-ATAATGAAGACCATGGTTGATTTAAT
+EU434919.1      -------------------------------CAGACAATGAAGACTATAGCAGACTGAAT
+                                                                            
+
+NR_146000.1     CAGTCTCTGCTGATGAAGATCTTGGCTGTTACCTTTG---------TGTGTAAGGAAGCT
+EU434919.1      TACTCTCTG-AGATGAGGA-CTTTGCTATTGCCATTGCAGAACCACTG-GT--GGAAGTT
+                                                                            
+
+NR_146000.1     AAAGACTTAAGTAAATAACAG-------TCCA--AAAACTTGTCAATTAGGAATGAATGC
+EU434919.1      GTTG--TTA-------AACAGTGGGTCTTGCATGCAAGCTCTACAGTT--------ATGC
+                                                                            
+
+NR_146000.1     GCAATGATTCAATTA-TTCTCCAGCGAGGAAGATCATGGT------------TGTTGTCT
+EU434919.1      ACAGTATTTCCATGACATCCCAAGCCATGAGGTTCATGCTGCCATATCCCCCTGTT----
+                                                                            
+
+NR_146000.1     GTTTGAGTAATGAGTGTAGAAACCTATAATGGAGGCGTGATGGCTGATGCAATCATTTTC
+EU434919.1      -------TAACAAGTGTGGAAACTGAT-TTGTAG-----------GAACAAACCAT----
+                                                                            
+
+NR_146000.1     CACTGATGAAGGTTTTGATGGCCACCTGTAATGAACAGCCCCA-TCTGATTTAATCACTG
+EU434919.1      CCCATAT-------------GCAACCAG------ACAGCTCCATTCTGTTT---TCACCG
+                                                                            
+
+NR_146000.1     TGCAATGACC-GTGAACTGTA------CAGTTACCTCCGTG---TGTCACAGGAAGACTC
+EU434919.1      ------GCCCTGTGAGATCTACACACTCAGTT--CTGGGTGAGAAGACACAGAA------
+                                                                            
+
+NR_146000.1     TTTTGACTTAAGCACCCTTCCATGGTCATG---AGGTTTCT--GGTTGCCTCTGTGTGTT
+EU434919.1      --TGGACT----CACAAT----TGCTGATGTATAGG-TTCTAATGTTTTCTAT-TGTG--
+                                                                            
+
+NR_146000.1     AGA------------AG-CTTGGAG-ACCAATGCCT----TCTGCTGT-------GATCG
+EU434919.1      -GACACGGGACACCCAGACT--GAGAACCAATGGCTCCAGTCTGATTTAAACATGGGTC-
+                                                                            
+
+NR_146000.1     CGTTCTC-CACA--------GTTGCCTCTGGG--TAGGAG-CCTG-GACA---CTAATAG
+EU434919.1      CGTGCTCACACACTCAATACCTACCCTCTGTGCTCACAAGTCCTGTGAGAAATGTAAAAC
+                                                                            
+
+NR_146000.1     AAAATGGATGCACTTGAGCCGACCTAAGCATTCATGGTCATGAGATTTGTGGTTGCCACT
+EU434919.1      TAAATGGA--CAAAT-ATCC-ACCT-----TT-----TTATTATCTTTG---------CT
+                                                                            
+
+NR_146000.1     GTTGGTTAGGAGCATAGAGATCAGTAATGGACACACCTGG------GCTGGCAGA--ACA
+EU434919.1      GTTG-----------------------TGCCCTC-CCTGGATGGGTGCTGGCACATGATG
+                                                                            
+
+NR_146000.1     TCTTGCCTTGATCTGGAGCCCCATGTCTGCCCCTCTGTAGAGGTGCA-CATGGGCCAATG
+EU434919.1      TCTTGCCT---GCTGG---TCCGTGGTTG-CACTCT---------CACCATGTG-----G
+                                                                            
+
+NR_146000.1     ATGGATGCAATG-AGCTGA----TCATT-TTGCTGTGATCAAGGCTATGTT-------GC
+EU434919.1      ATGGA-GCTCGGCAGCTGAAAATGCATTCTTCC----ACCAAG---ATGATTTACACAGC
+                                                                            
+
+NR_146000.1     CT--CTGTGTTAGG------CCAAT-GGTTGATGTTCATGGGTGATTGATCATCCTGTAG
+EU434919.1      CTAGCTGGATCAGGAGCCCCCTAATAAGCTG--CTTCA-----GATTG----TAATATAG
+                                                                            
+
+NR_146000.1     CGACGGT--GGTATTGACTGTTCCCCAGAGGACAAGGAGTGTG-------TTCTT-ATCT
+EU434919.1      ACACAGTAATGTA-TGCCTG-------CAGGA-------TGAGTCCCACCTTCTTCAT-T
+                                                                            
+
+NR_146000.1     ACTCAGGAGG-CTGAG-----------------GCAGGAGAAACGCTTGAACCCGAGAG-
+EU434919.1      AGTCTTGAGGTTTGAGATTCCCTGTTTGTGTCTGCAGGA-------TT----CAGATAGT
+                                                                            
+
+NR_146000.1     -GCGGAGGT--TGC-AGTGAGCT---GAGATTGCGCCATTGCACTCCAGCCTGGGCAACA
+EU434919.1      AATGGATATCCTGCAAGTCGGCTTCGTAGAGT-CTCCCTTG-------------------
+                                                                            
+
+NR_146000.1     AGAGTGAAACTC--CATCTCAAAAGAAAAAAAAAAGAAAACAAAACAAAAAAAGAAAAAA
+EU434919.1      AAAGTGGACCTCATGATCT---------------------------------------AG
+                                                                            
+
+NR_146000.1     CC--AATGTTC---------CA-----ATAGTTTCCC----AAATCATGCTGATGCTGCC
+EU434919.1      CCTTTATGTCCGTGGATTGACACTGTGATGGATTCCCCCCAAGTTCAT------------
+                                                                            
+
+NR_146000.1     TCCTGAGAAATATTTTCAGAATCACTGAGAAAAATGT-ATGAAATAGTTAATGTCCTTGC
+EU434919.1      ---TTAGATATTCTCTCTTATTC------ATAAATGTCACG-----------GTC--AGC
+                                                                            
+
+NR_146000.1     TCTGTGTCAGTGGTGGAGGCTGTCTGCAGTAGGAGCATGGAGACCAACAATGGATGCTCT
+EU434919.1      TCTGT-----------------TCT----------TATAGATACC-AGAATGGATACCCC
+                                                                            
+
+NR_146000.1     TAAACTGATTTA---AGCACGCTTCC---ATGGTCAGAAGCCT--TATGGTTGCCACAGG
+EU434919.1      TAAGCTGATGTATATA-CACCCTTCCTCGGTTGTGAGATTCCTGCTCTGGT--------G
+                                                                            
+
+NR_146000.1     GTATTAGGAGCATGGAGACCAATAATGGATGTCCTTGTTCTGAT--TTGAGGATGCCTCC
+EU434919.1      GT----------TGTAGTC--ATAA--GATATAC--------ATCGTTGCGTA---CACC
+                                                                            
+
+NR_146000.1     AAGGT--------CACATACT-CTGT----TTGCACCACGCTTAGGAAGGAGCGTGAAGA
+EU434919.1      TTGGTTGTGGGCACGCACACTACTGTTGAATT--ACCAC-CTT---------------GT
+                                                                            
+
+NR_146000.1     CCAAGGGGAGGAAGATGATAAACACAGATCATGGAGGACTGTTTTATCTGTTTGTGATCT
+EU434919.1      CCAAGTGG----------------------ATGGA------------------------T
+                                                                            
+
+NR_146000.1     GCCGTCCTCTGTGAGCCTCAGGATGGATGTTTGCCAGCCGAT-TCCATGGTTACAAGCTC
+EU434919.1      GC-------------CCTCA--ATGG--GATTGGCA--CTTTCTCCAT-------TGCTC
+                                                                            
+
+NR_146000.1     TATAGCTGCA-TCTATGTGTTAGGAGC--------------ATGAAGAC-CAATAATGGA
+EU434919.1      -----CTGCACTC----TGTTATCAGCACTTCGGGTTCATAATGTACACACAGCAATGGA
+                                                                            
+
+NR_146000.1     TGCACTG-AGCTGATTATGAAT-TTAGCCCTGATGAAGACTTGTGTTGCTGTCATGATAT
+EU434919.1      TTTTCTGCAGCTGATTTTCTATATT----CTG--------TTTTCTTCGGGT--------
+                                                                            
+
+NR_146000.1     GAAAGATTCCAGTAATGAACGCACTTGAGTTGATTCAAGCACGCTTCC---ATGGTCATG
+EU434919.1      --AAG----CAGAAA------CA--------GATGC-------CTTCCTCACTGGTCACC
+                                                                            
+
+NR_146000.1     AGCTCTGTGGTTGCA---TC-----TGTGTGTTAGGAGCATGCAG--ACCAATAGTGATA
+EU434919.1      A-------GGTT-CAAGGTCCCTCATATGTGTCAGGTGCAT--AGTCACCAACA-----A
+                                                                            
+
+NR_146000.1     A--------TC---TCGAGGTGATTTATGCATTCTTCCATGGC-----CACCAGCCTTAT
+EU434919.1      AGGCCAACTTCACATCAATGGG-----TGGATCGTACCTCGGCCTAAGCTCCAG------
+                                                                            
+
+NR_146000.1     GATTGCATCTGTGC-------GTCACAGCTTAGAGATCAATAATGGATGCAACAAGCTCT
+EU434919.1      GATTG-AT-TGTGCTGTTAGAGTCACAGC------------------TACAACCGGCTCA
+                                                                            
+
+NR_146000.1     TTGAATCATTCTGTTGGGATCAAGA----TTGTTGTGTTCCCTCTGTTTGGAAAGAGA-C
+EU434919.1      GGGAACC---CAGTGG-----AAGAGGAGGTGGAGTGT----------------GAGAGC
+                                                                            
+
+NR_146000.1     CAA---GAATGG-ATACGCTCAGGTGATTTAAGCA--GTCTTCCATGGCCAC--GAGCTC
+EU434919.1      CAATTGGAATGGAAGACAGTGAGG------AAACAAGGCCTTCGA--GACACAAGAGGAC
+                                                                            
+
+NR_146000.1     TGTGGTTGCCTCTGTATATTAAGAGCACAGAGATTAAAAATGGCCCCATTCCAGCTGATA
+EU434919.1      TG---------CTG-------AGCTCACAAAGACTGA----GGC----------------
+                                                                            
+
+NR_146000.1     TAAGCACTCTTCCATGGCATGTGCA---CTATGGTTGGTTC--TCTG-----TGTTAGGA
+EU434919.1      --AGCACCCT--CAGGACCTGCACAGGTCTAAGCTTGATGCGATCTGAGTACTGAGAGG-
+                                                                            
+
+NR_146000.1     GC------ACACAAACC---ATTG-----CGAGTATGCATTCATTTCC---------TCT
+EU434919.1      GCAACTGGACACAATTCTATATTGATAACCCAG-AAGCTTTC---TCCAGTTGATAAACT
+                                                                            
+
+NR_146000.1     CTTTACAAG---AATGGGTGCACTTGAGCCGATTGAAACATTCCTCCTTGCATCTTTCTT
+EU434919.1      CTTTCAAAGGAAAA-------ACTTG------TT------TTCTACCATGGA--------
+                                                                            
+
+NR_146000.1     CTGTG--ATTGCATCTATTTGTTAGTAGCATAGA---GACCAATAATAGATGGCTTGTGC
+EU434919.1      --GTGACACTGGAT---------------ATAGAAACTACCGTTAACA----------GC
+                                                                            
+
+NR_146000.1     TGATGGAAGGATTCCTCCCTGGTGACATGCTGTGTCTGCCTCTTGATTGGGAGCACGCAG
+EU434919.1      AGA-----------CTCCATGG---------------------------------CTCAG
+                                                                            
+
+NR_146000.1     ACCTACAAT--------------GATGCACTTTTT---ATGATTTGAGAATTC--CTTCA
+EU434919.1      ACTTCCAATACAATATGAACTCAGTTGCAATTTTTTGCAAGGTTT-----TTCGAC-TCA
+                                                                            
+
+NR_146000.1     TGGTCACGTGCTCTGTTTTTATCATGGTTGGG---------AGCCTGCAGAGCAATAAGG
+EU434919.1      TAGT-----------TCTTTGTC-----TGGGTACTTTTTCACCCTACAGAGAATTTCTG
+                                                                            
+
+NR_146000.1     GACAT----GCCTTTGCTGATTTGAG------GA--TTCCTCTGAGGTTGGGAGCTAAGT
+EU434919.1      TATATATTATCGTTT-CTGATTCTAGTGTTTTGAATTTTCGCTG-GGT------CTAAAT
+                                                                            
+
+NR_146000.1     TTGCATC-ATG-CTTAGAAAGGAGTGTGCAG-ACCTG----TAATGATTGCACTTTG---
+EU434919.1      ----ATCTCTGTCT-------CAGTGT-CAGTATGTGTTTCTCATGATTTTTCTTTGCTT
+                                                                            
+
+NR_146000.1     CTGATTGAAGGATTCCTTCAAGTC----CATGTGCTCCACTTGCACCATTTTTAGGATGG
+EU434919.1      CTCTTT------TTCCT---ATTCTTTGCTTGTATTCC-CTGG-------TTTGTGTTTG
+                                                                            
+
+NR_146000.1     A--GCCTGGAGACCTATAATGAACAACTTG--TGCTG----TGTTAAGGATTCCTCC-AT
+EU434919.1      AGTGTCTGG-GAACTCTGAGGGTC----TGGTTGGTGATATTGTT----GTTCTTCCTAT
+                                                                            
+
+NR_146000.1     GATCACGCGCCCCATTTGTACACCATGCTTGGGAAGGTGCATGCAGAC---CAATAATGG
+EU434919.1      G-----GGG------TTGAAAACC--CCTT---CAGCT-CCTTCAGCCTTTCACTAA---
+                                                                            
+
+NR_146000.1     ACGTAC----TTGTGATGATTTAAAGATGCCTCCAAGGTCACGTGCTCTGTTTGCACCAT
+EU434919.1      --GTCCTCCATTATTATGATT--------CCT--------------------------AT
+                                                                            
+
+NR_146000.1     GCTTAGGAAGGAGCGTACAGACCAAAAATGGATGAAT-TGTGCACCTTGAAAAGTTCTTC
+EU434919.1      GCT--------------CAGTCC---AGTGGTTGGATGTGAGCCCC-------------C
+                                                                            
+
+NR_146000.1     CATGGTCACCTGAGGCATCTGCGTCATGATT----AGGCTCCGGATGA----CTAATAAT
+EU434919.1      C-----CCCC-----CCTCTGC------ATTTGTCAGGCTCCGGCAGAGCCTCTAA----
+                                                                            
+
+NR_146000.1     GGACGTA-CTTGTTCTGATTTGAGGACTTCTTCATGGTCACATGTTCTGTTTGCACCATG
+EU434919.1      GGAGATAGCT-------ATATTAGG--CTCTT----GTCA---GCTTTGTTTG-----TT
+                                                                            
+
+NR_146000.1     CTTAGGAAGGAGCATGTGTAC-CAATAATGGAAGCACAGAAGCTGGTTTTAATAGTTAAG
+EU434919.1      TTT-------ATTCTGTCTTCTCTATA---------------CTGTTTATTTTAGATAA-
+                                                                            
+
+NR_146000.1     AGCTGTATGGTCCATCTCTGTGCTAGAAGCTGGAGACCAATAACAGTCACTCCCTGCACT
+EU434919.1      --CTGT---GTTTAT-TCT-------------------AAT----GT-----------AT
+                                                                            
+
+NR_146000.1     GATTCTGCCATGACCACTTGCTCTATGGT-TGTTTTAAGGAACCTACAGACAAATAATGG
+EU434919.1      GA-------ATGAATAATTG------GGTGTGTGTTTGGG--------------------
+                                                                            
+
+NR_146000.1     ATTATCATTGGTGAAGATCTTA------------------GCTGTTCCATAGAAGGAACA
+EU434919.1      -------TGGGTGAAG----TAAGTGGGAGGGTGGGGGTGGATG-----TGGGAGGAA-A
+                                                                            
+
+NR_146000.1     CACT-TATCAC---TACAGTGATTCTGTAATGATGAAG-ACCTTTATGGGATGGGTAGAC
+EU434919.1      AACTGTAACACAAATAC----ATTGTATAA-----AAGTACATT----------------
+                                                                            
+
+NR_146000.1     CAGAGCTGATTAAAT-TA-TTCTCCCATTGATGAGGAACTTTACCTTATCCCTCAGAGTA
+EU434919.1      ------TTAATAAATGTATTTCTTC---------------------TATGACTAAAAAAA
+                                                                            
+
+NR_146000.1     AGGAGAATGTCATATAATGATGAAGATCTTGACTGTTACCCATGTGGCAAGGAGAGTGTA
+EU434919.1      AAAAAAA----AAAAAAAAAAAA-------------------------------------
+                                                                            
+
+NR_146000.1     GAACAGG
+EU434919.1      -------
+```
+The alignment file was then used to predict the 2D structure with RNAalifold.
+- ```.``` = unpaired base
+- ```(``` = open bp
+- ```)``` = closed bp
+Ouput
+```R
+2 sequences; length of alignment 5107.
+__________________________________________________________________________________________________________________________________________________________________________________________________________________________GAUUCCUGAGG_____________CAGCCCUGC__CCC___CCA____________________GGGUGA______AUGUU____AGUC__ACCAUGAAGA__ACCAGCAGCCCAGAAUC____AGUGCCCUGACAG__GC_________________AGAAU_UGCUUAGACAUAACAAAGAUC__CACU__AUUCCUGAUAA____CAACACCUCAGAAU________CUGUACACACCAGAGGUGAUUUAACCACCUUACUGCCACCAUGAAA___________CCUGGGCUC______________________CUUU______________________AUCCU______________GGCAG______________________GUCAUCU_GACCCGUAACGC____________CCAAGUCAG_________________________AAGGGGA___GG_______________GAGGA______________UGACU__UGCCC__GGUCGGCU______CAACACCC_AGGA____AACUCAG___GUCUGUGUGAGUCCUCUGCAAAACGG_________AG_________AGGUGCAAGAAUGGAGGCC____CUAAUG__UGAAUGGA_GACUA_____________GCAU_GAUGG_AGAG__________ACCU__UG___GCAG_GACCGCUGUGAG_AAU__________CAAACAA_______UAUGC_____AAUGCUGUG_____UACCU____GAUGGGUACAG___GAGAAU_GAGGCU_______CCA_GAGUAAAA______ACACUUGGU__AUGAA___CUUGAUUGCGAC__CUGUGG___AUG___CAUG__CCAACCAA_UGA___________CUCAUCC__ACGU____ACCAAAGG_______________________________UCCUGGC__UU___UCC___GUG_GGGUA____AAGAAGAGAG_UACU___________CCAUGU___UGGUCCCA________________AAGACCAUCACU________GUUAACUGUGGACU__AAGGAGCAGAAAGACAG_UAGGGGACA_________________CAGGACACCUGAUUUAAUAAUUUAAGAAAGAACCAUUAUCCUGAGUAAGGAGCAUAGA_GACAAA___AAAAUGAAAGC__________ACGCUACAUGAUUAAA________UUCUGGGAAAGAUCUUG_CUGUU_ACCUCU__________AGAGAAG________AAGG____GACGAGA__________________________________________________________CA_ACAAUGAAGACCAUAGCAGACUGAAUCACUCUCUG_AGAUGAAGA_CUUGGCUAUUACCAUUG_________UG_GU__GGAAGCUAAAG__UUA_______AACAG_______UCCA__AAAACUCGACAAUU________AUGCACAAUAAUUCAAUGA_AUCCCAAGCCAGGAAGAUCAUGCU____________UGUU___________UAACAAGUGUAGAAACCGAU_AUGGAG___________GAACAAACCAU____CACAGAU_____________GCAACCAG______ACAGCCCCA_UCUGAUU___UCACCG______GACC_GUGAAAUCUA______CAGUU__CUCCGUG___AGACACAGAA________UGGACU____CACAAU____UGCUCAUG___AGG_UUCU__GGUUGCCUAU_UGUG___GA____________AG_CU__GAG_ACCAAUGCCU____UCUGAUGU_______GAUC_CGUGCUC_CACA________CUACCCUCUGGG__CACAAG_CCUG_GACA___CUAAAACAAAAUGGA__CAAAU_AGCC_ACCU_____UU_____UCAUGAGAUUUG_________CUGUUG_______________________UGCACAC_CCUGG______GCUGGCACA__ACAUCUUGCCU___GCUGG___CCCAUGGCUG_CACUCU_________CA_CAUGGG_____GAUGGA_GCAAGG_AGCUGA____GCAUU_UUCC____ACCAAG___AUGAU_______GCCU__CUGGAUCAGG______CCAAU_AGCUG__CUUCA_____GAUUG____UAAUAUAGACACAGU__GGUA_UGACUG_______CAGGA_______UGAG_______UUCUU_AU_UACUCAGGAGG_CUGAG_________________GCAGGA_______UU____CAGAGAG__ACGGAGAU__UGC_AGUCAGCU___GAGAGU_CGCCAUUG___________________AAAGUGAAACUC__CAUCU_______________________________________AACC__AAUGUCC_________CA_____AUAGAUUCCC____AAAUCAU_______________UGAGAAAUACUCUCAGAAUC______AAAAAUGU_ACG___________GUC__AGCUCUGU_________________UCU__________CAUAGAGACC_ACAAUGGAUACCCCUAAACUGAUGUA___A_CACCCUUCC___AUGGUCAGAAGCCU__UAUGGU________GGU__________UGGAGAC__AUAA__GAUAUAC________AU__UUGAGGA___CACCAAGGU________CACACACU_CUGU____UU__ACCAC_CUU_______________GACCAAGGGG______________________AUGGA________________________UGC_____________CCUCA__AUGG__GAUUGCCA__CGAU_UCCAU_______AGCUC_____CUGCA_UC____UGUUAGCAGC______________AUGAACAC_CAACAAUGGAUGCACUG_AGCUGAUUAUCAAU_UU____CUG________UUGUCUUCCGGU__________AAG____CAGAAA______CA________GAUGC_______CUUCC___AUGGUCACCA_______GGUU_CA___UC_____UAUGUGUCAGGAGCAU__AG__ACCAACA_____AA________UC___UCAAGGGG_____UGCAUCCUACCACGGC_____CACCAG______GAUUG_AU_UGUGC_______GUCACAGC__________________UACAACAAGCUCAGGGAACC___CAGUGG_____AAGA____GUGGAGUGU________________GAGA_CCAA___GAAUGG_AGACACUCAGG______AAACA__GCCUUCCA__GACAC__GAGCACUG_________CUG_______AGAGCACAAAGACUAA____GGC__________________AGCACCCU__CAGGACAUGCACA___CUAAGCUUGAUGC__UCUG_____UGAGAGG_GC______ACACAAACC___AUUG_____CCAG_AAGCAUUC___UCC_________ACUCUUUAAAAG___AA_______ACUUG______UU______UUCCACCAUGCA__________GUG__ACUGCAU_______________AUAGA___GACCAAUAACA__________GCAGA___________CUCCAUGG_________________________________CGCAGACCUACAAU______________GAUGCAAUUUUU___AAGAUUU_____UUC__C_UCAUAGU___________UCUUUAUC_____UGGG_________ACCCUACAGAGAAAUAAGGGACAU____GCCUUU_CUGAUUCGAG______GA__UUCCGCUG_GGU______CUAAAU____AUC_AUG_CU_______CAGUGU_CAG_ACCUG____UAAUGAUUGCACUUUG___CUCAUU______UUCCU___AGUC____CAUGUACUCC_CUGG_______UUUAGGAUGGA__GCCUGG_GAACUAUAAGGAAC____UG__UGCUG____UGUU____AUUCCUCC_AUG_____GCG______UUGAAAACC__CCUU___AAGCU_CAUGCAGAC___CAAUAA_____GUAC____UUAUGAUGAUU________CCU__________________________AUGCU______________CAGACC___AAUGGAUGAAU_UGAGCACC_____________CC_____CACC_____CAUCUGC______AUU____AGGCUCCGGAAGA____CUAA____GGACAUA_CU_______AUAUGAGG__CUCUU____GUCA___GCUCUGUUUG_____UGCUU_______AGCAUGUCUAC_CAAUA_______________CUGGUUAUAAUAGAUAA___CUGU___GUCCAU_UCU___________________AAU____GU___________AUGA_______AUGAACAAUUG______GGU_UGUGUUAAGG___________________________UGGGUGAAG____UA__________________GAUG_____UAGAAGGAA_AAACU_UAACAC___UAC____AUUCUAUAA_____AAG_ACAUU______________________UGAAUAAAU_UA_UUCUCC_____________________UAUCACUAAAAAAAAAAAAAA____AAAAAAAAAAAA____________________________________________
+.............................................................................................................................................................................................................................((((((((...........((..(((((................................)))))..))....................((((((((....((((((.((((..((......(((((((((((((((...................(((((.((((((((......................................((((((.........................))))))((((.((((((((.(((((((((((................))))))...................................................................(((((((.....................(((((((..((((((....................................................))))))......................)))..............))))).)))))).................((((((.(((........))).)...)))))(((((.......)))))..))........)))........)))))))).))))(.((((((...........((((.((.((.(((.............(((...(((((((((...........((((......(((((((((.((((.(((............))).))))......((((((....)))))).....................))))))))).........))))))))....)))))(((((..........)))))...................(((((((.((((((...(((..........................................))).....))))))................................(((((((..((...((....((((((........(((((....))))).....................(((((((................((((((..............)))))))).)))))..........(((((((((.((((((.........................)))))).....................(((((.(((((...))))).)))))..(((((.......(((((.(((..........))))))))..................(((((((((((((..........((((.(......).))))..................................................................................................(((.(((((...........)))))..)))))))))))))))).......((((...(((((((............................)))))))....)))).......))))).................)))))))))(((((.((((((.....)))))))))))..............................((((((((((..(((((....(((((((...........................................(((((((...........((((((.((...........(((......(((..(((((((((......((((((..(((((((...((((((((...................((((((......((((((...(((....)))..))))))...))))))...............((((((..(((.........)).)))))))..........((((((.((((((.((...........(((.(((((((..(....).)))).)))....)))........)))).)))).))))))......................................))))...........................)))))))))))).....)))))......)))))))))...).)))))...(((((((.(((..............)))))))))).....)))))).))((((((((((......((((((((.......)))))..))).......))).)).)))))((((((.....)))))).....................................(((((.........))))).......((((.....((((((..................(((((.....)))))................(((((((......(((...(((........))))))))))))).((((((((..((((((..(((((((........................((((..........................................................))))................(((((((.......)))))))................((((.....))))..........................................((((((((...........................)))))))).....))))))).))))))))))))))........)))))))))).)))))))....(((......)))......................(((.(((......)))..)))....................)))))))))))).........))))))..))))........))))))...................((....)).....................((((((.......................(((((............((.......))......)))))......)))))).......((((.......(((.......)))...))))...................(((((((((((((((((((((.(((((...............................((((((((...................(((((.....(((..(((((((((.......(((........)))))))))))).))))))))................((((((((((((((...........................................))))).))))).))))....)))))))).......(((((.(((((((.....)).)))))...................))))).))))))))))))))...)).................))))))))))...............)))))))))...))(((((((((....................))))))))))))))))...(((((....................)))))...............)))................).)))).)).)))))))))).)...)).))))))..)))))...)))....)))))))).))......)).......................................................((((.............))))...................(((((((...................................................................................))))))).....................................((((..........................................................)))).....................................((((.(((((((...........................................))))))))))).................................(((((...(((((((((.......((((...............................))))...))))))))).)))))...........))..)))).)).))))....)))))))).............(((.............(((((((((((..............(((((((((...........))))..)))))....(((((((((............................................................((((..............(((((((........))))).))))))..............(((.....((((..((((((((((.....................))))))...........(((((...(((..........)))..)))))......................................................................((((.......)))).............((((((.((..........................................)).......))))))....)).))..))))........)))........................))))))))).................................)))))))))))..........))).......................(((((((((((..........................)))))))))))............................)))))))).....................................................................
+ minimum free energy = -381.69 kcal/mol (-494.82 + 113.13)
+ ```
 
 # 2D STRUCTURE PREDICTION OF snoRNA
 
