@@ -2642,6 +2642,37 @@ RNAdistance was used to calculate the distances between RNA secondary structures
 53 42 28 19 26 45 17
 55 38 22 21 20 41 21 18
 ```
+In order to identify which structures shared more similarity, a correlation plot was created to facilitate the visualisation of the data. ```GGcorrplot```reorders the correlation matrix and displays the significance level on the correlogram. It includes also a function for computing a matrix of correlation p-values.
+```R
+library("ggplot2")
+library("ggcorrplot")
+getwd()
+baseDir <-  "/home/aurilyconstantino/Cambridge_project"
+# SNORD113
+# Writes a table to a file 
+SNORD113.data <- "55
+47 26
+52 43 31
+57 34 18 29
+56 53 47 38 45
+56 41 33 20 29 44
+53 42 28 19 26 45 17
+55 38 22 21 20 41 21 18"
+write.table(SNORD113.data, paste0(baseDir, "SNORD113.txt"), quote=F, row.names=F, col.names=F)
+
+# Create an empty matrix of the size of the data
+SNORD113.m <- matrix(0, 8, 8)
+# Read in the data to the empty matrix
+SNORD113.m[row(SNORD113.m) >= col(SNORD113.m)] <- scan(paste0(baseDir, "SNORD113.txt"), sep=" ")
+# Calcualte a correlation matrix from the distances
+SNORD113.m.cor <- cor(SNORD113.m)
+# Plot the correlations
+ggcorrplot(SNORD113.m.cor, hc.order = TRUE, type = "lower", lab = TRUE)
+```
+
+![Alt text](images/Matrix_corrplot_SNORD113.jpeg)
+
+
 ### Matrix for SNORD114
 ```R
 (((((((..((((((((((.(((...))).)))))))(((...........))).....)))..)))))))
@@ -2706,6 +2737,10 @@ RNAdistance was used to calculate the distances between RNA secondary structures
 46 46 35 65 58 26 29 22 48 47 29 62 27 34 36 33 54 31 26 30 30 40 24 26 34 28 22 26
 45 35 38 62 55 27 32 21 47 42 14 53 28 21 25 40 55 34 23 21 25 47 27 21 13 35 21 25 35
 ```
+#### Correlation plot
+
+![Alt text](images/Matrix_corrplot_SNORD114.jpg)
+
 # References
 
 Barlow, D.P., Stoger, R., Herrmann, B.G., Saito, K. and Schweifer, N. (1991) 'The mouse insulin-like growth factor type-2 receptor is imprinted and closely linked to the Tme locus', Nature, 349(6304), pp. 84-87. doi: 10.1038/349084a0 [doi].
