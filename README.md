@@ -2670,7 +2670,7 @@ SNORD113.m.cor <- cor(SNORD113.m)
 ggcorrplot(SNORD113.m.cor, hc.order = TRUE, type = "lower", lab = TRUE)
 ```
 
-![Alt text](images/Matrix_corrplot_SNORD113.jpeg)
+![Alt text](images/Matrix_corrplot_SNORD113.jpg)
 
 
 ### Matrix for SNORD114
@@ -2738,6 +2738,49 @@ ggcorrplot(SNORD113.m.cor, hc.order = TRUE, type = "lower", lab = TRUE)
 45 35 38 62 55 27 32 21 47 42 14 53 28 21 25 40 55 34 23 21 25 47 27 21 13 35 21 25 35
 ```
 #### Correlation plot
+
+```R
+# SNORD114
+SNORD114.data<- "52
+51 45
+57 65 56
+66 60 41 75
+44 36 35 63 58
+49 45 48 66 59 31
+44 36 35 61 48 18 25
+50 58 39 63 44 46 51 46
+57 53 54 74 59 43 38 43 53
+45 31 40 66 53 23 32 17 51 42
+56 58 49 73 34 56 51 48 34 55 53
+45 41 38 58 59 21 30 11 49 42 26 49
+44 34 41 65 48 16 27 18 42 39 25 50 23
+44 20 33 51 56 26 39 24 46 51 27 58 31 24
+51 53 36 66 45 35 42 33 33 50 42 39 40 39 37
+60 52 51 71 52 54 59 50 38 57 57 44 57 52 46 43
+47 37 26 62 57 25 46 27 43 58 30 57 28 33 27 48 57
+44 36 41 65 54 18 29 14 42 37 27 50 15 16 32 35 54 31
+44 38 37 63 50 12 27 14 46 43 21 52 19 4 20 35 54 29 20
+42 40 37 61 52 18 27 8 46 43 23 46 7 16 30 37 54 29 16 12
+42 50 35 61 42 38 41 30 28 57 45 38 37 40 38 21 46 45 38 36 34
+48 38 39 59 56 22 33 26 38 39 29 52 25 24 34 39 54 27 20 28 26 40
+44 32 39 63 46 22 25 4 42 39 21 46 15 14 28 37 48 31 10 18 12 34 22
+44 36 33 63 48 22 29 14 48 45 15 46 21 28 24 37 50 33 28 24 18 36 34 18
+36 40 41 65 54 30 23 24 46 37 29 50 25 26 34 43 54 33 26 28 24 44 28 24 30
+44 36 35 61 48 18 25 0 46 43 17 48 11 18 24 33 50 27 14 14 8 30 26 4 14 24
+42 34 39 65 52 18 27 12 40 37 25 46 17 14 32 37 50 31 8 18 14 36 18 8 24 24 12
+46 46 35 65 58 26 29 22 48 47 29 62 27 34 36 33 54 31 26 30 30 40 24 26 34 28 22 26
+45 35 38 62 55 27 32 21 47 42 14 53 28 21 25 40 55 34 23 21 25 47 27 21 13 35 21 25 35"
+write.table(SNORD114.data, paste0(baseDir, "SNORD114.txt"), quote=F, row.names=F, col.names=F)
+
+# Create an empty matrix of the size of the data
+SNORD114.m <- matrix(0, 29, 29)
+# Read in the data to the empty matrix
+SNORD114.m[row(SNORD114.m) >= col(SNORD114.m)] <- scan(paste0(baseDir, "SNORD114.txt"), sep=" ")
+# Calcualte a correlation matrix from the distances
+SNORD114.m.cor <- cor(SNORD114.m)
+# Plot the correlations
+ggcorrplot(SNORD114.m.cor, hc.order = TRUE, type = "lower", lab = TRUE)
+```
 
 ![Alt text](images/Matrix_corrplot_SNORD114.jpg)
 
