@@ -755,6 +755,51 @@ The dataset obatined from cmsearch was organized into a BED format. The sequence
 |47|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 194257 |194186  |  AL132709.5|  28.4|   0.0|    no |   0.0|- cm|0.32|
 |48|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 196778 |196707  |  AL132709.5|  35.3|   0.0|    no |   0.0|- cm|0.32|
 ```
+As can be observed above, there is more than 40 sequences. The sequences that did not correspond to the seeds available in Rfam were deleted, 7 of them were eliminated. 
+```R 
+| n | Description                                                        | Start  | End    | Sequence   | Score | Bias| trunc | Bias | mdl| gc |
+|1|----------------------------------------------------------------------|--------|--------|------------|------|------|-------|------|----|----|
+|2 |  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro | 128363 |128289  | AL132709.5 | 67.0 |  0.0 |    no |  0.0 |- cm|0.51|
+|3 |Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro  |129680  |129609  | AL132709.5 |  61.7|  0.0 |    no |  0.0 |- cm|0.46|
+|4 | Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro |131508  | 131439 | AL132709.5 | 71.0 |  0.0 |   no  |  0.0 |- cm|0.43|
+|5 | Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro |132469  |132398  | AL132709.5 |82.5  | 0.0  |  no   | 0.0  |- cm|0.47|
+|6 | Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro |133438  |133369  | AL132709.5 |  66.9|  0.0 |    no |  0.0 |- cm|0.46|
+|7 | Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro |134553  |134482  | AL132709.5 | 82.9 |  0.0 |  no   |  0.0 |- cm|0.47|
+|8 |  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|135542  | 135471 | AL132709.5 |80.6  | 0.0  |  no   | 0.0  |- cm|0.47|
+|9 |  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|136822  |136751  | AL132709.5 | 68.2 |  0.0 |    no |  0.0 |- cm|0.44|
+|10| Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro | 137723 | 137652 | AL132709.5 | 88.3 |  0.0 |  no   |  0.0 |- cm|0.46|
+|11| Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro |138673  |138602  | AL132709.5 | 85.0 |  0.0 |  no   |  0.0 |- cm|0.46|
+|12| Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro |139624  |139553  | AL132709.5 | 89.7 |  0.0 |  no   |  0.0 |- cm|0.47|
+|13|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|140595  |140524  | AL132709.5 | 78.7 |  0.0 |   no  |  0.0 |- cm|0.47|
+|14|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 141607 |141533  |  AL132709.5|  47.3|   0.0|    no |   0.0|- cm|0.36|
+|15|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|142597  |142509  | AL132709.5 |  64.5|  0.0 |    no |  0.0 |- cm|0.38|
+|16|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|145122  |145048  | AL132709.5 | 70.9 |  0.0 |   no  |  0.0 |- cm|0.40|
+|17|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|145774  |145703  | AL132709.5 | 80.3 |  0.0 |  no   |  0.0 |- cm|0.38|
+|18|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|146793  |146719  | AL132709.5 | 82.9 |  0.0 |  no   |  0.0 |- cm|0.43|
+|19|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 148004 |147935  | AL132709.5 | 70.5 |  0.0 |   no  |  0.0 |- cm|0.47|
+|20| Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro |148929  |148858  |AL132709.5  | 88.3 |  0.0 |  no   |  0.0 |- cm|0.46|
+|21|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|149496  |149422  | AL132709.5 | 79.8 |  0.0 |  no   |  0.0 |- cm|0.47|
+|22|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|151720  | 151647 | AL132709.5 | 80.2 |  0.0 |  no   |  0.0 |- cm|0.46|
+|23| Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro | 152651 | 152577 | AL132709.5 | 83.4 |  0.0 |  no   |  0.0 |- cm|0.44|
+|24|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|153488  |153414  | AL132709.5 |80.4  | 0.0  |  no   | 0.0  |- cm|0.49|
+|25|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|154547  |154476  | AL132709.5 | 77.2 |  0.0 |   no  |  0.0 |- cm|0.36|
+|26| Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro | 155570 |155499  | AL132709.5 | 88.3 |  0.0 |  no   |  0.0 |- cm|0.47|
+|27|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|156819  |156747  | AL132709.5 |  64.0|  0.0 |    no |  0.0 |- cm|0.40|
+|28|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 158545 |158469  |  AL132709.5|  54.6|   0.0|    no |   0.0|- cm|0.40|
+|29|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|164433  |164362  | AL132709.5 | 80.2 |  0.0 |  no   |  0.0 |- cm|0.40|
+|30|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|166229  |166160  | AL132709.5 | 77.4 |  0.0 |   no  |  0.0 |- cm|0.47|
+|31|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|167225  |167151  | AL132709.5 | 70.9 |  0.0 |   no  |  0.0 |- cm|0.43|
+|32| Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro |168250  |168176  | AL132709.5 | 93.3 |  0.0 |  no   |  0.0 |- cm|0.48|
+|33|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 169743 |169666  |  AL132709.5|  64.0|   0.0|    no |   0.0|- cm|0.42|
+|34|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 171766 |171695  | AL132709.5 | 81.9 |  0.0 |  no   |  0.0 |- cm|0.49|
+|35|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 175950 |175879  |  AL132709.5|  60.0|   0.0|    no |   0.0|- cm|0.42|
+|36|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro|178148  |178075  | AL132709.5 |  64.2|  0.0 |    no |  0.0 |- cm|0.39|
+|37|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 182043 |181969  |  AL132709.5|  56.8|   0.0|    no |   0.0|- cm|0.40|
+|38|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 183412 |183335  |  AL132709.5|  56.4|   0.0|    no |   0.0|- cm|0.41|
+|39|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 185108 |185034  |  AL132709.5|  55.3|   0.0|    no |   0.0|- cm|0.40|
+|40|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 191680 | 191609 |  AL132709.5|  57.5|   0.0|    no |   0.0|- cm|0.39|
+|41|  Human chromosome 14 DNA sequence BAC R-909M7 of library RPCI-11 fro| 194257 |194186  |  AL132709.5|  28.4|   0.0|    no |   0.0|- cm|0.32|
+```
 
 Command used to retrieve sequences from AL132709 using coordinates:
 
@@ -763,7 +808,7 @@ HitseqNum<- AL132709seq[start:end]
 Example
 H1<-AL132709seq[168250:168176]
 ```
-These sequences correspond to the snoRNAs and their respective copies. Knowing SNORD113/SNORD114 contain 9 and 31 copies a cmalign will search for similarity between the sequences, allowing to understand how this copies might differ from each other.
+These sequences correspond to all the hits found above the inclusion threshold of cmsearch. Knowing SNORD113/SNORD114 contain 9 and 31 copies a cmalign will search for similarity between the sequences, allowing to understand how this copies might differ from each other.
 
 ```R
 > H1
@@ -861,9 +906,130 @@ cacttttaactctggttactaccgcactcggtatatgttactcattttgtacagacctgaaactacaggtt
 > H47
 tatcggttagtaatcataagactcgacatccttagtttctaaaactaatctaagacattgagtctccaaata
 ```
-In order to perform a cmalign a fasta file containing the list of sequences is required. The list of snoRNAs was saved into fasta file all_SNO.fa as seen above.
-A cmalign was then carried out using all_SNO.fa.
+The sequences corresponding to snoRNAs were gathered into a txt file that would later be aligned using cmalign. 
+```R
+>SNORD113-1
+ttgaacctcagagttccaggcacttagtattcatcctccatgactcacacaccaccggctgtcatcgcttgctca
 
+>SNORD113-2
+atggacctcagagttccagataggcattcactgacgaagacccatccaataccagtagtcatgattgatcca
+
+>SNORD113-3
+acagacctcagagttccagacatgtattcactgtatatgactcatgctaccagtagtcatcatcgatcca
+
+>SNORD113-4
+atggacctcagagttctagacacgtattcatcgcatatgactcatacgccaccagcagtcatcatcgatcca
+
+>SNORD113-5
+atgggcctcagagttccagacatgtattcattgtatgactcacacgacaccagtagtcaacactgaacca
+
+>SNORD113-6
+atggacctcagagttccagacacgtattcatcgtatgtgactcatactccaccagtgctcatcatcgatcca
+
+>SNORD113-7
+acggacctcagagttctagacacgtattcatcgcaaaagactcatacgccaccagtagtcatcatcgatcca
+
+>SNORD113-8
+acagacctcagagttccagatacgtactcatcatatgtgagtcatatgccatcaacagtcaccatcgatcca
+
+>SNORD113-9
+atggacctcagagttccagacacgtattcattgtctatgactcatacgccaccagtagtcatcatcgatcca
+
+>SNORD114-1
+atggacctcagagttccaaacacgtattcatcacatatgactcatacgccaccggtagtcatcatcgatcca
+
+>SNORD114-2
+gtggacctcagagttccagacacgtattcatcacatatgactcatacgccaccagtggtcatcattgatcca
+
+>SNORD114-3
+acagacctcagagttccagagacgtattcactgtagatgactcatacgccaccagtagtcatcatcgatcca
+
+>SNORD114-4
+ttgatgctcagagttccacacacatattactcatagtttatgactcctgcactactatttgttatcgttgttcta
+
+>SNORD114-5
+ttggacctcaaagtttcagatatgtaatattcttcatatacaaccagcatgtacaaccacataagccaccacttgtcatcaacagtcca
+
+>SNORD114-6
+ttggacctcagagttccacacacgtatcatccattatccaagattcatatgccagcaagttttatcattgatcca
+
+>SNORD114-7
+ttggacctcagaatttcagacatgtattcatcgtatatgactcatacaccaacagtagtcatcactgatcta
+
+>SNORD114-8
+ttggacctcagagtttcagacacatatcattcatcgtccataactccaatgccaccatttgtcatcattggtcca
+
+>SNORD114-9
+ttggacctcagagttccagacacgtggtgttcattatgcgtgactcacaccagtagtcataattggtcca
+
+>SNORD114-10
+aaggacctcagagttccagacacatattcatcatgtatgactcatacgccaccagtggtcatcatcgatcca
+
+>SNORD114-11
+ttggacctcagagttctagacacgtattattcatcacccaacactcatacgccggcagttgtcatcattggtcca
+
+>SNORD114-12
+ttggacctcagagttctagaaacatggtgttcatgtgtatgactcatatgccaccagtggtcatcactggtcca
+
+>SNORD114-13
+atggacctcagagttccagacacgtattattcatcatccaagactcatacgccggtatttgtcatcattggtcca
+
+>SNORD114-14
+ttggacctcagagttccagacacatgatattcactgtgcatgactcacacaccaccagtcaccatcactggtcca
+
+>SNORD114-15
+atggacctcagagtttcagacatgtattcatcatgtgtaactcatacactaacagtagtcatcattgatctt
+
+>SNORD114-16
+atggacctcagagttccagacacgtattcatcatgtaagactcatacgccaccagcagtcatcatcgatcca
+
+>SNORD114-17
+acagacctcagagtttcaaacatgtattcactgtataagactcataagccaccagtggccatcatatcatcaa
+
+>SNORD114-18
+ttggacctcagagttctagacacgtattattcatcacccaacactcatacgccggcagttgtcatcattggtcca
+
+>SNORD114-19
+ttggacctcagagttccagacatatattcaccaaatatgatttatacgccaccagtggacatcattgatcca
+
+>SNORD114-20
+atggacctcagagttctagacacgtattcattgtatgactcataggccaccagtggtcatcatcaatcca
+
+>SNORD114-21
+ttgaacctcagagttctagacacacattattcagcatccttgacttctatgccaccagttttcatcactggctca
+
+>SNORD114-22
+ttggacctcagagtttcagacacgtagtattcatcgtccatgactcaaacgccaccagtggtcatcattggtcca
+
+>SNORD114-23
+ttggacctcagatttccagatacaaactgttattcaacctcactgactcataccccaacagtcattatcattggtccc
+
+>SNORD114-24
+ttggacctcagacttccagacctgtattcaccgtcaatgactcatacgccaccagtcatcatcataggtcca
+
+>SNORD114-25
+atggacctcagagttatagggtttaatcaaaatccaagattcagacaccccagggtactcatcattgatcca
+
+>SNORD114-26
+atggacctcagagttacagatggctttaatcaaaatttttgattcagacaccctccaatctcatcattggtcca
+
+>SNORD114-27
+atggacctcagagttgcagatgggtttaatcaaaaatgttgtttcagaaaccccatgatattcatcactggtcca
+
+>SNORD114-28
+acagatctcagagttacacagagggcttaatcaaaagtgttgattcagacacctccaccaatactcatcattgatcca
+
+>SNORD114-29
+atggacctcagaattgcatatgggtttaatcaaaaatcctgtttcagataccccatggtactcatcattggtcca
+
+>SNORD114-30
+atggacctcagagttacagggtttaatcaaaatcattgattcagacaccccagaatactcatcattggtcta
+
+>SNORD114-31
+ataaacctctgagttacagaatctaatcaaaatctttgattcctacagctcagaatactaatgattggctat
+```
+In order to perform a cmalign a fasta file containing the list of sequences is required. Both lists were saved into fasta files: all_SNO.fa, and snoRNA_ord.txt, respectively. The first contains all the hits of the cmsearch, and the second only those sequences corresponding to snoRNAs.
+##### cmalign with hit list
 ```phython
 cmaling SNO.cm all_SNO.fa
  STOCKHOLM 1.0
@@ -965,6 +1131,95 @@ H47          -------.-------------------UAUC.----------------------..-----------
 #=GR H47 PP  ...........................2222.........................................2333444455556667777777777777777777............7888888899999999999999999999999999.......
 #=GC SS_cons :<<<<<_._______________________.______________________..________________~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~>>>>>::
 #=GC RF      UGGAccA.aUGAUGACcACUGGUGGCgUaUG.AGUCAUacAUGAUGAaUAcAac..gUGUCUGGAAcUCUGA~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ggUCCAa
+//
+```
+##### cmalign with snoRNA list
+```R
+STOCKHOLM 1.0
+#=GF AU Infernal 1.1.1
+
+SNORD113-1          -----------------...................-------.-----------------UUGAA----------------------ccucagaguuccaggcacuuaguauucauccucca......ugacucacacaccaccggcugucaucgcuugcuca-------
+#=GR SNORD113-1  PP .............................................................33332......................34456677778888888888888888999999999......999999999999999999***********977777.......
+SNORD113-2          -----------------...................---AUGGaCCUCAGAGU-----------------------------------uccagauaggcauucacugacgaaga........................cccauccaauaccaguagucaugauuGAUCCA-
+#=GR SNORD113-2  PP .......................................66666666666665...................................566677789*****************........................********************************.
+SNORD113-3          -------------AC--...................-----A-.--------------------------------------------gaccucagaguuccagacauguauucacug...............uauaugacucaugcuaccaguagucaucaucGAUCCA-
+#=GR SNORD113-3  PP .............22..........................2..............................................223333444444555555555555555555...............6666666677888899999999999999999******.
+SNORD113-4          -----------------...................---AUGGaCCUCAGAGUUCUAG------------------------------acacguauucaucgcauaugacu.............................cauacgccaccagcagucaucaucGAUCCA-
+#=GR SNORD113-4  PP .......................................5555555555555554444..............................45677777777777777777777.............................7788899***********************.
+SNORD113-5          -----------------...................---AUGGgCCUCAGAGUU----------------------------------ccagacauguauucauuguaugacuca.....................cacgacaccaguagucaacacugaacca-------
+#=GR SNORD113-5  PP .......................................444446666666665..................................56666677778888888888899999*.....................**********************888887.......
+SNORD113-6          -----------------...................---AUGGaCCUCAGAGU-----------------------------------uccagacacguauucaucguauguga........................cucauacuccaccagugcucaucaucGAUCCA-
+#=GR SNORD113-6  PP .......................................55555555555554...................................56667778888888888888888888........................889999999***********************.
+SNORD113-7          -----------------...................---ACGGaCCUCAGAGUUCU--------------------------------agacacguauucaucgcaaaagac...........................ucauacgccaccaguagucaucaucGAUCCA-
+#=GR SNORD113-7  PP .......................................44555666666665555................................556789999999999999999999...........................9999999999999999999999999******.
+SNORD113-8          -------------ACA-...................-------.--------------------------------------------gaccucagaguuccagauacguacucaucau.............augugagucauaugccaucaacagucaccaucGAUCCA-
+#=GR SNORD113-8  PP .............222........................................................................2333444444455555556666666666666.............66666666666778888899999999999999888888.
+SNORD113-9          -----------------...................---AUGGaCCUCAGAGUU----------------------------------ccagacacguauucauugucuauga.........................cucauacgccaccaguagucaucaucGAUCCA-
+#=GR SNORD113-9  PP .......................................555555555555554..................................4555556666666666666666666.........................67799999************************.
+SNORD114-1          -----------------...................---AUGGaCCUCAGAG------------------------------------uuccaaacacguauucaucacauaug.......................acucauacgccaccgguagucaucaucGAUCCA-
+#=GR SNORD114-1  PP .......................................5555555555544....................................56777888999999999999999999.......................99999999*************************.
+SNORD114-2          -----------------...................---GUGGaCCUCAGAGUU----------------------------------ccagacacguauucaucacauauga.........................cucauacgccaccaguggucaucauuGAUCCA-
+#=GR SNORD114-2  PP .......................................999999999999886..................................66677899*****************.........................********************************.
+SNORD114-3          -------------AC--...................-------.--------------------------------------------agaccucagaguuccagagacguauucacugu............agaugacucauacgccaccaguagucaucaucGAUCCA-
+#=GR SNORD114-3  PP .............22.........................................................................23344455555566666677777777777788............88888888899999999999999999999999******.
+SNORD114-4          -------UUGAUGCUCAgaguuccacacacauauuaCUCAUAG.UUUAUGACUCCUGCA-----------------------------cuacuauuu..........................................................guuaucguuGUUCUA-
+#=GR SNORD114-4  PP .......**********99998888887777777776666666.666666666666655.............................567888999..........................................................99******8888888.
+SNORD114-5          -----------------...................---UUGGaCC------------------------------------------ucaaaguuucagauauguaauauucuucauauacaaccagcauguacaaccacauaagccaccacuugucaucaacAGUCCA-
+#=GR SNORD114-5  PP .......................................3333333..........................................34555555666677888899999999999999**************************************************.
+SNORD114-6          -----------------...................---UUGGaCCUCAGAGUU----------------------------------ccacacacguaucauccauuauccaag......................auucauaugccagcaaguuuuaucauuGAUCCA-
+#=GR SNORD114-6  PP .......................................777777777777765..................................66667889999999*************......................*********************************.
+SNORD114-7          -----------------...................---UUGGaCCUCAGAAUUUCAGACA-UGUAUUCAU-----------------cguauaugacucauaca.........................................ccaacaguagucaucacuGAUCUA-
+#=GR SNORD114-7  PP .......................................6666677777766666655543.555555554.................44444555788899999.........................................9*****************777777.
+SNORD114-8          -----------------...................---UUGGaCCUCAGAGUUUC--------------------------------agacacauaucauucaucguccauaa........................cuccaaugccaccauuugucaucauuGGUCCA-
+#=GR SNORD114-8  PP .......................................77777888888777665................................55678899999999999999999999........................999*****************************.
+SNORD114-9          -----------------...................---UUGGaCCUCAGAGU-----------------------------------uccagacacgugguguucauuaugc..........................gugacucacaccaguagucauaauuGGUCCA-
+#=GR SNORD114-9  PP .......................................66666666666665...................................5677778999999999999999***..........................*******************************.
+SNORD114-10         -----------------...................---AAGGaCC------------------------------------------ucagaguuccagacacauauucaucaugu.................augacucauacgccaccaguggucaucaucGAUCCA-
+#=GR SNORD114-10 PP .......................................2222333..........................................34444455666777778888888888888.................888888889999999999999999999999******.
+SNORD114-11         -----------------...................---UUGGaCCUCAGAGUUCUAGA-----------------------------cacguauuauucaucacccaacac...........................ucauacgccggcaguugucaucauuGGUCCA-
+#=GR SNORD114-11 PP .......................................88888888888888777665.............................68999*******************...........................*******************************.
+SNORD114-12         -----------------...................---UUGGaCCUCAGAGUUCUAG------------------------------aaacaugguguucauguguaugac...........................ucauaugccaccaguggucaucacuGGUCCA-
+#=GR SNORD114-12 PP .......................................7777888888877765554..............................456666667777777777777788...........................99*****************************.
+SNORD114-13         -----------------...................---AUGGaCCUCAGAG------------------------------------uuccagacacguauuauucaucauccaa....................gacucauacgccgguauuugucaucauuGGUCCA-
+#=GR SNORD114-13 PP .......................................5555555555555....................................5677778899999999999999999999....................9*********************************.
+SNORD114-14         -----------------...................---UUGGaCCUCAGAGUU----------------------------------ccagacacaugauauucacugugcaug......................acucacacaccaccagucaccaucacuGGUCCA-
+#=GR SNORD114-14 PP .......................................777777777777765..................................566667778888888888888889999......................9999*****************************.
+SNORD114-15         -----------------...................---AUGGaCCUCAGAGUUUCAGACA-UGUAUUCAUC----------------auguguaacucauacac..........................................uaacaguagucaucauuGAUCUU-
+#=GR SNORD114-15 PP .......................................8888899999999888777764.6666666644................344444556679*****..........................................*****************555555.
+SNORD114-16         -----------------...................---AUGGaCCUCAGAG------------------------------------uuccagacacguauucaucauguaag.......................acucauacgccaccagcagucaucaucGAUCCA-
+#=GR SNORD114-16 PP .......................................5555555555555....................................56777888999999999999******.......................*********************************.
+SNORD114-17         -----------------...................---ACAGaCCUCAG--------------------------------------aguuucaaacauguauucacuguauaagacu..............cauaagccaccaguggccaucauaucaucaa-------
+#=GR SNORD114-17 PP .......................................22223333333......................................3344445555555555666666666666666..............7999999999999999999999999777777.......
+SNORD114-18         -----------------...................---UUGGaCCUCAGAGUUCUAGA-----------------------------cacguauuauucaucacccaacac...........................ucauacgccggcaguugucaucauuGGUCCA-
+#=GR SNORD114-18 PP .......................................88888888888888777665.............................68999*******************...........................*******************************.
+SNORD114-19         -----------------...................---UUGGaCCUCAGAGU-----------------------------------uccagacauauauucaccaaauauga........................uuuauacgccaccaguggacaucauuGAUCCA-
+#=GR SNORD114-19 PP .......................................66666666666666...................................56777789999999************........................********************************.
+SNORD114-20         -----------------...................---AUGGaCCUCAGAGUUCUAG------------------------------acacguauucauuguaugacuc...............................auaggccaccaguggucaucaucAAUCCA-
+#=GR SNORD114-20 PP .......................................6666677777776665555..............................578999999999999999****...............................***********************777777.
+SNORD114-21         -----------------...................-------.-----------------UUGAAC---------------------cucagaguucuagacacacauuauucagcauccu.......ugacuucuaugccaccaguuuucaucacuggcuca-------
+#=GR SNORD114-21 PP .............................................................444443.....................344555556666779999999999**********.......*****************************877766.......
+SNORD114-22         -----------------...................---UUGGaCCUCAGAGUUU---------------------------------cagacacguaguauucaucguccaug.......................acucaaacgccaccaguggucaucauuGGUCCA-
+#=GR SNORD114-22 PP .......................................7777777777777765.................................55567889999999999999999999.......................9999*****************************.
+SNORD114-23         -----------------...................---UUGGaCC------------------------------------------ucagauuuccagauacaaacuguuauucaacc...........ucacugacucauaccccaacagucauuaucauuGGUCCC-
+#=GR SNORD114-23 PP .......................................3333333..........................................34556667777888999999999999******...........*********************************999998.
+SNORD114-24         -----------------...................---UUGG.--------------------------------------------accucagacuuccagaccuguauucaccguc..............aaugacucauacgccaccagucaucaucauaGGUCCA-
+#=GR SNORD114-24 PP .......................................3333.............................................2344566777888899999999999999999..............9999999******************************.
+SNORD114-25         -----------------...................---AUGGaCCUCAGAGUUAUAGGGUUU-------------------------aaucaaaauccaagauucaga..................................caccccaggguacucaucauuGAUCCA-
+#=GR SNORD114-25 PP .......................................999999999999999998765555.........................55555556677777888899*..................................*********************999999.
+SNORD114-26         -----------------...................---AUGGaCCUCAGAGUUACAGAUG---------------------------gcuuuaaucaaaauuuuugauuc..............................agacacccuccaaucucaucauuGGUCCA-
+#=GR SNORD114-26 PP .......................................9999999999999999988775...........................6778888888888889999999*..............................*****************************.
+SNORD114-27         -----------------...................---AUGGaCCUCAGAGUUGCAGAUG---------------------------gguuuaaucaaaaauguuguuuc.............................agaaaccccaugauauucaucacuGGUCCA-
+#=GR SNORD114-27 PP .......................................8888888888888888777765...........................67777777788888888899999.............................999999************************.
+SNORD114-28         -------------ACA-...................-------.--------------------------------------------gaucucagaguuacacagagggcuuaaucaaaag.......uguugauucagacaccuccaccaauacucaucauuGAUCCA-
+#=GR SNORD114-28 PP .............221........................................................................2223344455566666777777777777777777.......77777788889999999999999999999999999888888.
+SNORD114-29         -----------------...................---AUGGaCCUCAGAAUUGCAUAU----------------------------ggguuuaaucaaaaauccuguuuc............................agauaccccaugguacucaucauuGGUCCA-
+#=GR SNORD114-29 PP .......................................666666666666666555554............................57888888899999999999****............................******************************.
+SNORD114-30         -----------------...................---AUGGaCCUCAGAGUUACA-------------------------------ggguuuaaucaaaaucauugauuc............................agacaccccagaauacucaucauuGGUCUA-
+#=GR SNORD114-30 PP .......................................777778888888877655...............................566666777777777888889999............................9***********************999999.
+SNORD114-31         -----------------...................---AUAAaCCUCUGAGUUACAGAAUCUAAUCAAAA-----------------ucuuugauuccuacagcuca....................................gaauacuaaugauuggcuau-------
+#=GR SNORD114-31 PP .......................................55556888888888887777777766666664.................4455667889999999****....................................*************9988777.......
+#=GC SS_cons        :<<<<<___________..................._______.____________________________________________~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~>>>>>::
+#=GC RF             UGGAccAaUGAUGACcA...................CUGGUGG.CgUaUGAGUCAUacAUGAUGAaUAcAacgUGUCUGGAAcUCUGA~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ggUCCAa
 //
 ```
 ## UCSC Genome Browser snoRNA sequence retrieval 
