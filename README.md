@@ -3056,15 +3056,15 @@ In order to use this tool, the sequence and the secondary structure in brakcet f
 ### SNORD113
 
 #### SNORD113-1
-![Alt text](images/3D_STRUCTURES/3dRNA/SNORD113-1/1-SNORD113-1_3D.jpg)
+![Alt text](images/3D_STRUCTURES/3dRNA/SNORD113-1/1-SNORD113-1.jpg)
 
-![Alt text](images/3D_STRUCTURES/3dRNA/SNORD113-1/2-SNORD113-1_3D.jpg)
+![Alt text](images/3D_STRUCTURES/3dRNA/SNORD113-1/2-SNORD113-1.jpg)
 
-![Alt text](images/3D_STRUCTURES/3dRNA/SNORD113-1/3-SNORD113-1_3D.jpg)
+![Alt text](images/3D_STRUCTURES/3dRNA/SNORD113-1/3-SNORD113-1.jpg)
 
-![Alt text](images/3D_STRUCTURES/3dRNA/SNORD113-1/4-SNORD113-1_3D.jpg)
+![Alt text](images/3D_STRUCTURES/3dRNA/SNORD113-1/4-SNORD113-1.jpg)
 
-![Alt text](images/3D_STRUCTURES/3dRNA/SNORD113-1/5-SNORD113-1_3D.jpg)
+![Alt text](images/3D_STRUCTURES/3dRNA/SNORD113-1/5-SNORD113-1.jpg)
 
 #### SNORD113-2
 ![Alt text](images/3D_STRUCTURES/3dRNA/SNORD113-2/1-SNORD113-2_3D.jpg)
