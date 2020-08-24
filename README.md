@@ -3150,7 +3150,7 @@ In order to use this tool, the sequence and the secondary structure in brakcet f
 
 ![Alt text](images/3D_STRUCTURES/3dRNA/SNORD113-9/3-SNORD113-9_3D.jpg)
 
-![Alt text](images/3D_STRUCTURES/3dRNA/SNORD113-9/4-SNORD113-9_3D.jpg)
+![Alt text](images/3D_STRUCTURES/3dRNA/SNORD113-9/4-SNORD113-9-3D.jpg)
 
 ![Alt text](images/3D_STRUCTURES/3dRNA/SNORD113-9/5-SNORD113-9_3D.jpg)
 
