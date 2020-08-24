@@ -3150,9 +3150,114 @@ In order to use this tool, the sequence and the secondary structure in brakcet f
 
 ![Alt text](images/3D_STRUCTURES/3dRNA/SNORD113-9/3-SNORD113-9_3D.jpg)
 
-![Alt text](images/3D_STRUCTURES/3dRNA/SNORD113-9/4-SNORD113-9_3D.jpg)
+![Alt text](images/3D_STRUCTURES/3dRNA/SNORD113-9/4-SNORD113-9-3D.jpg)
 
 ![Alt text](images/3D_STRUCTURES/3dRNA/SNORD113-9/5-SNORD113-9_3D.jpg)
+
+## Contact prediction 
+
+For protein coding genes, when a residue mutates a compensatory mutation follows and these are captured in our DNA. By analising a multiple sequence alignment of homologous, protein sequences, we can measure coupling of any given residue pairs. GREMLIN (Generative REgularized Models of proteINs) is a method to learn a statistical model that simultaneously captures conservation and coevolution in a MSA. The predicted contacts obtained with GREMLIN can be used to improve the 3D prediction. 
+
+#### Alignment of sequences of interest with Rfam seed
+A ```cmalign``` was conducted between the covariance model built with the SNORD family Rfam seed and a list of all the snoRNAs. The aligments for each clusters were carried out independently and the obtained sequences were used in GREMLIN to predict contacts.
+
+```R
+# STOCKHOLM 1.0
+#=GF AU Infernal 1.1.1
+
+SNORD113-1         AAAGUGAGUGAUGAAUAguUCUGUGG...CAUAUGAAUCAUUAAUUUUGAUUAAA-----CCCUAAACUCUGAAGUCC--
+#=GR SNORD113-1 PP 7777777**********9977899**...**************************.....77889*************..
+SNORD113-2         AUAGCCAAUCAUUAGUA..UUCUGAG..cUGUAGGAAUCAAAGAUUUUGAUUAGAU----UCUGUAACUCAGAGGUUUA-
+#=GR SNORD113-2 PP *****************..*******..9************************987....9******************.
+SNORD113-3         UAGACCAAUGAUGAGUA..UUCUGGG..gUGUCUGAAUCAAUGAUUUUGAUUAAAC----CCUGUAACUCUGAGGUCCA-
+#=GR SNORD113-3 PP *****************..7777777..7*************************87....7******************.
+SNORD113-4         UGGACCAAUGAUGAGUA..CCAUGGG..gUAUCUGAAACAGGAUUUUUGAUUAAACC-CAUAUGCAAUUCUGAGGUCCA-
+#=GR SNORD113-4 PP *****************..8887777..7*************************998.*********************.
+SNORD113-5         UGGAUCAAUGAUGAGUA..UUGGUGGaggUGUCUGAAUCAACACUUUUGAUUAAGCCCUCUGUGUAACUCUGAGAUCUG-
+#=GR SNORD113-5 PP *****************..9999999999**************************************************.
+SNORD113-6         UGGACCAGUGAUGAAUA..UCAUGGG..gUUUCUGAAACAACAUUUUUGAUUAAACC-CAUCUGCAACUCUGAGGUCCA-
+#=GR SNORD113-6 PP *****************..6665555..5*************************998.*********************.
+SNORD113-7         UGGAUCAAUGAUGAGUA..UGCGUGGg.gCAUCUGAAUCAAAUAUUCUGAUUAUACCCUGUCUGUAUCUCUGAGGUCCA-
+#=GR SNORD113-7 PP *****************..66666666.7**************************************************.
+SNORD113-8         UGGACCAAUGAUGAGAU..UGGAGGG...UGUCUGAAUCAAAAAUUUUGAUUAAAGC-CAUCUGUAACUCUGAGGUCCA-
+#=GR SNORD113-8 PP ***************88..7777777...**************************98.*********************.
+SNORD113-9         UGGAUCAAUGAUGAGUA.cCCUGGGG...UGUCUGAAUCUUGGAUUUUGAUUAAAC----CCUAUAACUCUGAGGUCCA-
+#=GR SNORD113-9 PP *****************.65555666...*************************87....7******************.
+#=GC SS_cons       :<<<<<___________.._______...____________________________________________>>>>>::
+#=GC RF            UGGAccAaUGAUGACcA..CUGGUGG...CgUaUGAGUCAUacAUGAUGAaUAcAacgUGUCUGGAAcUCUGAggUCCAa
+//
+```
+Alignment of SNORD114 cluster with Rfam seed.
+```R
+# STOCKHOLM 1.0
+#=GF AU Infernal 1.1.1
+
+#=GS SNORD114-28=hg38_refGene_NR_003221 DE range=chr14:100989130-100989200 5'pad=0 3'pad=0 strand=+ repeatMasking=none
+
+SNORD114-1                                 UGGACCUAUGAUGAUGA.......................................CUGGUGGCGUAUG.AGUCAUUGACGGUGAAUACA--...-GGUCUGGAAGUCUGAGGUCCA-
+#=GR SNORD114-1                         PP *****************.......................................*************.*******************8......88*******************.
+SNORD114-2                                 GGGACCAAUGAUAAUGA.......................................CUGUUGGGGUAUG.AGUCAGUGAGGUUGAAUAACAGuuuGUAUCUGGAAAUCUGAGGUCCA-
+#=GR SNORD114-2                         PP *****************.......................................*************.*******************988*************************.
+SNORD114-3                                 UGGACCAAUGAUGACCA.......................................CUGGUGGCGUUUG.AGUCAUGGACGAUGAAUACUAC...GUGUCUGAAACUCUGAGGUCCA-
+#=GR SNORD114-3                         PP *****************.......................................*************.**********************...**********************.
+SNORD114-4                                 ---------AAUGAGAAuuaagcuaaacaguccuaagccugagccagugaugaaaaCUGGUGGCAUAGA.AGUCAAGGAUGCUGAAUAAUGU...GUGUCUAGAACUCUGAGGUUCA-
+#=GR SNORD114-4                         PP .........77888888888*************************************************.**********************...**********************.
+SNORD114-5                                 UGGAUUGAUGAUGACCA.......................................CUGGUGGCCUAUG.AGUCAU--ACAAUGAAUAC---...GUGUCUAGAACUCUGAGGUCCA-
+#=GR SNORD114-5                         PP *****************.......................................*************.******..778********......8*********************.
+SNORD114-6                                 UGGAUCAAUGAUGUCCA.......................................CUGGUGGCGUAUA.AAUCAUAUUUGGUGAAUAUA--...-UGUCUGGAACUCUGAGGUCCA-
+#=GR SNORD114-6                         PP *****************.......................................*************.*******************8......99*******************.
+SNORD114-7                                 UGAACUAGUGGUGAUGG.......................................CUUGUGGCAUAUUuAGUCACAGAUGAUGAAUAAAUA..cAUGCCUGAGACUCUGAGGUUAG-
+#=GR SNORD114-7                         PP *****************.......................................*********************************988..9**********************.
+SNORD114-9                                 UGGAUCGAUGAUGACUG.......................................CUGGUGGCGUAUG.AGUCUUACAUGAUGAAUAC---...GUGUCUGGAACUCUGAGGUCCA-
+#=GR SNORD114-9                         PP *****************.......................................*************.*******************......8*********************.
+SNORD114-10                                AAGAUCAAUGAUGACUA.......................................CUGUUAGUGUAUG.AGUUACACAUGAUGAAUACA--...-UGUCUGAAACUCUGAGGUCCA-
+#=GR SNORD114-10                        PP *****************.......................................*************.*******************8......99*******************.
+SNORD114-11                                UGGACCAGUGAUGGUGA.......................................CUGGUGGUGUGUG.AGUCAUGCACAGUGAAUAUCAU...GUGUCUGGAACUCUGAGGUCCA-
+#=GR SNORD114-11                        PP *****************.......................................*************.**********************...**********************.
+SNORD114-12                                UGGACCAAUGAUGACAA.......................................AUACCGGCGUAUG.AGUCUUGGAUGAUGAAUAAUAC...GUGUCUGGAACUCUGAGGUCCA-
+#=GR SNORD114-12                        PP *****************.......................................*************.**********************...**********************.
+SNORD114-13                                UGGACCAGUGAUGACCA.......................................CUGGUGGCAUAUG.AGUCAUACAC-AUGAACACCAU...GUUUCUAGAACUCUGAGGUCCA-
+#=GR SNORD114-13                        PP *****************.......................................*************.*********8.5**********...**********************.
+SNORD114-14                                UGGACCAAUGAUGACAA.......................................CUGCCGGCGUAUG.AGUGUUGGGUGAUGAAUAAUAC...GUGUCUAGAACUCUGAGGUCCA-
+#=GR SNORD114-14                        PP *****************.......................................*************.**********************...**********************.
+SNORD114-15                                UGGAUCGAUGAUGACCA.......................................CUGGUGGCGUAUG.AGUCAUACAUGAUGAAUAU---...GUGUCUGGAACUCUGAGGUCCU-
+#=GR SNORD114-15                        PP *****************.......................................*************.*******************......8*********************.
+SNORD114-16                                UGGACCAAUUAUGACUA.......................................CUGGU-----GUG.AGUCACGCAUAAUGAACACCAC...GUGUCUGGAACUCUGAGGUCCA-
+#=GR SNORD114-16                        PP *****************.......................................***65.....6**.**********************...**********************.
+SNORD114-17                                UGGACCAAUGAUGACAA.......................................AUGGUGGCAUUGG.AGUUAUGGACGAUGAAUGAUAU...GUGUCUGAAACUCUGAGGUCCA-
+#=GR SNORD114-17                        PP *****************.......................................*************.**********************...**********************.
+SNORD114-18                                UAGAUCAGUGAUGACUA.......................................CUGUUGGUGUAUG.AGUCAUAUACGAUGAAUACA--...-UGUCUGAAAUUCUGAGGUCCA-
+#=GR SNORD114-18                        PP *****************.......................................*************.*******************8......99*******************.
+SNORD114-19                                UGGAUCAAUGAUAAAAC.......................................UUGCUGGCAUAUG.AAUCUUGGAUAAUGGAUGAUAC...GUGUGUGGAACUCUGAGGUCCA-
+#=GR SNORD114-19                        PP *****************.......................................*************.**********************...**********************.
+SNORD114-20                                UGGAUCGAUGAUGACUA.......................................CUGGUGGCGUAUG.AGUCAUCUACAGUGAAUAC---...GUCUCUGGAACUCUGAGGUCUG-
+#=GR SNORD114-20                        PP *****************.......................................*************.*******************......688*******************.
+SNORD114-21                                UGGAUCAAUGAUGACCA.......................................CUGGUGGCGUAUG.AGUCAUAUGUGAUGAAUAC---...GUGUCUGGAACUCUGAGGUCCA-
+#=GR SNORD114-21                        PP *****************.......................................*************.*******************......8*********************.
+SNORD114-22                                UGGAUCGAUGAUGACUA.......................................CCGGUGGCGUAUG.AGUCAUAUGUGAUGAAUAC---...GUGUUUGGAACUCUGAGGUCCA-
+#=GR SNORD114-22                        PP *****************.......................................*************.*******************......8*********************.
+SNORD114-23                                UGGAUCGAUGAUGACUA.......................................CUGGUGGCGUAUG.AGUCAUAGACAAUGAAUAC---...GUGUCUGGAACUCUGAGGUCCA-
+#=GR SNORD114-23                        PP *****************.......................................*************.*******************......8*********************.
+SNORD114-24                                UGGAUCGAUGGUGACUG.......................................UUGAUGGCAUAUG.ACUCACAUAUGAUGAGUAC---...GUAUCUGGAACUCUGAGGUCUG-
+#=GR SNORD114-24                        PP *****************.......................................*************.*******************......799*******************.
+SNORD114-25                                UGGAUCGAUGAUGACUA.......................................CUGGUGGCGUAUG.AGUCUUUUGCGAUGAAUAC---...GUGUCUAGAACUCUGAGGUCCG-
+#=GR SNORD114-25                        PP *****************.......................................*************.*******************......8*********************.
+SNORD114-26                                UGGAUCGAUGAUGAGCA.......................................CUGGUGGAGUAUG.AGUCACAUACGAUGAAUAC---...GUGUCUGGAACUCUGAGGUCCA-
+#=GR SNORD114-26                        PP *****************.......................................*************.*******************......8*********************.
+SNORD114-27                                UGGUUCAGUGUUGACUA.......................................CUGGUGUCGUGUG.AGUCAU--ACAAUGAAUACA--...-UGUCUGGAACUCUGAGGCCCA-
+#=GR SNORD114-27                        PP *****************.......................................*************.******..778********8......99*******************.
+SNORD114-28=hg38_refGene_NR_003221         UGGAUCGAUGAUGACUG.......................................CUGGUGGCGUAUG.AGUCAUAUGCGAUGAAUAC---...GUGUCUAGAACUCUGAGGUCCA-
+#=GR SNORD114-28=hg38_refGene_NR_003221 PP *****************.......................................*************.*******************......8*********************.
+SNORD114-29                                UGGAUCGAUGAUGACUA.......................................CUGGUAGC--AUG.AGUCAUAUACAGUGAAUACA--...-UGUCUGGAACUCUGAGGUCUG-
+#=GR SNORD114-29                        PP *****************.......................................*******9..79*.*******************8......99*******************.
+SNORD114-30                                UGGAUCAAUCAUGACUA.......................................CUGGUAUUGGAUG.GGUCUUCGUCAGUGAAUGCC--...-UAUCUGGAACUCUGAGGUCCA-
+#=GR SNORD114-30                        PP *****************.......................................*************.*******************7......88*******************.
+SNORD114-31                                UGAGCAAGCGAUGACAG.......................................CCGGUGGUGUGUG.AGUCAUGGAGGAUGAAUACUAA...GUGCCUGGAACUCUGAGGUUCA-
+#=GR SNORD114-31                        PP *****************.......................................*************.**********************...**********************.
+#=GC SS_cons                               :<<<<<___________......................................._____________.______________________...________________>>>>>::
+#=GC RF                                    UGGAccAaUGAUGACcA.......................................CUGGUGGCgUaUG.AGUCAUacAUGAUGAaUAcAac...gUGUCUGGAAcUCUGAggUCCAa
+//
+```
 
 # References
 
