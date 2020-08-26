@@ -3492,6 +3492,7 @@ In order to use this tool, the sequence and the secondary structure in brakcet f
 For protein coding genes, when a residue mutates a compensatory mutation follows and these are captured in our DNA. By analising a multiple sequence alignment of homologous, protein sequences, we can measure coupling of any given residue pairs. GREMLIN (Generative REgularized Models of proteINs) is a method to learn a statistical model that simultaneously captures conservation and coevolution in a MSA. The predicted contacts obtained with GREMLIN can be used to improve the 3D prediction. 
 
 #### Alignment of sequences of interest with Rfam seed
+##### Infernal alignment
 A ```cmalign``` was conducted between the covariance model built with the SNORD family Rfam seed and a list of all the snoRNAs. The aligments for each clusters were carried out independently and the obtained sequences were used in GREMLIN to predict contacts.
 
 ```R
@@ -3591,6 +3592,491 @@ SNORD114-31                                UGAGCAAGCGAUGACAG....................
 #=GC RF                                    UGGAccAaUGAUGACcA.......................................CUGGUGGCgUaUG.AGUCAUacAUGAUGAaUAcAac...gUGUCUGGAAcUCUGAggUCCAa
 //
 ```
+##### Needle aligment
+EMBOSS Needle is a pairwise sequence alignment tool from EMBLE-EBI that was used to produce the alignments of the Rfam seeds with the respective snoRNA in a FASTA format, as OPENSEQ only the latter as input for the search. Both the Infernal and Needle alignments were used for the contact prediction study, to compare the results and ensure cosnsitent results. 
+
+SNORD113 alignments
+```
+>SNORD113-1_seed
+AAAGTGAGTGATGA-----ATAGTTCTGTGGCA-----TATGAATCATTAATTTTGATT-
+--AAACCCTAAACTCTGAAGTCC-----------
+>SNORD113-1
+----------ttgaacctcagagttc-caggcacttagtattcatcctcca---tgactc
+acacacc----ac-cggctgtcatcgcttgctca
+```
+```
+>SNORD113-2_seed
+atggacctcagagttccagataggcattca--------ctgacgaagacccatccaatac
+cagtag---tca-------tgatt-gatcca----------------
+>SNORD113-2
+-------------------ATAGCCAATCATTAGTATTCTG-----------------AG
+CTGTAGGAATCAAAGATTTTGATTAGATTCTGTAACTCAGAGGTTTA
+```
+```
+>SNORD113-3_seed
+acagacctcagagttccagac--at-----gtattcact---gtatatgactc-atgct-
+---------accagtagtca-tcatcgatcca
+>SNORD113-3
+----------------TAGACCAATGATGAGTATT--CTGGGGTGTCTGAATCAATGATT
+TTGATTAAACCCTGTA---ACTCTGAGGTCCA
+```
+```
+>SNORD113-4_seed
+atggacc--tca-gagt-----------tct-agacacg------tattcatcgcatatg
+--actcatacg-ccaccagcagtcatcatcgatcca
+>SNORD113-4
+-TGGACCAATGATGAGTACCATGGGGTATCTGAAACAGGATTTTTGATTAAACCCATATG
+CAATTCTGAGGTCCA---------------------
+```
+```
+>SNORD113-5_seed
+atgggcctcagagttccagacatgtattcat-----tgtatgactcacacgacac-----
+----------cagtagtcaacactga-acca-
+>SNORD113-5
+-TGG--ATCAATGAT---GA---GTATTGGTGGAGGTGTCTGAATCA----ACACTTTTG
+ATTAAGCCCTCTGT-GT-AACTCTGAGATCTG
+```
+```
+>SNORD113-6_seed
+atggacc-----------tca--gagttccagacacgtattcatcgtatgtgactcatac
+tccaccagtgctcatcatcgatcca
+>SNORD113-6
+-TGGACCAGTGATGAATATCATGGGGTTTCTGAAA------CAACATTTTTGA-TTAAAC
+-CCATC--TGCAACTCTGAGGTCCA
+```
+```
+>SNORD113-7_seed
+acggacctca-----gagt------------tctaga--cacgtattcatcgcaaaagac
+tcatacgccaccagt-agtcatcatc---gatcca
+>SNORD113-7
+-TGGA--TCAATGATGAGTATGCGTGGGGCATCT-GAATCAAATATTC--------TGA-
+TTATAC----CCTGTCTGT-ATC-TCTGAGGTCCA
+```
+```
+>SNORD113-8_seed
+acagacc-----tcaga-------gttccagatacgtactcatcata---tgtgagtcat
+atgccatc---aacagtcaccatcgatcca
+>SNORD113-8
+-TGGACCAATGATGAGATTGGAGGGTGTCTGA---------ATCAAAAATTTTGATT--A
+AAGCCATCTGTAACTCTGA-----GGTCCA
+```
+```
+>SNORD113-9_seed
+atggacctca-----gagttcc------------agacacgtattcattg-------tct
+atgactcatacg-ccaccagtagtcatcatcgatcca
+>SNORD113-9
+-TGGA--TCAATGATGAGTACCCTGGGGTGTCTGAATCTTGGATT--TTGATTAAACCCT
+ATAACTCTGAGGTCCA---------------------
+```
+SNORD114 alignments
+```
+>SNORD114-1_seed
+atggacctcagagttccaaacacgtattcatca-------catatgactcat--acg---
+---cca---ccggtagtcatcatcgatcca
+>SNORD114-1
+-TGGACCTATGA---------------TGATGACTGGTGGCGTATGAGTCATTGACGGTG
+AATACAGGTCTGGAAGTC-TGA--GGTCCA
+```
+```
+>SNORD114-2_seed
+gtggacc--------------------tcagagttccagacacgtattcatcaca-tatg
+actcatacgccaccagtggtcatcattga--tcca
+>SNORD114-2
+-GGGACCAATGATAATGACTGTTGGGGTATGAGT--CAGTGAGGT-TGAATAACAGTTTG
+TATC------------TGGAAATC--TGAGGTCCA
+```
+```
+>SNORD114-3_seed
+----aca-----gacctcagagttccagagacgt---attcactgta-gatgactcatac
+gccaccagtagtcatca---tc---gatcca
+>SNORD114-3
+TGGACCAATGATGACCACTG-------GTGGCGTTTGAGTCA-TGGACGATGAATACTAC
+G--------TGTC-TGAAACTCTGAGGTCCA
+```
+```
+>SNORD114-4_seed
+-----------------------------ttgatgctcagagttccacac-----acata
+ttactcatagtttatgactcctgcactactatttgt-ta----tc-gttgttcta
+>SNORD114-4
+AATGAGAATTAAGCTAAACAGTCCTAAGCCTGA-GC-CAGTGATGAAAACTGGTGGCATA
+GAAGTCA------AGGA-TGCTG-AATAATGTGTGTCTAGAACTCTGAGGTTCA-
+```
+```
+>SNORD114-5_seed
+ttggacctcaaagtttcagat-atgtaatattcttcatatacaacca------gc--atg
+-----tacaaccacataagccaccacttgtcatcaac-----agtcca
+>SNORD114-5
+-TGGA--------TT---GATGATG------------------ACCACTGGTGGCCTATG
+AGTCATACAATGA-AT--------ACGTGTCTAGAACTCTGAGGTCCA
+```
+```
+>SNORD114-6_seed
+ttggacctca--gagttccac---acacgtatcatccattatccaagatt-------cat
+atgccagcaagttttatcattgatcca
+>SNORD114-6
+-TGGA--TCAATGATGTCCACTGGTGGCGTATAAATCAT--------ATTTGGTGAATAT
+ATGTCTGGAACTCTGA-----GGTCCA
+```
+```
+>SNORD114-7_seed
+------------------ttg-gacctcagaattt-----caga-catgtattcatcgta
+tatgactcatacaccaacagtagtcatcactgatcta
+>SNORD114-7
+TGAACTAGTGGTGATGGCTTGTGGCAT----ATTTAGTCACAGATGATGAATAAA---TA
+CATGCCTGAGACTCTGAGGTTAG--------------
+```
+```
+>SNORD114-9_seed
+ttggacctcagagttcca----gacacgtggtg------------ttcattatg----cg
+tg------actcacaccagtagtcataattggtcca
+>SNORD114-9
+-TGGA---------TCGATGATGACTGCTGGTGGCGTATGAGTCTTACATGATGAATACG
+TGTCTGGAACTCTGA---------------GGTCCA
+```
+```
+>SNORD114-10_seed
+aaggacctca----------------------gagttccagacacat-attcat-catgt
+atg--actcatacg-ccaccagtggtcatcatcgatcca
+>SNORD114-10
+-AAGA--TCAATGATGACTACTGTTAGTGTATGAGTT----ACACATGATGAATACATGT
+CTGAAACTCTGAGGTCCA---------------------
+```
+```
+>SNORD114-11_seed
+ttggacctcagagttctagacac-------gtattattcat---cacccaacactcatac
+gccggcagttgtcatcattggtcca
+>SNORD114-11
+-TGGACC----AGTGATGGTGACTGGTGGTGTGTGAGTCATGCACAGTGAATA-TCATGT
+GTCTGGAACTCTGA-----GGTCCA
+```
+```
+>SNORD114-12_seed
+ttggacctcagagttctagaaacat---ggtgttcatgtgt--------atgactcata-
+-tgccaccagtggtcatcact--ggtcca
+>SNORD114-12
+-TGGACCAATGA-----TGACAAATACCGGCGT--ATGAGTCTTGGATGATGAATAATAC
+GTGTC-----TGG--AACTCTGAGGTCCA
+```
+```
+>SNORD114-13_seed
+atggacctcagagtt--cca-----gacacgtattattcatcatccaagactcat--acg
+ccggtatttgtc-----atcattggtcca
+>SNORD114-13
+-TGGAC--CAGTGATGACCACTGGTGGCA--TATGAGTCAT--------ACACATGAACA
+CC---ATGTTTCTAGAACTCTGAGGTCCA
+```
+```
+>SNORD114-14_seed
+ttggacc-----tcagagttccagacacatga-tattcactgtgcatgactcacacacca
+ccagtcaccatcact----ggtcca
+>SNORD114-14
+-TGGACCAATGATGACAACTGCCGGCGTATGAGTGTTGGGTG---ATGAATAATAC----
+---GTGTCTAGAACTCTGAGGTCCA
+```
+```
+>SNORD114-15_seed
+-------atg--gacc----------tcagagtttcagacatgtattcatcatgtgt---
+-aactcatacactaacagtagtcatcattga--tctt
+>SNORD114-15
+TGGATCGATGATGACCACTGGTGGCGTATGAG--TCATACATG-ATGAAT-ATGTGTCTG
+GAACTC----------------------TGAGGTCCT
+```
+```
+>SNORD114-16_seed
+atggacc---tcaga------gttccagacacgtattcatcatgtaagactcatacgcca
+ccagcagtcatcatcga---------tcca
+>SNORD114-16
+-TGGACCAATTATGACTACTGGTGTGAGTCACG----CATAATGAA------------CA
+CCACGTGTC----TGGAACTCTGAGGTCCA
+```
+```
+>SNORD114-17_seed
+-------------aca------gacctcagagtt--------tcaa--acatgtattcac
+tgtataagactcataag--ccaccagtggccatcatatcatcaa
+>SNORD114-17
+TGGACCAATGATGACAAATGGTGGCATTGGAGTTATGGACGATGAATGATATG-------
+TGTCTGAAACTC-TGAGGTCCA----------------------
+```
+```
+>SNORD114-18_seed
+ttggacctcagagttctagac-ac-------gtattattcatcacccaacactcatacgc
+cggcagt---tgtc---atcatt----ggtcca
+>SNORD114-18
+-TAGA--TCAGTGAT---GACTACTGTTGGTGTATGAGTCAT------------ATACGA
+TG--AATACATGTCTGAA--ATTCTGAGGTCCA
+```
+```
+>SNORD114-19_seed
+ttggacc-----tcagagttccagacatatattcaccaaat--------atgatttatac
+gccaccagtggacatcattga--tcca
+>SNORD114-19
+-TGGATCAATGATAAAACTTGCTGGCATAT-------GAATCTTGGATAATGGATGATAC
+G---TGTGTGGAACTC--TGAGGTCCA
+```
+```
+>SNORD114-20_seed
+atggacc--tca-gagttctagacacgtattcattgtatgactcataggccaccagtggt
+catcatcaatcca---------------------
+>SNORD114-20
+-TGGATCGATGATGACTACTGGTGGC---------GTATGAGTCAT----CTACAGTG--
+-------AATACGTCTCTGGAACTCTGAGGTCTG
+```
+```
+>SNORD114-21_seed
+ttgaacctcagagttctagacacac---------attattca--------gcatccttga
+ct---tctatg----ccaccagttttcatcactggctca
+>SNORD114-21
+-TGGA--TCAATGAT---GAC-CACTGGTGGCGTATGAGTCATATGTGATGAATACGTGT
+CTGGAACTCTGAGGTCCA---------------------
+```
+```
+>SNORD114-22_seed
+ttggacctcagagtttcagacacgtagtattcatcgtccatgactcaaacgccaccagtg
+--------gtcatcat--------------------------tggtcca
+>SNORD114-22
+-----------------------------TGGATCGATGATGACT--------ACCGGTG
+GCGTATGAGTCAT-ATGTGATGAATACGTGTTTGGAACTCTGAGGTCCA
+```
+```
+>SNORD114-23
+ttggacctcagatttccagat-acaaactg-----ttattcaacctcactgactcatacc
+ccaacagtcatta------------tcattggtccc
+>SNORD114-23
+-TGGATC---GAT-----GATGAC-TACTGGTGGCGTA-----------TGAGTCATA--
+--GACAATGAATACGTGTCTGGAACTCTGAGGTCCA
+```
+```
+>SNORD114-24_seed
+ttggacctcagacttcca----gacctgt--attcaccgtca-atgactca---------
+--tacgccaccagtcatc-----atcataggtcca
+>SNORD114-24
+-TGGA---------TCGATGGTGA-CTGTTGAT-----GGCATATGACTCACATATGATG
+AGTACG--------TATCTGGAACTCTGAGGTCTG
+```
+```
+>SNORD114-25_seed
+-------atg--gacctcagagt----tat-agggtttaatcaaaatccaagattcagac
+accccagggt-----actcatcattga--tcca
+>SNORD114-25
+TGGATCGATGATGACTACTG-GTGGCGTATGAGTCTTT--------TGC--GATGAATAC
+------GTGTCTAGAACTC-----TGAGGTCCG
+```
+```
+>SNORD114-26_seed
+--------------------atggacctcagagttaca---gatggctttaatcaaaatt
+tttgattcagacaccctccaatctcatcattggtcca
+>SNORD114-26
+TGGATCGATGATGAGCACTGGTGGA-GTATGAGTCACATACGATG-----------AATA
+CGTG--TCTGGAAC-------TCTGA-----GGTCCA
+```
+```
+>SNORD114-27_seed
+atggacctcagagttg-cagatgggtttaatcaaaaatgttgtttcagaaaccccatgat
+attcatcact----------ggtcca
+>SNORD114-27
+-TGG--TTCAGTGTTGACTACTGG-------------TGTCGTGTGAGTCATACAATGA-
+ATACATGTCTGGAACTCTGAGGCCCA
+```
+```
+>SNORD114-28_seed
+-------------acag----------atctcagagttacacaga-gggcttaatcaaaa
+gtgttgattc-agacacctccaccaatactcatcattga--tcca
+>SNORD114-28
+TGGATCGATGATGACTGCTGGTGGCGTAT----GAGT----CATATGCGATGAAT---AC
+GTG-----TCTAGA-------------ACTC-----TGAGGTCCA
+```
+```
+>SNORD114-29_seed
+atggacctcagaattgcatatgggt----ttaatcaaaaatcctgtttcag---ataccc
+ca----tggtactcatcattggtcca
+>SNORD114-29
+-TGGATCGATGA--TGACTACTGGTAGCATGAGTCATA--------TACAGTGAATA---
+CATGTCTGGAACTC-TGA--GGTCTG
+```
+```
+>SNORD114-30_seed
+atggacc--tca-gagttacagggtttaatcaaaatcatt-gat---------tcagaca
+ccccagaatactcatcattgg---tcta-------
+>SNORD114-30
+-TGGATCAATCATGA-CTACTGG-------------TATTGGATGGGTCTTCGTCAG---
+----TGAATGCCTATC--TGGAACTCTGAGGTCCA
+```
+```
+>SNORD114-31_seed
+ataaacctctgagttacagaatctaatcaaaatctttgattcctacagc-----------
+---tca--------gaatactaa-tgattgg--ctat--------
+>SNORD114-31
+---------TGAG----------------CAAGCGATG------ACAGCCGGTGGTGTGT
+GAGTCATGGAGGATGAATACTAAGTGCCTGGAACTCTGAGGTTCA
+```
+##### CONTACT PREDICTION RESULTS
+
+As the Rfam seeds and the snoRNA sequences were too similar, GREMLIN was not able to predict contacts. In consequence, the structures obtained with 3dRNA could not be improved further. 
+Nevertheless, the sequence conservation analysis was carried out in all snoRNAs.
+
+###### Sequence conservation SNORD113
+```
+SNORD113-1
+```
+![Alt text](images/Sequence_conservation/seq_con_113-1.png)
+```
+SNORD113-2
+```
+![Alt text](images/Sequence_conservation/seq_con_113-2.png)
+```
+SNORD113-3
+```
+![Alt text](images/Sequence_conservation/seq_con_113-3.png)
+```
+SNORD113-4
+```
+![Alt text](images/Sequence_conservation/seq_con-113-4.png)
+```
+SNORD113-5
+```
+![Alt text](images/Sequence_conservation/seq_con_113-5.png)
+```
+SNORD113-6
+```
+![Alt text](images/Sequence_conservation/seq_con_113-6.png)
+```
+SNORD113-7
+```
+![Alt text](images/Sequence_conservation/seq_con_113-7.png)
+```
+SNORD113-8
+```
+![Alt text](images/Sequence_conservation/seq_con_113-8.png)
+```
+SNORD113-9
+```
+![Alt text](images/Sequence_conservation/seq_con_113-9.png)
+
+###### Sequence conservation SNORD114
+```
+SNORD114-1
+```
+![Alt text](images/Sequence_conservation/seq_con_114-1.png)
+```
+SNORD114-2
+```
+![Alt text](images/Sequence_conservation/seq_con_114-2.png)
+```
+SNORD114-3
+```
+![Alt text](images/Sequence_conservation/seq_con_114-3.png)
+```
+SNORD114-4
+```
+![Alt text](images/Sequence_conservation/seq_con_114-4.png)
+```
+SNORD114-5
+```
+![Alt text](images/Sequence_conservation/seq_con_114-5.png)
+```
+SNORD114-6
+```
+![Alt text](images/Sequence_conservation/seq_con_114-6.png)
+```
+SNORD114-7
+```
+![Alt text](images/Sequence_conservation/seq_con_114-7.png)
+```
+SNORD114-9
+```
+![Alt text](images/Sequence_conservation/seq_con_114-9.png)
+```
+SNORD114-10
+```
+![Alt text](images/Sequence_conservation/seq_con_114-10.png)
+```
+SNORD114-11
+```
+![Alt text](images/Sequence_conservation/seq_con_114-11.png)
+```
+SNORD114-12
+```
+![Alt text](images/Sequence_conservation/seq_con_114-12.png)
+```
+SNORD114-13
+```
+![Alt text](images/Sequence_conservation/seq_con_114-13.png)
+```
+SNORD114-14
+```
+![Alt text](images/Sequence_conservation/seq_con_114-14.png)
+```
+SNORD114-15
+```
+![Alt text](images/Sequence_conservation/seq_con_114-15.png)
+```
+SNORD114-16
+```
+![Alt text](images/Sequence_conservation/seq_con_114-16.png)
+```
+SNORD114-17
+```
+![Alt text](images/Sequence_conservation/seq_con_114-17.png)
+```
+SNORD114-18
+```
+![Alt text](images/Sequence_conservation/seq_con_114-18.png)
+```
+SNORD114-19
+```
+![Alt text](images/Sequence_conservation/seq_con_114-19.png)
+```
+SNORD114-20
+```
+![Alt text](images/Sequence_conservation/seq_con_114-20.png)
+```
+SNORD114-21
+```
+![Alt text](images/Sequence_conservation/seq_con_114-21.png)
+```
+SNORD114-22
+```
+![Alt text](images/Sequence_conservation/seq_con_114-22.png)
+```
+SNORD114-23
+```
+![Alt text](images/Sequence_conservation/seq_con_114-23.png)
+```
+SNORD114-24
+```
+![Alt text](images/Sequence_conservation/seq_con_114-24.png)
+```
+SNORD114-25
+```
+![Alt text](images/Sequence_conservation/seq_con_114-25.png)
+```
+SNORD114-26
+```
+![Alt text](images/Sequence_conservation/seq_con_114-26.png)
+```
+SNORD114-27
+```
+![Alt text](images/Sequence_conservation/seq_con_114-27.png)
+```
+SNORD114-28
+```
+![Alt text](images/Sequence_conservation/seq_con_114-28.png)
+```
+SNORD114-29
+```
+![Alt text](images/Sequence_conservation/seq_con_114-29.png)
+```
+SNORD114-30
+```
+![Alt text](images/Sequence_conservation/seq_con_114-30.png)
+```
+SNORD114-31
+```
+![Alt text](images/Sequence_conservation/seq_con_114-31.png)
+
+
+
+
 
 # References
 
