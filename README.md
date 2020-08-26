@@ -3909,6 +3909,175 @@ ataaacctctgagttacagaatctaatcaaaatctttgattcctacagc-----------
 ---------TGAG----------------CAAGCGATG------ACAGCCGGTGGTGTGT
 GAGTCATGGAGGATGAATACTAAGTGCCTGGAACTCTGAGGTTCA
 ```
+##### CONTACT PREDICTION RESULTS
+
+As the Rfam seeds and the snoRNA sequences were too similar, GREMLIN was not able to predict contacts. In consequence, the structures obtained with 3dRNA could not be improved further. 
+Nevertheless, the sequence conservation analysis was carried out in all snoRNAs.
+
+###### Sequence conservation SNORD113
+```
+SNORD113-1
+```
+![Alt text](images/Sequence_conservation/seq_con_113-1.png)
+```
+SNORD113-2
+```
+![Alt text](images/Sequence_conservation/seq_con_113-2.png)
+```
+SNORD113-3
+```
+![Alt text](images/Sequence_conservation/seq_con_113-3.png)
+```
+SNORD113-4
+```
+![Alt text](images/Sequence_conservation/seq_con-113-4.png)
+```
+SNORD113-5
+```
+![Alt text](images/Sequence_conservation/seq_con_113-5.png)
+```
+SNORD113-6
+```
+![Alt text](images/Sequence_conservation/seq_con_113-6.png)
+```
+SNORD113-7
+```
+![Alt text](images/Sequence_conservation/seq_con_113-7.png)
+```
+SNORD113-8
+```
+![Alt text](images/Sequence_conservation/seq_con_113-8.png)
+```
+SNORD113-9
+```
+![Alt text](images/Sequence_conservation/seq_con_113-9.png)
+
+###### Sequence conservation SNORD114
+```
+SNORD114-1
+```
+![Alt text](images/Sequence_conservation/seq_con_114-1.png)
+```
+SNORD114-2
+```
+![Alt text](images/Sequence_conservation/seq_con_114-2.png)
+```
+SNORD114-3
+```
+![Alt text](images/Sequence_conservation/seq_con_114-3.png)
+```
+SNORD114-4
+```
+![Alt text](images/Sequence_conservation/seq_con_114-4.png)
+```
+SNORD114-5
+```
+![Alt text](images/Sequence_conservation/seq_con_114-5.png)
+```
+SNORD114-6
+```
+![Alt text](images/Sequence_conservation/seq_con_114-6.png)
+```
+SNORD114-7
+```
+![Alt text](images/Sequence_conservation/seq_con_114-7.png)
+```
+SNORD114-9
+```
+![Alt text](images/Sequence_conservation/seq_con_114-9.png)
+```
+SNORD114-10
+```
+![Alt text](images/Sequence_conservation/seq_con_114-10.png)
+```
+SNORD114-11
+```
+![Alt text](images/Sequence_conservation/seq_con_114-11.png)
+```
+SNORD114-12
+```
+![Alt text](images/Sequence_conservation/seq_con_114-12.png)
+```
+SNORD114-13
+```
+![Alt text](images/Sequence_conservation/seq_con_114-13.png)
+```
+SNORD114-14
+```
+![Alt text](images/Sequence_conservation/seq_con_114-14.png)
+```
+SNORD114-15
+```
+![Alt text](images/Sequence_conservation/seq_con_114-15.png)
+```
+SNORD114-16
+```
+![Alt text](images/Sequence_conservation/seq_con_114-16.png)
+```
+SNORD114-17
+```
+![Alt text](images/Sequence_conservation/seq_con_114-17.png)
+```
+SNORD114-18
+```
+![Alt text](images/Sequence_conservation/seq_con_114-18.png)
+```
+SNORD114-19
+```
+![Alt text](images/Sequence_conservation/seq_con_114-19.png)
+```
+SNORD114-20
+```
+![Alt text](images/Sequence_conservation/seq_con_114-20.png)
+```
+SNORD114-21
+```
+![Alt text](images/Sequence_conservation/seq_con_114-21.png)
+```
+SNORD114-22
+```
+![Alt text](images/Sequence_conservation/seq_con_114-22.png)
+```
+SNORD114-23
+```
+![Alt text](images/Sequence_conservation/seq_con_114-23.png)
+```
+SNORD114-24
+```
+![Alt text](images/Sequence_conservation/seq_con_114-24.png)
+```
+SNORD114-25
+```
+![Alt text](images/Sequence_conservation/seq_con_114-25.png)
+```
+SNORD114-26
+```
+![Alt text](images/Sequence_conservation/seq_con_114-26.png)
+```
+SNORD114-27
+```
+![Alt text](images/Sequence_conservation/seq_con_114-27.png)
+```
+SNORD114-28
+```
+![Alt text](images/Sequence_conservation/seq_con_114-28.png)
+```
+SNORD114-29
+```
+![Alt text](images/Sequence_conservation/seq_con_114-29.png)
+```
+SNORD114-30
+```
+![Alt text](images/Sequence_conservation/seq_con_114-30.png)
+```
+SNORD114-31
+```
+![Alt text](images/Sequence_conservation/seq_con_114-31.png)
+
+
+
+
+
 # References
 
 Barlow, D.P., Stoger, R., Herrmann, B.G., Saito, K. and Schweifer, N. (1991) 'The mouse insulin-like growth factor type-2 receptor is imprinted and closely linked to the Tme locus', Nature, 349(6304), pp. 84-87. doi: 10.1038/349084a0 [doi].
