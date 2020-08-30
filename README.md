@@ -2480,6 +2480,7 @@ ________________________________________________________________________________
 
 # 2D STRUCTURE PREDICTION OF snoRNA
 
+
 The snoRNA sequences obtained from the search were introduced into the RNAFold server from RNAVienna to predict their 2D structures. Both the sequences retrieved from UCSC Genome Browser and Infernal were used to predict the 2D structures of the corresponding snoRNA.
 
 ## Infernal/Rfam snoRNA analysis
