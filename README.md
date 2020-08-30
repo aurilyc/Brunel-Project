@@ -2480,9 +2480,260 @@ ________________________________________________________________________________
 
 # 2D STRUCTURE PREDICTION OF snoRNA
 
-The snoRNA sequences obtained from the search were introduced into the RNAFold server from RNAVienna to predict their 2D structures.
+The snoRNA sequences obtained from the search were introduced into the RNAFold server from RNAVienna to predict their 2D structures. Both the sequences retrieved from UCSC Genome Browser and Infernal were used to predict the 2D structures of the corresponding snoRNA.
 
-## SNORD113 
+## Infernal/Rfam snoRNA analysis
+
+### SNORD113
+
+![alt text](images/113-1_RNA_2D.png)
+
+```R
+>SNORD113-1
+uugaaccucagaguuccaggcacuuaguauucauccuccaugacucacacaccaccggcugucaucgcuugcuca
+..........(((...(((((..................(((((................))))).)))))))).
+```
+
+![alt text](images/113-2_RNA_2D.png)
+
+```R
+>SNORD113-2
+auggaccucagaguuccagauaggcauucacugacgaagacccauccaauaccaguagucaugauugaucca
+.((((.((...)).))))(((.((..(((......)))..)).)))...........((((....))))...
+```
+![alt text](images/113-3_RNA_2D.png)
+```R
+>SNORD113-3
+acagaccucagaguuccagacauguauucacuguauaugacucaugcuaccaguagucaucaucgaucca
+...(((((...(((...((.(((((((.....))))))).))...)))...))..)))............
+```
+![alt text](images/113-4_RNA_2D.png)
+```R
+>SNORD113-4
+auggaccucagaguucuagacacguauucaucgcauaugacucauacgccaccagcagucaucaucgaucca
+..((((......)))).............((((...((((((.....((.....))))))))...))))...
+```
+![alt text](images/113-5_RNA_2D.png)
+```R
+>SNORD113-5
+augggccucagaguuccagacauguauucauuguaugacucacacgacaccaguagucaacacugaacca
+.((((.((...)).))))........((((.(((.(((((.((.........)))))))))).))))...
+```
+![alt text](images/113-6_RNA_2D.png)
+```R
+>SNORD113-6
+auggaccucagaguuccagacacguauucaucguaugugacucauacuccaccagugcucaucaucgaucca
+..........((((...((.(((((((.....))))))).))...)))).......................
+```
+![alt text](images/113-7_RNA_2D.png)
+```R
+>SNORD113-7
+acggaccucagaguucuagacacguauucaucgcaaaagacucauacgccaccaguagucaucaucgaucca
+..(((.....((...(((....(((((...((......))...))))).......)))...)).....))).
+```
+![alt text](images/113-8_RNA_2D.png)
+```R
+>SNORD113-8
+acagaccucagaguuccagauacguacucaucauaugugagucauaugccaucaacagucaccaucgaucca
+...(((....((((...........))))..((((((.....)))))).........)))............
+```
+![alt text](images/113-9_RNA_2D.png)
+```R
+>SNORD113-9
+auggaccucagaguuccagacacguauucauugucuaugacucauacgccaccaguagucaucaucgaucca
+.(((......(((((..(((((.........)))))..))))).....)))......(((......)))...
+```
+### SNORD114
+![alt text](images/114-1_RNA_2D.png)
+```R
+>SNORD114-1
+auggaccucagaguuccaaacacguauucaucacauaugacucauacgccaccgguagucaucaucgaucca
+.((((.((...)).))))...........(((....((((((.....(((...)))))))))....)))...
+```
+![alt text](images/114-2_RNA_2D.png)
+```R
+>SNORD114-2
+guggaccucagaguuccagacacguauucaucacauaugacucauacgccaccaguggucaucauugaucca
+.((((.((...)).))))....(((((((((.....))))...)))))........(((((....)))))..
+```
+![alt text](images/114-3_RNA_2D.png)
+```R
+>SNORD114-3
+acagaccucagaguuccagagacguauucacuguagaugacucauacgccaccaguagucaucaucgaucca
+(((........(((.....))).......)))).(((((((...((.......))))))))).........
+```
+![alt text](images/114-4_RNA_2D.png)
+```R
+>SNORD114-4
+uugaugcucagaguuccacacacauauuacucauaguuuaugacuccugcacuacuauuuguuaucguuguucua
+.....(((..((((..............))))..)))..(((((....(((........)))....)))))....
+```
+![alt text](images/114-5_RNA_2D.png)
+```R
+>SNORD114-5
+uuggaccucaaaguuucagauauguaauauucuucauauacaaccagcauguacaaccacauaagccaccacuugucaucaacagucca
+.(((((.............((((((.....................))))))........(((((......)))))........)))))
+```
+![alt text](images/114-6_RNA_2D.png)
+```R
+>SNORD114-6
+uuggaccucagaguuccacacacguaucauccauuauccaagauucauaugccagcaaguuuuaucauugaucca
+.((((.((...)).))))....(((((.(((..........)))..)))))........................
+```
+![alt text](images/114-7_RNA_2D.png)
+```R
+>SNORD114-7
+uuggaccucagaauuucagacauguauucaucguauaugacucauacaccaacaguagucaucacugaucua
+..........((((..((....)).))))((((...((((((...((.......))))))))...))))...
+```
+![alt text](images/114-8_RNA_2D.png)
+```R
+>SNORD114-8
+uuggaccucagaguuucagacacauaucauucaucguccauaacuccaaugccaccauuugucaucauuggucca
+.((((((...(((((...(((..............)))...)))))..(((.((.....)).)))....))))))
+```
+![alt text](images/114-9_RNA_2D.png)
+```R
+>SNORD114-9
+uuggaccucagaguuccagacacgugguguucauuaugcgugacucacaccaguagucauaauuggucca
+.((((((....((((...(((((.((((((((((.....))))...)))))))).)))..))))))))))
+```
+![alt text](images/114-10_RNA_2D.png)
+```R
+>SNORD114-10
+aaggaccucagaguuccagacacauauucaucauguaugacucauacgccaccaguggucaucaucgaucca
+..(((.((...)).)))............((((((.(((((.(((.........))))))))))).)))...
+```
+![alt text](images/114-11_RNA_2D.png)
+```R
+>SNORD114-11
+uuggaccucagaguucuagacacguauuauucaucacccaacacucauacgccggcaguugucaucauuggucca
+.((((((...((((..((......))..)))).....................(((....)))......))))))
+```
+![alt text](images/114-12_RNA_2D.png)
+```R
+>SNORD114-12
+uuggaccucagaguucuagaaacaugguguucauguguaugacucauaugccaccaguggucaucacuggucca
+.((((((...((...((....((.(((((..((((((.......)))))).)))))))))...))...))))))
+```
+![alt text](images/114-13_RNA_2D.png)
+```R
+>SNORD114-13
+auggaccucagaguuccagacacguauuauucaucauccaagacucauacgccgguauuugucaucauuggucca
+.((((((...((((..............)))).........(((..((((....))))..)))......))))))
+```
+![alt text](images/114-14_RNA_2D.png)
+```R
+>SNORD114-14
+uuggaccucagaguuccagacacaugauauucacugugcaugacucacacaccaccagucaccaucacuggucca
+.((((((...((((..((..(((((((...))).))))..))))))..........(((.......)))))))))
+```
+![alt text](images/114-15_RNA_2D.png)
+```R
+>SNORD114-15
+auggaccucagaguuucagacauguauucaucauguguaacucauacacuaacaguagucaucauugaucuu
+..........(((((....(((((.......)))))..)))))..............((((....))))...
+```
+![alt text](images/114-16_RNA_2D.png)
+```R
+>SNORD114-16
+auggaccucagaguuccagacacguauucaucauguaagacucauacgccaccagcagucaucaucgaucca
+.((((.((...)).))))...........((((((...((((.....((.....))))))..))).)))...
+```
+![alt text](images/114-17_RNA_2D.png)
+```R
+>SNORD114-17
+acagaccucagaguuucaaacauguauucacuguauaagacucauaagccaccaguggccaucauaucaucaa
+..........((((((...(((((....)).)))...))))))....((((....))))..............
+```
+![alt text](images/114-18_RNA_2D.png)
+```R
+>SNORD114-18
+uuggaccucagaguucuagacacguauuauucaucacccaacacucauacgccggcaguugucaucauuggucca
+.((((((...((((..((......))..)))).....................(((....)))......))))))
+```
+![alt text](images/114-19_RNA_2D.png)
+```R
+>SNORD114-19
+uuggaccucagaguuccagacauauauucaccaaauaugauuuauacgccaccaguggacaucauugaucca
+(((((.((...)).))))).(((((.........)))))................((((((....)).))))
+```
+![alt text](images/114-20_RNA_2D.png)
+```R
+>SNORD114-20
+auggaccucagaguucuagacacguauucauuguaugacucauaggccaccaguggucaucaucaaucca
+.(((.(((..(((((....(((.........)))..)))))..))))))....(((...........)))
+```
+![alt text](images/114-21_RNA_2D.png)
+
+```R
+>SNORD114-21
+uugaaccucagaguucuagacacacauuauucagcauccuugacuucuaugccaccaguuuucaucacuggcuca
+..((((......)))).................((((...........))))..(((((.......)))))....
+```
+![alt text](images/114-22_RNA_2D.png)
+
+```R
+>SNORD114-22
+uuggaccucagaguuucagacacguaguauucaucguccaugacucaaacgccaccaguggucaucauuggucca
+.((((((...(((((...(((..............)))...)))))....((((....)))).......))))))
+```
+![alt text](images/114-23_RNA_2D.png)
+```R
+>SNORD114-23
+uuggaccucagauuuccagauacaaacuguuauucaaccucacugacucauaccccaacagucauuaucauugguccc
+..(((((...(((...(((.......)))..............(((((...........)))))..)))...))))).
+```
+![alt text](images/114-24_RNA_2D.png)
+```R
+>SNORD114-24
+uuggaccucagacuuccagaccuguauucaccgucaaugacucauacgccaccagucaucaucauaggucca
+.(((((((..((......(((.((....))..))).((((((...........))))))..))..)))))))
+```
+![alt text](images/114-25_RNA_2D.png)
+```R
+>SNORD114-25
+auggaccucagaguuauaggguuuaaucaaaauccaagauucagacaccccaggguacucaucauugaucca
+.((((..((.(((((...((((((.....))))))..))))).)).(((....)))..(((....)))))))
+```
+![alt text](images/114-26_RNA_2D.png)
+```R
+>SNORD114-26
+auggaccucagaguuacagauggcuuuaaucaaaauuuuugauucagacacccuccaaucucaucauuggucca
+.((((((...(((.....((.((.((((((((((...))))))).)))..)).))....)))......))))))
+```
+![alt text](images/114-27_RNA_2D.png)
+```R
+>SNORD114-27
+auggaccucagaguugcagauggguuuaaucaaaaauguuguuucagaaaccccaugauauucaucacuggucca
+.((((((...((((..((...((((((...(((.....)))......))))))..))..))))......))))))
+```
+![alt text](images/114-28_RNA_2D.png)
+```R
+>SNORD114-28
+acagaucucagaguuacacagagggcuuaaucaaaaguguugauucagacaccuccaccaauacucaucauugaucca
+...((((...((((......((((.((.((((((.....)))))).))...)))).......))))......))))..
+```
+![alt text](images/114-29_RNA_2D.png)
+```R
+>SNORD114-29
+auggaccucagaauugcauauggguuuaaucaaaaauccuguuucagauaccccaugguacucaucauuggucca
+.((((((...((..(((.((((((....(((..((((...))))..)))..)))))))))....))...))))))
+```
+![alt text](images/114-30_RNA_2D.png)
+```R
+>SNORD114-30
+auggaccucagaguuacaggguuuaaucaaaaucauugauucagacaccccagaauacucaucauuggucua
+.((((((...((((....((((((((((((.....)))))).)))).)).......))))......))))))
+```
+![alt text](images/114-31_RNA_2D.png)
+```R
+>SNORD114-31
+auaaaccucugaguuacagaaucuaaucaaaaucuuugauuccuacagcucagaauacuaaugauuggcuau
+.......((((((((...(((((..............)))))....))))))))..................
+```
+## UCSC Genome Browser snoRNA sequence analysis
+### SNORD113 
 
 ![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-1.png) 
 ```R
