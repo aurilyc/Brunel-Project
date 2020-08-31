@@ -4166,6 +4166,125 @@ GAGTCATGGAGGATGAATACTAAGTGCCTGGAACTCTGAGGTTCA
 In order to improve the 3D structures from RNAVienna, GREMLIN was used to predict contacts for every sequence. In protein coding genes, when a residue mutates a compensatory mutation follows. These mutations accumulate in our DNA and tools like GREMLIN allow the study of this correlated mutations by analyzing homologous sequences in an MSA. 
 At first, an alignment of each cluster was introduced into OPENSEQ (GREMLIN server) to predict the contacts but, as the Rfam seeds and the snoRNA sequences were too similar, GREMLIN was not able to predict correlated mutations. In consequence, the Rfam seed alignment of the SNORD113/114 family consisting of 59 sequences was used unusuccessfully to predict contacts for each snoRNA. As both the sequences found within the clusters and the Rfam seed alignment were too similar, all the sequences belonging to the Rfam SNORD113/114 family (1,426 sequence regions) were aligned using Clustal and introduced into OPENSEQ with one of the 40 snoRNA each time, obatining GREMLIN results that could be used to improve the structures. A contact map was produced for each search, illustrating the position of the residues and the coordinates of the coupling with their pair residues.
 
+The file ```RF00181.fa``` was downloaded from Rfam, this file contains all the sequences from the SNORD113/114 family to which a snoRNA sequence was added to perform an MSA using Clustal Omega. Once there was an alignment for every snoRNA in FASTA format, these were introduced into OPENSEQ. 
+
+![Alt text](images/GREMLIN/G_113-1.png)
+
+```Contact predictions for SNORD113-1```
+```
+i	j	i_id	j_id	r_sco	s_sco	prob
+25	29	25_A	29_A	0.4744	2.692	1.000
+2	5	2_G	5_T	0.3547	2.013	1.000
+64	67	64_T	67_C	0.3533	2.005	1.000
+73	76	73_G	76_C	0.2943	1.670	0.999
+59	63	59_C	63_G	0.2841	1.612	0.998
+70	74	70_T	74_G	0.2755	1.564	0.997
+2	11	2_G	11_A	0.2703	1.534	0.997
+22	29	22_T	29_A	0.2661	1.510	0.996
+44	49	44_C	49_T	0.2517	1.428	0.994
+16	45	16_T	45_C	0.2514	1.427	0.994
+70	73	70_T	73_G	0.2483	1.409	0.993
+40	50	40_C	50_T	0.2440	1.384	0.992
+42	50	42_C	50_T	0.2424	1.375	0.991
+13	66	13_G	66_A	0.2356	1.337	0.989
+20	25	20_G	25_A	0.2344	1.330	0.988
+69	73	69_C	73_G	0.2326	1.320	0.987
+37	76	37_C	76_C	0.2138	1.213	0.975
+32	37	32_T	37_C	0.2134	1.211	0.974
+74	77	74_G	77_C	0.2099	1.191	0.971
+75	79	75_T	79_T	0.2070	1.175	0.968
+10	13	10_G	13_G	0.2043	1.160	0.964
+11	20	11_A	20_G	0.2005	1.138	0.959
+44	56	44_C	56_A	0.1972	1.119	0.954
+7	25	7_A	25_A	0.1970	1.118	0.954
+3	7	3_G	7_A	0.1951	1.107	0.950
+38	42	38_A	42_C	0.1936	1.099	0.948
+1	5	1_T	5_T	0.1934	1.097	0.947
+15	18	15_A	18_G	0.1929	1.095	0.946
+69	72	69_C	72_A	0.1925	1.092	0.945
+19	25	19_T	25_A	0.1923	1.092	0.945
+49	79	49_T	79_T	0.1923	1.091	0.945
+43	58	43_A	58_C	0.1850	1.050	0.929
+5	59	5_T	59_C	0.1844	1.046	0.927
+52	64	52_A	64_T	0.1797	1.020	0.915
+8	15	8_A	15_A	0.1782	1.012	0.911
+36	50	36_T	50_T	0.1782	1.011	0.910
+68	71	68_T	71_G	0.1780	1.010	0.910
+21	29	21_G	29_A	0.1779	1.010	0.910
+49	52	49_T	52_A	0.1771	1.005	0.907
+38	41	38_A	41_A	0.1769	1.004	0.906
+10	14	10_G	14_A	0.1766	1.002	0.905
+19	23	19_T	23_G	0.1754	0.996	0.902
+45	48	45_C	48_T	0.1751	0.994	0.900
+24	69	24_C	69_C	0.1750	0.993	0.900
+63	66	63_G	66_A	0.1735	0.985	0.895
+75	78	75_T	78_A	0.1699	0.964	0.881
+43	46	43_A	46_C	0.1693	0.961	0.879
+25	53	25_A	53_T	0.1687	0.957	0.876
+51	66	51_C	66_A	0.1684	0.955	0.875
+20	39	20_G	39_A	0.1671	0.948	0.870
+3	6	3_G	6_C	0.1670	0.948	0.870
+19	31	19_T	31_C	0.1623	0.921	0.848
+56	64	56_A	64_T	0.1619	0.919	0.846
+31	50	31_C	50_T	0.1615	0.917	0.845
+11	79	11_A	79_T	0.1607	0.912	0.840
+14	45	14_A	45_C	0.1604	0.910	0.838
+52	59	52_A	59_C	0.1600	0.908	0.837
+33	52	33_G	52_A	0.1598	0.907	0.836
+62	65	62_T	65_G	0.1597	0.906	0.835
+68	74	68_T	74_G	0.1574	0.893	0.823
+48	54	48_T	54_T	0.1554	0.882	0.812
+10	57	10_G	57_G	0.1550	0.880	0.810
+36	41	36_T	41_A	0.1548	0.878	0.808
+32	78	32_T	78_A	0.1541	0.875	0.805
+22	59	22_T	59_C	0.1541	0.874	0.803
+17	20	17_A	20_G	0.1517	0.861	0.790
+23	30	23_G	30_T	0.1517	0.861	0.790
+30	50	30_T	50_T	0.1509	0.856	0.784
+15	32	15_A	32_T	0.1494	0.848	0.775
+33	36	33_G	36_T	0.1487	0.844	0.770
+5	69	5_T	69_C	0.1470	0.834	0.758
+38	59	38_A	59_C	0.1464	0.831	0.755
+5	8	5_T	8_A	0.1460	0.828	0.751
+68	75	68_T	75_T	0.1452	0.824	0.746
+40	46	40_C	46_C	0.1449	0.823	0.745
+61	64	61_C	64_T	0.1446	0.820	0.741
+56	79	56_A	79_T	0.1444	0.819	0.740
+1	6	1_T	6_C	0.1442	0.819	0.740
+4	31	4_A	31_C	0.1442	0.818	0.738
+19	64	19_T	64_T	0.1439	0.817	0.737
+70	77	70_T	77_C	0.1427	0.810	0.728
+48	53	48_T	53_T	0.1425	0.809	0.727
+72	75	72_A	75_T	0.1415	0.803	0.719
+13	21	13_G	21_G	0.1405	0.797	0.711
+52	58	52_A	58_C	0.1402	0.796	0.709
+25	56	25_A	56_A	0.1402	0.795	0.708
+72	77	72_A	77_C	0.1378	0.782	0.690
+1	54	1_T	54_T	0.1373	0.779	0.686
+20	42	20_G	42_C	0.1369	0.777	0.683
+43	47	43_A	47_C	0.1355	0.769	0.671
+33	67	33_G	67_C	0.1351	0.767	0.668
+3	49	3_G	49_T	0.1345	0.763	0.662
+24	78	24_C	78_A	0.1342	0.761	0.659
+18	35	18_G	35_G	0.1336	0.758	0.655
+4	15	4_A	15_A	0.1333	0.756	0.652
+51	77	51_C	77_C	0.1331	0.756	0.652
+6	78	6_C	78_A	0.1325	0.752	0.646
+16	67	16_T	67_C	0.1319	0.749	0.641
+31	49	31_C	49_T	0.1315	0.746	0.637
+61	66	61_C	66_A	0.1302	0.739	0.626
+16	31	16_T	31_C	0.1300	0.738	0.624
+50	53	50_T	53_T	0.1299	0.737	0.623
+13	53	13_G	53_T	0.1294	0.734	0.618
+29	33	29_A	33_G	0.1292	0.733	0.617
+58	67	58_C	67_C	0.1292	0.733	0.617
+6	74	6_C	74_G	0.1281	0.727	0.607
+6	10	6_C	10_G	0.1266	0.718	0.593
+41	68	41_A	68_T	0.1265	0.718	0.593
+65	77	65_G	77_C	0.1260	0.715	0.588
+39	43	39_A	43_A	0.1250	0.709	0.578
+24	40	24_C	40_C	0.1245	0.707	0.575
+```
 
 # References
 
