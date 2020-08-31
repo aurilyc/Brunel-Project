@@ -2480,9 +2480,261 @@ ________________________________________________________________________________
 
 # 2D STRUCTURE PREDICTION OF snoRNA
 
-The snoRNA sequences obtained from the search were introduced into the RNAFold server from RNAVienna to predict their 2D structures. 
 
-## SNORD113 
+The snoRNA sequences obtained from the search were introduced into the RNAFold server from RNAVienna to predict their 2D structures. Both the sequences retrieved from UCSC Genome Browser and Infernal were used to predict the 2D structures of the corresponding snoRNA.
+
+## Infernal/Rfam snoRNA analysis
+
+### SNORD113
+
+![alt text](images/113-1_RNA_2D.png)
+
+```R
+>SNORD113-1
+uugaaccucagaguuccaggcacuuaguauucauccuccaugacucacacaccaccggcugucaucgcuugcuca
+..........(((...(((((..................(((((................))))).)))))))).
+```
+
+![alt text](images/113-2_RNA_2D.png)
+
+```R
+>SNORD113-2
+auggaccucagaguuccagauaggcauucacugacgaagacccauccaauaccaguagucaugauugaucca
+.((((.((...)).))))(((.((..(((......)))..)).)))...........((((....))))...
+```
+![alt text](images/113-3_RNA_2D.png)
+```R
+>SNORD113-3
+acagaccucagaguuccagacauguauucacuguauaugacucaugcuaccaguagucaucaucgaucca
+...(((((...(((...((.(((((((.....))))))).))...)))...))..)))............
+```
+![alt text](images/113-4_RNA_2D.png)
+```R
+>SNORD113-4
+auggaccucagaguucuagacacguauucaucgcauaugacucauacgccaccagcagucaucaucgaucca
+..((((......)))).............((((...((((((.....((.....))))))))...))))...
+```
+![alt text](images/113-5_RNA_2D.png)
+```R
+>SNORD113-5
+augggccucagaguuccagacauguauucauuguaugacucacacgacaccaguagucaacacugaacca
+.((((.((...)).))))........((((.(((.(((((.((.........)))))))))).))))...
+```
+![alt text](images/113-6_RNA_2D.png)
+```R
+>SNORD113-6
+auggaccucagaguuccagacacguauucaucguaugugacucauacuccaccagugcucaucaucgaucca
+..........((((...((.(((((((.....))))))).))...)))).......................
+```
+![alt text](images/113-7_RNA_2D.png)
+```R
+>SNORD113-7
+acggaccucagaguucuagacacguauucaucgcaaaagacucauacgccaccaguagucaucaucgaucca
+..(((.....((...(((....(((((...((......))...))))).......)))...)).....))).
+```
+![alt text](images/113-8_RNA_2D.png)
+```R
+>SNORD113-8
+acagaccucagaguuccagauacguacucaucauaugugagucauaugccaucaacagucaccaucgaucca
+...(((....((((...........))))..((((((.....)))))).........)))............
+```
+![alt text](images/113-9_RNA_2D.png)
+```R
+>SNORD113-9
+auggaccucagaguuccagacacguauucauugucuaugacucauacgccaccaguagucaucaucgaucca
+.(((......(((((..(((((.........)))))..))))).....)))......(((......)))...
+```
+### SNORD114
+![alt text](images/114-1_RNA_2D.png)
+```R
+>SNORD114-1
+auggaccucagaguuccaaacacguauucaucacauaugacucauacgccaccgguagucaucaucgaucca
+.((((.((...)).))))...........(((....((((((.....(((...)))))))))....)))...
+```
+![alt text](images/114-2_RNA_2D.png)
+```R
+>SNORD114-2
+guggaccucagaguuccagacacguauucaucacauaugacucauacgccaccaguggucaucauugaucca
+.((((.((...)).))))....(((((((((.....))))...)))))........(((((....)))))..
+```
+![alt text](images/114-3_RNA_2D.png)
+```R
+>SNORD114-3
+acagaccucagaguuccagagacguauucacuguagaugacucauacgccaccaguagucaucaucgaucca
+(((........(((.....))).......)))).(((((((...((.......))))))))).........
+```
+![alt text](images/114-4_RNA_2D.png)
+```R
+>SNORD114-4
+uugaugcucagaguuccacacacauauuacucauaguuuaugacuccugcacuacuauuuguuaucguuguucua
+.....(((..((((..............))))..)))..(((((....(((........)))....)))))....
+```
+![alt text](images/114-5_RNA_2D.png)
+```R
+>SNORD114-5
+uuggaccucaaaguuucagauauguaauauucuucauauacaaccagcauguacaaccacauaagccaccacuugucaucaacagucca
+.(((((.............((((((.....................))))))........(((((......)))))........)))))
+```
+![alt text](images/114-6_RNA_2D.png)
+```R
+>SNORD114-6
+uuggaccucagaguuccacacacguaucauccauuauccaagauucauaugccagcaaguuuuaucauugaucca
+.((((.((...)).))))....(((((.(((..........)))..)))))........................
+```
+![alt text](images/114-7_RNA_2D.png)
+```R
+>SNORD114-7
+uuggaccucagaauuucagacauguauucaucguauaugacucauacaccaacaguagucaucacugaucua
+..........((((..((....)).))))((((...((((((...((.......))))))))...))))...
+```
+![alt text](images/114-8_RNA_2D.png)
+```R
+>SNORD114-8
+uuggaccucagaguuucagacacauaucauucaucguccauaacuccaaugccaccauuugucaucauuggucca
+.((((((...(((((...(((..............)))...)))))..(((.((.....)).)))....))))))
+```
+![alt text](images/114-9_RNA_2D.png)
+```R
+>SNORD114-9
+uuggaccucagaguuccagacacgugguguucauuaugcgugacucacaccaguagucauaauuggucca
+.((((((....((((...(((((.((((((((((.....))))...)))))))).)))..))))))))))
+```
+![alt text](images/114-10_RNA_2D.png)
+```R
+>SNORD114-10
+aaggaccucagaguuccagacacauauucaucauguaugacucauacgccaccaguggucaucaucgaucca
+..(((.((...)).)))............((((((.(((((.(((.........))))))))))).)))...
+```
+![alt text](images/114-11_RNA_2D.png)
+```R
+>SNORD114-11
+uuggaccucagaguucuagacacguauuauucaucacccaacacucauacgccggcaguugucaucauuggucca
+.((((((...((((..((......))..)))).....................(((....)))......))))))
+```
+![alt text](images/114-12_RNA_2D.png)
+```R
+>SNORD114-12
+uuggaccucagaguucuagaaacaugguguucauguguaugacucauaugccaccaguggucaucacuggucca
+.((((((...((...((....((.(((((..((((((.......)))))).)))))))))...))...))))))
+```
+![alt text](images/114-13_RNA_2D.png)
+```R
+>SNORD114-13
+auggaccucagaguuccagacacguauuauucaucauccaagacucauacgccgguauuugucaucauuggucca
+.((((((...((((..............)))).........(((..((((....))))..)))......))))))
+```
+![alt text](images/114-14_RNA_2D.png)
+```R
+>SNORD114-14
+uuggaccucagaguuccagacacaugauauucacugugcaugacucacacaccaccagucaccaucacuggucca
+.((((((...((((..((..(((((((...))).))))..))))))..........(((.......)))))))))
+```
+![alt text](images/114-15_RNA_2D.png)
+```R
+>SNORD114-15
+auggaccucagaguuucagacauguauucaucauguguaacucauacacuaacaguagucaucauugaucuu
+..........(((((....(((((.......)))))..)))))..............((((....))))...
+```
+![alt text](images/114-16_RNA_2D.png)
+```R
+>SNORD114-16
+auggaccucagaguuccagacacguauucaucauguaagacucauacgccaccagcagucaucaucgaucca
+.((((.((...)).))))...........((((((...((((.....((.....))))))..))).)))...
+```
+![alt text](images/114-17_RNA_2D.png)
+```R
+>SNORD114-17
+acagaccucagaguuucaaacauguauucacuguauaagacucauaagccaccaguggccaucauaucaucaa
+..........((((((...(((((....)).)))...))))))....((((....))))..............
+```
+![alt text](images/114-18_RNA_2D.png)
+```R
+>SNORD114-18
+uuggaccucagaguucuagacacguauuauucaucacccaacacucauacgccggcaguugucaucauuggucca
+.((((((...((((..((......))..)))).....................(((....)))......))))))
+```
+![alt text](images/114-19_RNA_2D.png)
+```R
+>SNORD114-19
+uuggaccucagaguuccagacauauauucaccaaauaugauuuauacgccaccaguggacaucauugaucca
+(((((.((...)).))))).(((((.........)))))................((((((....)).))))
+```
+![alt text](images/114-20_RNA_2D.png)
+```R
+>SNORD114-20
+auggaccucagaguucuagacacguauucauuguaugacucauaggccaccaguggucaucaucaaucca
+.(((.(((..(((((....(((.........)))..)))))..))))))....(((...........)))
+```
+![alt text](images/114-21_RNA_2D.png)
+
+```R
+>SNORD114-21
+uugaaccucagaguucuagacacacauuauucagcauccuugacuucuaugccaccaguuuucaucacuggcuca
+..((((......)))).................((((...........))))..(((((.......)))))....
+```
+![alt text](images/114-22_RNA_2D.png)
+
+```R
+>SNORD114-22
+uuggaccucagaguuucagacacguaguauucaucguccaugacucaaacgccaccaguggucaucauuggucca
+.((((((...(((((...(((..............)))...)))))....((((....)))).......))))))
+```
+![alt text](images/114-23_RNA_2D.png)
+```R
+>SNORD114-23
+uuggaccucagauuuccagauacaaacuguuauucaaccucacugacucauaccccaacagucauuaucauugguccc
+..(((((...(((...(((.......)))..............(((((...........)))))..)))...))))).
+```
+![alt text](images/114-24_RNA_2D.png)
+```R
+>SNORD114-24
+uuggaccucagacuuccagaccuguauucaccgucaaugacucauacgccaccagucaucaucauaggucca
+.(((((((..((......(((.((....))..))).((((((...........))))))..))..)))))))
+```
+![alt text](images/114-25_RNA_2D.png)
+```R
+>SNORD114-25
+auggaccucagaguuauaggguuuaaucaaaauccaagauucagacaccccaggguacucaucauugaucca
+.((((..((.(((((...((((((.....))))))..))))).)).(((....)))..(((....)))))))
+```
+![alt text](images/114-26_RNA_2D.png)
+```R
+>SNORD114-26
+auggaccucagaguuacagauggcuuuaaucaaaauuuuugauucagacacccuccaaucucaucauuggucca
+.((((((...(((.....((.((.((((((((((...))))))).)))..)).))....)))......))))))
+```
+![alt text](images/114-27_RNA_2D.png)
+```R
+>SNORD114-27
+auggaccucagaguugcagauggguuuaaucaaaaauguuguuucagaaaccccaugauauucaucacuggucca
+.((((((...((((..((...((((((...(((.....)))......))))))..))..))))......))))))
+```
+![alt text](images/114-28_RNA_2D.png)
+```R
+>SNORD114-28
+acagaucucagaguuacacagagggcuuaaucaaaaguguugauucagacaccuccaccaauacucaucauugaucca
+...((((...((((......((((.((.((((((.....)))))).))...)))).......))))......))))..
+```
+![alt text](images/114-29_RNA_2D.png)
+```R
+>SNORD114-29
+auggaccucagaauugcauauggguuuaaucaaaaauccuguuucagauaccccaugguacucaucauuggucca
+.((((((...((..(((.((((((....(((..((((...))))..)))..)))))))))....))...))))))
+```
+![alt text](images/114-30_RNA_2D.png)
+```R
+>SNORD114-30
+auggaccucagaguuacaggguuuaaucaaaaucauugauucagacaccccagaauacucaucauuggucua
+.((((((...((((....((((((((((((.....)))))).)))).)).......))))......))))))
+```
+![alt text](images/114-31_RNA_2D.png)
+```R
+>SNORD114-31
+auaaaccucugaguuacagaaucuaaucaaaaucuuugauuccuacagcucagaauacuaaugauuggcuau
+.......((((((((...(((((..............)))))....))))))))..................
+```
+## UCSC Genome Browser snoRNA sequence analysis
+### SNORD113 
 
 ![alt text](images/2D_STRUCTURES/SNORD113/SNORD113-1.png) 
 ```R
@@ -3911,171 +4163,8 @@ GAGTCATGGAGGATGAATACTAAGTGCCTGGAACTCTGAGGTTCA
 ```
 ##### CONTACT PREDICTION RESULTS
 
-As the Rfam seeds and the snoRNA sequences were too similar, GREMLIN was not able to predict contacts. In consequence, the structures obtained with 3dRNA could not be improved further. 
-Nevertheless, the sequence conservation analysis was carried out in all snoRNAs.
-
-###### Sequence conservation SNORD113
-```
-SNORD113-1
-```
-![Alt text](images/Sequence_conservation/seq_con_113-1.png)
-```
-SNORD113-2
-```
-![Alt text](images/Sequence_conservation/seq_con_113-2.png)
-```
-SNORD113-3
-```
-![Alt text](images/Sequence_conservation/seq_con_113-3.png)
-```
-SNORD113-4
-```
-![Alt text](images/Sequence_conservation/seq_con-113-4.png)
-```
-SNORD113-5
-```
-![Alt text](images/Sequence_conservation/seq_con_113-5.png)
-```
-SNORD113-6
-```
-![Alt text](images/Sequence_conservation/seq_con_113-6.png)
-```
-SNORD113-7
-```
-![Alt text](images/Sequence_conservation/seq_con_113-7.png)
-```
-SNORD113-8
-```
-![Alt text](images/Sequence_conservation/seq_con_113-8.png)
-```
-SNORD113-9
-```
-![Alt text](images/Sequence_conservation/seq_con_113-9.png)
-
-###### Sequence conservation SNORD114
-```
-SNORD114-1
-```
-![Alt text](images/Sequence_conservation/seq_con_114-1.png)
-```
-SNORD114-2
-```
-![Alt text](images/Sequence_conservation/seq_con_114-2.png)
-```
-SNORD114-3
-```
-![Alt text](images/Sequence_conservation/seq_con_114-3.png)
-```
-SNORD114-4
-```
-![Alt text](images/Sequence_conservation/seq_con_114-4.png)
-```
-SNORD114-5
-```
-![Alt text](images/Sequence_conservation/seq_con_114-5.png)
-```
-SNORD114-6
-```
-![Alt text](images/Sequence_conservation/seq_con_114-6.png)
-```
-SNORD114-7
-```
-![Alt text](images/Sequence_conservation/seq_con_114-7.png)
-```
-SNORD114-9
-```
-![Alt text](images/Sequence_conservation/seq_con_114-9.png)
-```
-SNORD114-10
-```
-![Alt text](images/Sequence_conservation/seq_con_114-10.png)
-```
-SNORD114-11
-```
-![Alt text](images/Sequence_conservation/seq_con_114-11.png)
-```
-SNORD114-12
-```
-![Alt text](images/Sequence_conservation/seq_con_114-12.png)
-```
-SNORD114-13
-```
-![Alt text](images/Sequence_conservation/seq_con_114-13.png)
-```
-SNORD114-14
-```
-![Alt text](images/Sequence_conservation/seq_con_114-14.png)
-```
-SNORD114-15
-```
-![Alt text](images/Sequence_conservation/seq_con_114-15.png)
-```
-SNORD114-16
-```
-![Alt text](images/Sequence_conservation/seq_con_114-16.png)
-```
-SNORD114-17
-```
-![Alt text](images/Sequence_conservation/seq_con_114-17.png)
-```
-SNORD114-18
-```
-![Alt text](images/Sequence_conservation/seq_con_114-18.png)
-```
-SNORD114-19
-```
-![Alt text](images/Sequence_conservation/seq_con_114-19.png)
-```
-SNORD114-20
-```
-![Alt text](images/Sequence_conservation/seq_con_114-20.png)
-```
-SNORD114-21
-```
-![Alt text](images/Sequence_conservation/seq_con_114-21.png)
-```
-SNORD114-22
-```
-![Alt text](images/Sequence_conservation/seq_con_114-22.png)
-```
-SNORD114-23
-```
-![Alt text](images/Sequence_conservation/seq_con_114-23.png)
-```
-SNORD114-24
-```
-![Alt text](images/Sequence_conservation/seq_con_114-24.png)
-```
-SNORD114-25
-```
-![Alt text](images/Sequence_conservation/seq_con_114-25.png)
-```
-SNORD114-26
-```
-![Alt text](images/Sequence_conservation/seq_con_114-26.png)
-```
-SNORD114-27
-```
-![Alt text](images/Sequence_conservation/seq_con_114-27.png)
-```
-SNORD114-28
-```
-![Alt text](images/Sequence_conservation/seq_con_114-28.png)
-```
-SNORD114-29
-```
-![Alt text](images/Sequence_conservation/seq_con_114-29.png)
-```
-SNORD114-30
-```
-![Alt text](images/Sequence_conservation/seq_con_114-30.png)
-```
-SNORD114-31
-```
-![Alt text](images/Sequence_conservation/seq_con_114-31.png)
-
-
-
+In order to improve the 3D structures from RNAVienna, GREMLIN was used to predict contacts for every sequence. In protein coding genes, when a residue mutates a compensatory mutation follows. These mutations accumulate in our DNA and tools like GREMLIN allow the study of this correlated mutations by analyzing homologous sequences in an MSA. 
+At first, an alignment of each cluster was introduced into OPENSEQ (GREMLIN server) to predict the contacts but, as the Rfam seeds and the snoRNA sequences were too similar, GREMLIN was not able to predict correlated mutations. In consequence, the Rfam seed alignment of the SNORD113/114 family consisting of 59 sequences was used unusuccessfully to predict contacts for each snoRNA. As both the sequences found within the clusters and the Rfam seed alignment were too similar, all the sequences belonging to the Rfam SNORD113/114 family (1,426 sequence regions) were aligned using Clustal and introduced into OPENSEQ with one of the 40 snoRNA each time, obatining GREMLIN results that could be used to improve the structures. A contact map was produced for each search, illustrating the position of the residues and the coordinates of the coupling with their pair residues.
 
 
 # References
