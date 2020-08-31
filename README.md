@@ -3123,10 +3123,181 @@ UGAGCAAGCGAUGACAGCCGGUGGUGUGUGAGUCAUGGAGGAUGAAUACUAAGUGCCUGGAACUCUGAGGUUCA
 (((((....(((..(((.((.(...((((..(((......)))..))))..).)).)))..).))....)))))
  minimum free energy = -14.10 kcal/mol
  ```
-## Correlation matrix for sets of snoRNAs
+# Correlation matrices for sets of snoRNAs
 
 RNAdistance was used to calculate the distances between RNA secondary structures. This program reads RNA secondary structures from stdin and calculates one or more measures for their dissimilarity, based on a aligmnent. 
 ```-Xm``` is an argument that creates a distance matrix between all structures. The output is formatted as a lower triangle matrix. 
+## Sequences from Rfam/Infernal retrieval
+### Matrix for SNORD113
+```R
+..........(((...(((((..................(((((................))))).)))))))).
+.((((.((...)).))))(((.((..(((......)))..)).)))...........((((....))))...
+...(((((...(((...((.(((((((.....))))))).))...)))...))..)))............
+..((((......)))).............((((...((((((.....((.....))))))))...))))...
+.((((.((...)).))))........((((.(((.(((((.((.........)))))))))).))))...
+..........((((...((.(((((((.....))))))).))...)))).......................
+..(((.....((...(((....(((((...((......))...))))).......)))...)).....))).
+...(((....((((...........))))..((((((.....)))))).........)))............
+.(((......(((((..(((((.........)))))..))))).....)))......(((......)))...
+@
+> f   9
+61
+65 46
+53 52 58
+51 50 56 28
+55 46 22 48 48
+49 52 34 50 54 40
+55 46 34 56 66 40 48
+57 32 34 56 56 36 42 46
+```
+In order to identify which structures shared more similarity, a correlation plot was created to facilitate the visualisation of the data. ```GGcorrplot```reorders the correlation matrix and displays the significance level on the correlogram. It also includes a function for computing a matrix of correlation p-values.
+```R
+library("ggplot2")
+library("ggcorrplot")
+getwd()
+baseDir <-  "/home/aurilyconstantino/Cambridge_project"
+# SNORD113
+# Writes a table to a file 
+SNORD113.data <- "61
+65 46
+53 52 58
+51 50 56 28
+55 46 22 48 48
+49 52 34 50 54 40
+55 46 34 56 66 40 48
+57 32 34 56 56 36 42 46"
+write.table(SNORD113.data, paste0(baseDir, "SNORD113.txt"), quote=F, row.names=F, col.names=F)
+
+# Create an empty matrix of the size of the data
+SNORD113.m <- matrix(0, 8, 8)
+# Read in the data to the empty matrix
+SNORD113.m[row(SNORD113.m) >= col(SNORD113.m)] <- scan(paste0(baseDir, "SNORD113.txt"), sep=" ")
+# Calcualte a correlation matrix from the distances
+SNORD113.m.cor <- cor(SNORD113.m)
+# Plot the correlations
+ggcorrplot(SNORD113.m.cor, hc.order = TRUE, type = "lower", lab = TRUE)
+
+# Add snoRNA names to rows and columns
+colnames(SNORD113.m.cor)<-c("SNORD113-1","SNORD113-2", "SNORD113-3","SNORD113-4","SNORD113-5","SNORD113-6","SNORD113-7","SNORD113-8","SNORD113-9")
+rownames(SNORD113.m.cor)<-c("SNORD113-1","SNORD113-2", "SNORD113-3","SNORD113-4","SNORD113-5","SNORD113-6","SNORD113-7","SNORD113-8","SNORD113-9")
+```
+![Alt text](images/corr_inf_seq_113.jpg)
+### Matrix for SNORD114
+```R
+.((((.((...)).))))...........(((....((((((.....(((...)))))))))....)))...
+.((((.((...)).))))....(((((((((.....))))...)))))........(((((....)))))..
+(((........(((.....))).......)))).(((((((...((.......))))))))).........
+.....(((..((((..............))))..)))..(((((....(((........)))....)))))....
+.(((((.............((((((.....................))))))........(((((......)))))........)))))
+.((((.((...)).))))....(((((.(((..........)))..)))))........................
+..........((((..((....)).))))((((...((((((...((.......))))))))...))))...
+.((((((...(((((...(((..............)))...)))))..(((.((.....)).)))....))))))
+.((((((....((((...(((((.((((((((((.....))))...)))))))).)))..))))))))))
+..(((.((...)).)))............((((((.(((((.(((.........))))))))))).)))...
+.((((((...((((..((......))..)))).....................(((....)))......))))))
+.((((((...((...((....((.(((((..((((((.......)))))).)))))))))...))...))))))
+.((((((...((((..............)))).........(((..((((....))))..)))......))))))
+.((((((...((((..((..(((((((...))).))))..))))))..........(((.......)))))))))
+..........(((((....(((((.......)))))..)))))..............((((....))))...
+.((((.((...)).))))...........((((((...((((.....((.....))))))..))).)))...
+..........((((((...(((((....)).)))...))))))....((((....))))..............
+.((((((...((((..((......))..)))).....................(((....)))......))))))
+(((((.((...)).))))).(((((.........)))))................((((((....)).))))
+.(((.(((..(((((....(((.........)))..)))))..))))))....(((...........)))
+..((((......)))).................((((...........))))..(((((.......)))))....
+.((((((...(((((...(((..............)))...)))))....((((....)))).......))))))
+..(((((...(((...(((.......)))..............(((((...........)))))..)))...))))).
+.(((((((..((......(((.((....))..))).((((((...........))))))..))..)))))))
+.((((..((.(((((...((((((.....))))))..))))).)).(((....)))..(((....)))))))
+.((((((...(((.....((.((.((((((((((...))))))).)))..)).))....)))......))))))
+.((((((...((((..((...((((((...(((.....)))......))))))..))..))))......))))))
+...((((...((((......((((.((.((((((.....)))))).))...)))).......))))......))))..
+.((((((...((..(((.((((((....(((..((((...))))..)))..)))))))))....))...))))))
+.((((((...((((....((((((((((((.....)))))).)))).)).......))))......))))))
+.......((((((((...(((((..............)))))....))))))))..................
+@
+> f   30
+44
+49 55
+67 57 50
+49 29 46 54
+34 48 41 59 47
+67 55 36 34 58 57
+64 66 73 75 75 58 55
+26 50 49 75 47 40 67 54
+41 47 58 42 52 61 42 69 57
+60 66 65 63 67 56 53 24 52 63
+51 59 42 36 54 55 28 57 57 28 47
+63 55 60 56 60 61 40 45 65 38 43 38
+50 30 45 49 33 48 49 66 54 41 54 45 45
+16 44 47 71 39 36 65 62 20 45 54 49 63 50
+63 39 48 48 36 45 50 65 63 54 57 54 46 25 57
+41 47 58 42 52 61 42 69 57 0 63 28 38 41 45 54
+48 28 57 67 31 58 65 88 56 51 84 55 61 42 50 53 51
+60 56 39 63 47 58 45 54 56 59 56 53 41 42 60 49 59 62
+43 43 52 48 40 51 60 87 51 48 77 56 72 43 43 48 48 41 61
+63 55 40 30 54 59 10 55 67 34 53 26 40 45 67 40 34 67 45 62
+50 58 53 49 59 50 43 60 50 39 50 41 49 50 50 63 39 56 56 47 43
+62 60 51 53 61 40 41 52 56 49 42 47 47 60 58 59 49 66 58 59 47 32
+70 50 57 57 67 60 39 52 68 45 42 51 29 40 64 43 45 60 46 65 35 58 56
+62 58 77 63 65 62 53 24 60 59 24 55 35 54 64 55 59 80 60 79 53 62 50 40
+57 61 64 54 64 57 36 25 63 56 29 54 34 57 59 52 56 77 47 74 36 51 45 45 27
+60 54 67 59 55 54 55 38 60 61 34 59 43 46 58 45 61 70 52 65 55 56 54 44 24 33
+59 71 70 66 70 61 46 27 61 60 21 50 38 61 63 58 60 83 53 80 46 59 49 41 25 30 43
+60 54 69 61 61 60 45 24 62 51 24 57 33 50 62 49 51 72 54 77 45 58 46 38 16 23 16 31
+62 50 37 45 37 56 41 58 54 57 48 51 47 30 54 31 57 52 30 55 37 58 58 48 54 45 48 53 46
+```
+```R
+# SNORD114
+SNORD114.data<- "44
+49 55
+67 57 50
+49 29 46 54
+34 48 41 59 47
+67 55 36 34 58 57
+64 66 73 75 75 58 55
+26 50 49 75 47 40 67 54
+41 47 58 42 52 61 42 69 57
+60 66 65 63 67 56 53 24 52 63
+51 59 42 36 54 55 28 57 57 28 47
+63 55 60 56 60 61 40 45 65 38 43 38
+50 30 45 49 33 48 49 66 54 41 54 45 45
+16 44 47 71 39 36 65 62 20 45 54 49 63 50
+63 39 48 48 36 45 50 65 63 54 57 54 46 25 57
+41 47 58 42 52 61 42 69 57 0 63 28 38 41 45 54
+48 28 57 67 31 58 65 88 56 51 84 55 61 42 50 53 51
+60 56 39 63 47 58 45 54 56 59 56 53 41 42 60 49 59 62
+43 43 52 48 40 51 60 87 51 48 77 56 72 43 43 48 48 41 61
+63 55 40 30 54 59 10 55 67 34 53 26 40 45 67 40 34 67 45 62
+50 58 53 49 59 50 43 60 50 39 50 41 49 50 50 63 39 56 56 47 43
+62 60 51 53 61 40 41 52 56 49 42 47 47 60 58 59 49 66 58 59 47 32
+70 50 57 57 67 60 39 52 68 45 42 51 29 40 64 43 45 60 46 65 35 58 56
+62 58 77 63 65 62 53 24 60 59 24 55 35 54 64 55 59 80 60 79 53 62 50 40
+57 61 64 54 64 57 36 25 63 56 29 54 34 57 59 52 56 77 47 74 36 51 45 45 27
+60 54 67 59 55 54 55 38 60 61 34 59 43 46 58 45 61 70 52 65 55 56 54 44 24 33
+59 71 70 66 70 61 46 27 61 60 21 50 38 61 63 58 60 83 53 80 46 59 49 41 25 30 43
+60 54 69 61 61 60 45 24 62 51 24 57 33 50 62 49 51 72 54 77 45 58 46 38 16 23 16 31
+62 50 37 45 37 56 41 58 54 57 48 51 47 30 54 31 57 52 30 55 37 58 58 48 54 45 48 53 46"
+write.table(SNORD114.data, paste0(baseDir, "SNORD114.txt"), quote=F, row.names=F, col.names=F)
+
+# Create an empty matrix of the size of the data
+SNORD114.m <- matrix(0, 29, 29)
+# Read in the data to the empty matrix
+SNORD114.m[row(SNORD114.m) >= col(SNORD114.m)] <- scan(paste0(baseDir, "SNORD114.txt"), sep=" ")
+# Calcualte a correlation matrix from the distances
+SNORD114.m.cor <- cor(SNORD114.m)
+# Plot the correlations
+ggcorrplot(SNORD114.m.cor, hc.order = TRUE, type = "lower", lab = TRUE)
+
+# Add snoRNA names to rows and columns
+colnames(SNORD114.m.cor) <- c("SNORD114-1","SNORD114-2", "SNORD114-3","SNORD114-4","SNORD114-5","SNORD114-6","SNORD114-7","SNORD114-8","SNORD114-9","SNORD114-10","SNORD114-11","SNORD114-12","SNORD114-13","SNORD114-14","SNORD114-15","SNORD114-16","SNORD114-17","SNORD114-18","SNORD114-19","SNORD114-20","SNORD114-21","SNORD114-22","SNORD114-23","SNORD114-24","SNORD114-25","SNORD114-26","SNORD114-27","SNORD114-28","SNORD114-29", "SNORD114-30","SNORD114-31")
+rownames(SNORD114.m.cor) <- c("SNORD114-1","SNORD114-2", "SNORD114-3","SNORD114-4","SNORD114-5","SNORD114-6","SNORD114-7","SNORD114-8","SNORD114-9","SNORD114-10","SNORD114-11","SNORD114-12","SNORD114-13","SNORD114-14","SNORD114-15","SNORD114-16","SNORD114-17","SNORD114-18","SNORD114-19","SNORD114-20","SNORD114-21","SNORD114-22","SNORD114-23","SNORD114-24","SNORD114-25","SNORD114-26","SNORD114-27","SNORD114-28","SNORD114-29", "SNORD114-30","SNORD114-31")
+```
+
+![Alt text](images/corr_inf_seq_114.jpg)
+
+
+## Sequences from UCSC Genome Browser
 ### Matrix for SNORD113
 ```R
 (((((.((((((..((((((....))).)))..)))))).))))).........................
@@ -3149,39 +3320,6 @@ RNAdistance was used to calculate the distances between RNA secondary structures
 53 42 28 19 26 45 17
 55 38 22 21 20 41 21 18
 ```
-In order to identify which structures shared more similarity, a correlation plot was created to facilitate the visualisation of the data. ```GGcorrplot```reorders the correlation matrix and displays the significance level on the correlogram. It includes also a function for computing a matrix of correlation p-values.
-```R
-library("ggplot2")
-library("ggcorrplot")
-getwd()
-baseDir <-  "/home/aurilyconstantino/Cambridge_project"
-# SNORD113
-# Writes a table to a file 
-SNORD113.data <- "55
-47 26
-52 43 31
-57 34 18 29
-56 53 47 38 45
-56 41 33 20 29 44
-53 42 28 19 26 45 17
-55 38 22 21 20 41 21 18"
-write.table(SNORD113.data, paste0(baseDir, "SNORD113.txt"), quote=F, row.names=F, col.names=F)
-
-# Create an empty matrix of the size of the data
-SNORD113.m <- matrix(0, 8, 8)
-# Read in the data to the empty matrix
-SNORD113.m[row(SNORD113.m) >= col(SNORD113.m)] <- scan(paste0(baseDir, "SNORD113.txt"), sep=" ")
-# Calcualte a correlation matrix from the distances
-SNORD113.m.cor <- cor(SNORD113.m)
-# Plot the correlations
-ggcorrplot(SNORD113.m.cor, hc.order = TRUE, type = "lower", lab = TRUE)
-
-# Add snoRNA names to rows and columns
-colnames(SNORD113.m.cor)<-c("SNORD113-1","SNORD113-2", "SNORD113-3","SNORD113-4","SNORD113-5","SNORD113-6","SNORD113-7","SNORD113-8","SNORD113-9")
-rownames(SNORD113.m.cor)<-c("SNORD113-1","SNORD113-2", "SNORD113-3","SNORD113-4","SNORD113-5","SNORD113-6","SNORD113-7","SNORD113-8","SNORD113-9")
-
-```
-
 ![Alt text](images/Matrix_corrplot_SNORD113.jpg)
 
 
@@ -3249,55 +3387,6 @@ rownames(SNORD113.m.cor)<-c("SNORD113-1","SNORD113-2", "SNORD113-3","SNORD113-4"
 46 46 35 65 58 26 29 22 48 47 29 62 27 34 36 33 54 31 26 30 30 40 24 26 34 28 22 26
 45 35 38 62 55 27 32 21 47 42 14 53 28 21 25 40 55 34 23 21 25 47 27 21 13 35 21 25 35
 ```
-#### Correlation plot
-
-```R
-# SNORD114
-SNORD114.data<- "52
-51 45
-57 65 56
-66 60 41 75
-44 36 35 63 58
-49 45 48 66 59 31
-44 36 35 61 48 18 25
-50 58 39 63 44 46 51 46
-57 53 54 74 59 43 38 43 53
-45 31 40 66 53 23 32 17 51 42
-56 58 49 73 34 56 51 48 34 55 53
-45 41 38 58 59 21 30 11 49 42 26 49
-44 34 41 65 48 16 27 18 42 39 25 50 23
-44 20 33 51 56 26 39 24 46 51 27 58 31 24
-51 53 36 66 45 35 42 33 33 50 42 39 40 39 37
-60 52 51 71 52 54 59 50 38 57 57 44 57 52 46 43
-47 37 26 62 57 25 46 27 43 58 30 57 28 33 27 48 57
-44 36 41 65 54 18 29 14 42 37 27 50 15 16 32 35 54 31
-44 38 37 63 50 12 27 14 46 43 21 52 19 4 20 35 54 29 20
-42 40 37 61 52 18 27 8 46 43 23 46 7 16 30 37 54 29 16 12
-42 50 35 61 42 38 41 30 28 57 45 38 37 40 38 21 46 45 38 36 34
-48 38 39 59 56 22 33 26 38 39 29 52 25 24 34 39 54 27 20 28 26 40
-44 32 39 63 46 22 25 4 42 39 21 46 15 14 28 37 48 31 10 18 12 34 22
-44 36 33 63 48 22 29 14 48 45 15 46 21 28 24 37 50 33 28 24 18 36 34 18
-36 40 41 65 54 30 23 24 46 37 29 50 25 26 34 43 54 33 26 28 24 44 28 24 30
-44 36 35 61 48 18 25 0 46 43 17 48 11 18 24 33 50 27 14 14 8 30 26 4 14 24
-42 34 39 65 52 18 27 12 40 37 25 46 17 14 32 37 50 31 8 18 14 36 18 8 24 24 12
-46 46 35 65 58 26 29 22 48 47 29 62 27 34 36 33 54 31 26 30 30 40 24 26 34 28 22 26
-45 35 38 62 55 27 32 21 47 42 14 53 28 21 25 40 55 34 23 21 25 47 27 21 13 35 21 25 35"
-write.table(SNORD114.data, paste0(baseDir, "SNORD114.txt"), quote=F, row.names=F, col.names=F)
-
-# Create an empty matrix of the size of the data
-SNORD114.m <- matrix(0, 29, 29)
-# Read in the data to the empty matrix
-SNORD114.m[row(SNORD114.m) >= col(SNORD114.m)] <- scan(paste0(baseDir, "SNORD114.txt"), sep=" ")
-# Calcualte a correlation matrix from the distances
-SNORD114.m.cor <- cor(SNORD114.m)
-# Plot the correlations
-ggcorrplot(SNORD114.m.cor, hc.order = TRUE, type = "lower", lab = TRUE)
-
-# Add snoRNA names to rows and columns
-colnames(SNORD114.m.cor) <- c("SNORD114-1","SNORD114-2", "SNORD114-3","SNORD114-4","SNORD114-5","SNORD114-6","SNORD114-7","SNORD114-8","SNORD114-9","SNORD114-10","SNORD114-11","SNORD114-12","SNORD114-13","SNORD114-14","SNORD114-15","SNORD114-16","SNORD114-17","SNORD114-18","SNORD114-19","SNORD114-20","SNORD114-21","SNORD114-22","SNORD114-23","SNORD114-24","SNORD114-25","SNORD114-26","SNORD114-27","SNORD114-28","SNORD114-29", "SNORD114-30")
-rownames(SNORD114.m.cor) <- c("SNORD114-1","SNORD114-2", "SNORD114-3","SNORD114-4","SNORD114-5","SNORD114-6","SNORD114-7","SNORD114-8","SNORD114-9","SNORD114-10","SNORD114-11","SNORD114-12","SNORD114-13","SNORD114-14","SNORD114-15","SNORD114-16","SNORD114-17","SNORD114-18","SNORD114-19","SNORD114-20","SNORD114-21","SNORD114-22","SNORD114-23","SNORD114-24","SNORD114-25","SNORD114-26","SNORD114-27","SNORD114-28","SNORD114-29", "SNORD114-30")
-```
-
 ![Alt text](images/Matrix_corrplot_SNORD114.jpg)
 
 ## 3dRNA
