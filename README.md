@@ -4090,18 +4090,62 @@ In cluster 14q(II), snoRNAs 19 and 20 (SNORD114-19 and SNORD114-20) were the one
 
 Barlow, D.P., Stoger, R., Herrmann, B.G., Saito, K. and Schweifer, N. (1991) 'The mouse insulin-like growth factor type-2 receptor is imprinted and closely linked to the Tme locus', Nature, 349(6304), pp. 84-87. doi: 10.1038/349084a0 [doi].
 
+Bartolomei, M.S., Webber, A.L., Brunkow, M.E. and Tilghman, S.M. (1993) 'Epigenetic mechanisms underlying the imprinting of the mouse H19 gene', Genes & development, 7(9), pp. 1663-1673. doi: 10.1101/gad.7.9.1663 [doi].
+
+Cavaille, J., Seitz, H., Paulsen, M., Ferguson-Smith, A.C. and Bachellerie, J.P. (2002) 'Identification of tandemly-repeated C/D snoRNA genes at the imprinted human 14q32 domain reminiscent of those at the Prader-Willi/Angelman syndrome region', Human molecular genetics, 11(13), pp. 1527-1538. doi: 10.1093/hmg/11.13.1527 [doi].
+
+Coan, P.M., Burton, G.J. and Ferguson-Smith, A.C. (2005) 'Imprinted genes in the placenta--a review', Placenta, 26 Suppl A, pp. 10. doi: S0143-4004(05)00009-3 [pii].
+
+Cooper, D.W., VandeBerg, J.L., Sharman, G.B. and Poole, W.E. (1971) 'Phosphoglycerate kinase polymorphism in kangaroos provides further evidence for paternal X inactivation', Nature: New ogy, 230(13), pp. 155-157. doi: 10.1038/newbio230155a0 [doi].
+
 Dawson, W.K. and Bujnicki, J.M. (2016) 'Computational modeling of RNA 3D structures and interactions', Current opinion in structural biology, 37, pp. 22-28. doi: 10.1016/j.sbi.2015.11.007 [doi].
+
+Edwards, C.A. and Ferguson-Smith, A.C. (2007) 'Mechanisms regulating imprinted genes in clusters', Current opinion in cell biology, 19(3), pp. 281-289. doi: S0955-0674(07)00065-8 [pii].
 
 Edwards, C.A., Mungall, A.J., Matthews, L., Ryder, E., Gray, D.J., Pask, A.J., Shaw, G., Graves, J.A., Rogers, J., SAVOIR consortium, Dunham, I., Renfree, M.B. and Ferguson-Smith, A.C. (2008) 'The evolution of the DLK1-DIO3 imprinted domain in mammals', PLoS biology, 6(6), pp. e135. doi: 10.1371/journal.pbio.0060135 [doi].
 
 Enterina, J.R., Enfield, K.S.S., Anderson, C., Marshall, E.A., Ng, K.W. and Lam, W.L. (2017) 'DLK1-DIO3 imprinted locus deregulation in development, respiratory disease, and cancer', Expert review of respiratory medicine, 11(9), pp. 749-761. doi: 10.1080/17476348.2017.1355241 [doi].
 
+Ferguson-Smith, A.C., Sasaki, H., Cattanach, B.M. and Surani, M.A. (1993) 'Parental-origin-specific epigenetic modification of the mouse H19 gene', Nature, 362(6422), pp. 751-755. doi: 10.1038/362751a0 [doi].
+
+Griffiths-Jones, S., Bateman, A., Marshall, M., Khanna, A. and Eddy, S.R. (2003) 'Rfam: an RNA family database', Nucleic acids research, 31(1), pp. 439-441. doi: 10.1093/nar/gkg006 [doi].
+
+Kalvari, I., Nawrocki, E.P., Argasinska, J., Quinones-Olvera, N., Finn, R.D., Bateman, A. and Petrov, A.I. (2018) 'Non-Coding RNA Analysis Using the Rfam Database', Current protocols in bioinformatics, 62(1), pp. e51. doi: 10.1002/cpbi.51 [doi].
+
+Kamisetty, H., Ovchinnikov, S. and Baker, D. (2013) 'Assessing the utility of coevolution-based residue-residue contact predictions in a sequence- and structure-rich era', Proceedings of the National Academy of Sciences of the United States of America, 110(39), pp. 15674-15679. doi: 10.1073/pnas.1314045110 [doi].
+
+Klein, D.J., Schmeing, T.M., Moore, P.B. and Steitz, T.A. (2001) 'The kink-turn: a new RNA secondary structure motif', The EMBO journal, 20(15), pp. 4214-4221. doi: 10.1093/emboj/20.15.4214 [doi].
+
+Lai, D., Proctor, J.R., Zhu, J.Y. and Meyer, I.M. (2012) 'R-CHIE: a web server and R package for visualizing RNA secondary structures', Nucleic acids research, 40(12), pp. e95. doi: 10.1093/nar/gks241 [doi].
+
 Li, E., Beard, C. and Jaenisch, R. (1993) 'Role for DNA methylation in genomic imprinting', Nature, 366(6453), pp. 362-365. doi: 10.1038/366362a0 [doi].
 
+Lorenz, R., Bernhart, S.H., Honer Zu Siederdissen, C., Tafer, H., Flamm, C., Stadler, P.F. and Hofacker, I.L. (2011) 'ViennaRNA Package 2.0', Algorithms for molecular biology : AMB, 6, pp. 26-26. doi: 10.1186/1748-7188-6-26 [doi].
+
+Madeira, F., Park, Y.M., Lee, J., Buso, N., Gur, T., Madhusoodanan, N., Basutkar, P., Tivey, A.R.N., Potter, S.C., Finn, R.D. and Lopez, R. (2019) 'The EMBL-EBI search and sequence analysis tools APIs in 2019', Nucleic acids research, 47(W1), pp. W636-W641. doi: 10.1093/nar/gkz268 [doi].
+
 Magnus, M., Boniecki, M.J., Dawson, W. and Bujnicki, J.M. (2016) 'SimRNAweb: a web server for RNA 3D structure modeling with optional restraints', Nucleic acids research, 44(W1), pp. 315. doi: 10.1093/nar/gkw279 [doi].
+
+Moon, Y.S., Smas, C.M., Lee, K., Villena, J.A., Kim, K.H., Yun, E.J. and Sul, H.S. (2002) 'Mice lacking paternally expressed Pref-1/Dlk1 display growth retardation and accelerated adiposity', Molecular and cellular biology, 22(15), pp. 5585-5592. doi: 10.1128/mcb.22.15.5585-5592.2002 [doi].
+
+Nawrocki, E.P. and Eddy, S.R. (2013) 'Infernal 1.1: 100-fold faster RNA homology searches', Bioinformatics (Oxford, England), 29(22), pp. 2933-2935. doi: 10.1093/bioinformatics/btt509 [doi].
+
+Needleman, S.B. and Wunsch, C.D. (1970) 'A general method applicable to the search for similarities in the amino acid sequence of two proteins', Journal of Molecular Biology, 48(3), pp. 443-453. doi: 0022-2836(70)90057-4 [pii].
+
+Nicholls, R.D., Saitoh, S. and Horsthemke, B. (1998) 'Imprinting in Prader-Willi and Angelman syndromes', Trends in genetics : TIG, 14(5), pp. 194-200. doi: S0168-9525(98)01432-2 [pii].
+
+Ohta, T., Gray, T.A., Rogan, P.K., Buiting, K., Gabriel, J.M., Saitoh, S., Muralidhar, B., Bilienska, B., Krajewska-Walasek, M., Driscoll, D.J., Horsthemke, B., Butler, M.G. and Nicholls, R.D. (1999) 'Imprinting-mutation mechanisms in Prader-Willi syndrome', American Journal of Human Genetics, 64(2), pp. 397-413. doi: S0002-9297(07)61746-7 [pii].
+
+Ovchinnikov, S., Kamisetty, H. and Baker, D. (2014) 'Robust and accurate prediction of residue-residue interactions across protein interfaces using evolutionary information', eLife, 3, pp. e02030. doi: 10.7554/eLife.02030 [doi].
 
 Samarsky, D.A., Fournier, M.J., Singer, R.H. and Bertrand, E. (1998) 'The snoRNA box C/D motif directs nucleolar targeting and also couples snoRNA synthesis and localization', The EMBO journal, 17(13), pp. 3747-3757. doi: 10.1093/emboj/17.13.3747 [doi].
 
 Schmidt, J.V., Matteson, P.G., Jones, B.K., Guan, X.J. and Tilghman, S.M. (2000) 'The Dlk1 and Gtl2 genes are linked and reciprocally imprinted', Genes & development, 14(16), pp. 1997-2002.
 
+Sievers, F., Wilm, A., Dineen, D., Gibson, T.J., Karplus, K., Li, W., Lopez, R., McWilliam, H., Remmert, M., Soding, J., Thompson, J.D. and Higgins, D.G. (2011) 'Fast, scalable generation of high-quality protein multiple sequence alignments using Clustal Omega', Molecular systems biology, 7, pp. 539. doi: 10.1038/msb.2011.75 [doi].
+
 Wang, J., Mao, K., Zhao, Y., Zeng, C., Xiang, J., Zhang, Y. and Xiao, Y. (2017) 'Optimization of RNA 3D structure prediction using evolutionary restraints of nucleotide-nucleotide interactions from direct coupling analysis', Nucleic acids research, 45(11), pp. 6299-6309. doi: 10.1093/nar/gkx386 [doi].
+
+Wang, J., Zhao, Y., Zhu, C. and Xiao, Y. (2015) '3dRNAscore: a distance and torsion angle dependent evaluation function of 3D RNA structures', Nucleic acids research, 43(10), pp. e63. doi: 10.1093/nar/gkv141 [doi].
+
+Zhao, Y., Huang, Y., Gong, Z., Wang, Y., Man, J. and Xiao, Y. (2012) 'Automated and fast building of three-dimensional RNA structures', Scientific reports, 2, pp. 734. doi: 10.1038/srep00734 [doi].
