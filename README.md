@@ -4063,24 +4063,24 @@ i	j	i_id	j_id	r_sco	s_sco	prob
 39	43	39_A	43_A	0.1250	0.709	0.578
 24	40	24_C	40_C	0.1245	0.707	0.575
 ```
-### DCA
+#### DCA
 Direct coupling analysis (DCA) is a statistical inference framework used to infer co-evolutionary coupling among residue pairs in multiple sequence alignments, which aims at disentangling direct from indirect correlation. For RNAs, the DCA-based methods first infer physical interactions, both secondary and tertiary, between nucleotides in an RNA molecule by analysing the co-evolutionary signals of nucleotides across sequences in the RNA family.
 Contratry to GREMLIN, DCA uses the Rfam database to identify which family the query sequence belongs to. Once identified, a MSA is performed with the sequences from the same family in order to calculate the direct-coupling information. The output is a list of DIs that can later be used in 3dRNA to optimize the structure. 
 Every snoRNA was input into DCA to obtain restraint predictions to improve their 3D structure. The structures were then visualized with Pymol.
 
 ![Alt text](images/DCA_fig.001.jpeg)
 
-### R-chie
+#### R-chie
 R-chie is a web-server for plotting RNA secondary structures, trans RNA-RNA, RNA-DNA and DNA-DNA interactions and genomic interactions. This package creates arc diagrams of RNA secondary structures, allowing for easy comparison and overlap of two structures, rank and dsiplay basepairs in colour and to also visualize corresponding MSAs and co-variation information. For our study, double covariance graphs were plotted to compare snoRNAs within the sama cluster and that had showcased high similarity in the distance matrices. Double covariance plots display multiple sequence alignments for two structures for easy comparison of the structures and/or alignments. The top offers information about conservation, on top of an alignment of homologues; whereas the bottom predicts percent canonical baspairs, below the same alignment. The latter allows us to locate G:A pairs and the percentage of non-canonical baspairs taking place, which is of great importance to our study as we want to identify Kink turn motifs. K-turn motifs are charecterized by G:A pairings so being able to find those in our structures is a sign of the presence of these conformations. 
 As can be seen below, all the structures appear to have G:A pairings, in higher or lower concentrations, but have them nonetheless. Taking these results into account, it could be speculated the structures contain K-turns but further assessment is necessary to confirm this hypothesis.
 
-## SNORD113 
+##### SNORD113 
 
 In cluster 14q(I), snoRNAs 3 and 4 (SNORD113-3 and SNORD113-4) were the ones showcasing a highets correlation in the distance matrices. As both were very similar, it was of interest to assess the conservation and compare them to the rest of sequences belonging to the 14q(I) cluster. 
 
 ![Alt text](images/RCHIE_SNORD113.png)
 
-## SNORD114
+##### SNORD114
 
 In cluster 14q(II), snoRNAs 19 and 20 (SNORD114-19 and SNORD114-20) were the ones showcasing a highets correlation in the distance matrices. 
 
