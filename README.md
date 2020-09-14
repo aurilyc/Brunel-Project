@@ -2477,6 +2477,9 @@ ________________________________________________________________________________
 .............................................................................................................................................................................................................................((((((((...........((..(((((................................)))))..))....................((((((((....((((((.((((..((......(((((((((((((((...................(((((.((((((((......................................((((((.........................))))))((((.((((((((.(((((((((((................))))))...................................................................(((((((.....................(((((((..((((((....................................................))))))......................)))..............))))).)))))).................((((((.(((........))).)...)))))(((((.......)))))..))........)))........)))))))).))))(.((((((...........((((.((.((.(((.............(((...(((((((((...........((((......(((((((((.((((.(((............))).))))......((((((....)))))).....................))))))))).........))))))))....)))))(((((..........)))))...................(((((((.((((((...(((..........................................))).....))))))................................(((((((..((...((....((((((........(((((....))))).....................(((((((................((((((..............)))))))).)))))..........(((((((((.((((((.........................)))))).....................(((((.(((((...))))).)))))..(((((.......(((((.(((..........))))))))..................(((((((((((((..........((((.(......).))))..................................................................................................(((.(((((...........)))))..)))))))))))))))).......((((...(((((((............................)))))))....)))).......))))).................)))))))))(((((.((((((.....)))))))))))..............................((((((((((..(((((....(((((((...........................................(((((((...........((((((.((...........(((......(((..(((((((((......((((((..(((((((...((((((((...................((((((......((((((...(((....)))..))))))...))))))...............((((((..(((.........)).)))))))..........((((((.((((((.((...........(((.(((((((..(....).)))).)))....)))........)))).)))).))))))......................................))))...........................)))))))))))).....)))))......)))))))))...).)))))...(((((((.(((..............)))))))))).....)))))).))((((((((((......((((((((.......)))))..))).......))).)).)))))((((((.....)))))).....................................(((((.........))))).......((((.....((((((..................(((((.....)))))................(((((((......(((...(((........))))))))))))).((((((((..((((((..(((((((........................((((..........................................................))))................(((((((.......)))))))................((((.....))))..........................................((((((((...........................)))))))).....))))))).))))))))))))))........)))))))))).)))))))....(((......)))......................(((.(((......)))..)))....................)))))))))))).........))))))..))))........))))))...................((....)).....................((((((.......................(((((............((.......))......)))))......)))))).......((((.......(((.......)))...))))...................(((((((((((((((((((((.(((((...............................((((((((...................(((((.....(((..(((((((((.......(((........)))))))))))).))))))))................((((((((((((((...........................................))))).))))).))))....)))))))).......(((((.(((((((.....)).)))))...................))))).))))))))))))))...)).................))))))))))...............)))))))))...))(((((((((....................))))))))))))))))...(((((....................)))))...............)))................).)))).)).)))))))))).)...)).))))))..)))))...)))....)))))))).))......)).......................................................((((.............))))...................(((((((...................................................................................))))))).....................................((((..........................................................)))).....................................((((.(((((((...........................................))))))))))).................................(((((...(((((((((.......((((...............................))))...))))))))).)))))...........))..)))).)).))))....)))))))).............(((.............(((((((((((..............(((((((((...........))))..)))))....(((((((((............................................................((((..............(((((((........))))).))))))..............(((.....((((..((((((((((.....................))))))...........(((((...(((..........)))..)))))......................................................................((((.......)))).............((((((.((..........................................)).......))))))....)).))..))))........)))........................))))))))).................................)))))))))))..........))).......................(((((((((((..........................)))))))))))............................)))))))).....................................................................
  minimum free energy = -381.69 kcal/mol (-494.82 + 113.13)
  ```
+This alignments was then input in RNAplot to visualize the consensus structure. 
+
+![Alt text](images/rnaalifold.png)
 
 # 2D STRUCTURE PREDICTION OF snoRNA
 
@@ -3936,320 +3939,6 @@ SNORD114-31                                UGAGCAAGCGAUGACAG....................
 ##### Needle aligment
 EMBOSS Needle is a pairwise sequence alignment tool from EMBLE-EBI that was used to produce the alignments of the Rfam seeds with the respective snoRNA in a FASTA format, as OPENSEQ only the latter as input for the search. Both the Infernal and Needle alignments were used for the contact prediction study, to compare the results and ensure cosnsitent results. 
 
-SNORD113 alignments
-```
->SNORD113-1_seed
-AAAGTGAGTGATGA-----ATAGTTCTGTGGCA-----TATGAATCATTAATTTTGATT-
---AAACCCTAAACTCTGAAGTCC-----------
->SNORD113-1
-----------ttgaacctcagagttc-caggcacttagtattcatcctcca---tgactc
-acacacc----ac-cggctgtcatcgcttgctca
-```
-```
->SNORD113-2_seed
-atggacctcagagttccagataggcattca--------ctgacgaagacccatccaatac
-cagtag---tca-------tgatt-gatcca----------------
->SNORD113-2
--------------------ATAGCCAATCATTAGTATTCTG-----------------AG
-CTGTAGGAATCAAAGATTTTGATTAGATTCTGTAACTCAGAGGTTTA
-```
-```
->SNORD113-3_seed
-acagacctcagagttccagac--at-----gtattcact---gtatatgactc-atgct-
----------accagtagtca-tcatcgatcca
->SNORD113-3
-----------------TAGACCAATGATGAGTATT--CTGGGGTGTCTGAATCAATGATT
-TTGATTAAACCCTGTA---ACTCTGAGGTCCA
-```
-```
->SNORD113-4_seed
-atggacc--tca-gagt-----------tct-agacacg------tattcatcgcatatg
---actcatacg-ccaccagcagtcatcatcgatcca
->SNORD113-4
--TGGACCAATGATGAGTACCATGGGGTATCTGAAACAGGATTTTTGATTAAACCCATATG
-CAATTCTGAGGTCCA---------------------
-```
-```
->SNORD113-5_seed
-atgggcctcagagttccagacatgtattcat-----tgtatgactcacacgacac-----
-----------cagtagtcaacactga-acca-
->SNORD113-5
--TGG--ATCAATGAT---GA---GTATTGGTGGAGGTGTCTGAATCA----ACACTTTTG
-ATTAAGCCCTCTGT-GT-AACTCTGAGATCTG
-```
-```
->SNORD113-6_seed
-atggacc-----------tca--gagttccagacacgtattcatcgtatgtgactcatac
-tccaccagtgctcatcatcgatcca
->SNORD113-6
--TGGACCAGTGATGAATATCATGGGGTTTCTGAAA------CAACATTTTTGA-TTAAAC
--CCATC--TGCAACTCTGAGGTCCA
-```
-```
->SNORD113-7_seed
-acggacctca-----gagt------------tctaga--cacgtattcatcgcaaaagac
-tcatacgccaccagt-agtcatcatc---gatcca
->SNORD113-7
--TGGA--TCAATGATGAGTATGCGTGGGGCATCT-GAATCAAATATTC--------TGA-
-TTATAC----CCTGTCTGT-ATC-TCTGAGGTCCA
-```
-```
->SNORD113-8_seed
-acagacc-----tcaga-------gttccagatacgtactcatcata---tgtgagtcat
-atgccatc---aacagtcaccatcgatcca
->SNORD113-8
--TGGACCAATGATGAGATTGGAGGGTGTCTGA---------ATCAAAAATTTTGATT--A
-AAGCCATCTGTAACTCTGA-----GGTCCA
-```
-```
->SNORD113-9_seed
-atggacctca-----gagttcc------------agacacgtattcattg-------tct
-atgactcatacg-ccaccagtagtcatcatcgatcca
->SNORD113-9
--TGGA--TCAATGATGAGTACCCTGGGGTGTCTGAATCTTGGATT--TTGATTAAACCCT
-ATAACTCTGAGGTCCA---------------------
-```
-SNORD114 alignments
-```
->SNORD114-1_seed
-atggacctcagagttccaaacacgtattcatca-------catatgactcat--acg---
----cca---ccggtagtcatcatcgatcca
->SNORD114-1
--TGGACCTATGA---------------TGATGACTGGTGGCGTATGAGTCATTGACGGTG
-AATACAGGTCTGGAAGTC-TGA--GGTCCA
-```
-```
->SNORD114-2_seed
-gtggacc--------------------tcagagttccagacacgtattcatcaca-tatg
-actcatacgccaccagtggtcatcattga--tcca
->SNORD114-2
--GGGACCAATGATAATGACTGTTGGGGTATGAGT--CAGTGAGGT-TGAATAACAGTTTG
-TATC------------TGGAAATC--TGAGGTCCA
-```
-```
->SNORD114-3_seed
-----aca-----gacctcagagttccagagacgt---attcactgta-gatgactcatac
-gccaccagtagtcatca---tc---gatcca
->SNORD114-3
-TGGACCAATGATGACCACTG-------GTGGCGTTTGAGTCA-TGGACGATGAATACTAC
-G--------TGTC-TGAAACTCTGAGGTCCA
-```
-```
->SNORD114-4_seed
------------------------------ttgatgctcagagttccacac-----acata
-ttactcatagtttatgactcctgcactactatttgt-ta----tc-gttgttcta
->SNORD114-4
-AATGAGAATTAAGCTAAACAGTCCTAAGCCTGA-GC-CAGTGATGAAAACTGGTGGCATA
-GAAGTCA------AGGA-TGCTG-AATAATGTGTGTCTAGAACTCTGAGGTTCA-
-```
-```
->SNORD114-5_seed
-ttggacctcaaagtttcagat-atgtaatattcttcatatacaacca------gc--atg
------tacaaccacataagccaccacttgtcatcaac-----agtcca
->SNORD114-5
--TGGA--------TT---GATGATG------------------ACCACTGGTGGCCTATG
-AGTCATACAATGA-AT--------ACGTGTCTAGAACTCTGAGGTCCA
-```
-```
->SNORD114-6_seed
-ttggacctca--gagttccac---acacgtatcatccattatccaagatt-------cat
-atgccagcaagttttatcattgatcca
->SNORD114-6
--TGGA--TCAATGATGTCCACTGGTGGCGTATAAATCAT--------ATTTGGTGAATAT
-ATGTCTGGAACTCTGA-----GGTCCA
-```
-```
->SNORD114-7_seed
-------------------ttg-gacctcagaattt-----caga-catgtattcatcgta
-tatgactcatacaccaacagtagtcatcactgatcta
->SNORD114-7
-TGAACTAGTGGTGATGGCTTGTGGCAT----ATTTAGTCACAGATGATGAATAAA---TA
-CATGCCTGAGACTCTGAGGTTAG--------------
-```
-```
->SNORD114-9_seed
-ttggacctcagagttcca----gacacgtggtg------------ttcattatg----cg
-tg------actcacaccagtagtcataattggtcca
->SNORD114-9
--TGGA---------TCGATGATGACTGCTGGTGGCGTATGAGTCTTACATGATGAATACG
-TGTCTGGAACTCTGA---------------GGTCCA
-```
-```
->SNORD114-10_seed
-aaggacctca----------------------gagttccagacacat-attcat-catgt
-atg--actcatacg-ccaccagtggtcatcatcgatcca
->SNORD114-10
--AAGA--TCAATGATGACTACTGTTAGTGTATGAGTT----ACACATGATGAATACATGT
-CTGAAACTCTGAGGTCCA---------------------
-```
-```
->SNORD114-11_seed
-ttggacctcagagttctagacac-------gtattattcat---cacccaacactcatac
-gccggcagttgtcatcattggtcca
->SNORD114-11
--TGGACC----AGTGATGGTGACTGGTGGTGTGTGAGTCATGCACAGTGAATA-TCATGT
-GTCTGGAACTCTGA-----GGTCCA
-```
-```
->SNORD114-12_seed
-ttggacctcagagttctagaaacat---ggtgttcatgtgt--------atgactcata-
--tgccaccagtggtcatcact--ggtcca
->SNORD114-12
--TGGACCAATGA-----TGACAAATACCGGCGT--ATGAGTCTTGGATGATGAATAATAC
-GTGTC-----TGG--AACTCTGAGGTCCA
-```
-```
->SNORD114-13_seed
-atggacctcagagtt--cca-----gacacgtattattcatcatccaagactcat--acg
-ccggtatttgtc-----atcattggtcca
->SNORD114-13
--TGGAC--CAGTGATGACCACTGGTGGCA--TATGAGTCAT--------ACACATGAACA
-CC---ATGTTTCTAGAACTCTGAGGTCCA
-```
-```
->SNORD114-14_seed
-ttggacc-----tcagagttccagacacatga-tattcactgtgcatgactcacacacca
-ccagtcaccatcact----ggtcca
->SNORD114-14
--TGGACCAATGATGACAACTGCCGGCGTATGAGTGTTGGGTG---ATGAATAATAC----
----GTGTCTAGAACTCTGAGGTCCA
-```
-```
->SNORD114-15_seed
--------atg--gacc----------tcagagtttcagacatgtattcatcatgtgt---
--aactcatacactaacagtagtcatcattga--tctt
->SNORD114-15
-TGGATCGATGATGACCACTGGTGGCGTATGAG--TCATACATG-ATGAAT-ATGTGTCTG
-GAACTC----------------------TGAGGTCCT
-```
-```
->SNORD114-16_seed
-atggacc---tcaga------gttccagacacgtattcatcatgtaagactcatacgcca
-ccagcagtcatcatcga---------tcca
->SNORD114-16
--TGGACCAATTATGACTACTGGTGTGAGTCACG----CATAATGAA------------CA
-CCACGTGTC----TGGAACTCTGAGGTCCA
-```
-```
->SNORD114-17_seed
--------------aca------gacctcagagtt--------tcaa--acatgtattcac
-tgtataagactcataag--ccaccagtggccatcatatcatcaa
->SNORD114-17
-TGGACCAATGATGACAAATGGTGGCATTGGAGTTATGGACGATGAATGATATG-------
-TGTCTGAAACTC-TGAGGTCCA----------------------
-```
-```
->SNORD114-18_seed
-ttggacctcagagttctagac-ac-------gtattattcatcacccaacactcatacgc
-cggcagt---tgtc---atcatt----ggtcca
->SNORD114-18
--TAGA--TCAGTGAT---GACTACTGTTGGTGTATGAGTCAT------------ATACGA
-TG--AATACATGTCTGAA--ATTCTGAGGTCCA
-```
-```
->SNORD114-19_seed
-ttggacc-----tcagagttccagacatatattcaccaaat--------atgatttatac
-gccaccagtggacatcattga--tcca
->SNORD114-19
--TGGATCAATGATAAAACTTGCTGGCATAT-------GAATCTTGGATAATGGATGATAC
-G---TGTGTGGAACTC--TGAGGTCCA
-```
-```
->SNORD114-20_seed
-atggacc--tca-gagttctagacacgtattcattgtatgactcataggccaccagtggt
-catcatcaatcca---------------------
->SNORD114-20
--TGGATCGATGATGACTACTGGTGGC---------GTATGAGTCAT----CTACAGTG--
--------AATACGTCTCTGGAACTCTGAGGTCTG
-```
-```
->SNORD114-21_seed
-ttgaacctcagagttctagacacac---------attattca--------gcatccttga
-ct---tctatg----ccaccagttttcatcactggctca
->SNORD114-21
--TGGA--TCAATGAT---GAC-CACTGGTGGCGTATGAGTCATATGTGATGAATACGTGT
-CTGGAACTCTGAGGTCCA---------------------
-```
-```
->SNORD114-22_seed
-ttggacctcagagtttcagacacgtagtattcatcgtccatgactcaaacgccaccagtg
---------gtcatcat--------------------------tggtcca
->SNORD114-22
------------------------------TGGATCGATGATGACT--------ACCGGTG
-GCGTATGAGTCAT-ATGTGATGAATACGTGTTTGGAACTCTGAGGTCCA
-```
-```
->SNORD114-23
-ttggacctcagatttccagat-acaaactg-----ttattcaacctcactgactcatacc
-ccaacagtcatta------------tcattggtccc
->SNORD114-23
--TGGATC---GAT-----GATGAC-TACTGGTGGCGTA-----------TGAGTCATA--
---GACAATGAATACGTGTCTGGAACTCTGAGGTCCA
-```
-```
->SNORD114-24_seed
-ttggacctcagacttcca----gacctgt--attcaccgtca-atgactca---------
---tacgccaccagtcatc-----atcataggtcca
->SNORD114-24
--TGGA---------TCGATGGTGA-CTGTTGAT-----GGCATATGACTCACATATGATG
-AGTACG--------TATCTGGAACTCTGAGGTCTG
-```
-```
->SNORD114-25_seed
--------atg--gacctcagagt----tat-agggtttaatcaaaatccaagattcagac
-accccagggt-----actcatcattga--tcca
->SNORD114-25
-TGGATCGATGATGACTACTG-GTGGCGTATGAGTCTTT--------TGC--GATGAATAC
-------GTGTCTAGAACTC-----TGAGGTCCG
-```
-```
->SNORD114-26_seed
---------------------atggacctcagagttaca---gatggctttaatcaaaatt
-tttgattcagacaccctccaatctcatcattggtcca
->SNORD114-26
-TGGATCGATGATGAGCACTGGTGGA-GTATGAGTCACATACGATG-----------AATA
-CGTG--TCTGGAAC-------TCTGA-----GGTCCA
-```
-```
->SNORD114-27_seed
-atggacctcagagttg-cagatgggtttaatcaaaaatgttgtttcagaaaccccatgat
-attcatcact----------ggtcca
->SNORD114-27
--TGG--TTCAGTGTTGACTACTGG-------------TGTCGTGTGAGTCATACAATGA-
-ATACATGTCTGGAACTCTGAGGCCCA
-```
-```
->SNORD114-28_seed
--------------acag----------atctcagagttacacaga-gggcttaatcaaaa
-gtgttgattc-agacacctccaccaatactcatcattga--tcca
->SNORD114-28
-TGGATCGATGATGACTGCTGGTGGCGTAT----GAGT----CATATGCGATGAAT---AC
-GTG-----TCTAGA-------------ACTC-----TGAGGTCCA
-```
-```
->SNORD114-29_seed
-atggacctcagaattgcatatgggt----ttaatcaaaaatcctgtttcag---ataccc
-ca----tggtactcatcattggtcca
->SNORD114-29
--TGGATCGATGA--TGACTACTGGTAGCATGAGTCATA--------TACAGTGAATA---
-CATGTCTGGAACTC-TGA--GGTCTG
-```
-```
->SNORD114-30_seed
-atggacc--tca-gagttacagggtttaatcaaaatcatt-gat---------tcagaca
-ccccagaatactcatcattgg---tcta-------
->SNORD114-30
--TGGATCAATCATGA-CTACTGG-------------TATTGGATGGGTCTTCGTCAG---
-----TGAATGCCTATC--TGGAACTCTGAGGTCCA
-```
-```
->SNORD114-31_seed
-ataaacctctgagttacagaatctaatcaaaatctttgattcctacagc-----------
----tca--------gaatactaa-tgattgg--ctat--------
->SNORD114-31
----------TGAG----------------CAAGCGATG------ACAGCCGGTGGTGTGT
-GAGTCATGGAGGATGAATACTAAGTGCCTGGAACTCTGAGGTTCA
-```
 ##### CONTACT PREDICTION RESULTS
 
 In order to improve the 3D structures from RNAVienna, GREMLIN was used to predict contacts for every sequence. In protein coding genes, when a residue mutates a compensatory mutation follows. These mutations accumulate in our DNA and tools like GREMLIN allow the study of this correlated mutations by analyzing homologous sequences in an MSA. 
@@ -4374,6 +4063,28 @@ i	j	i_id	j_id	r_sco	s_sco	prob
 39	43	39_A	43_A	0.1250	0.709	0.578
 24	40	24_C	40_C	0.1245	0.707	0.575
 ```
+### DCA
+Direct coupling analysis (DCA) is a statistical inference framework used to infer co-evolutionary coupling among residue pairs in multiple sequence alignments, which aims at disentangling direct from indirect correlation. For RNAs, the DCA-based methods first infer physical interactions, both secondary and tertiary, between nucleotides in an RNA molecule by analysing the co-evolutionary signals of nucleotides across sequences in the RNA family.
+Contratry to GREMLIN, DCA uses the Rfam database to identify which family the query sequence belongs to. Once identified, a MSA is performed with the sequences from the same family in order to calculate the direct-coupling information. The output is a list of DIs that can later be used in 3dRNA to optimize the structure. 
+Every snoRNA was input into DCA to obtain restraint predictions to improve their 3D structure. The structures were then visualized with Pymol.
+
+![Alt text](images/DCA_fig.001.jpeg)
+
+### R-chie
+R-chie is a web-server for plotting RNA secondary structures, trans RNA-RNA, RNA-DNA and DNA-DNA interactions and genomic interactions. This package creates arc diagrams of RNA secondary structures, allowing for easy comparison and overlap of two structures, rank and dsiplay basepairs in colour and to also visualize corresponding MSAs and co-variation information. For our study, double covariance graphs were plotted to compare snoRNAs within the sama cluster and that had showcased high similarity in the distance matrices. Double covariance plots display multiple sequence alignments for two structures for easy comparison of the structures and/or alignments. The top offers information about conservation, on top of an alignment of homologues; whereas the bottom predicts percent canonical baspairs, below the same alignment. The latter allows us to locate G:A pairs and the percentage of non-canonical baspairs taking place, which is of great importance to our study as we want to identify Kink turn motifs. K-turn motifs are charecterized by G:A pairings so being able to find those in our structures is a sign of the presence of these conformations. 
+As can be seen below, all the structures appear to have G:A pairings, in higher or lower concentrations, but have them nonetheless. Taking these results into account, it could be speculated the structures contain K-turns but further assessment is necessary to confirm this hypothesis.
+
+## SNORD113 
+
+In cluster 14q(I), snoRNAs 3 and 4 (SNORD113-3 and SNORD113-4) were the ones showcasing a highets correlation in the distance matrices. As both were very similar, it was of interest to assess the conservation and compare them to the rest of sequences belonging to the 14q(I) cluster. 
+
+![Alt text](images/RCHIE_SNORD113.png)
+
+## SNORD114
+
+In cluster 14q(II), snoRNAs 19 and 20 (SNORD114-19 and SNORD114-20) were the ones showcasing a highets correlation in the distance matrices. 
+
+![Alt text](images/rchie_SNORD114.png)
 
 # References
 
