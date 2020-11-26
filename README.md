@@ -4555,6 +4555,7 @@ SNORD115-48         GGGUCAAUGAUGAGA------UGU....UACCUUGAAGAGAAAUGAUGACGUAAAAAU..
 //
 ```
 # 2D RNA STRUCTURES
+## SNORD115
 
 ![Alt text](images/2D_STRUCTURES/SNORD115/115-1.png)
 ```R
@@ -4986,6 +4987,277 @@ GGGUCAAUGAUGAGAUGUUACCUUGAAGAGAAAUGAUGACGUAAAAAUUAAGUUCAGUUGGAUUACGCUGAGGCCC
 
 (((((..((((...((((((................))))))....))))...(((((........))))))))))
 ```
+
+## SNORD116
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-1.png)
+```R
+>SNORD116-1
+
+GGAUCGAUGAUGAGUCCCCUAUAAAAACAUUCCUUGGAAAAGCUGAACAAAAUGAGUGAGAACUCAUAACGUCAUUCUCAUCGGAACUGAGGUCC
+
+(((((..(((((((...((................))......(((.....((((((....))))))....)))..))))))).......)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-2.png)
+```R
+>SNORD116-2 
+
+GGAUCGAUGAUGAGUCCCCAAAAAAAACAUUCCUUGGAAAAGCUGAACAAAAUGAGUGAAAACUCAUACCGUCAUUCUCAUCGGAACUGAGGUCC
+
+(((((..(((((((...((((............))))......(((.....((((((....))))))....)))..))))))).......)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-3.png)
+```R
+>SNORD116-3
+
+GGAUCGAUGAUGAGUCCCCCAUAAAAACAUUCCUUGGAAAAGCUGAACAAAAUGAGUGAGAACUCAUACCGUCGUUCUCAUCGGAACUGAGGUCC
+
+(((((..(((((((....(((.............)))...(((.((.....((((((....))))))....)))))))))))).......)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-4.png)
+```R
+>SNORD116-4
+
+GGAUCGAUGAUGAGUCCCCCCAAAAAAACAUUCCUUGGAAAAGCUGAACAAAAUGAGUGAAAACUCAUACCGUCGUUCUCAGCGGAACUGAGGUCC
+
+(((((......)).)))...............((((((....(((((((...((((((....))))))...)).....)))))....))))))...
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-5.png)
+```R
+>SNORD116-5
+
+GGAUCGAUGAUGAGUCCCCCAUAAAAACAUUCCUUGGAAAAGCUGAACAAAAUGAGUGAGAACUCAUACCGUCGUUCUCAUCAGAACUGAGGUCC
+
+(((((..(((((((....(((.............)))...(((.((.....((((((....))))))....)))))))))))).......)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-6.png)
+```R
+>SNORD116-6
+
+GGAUCGAUGAUGAGUCCUCCAAAAAAAACAUUCCUUGGAAAAGCUGAACAAAAUGAGUGAAAACUCAUACCGUCAUUCUCAUCGGAACUGAGGUCC
+
+(((((..(((((((...(((((............))))).....(((.....((((((....))))))....)))..))))))).......)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-7.png)
+```R
+>SNORD116-7
+
+GGAUCGAUGAUGAGUCCCCCAUAAAAACAUUCCUUGGAAAAGCUGAACAAAAUGAGUGAGAACUCAUACCGUCGUUCUCAUCAGAACUGAGGUCC
+
+(((((..(((((((....(((.............)))...(((.((.....((((((....))))))....)))))))))))).......)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-8.png)
+```R
+>SNORD116-8
+
+GGAUCGAUGAUGAGUCCUCCAAAAAAACAUUCCUUGGAAAAGCUGAACAAAAUGAGUGAGAACUCAUACCGUCGUUCUCAUCGGAACUGAGGUCC
+
+(((((..(((((((...(((((...........)))))..(((.((.....((((((....))))))....)))))))))))).......)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-9.png)
+```R
+>SNORD116-9
+
+GGAUCGAUGAUGAGUCCCCCAUAAAAACAUUCCUUGGAAAAGCUGAACAAAAUGAGUGAGAACUCAUACCGUCGUUCUCAUCGGAACUGAGGUCC
+
+(((((..(((((((....(((.............)))...(((.((.....((((((....))))))....)))))))))))).......)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-10.png)
+```R
+>SNORD116-10
+
+AGGUUGAUGAUGACUUACAUAUAUACGUUUUUUUUUUUUUUUUGGAAAGGUGAACAAAAUGAGUGAAAACUCAGUACCAUCAUCCUCAUCUAACUGAGGUCC
+
+.....(((((((...(((........((((.(((((((.....))))))).))))....(((((....)))))))).)))))))((((......))))....
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-11.png)
+```R
+>SNORD116-11
+
+GGAUCAAUGAUGACUUCCAUACGUGGGUUCCUUGGAAAGUUGAACAAAAUGAGUGAAAACUUUAUACUGUCAUCCUCUUCAAACUGAGGUCC
+
+(((((.((((((.....))).))).))))).....((((((..((.......))...))))))..........((((........))))...
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-12.png)
+```R
+>SNORD116-12
+
+ GGAUCAAUGAUGACUUCCAUAUAUACAUUCCUUGGAAAGCUGAAUAAAAUGAAUGAAAACUCUAUACCAUCAUCCUCAUUGAACUGAGGUCC
+
+......((((((..(((((.............))))).............((........)).....))))))(((((......)))))...
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-13.png)
+```R
+>SNORD116-13
+
+GGACCAAUGAUGACUUCCAUACAUGCAUUCCUUGGAAAGCUGAACAAAAUGAGUGGGAACUCUGUACUAUCAUCUUAGUUGAACUGAGGUCC
+
+(((((...(((((.(((((.............))))).............((((....)))).......)))))(((((...))))))))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-14.png)
+```R
+>SNORD116-14
+
+GGAUCGAUGAUGACUUCCAUAUAUACAUUCCUUGGAAAGCUGAACAAAAUGAGUGAAAACUCUAUACCGUCAUUCUCGUCGAACUGAGGUCC
+
+((.((((((((((((((((.............))))).............((((....))))......))))...))))))).)).......
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-15.png)
+```R
+>SNORD116-15
+
+GGAUCGAUGAUGACUUCCAUAUAUACAUUCCUUGGAAAGCUGAACAAAAUGAGUGAAAACUCUAUACCGUCAUCCUCGUCAAACUGAGGUCC
+
+.((.(((.(((((((((((.............))))).............((((....))))......)))))).)))))............
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-16.png)
+```R
+>SNORD116-16
+
+GGAUCGAUGAUGACUUUCAUACAUGCAUUCCUUGGAAAGCUGAACAAAAUGAGUGAAAACUCUAUACCGUCAUCCUCGUCGAACUGAGGUCC
+
+.((.(((.((((((.......((.((.(((....))).))))........((((....))))......)))))).)))))............
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-17.png)
+```R
+>SNORD116-17
+
+GGAUCGAUGAUGACUUCCAUAUAUACAUUCCUUGGAAAGCUGAACAAAAUGAGUGAAAACUCUAUACCGUCAUCCUCGUCGAACUGAGGUCC
+
+.((.(((.(((((((((((.............))))).............((((....))))......)))))).)))))............
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-18.png)
+```R
+>SNORD116-18
+
+GGAUCGAUGAUGACUUCCUUAUAUACAUUCCUUGGAAAGCUGAACAAAAUGAGUGAAAACUCUAUACCGUCAUCCUCGUCGAACUGAGGUCC
+
+.((.(((.((((((((((...............)))).............((((....))))......)))))).)))))............
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-19.png)
+```R
+>SNORD116-19
+
+ GGAUCGAUGAUGACUUCCAUAUAUACAUUCCUUGGAAAGCUGAACAAAAUGAGUGAAAACUCUAUACCGUCAUCCUCGUCGAACUGAGGUCC
+
+.((.(((.(((((((((((.............))))).............((((....))))......)))))).)))))............
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-20.png)
+```R
+>SNORD116-20
+
+GGAUCGAUGAUGACUUCCAUAUAUACAUUCCUUGGAAAGCUGAACAAAAUGAGUGAAAACUCUAUACUGUCAUCCUCGUCGAACUGAGGUCC
+
+.((.(((.(((((((((((.............))))).............((((....))))......)))))).)))))............
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-21.png)
+```R
+>SNORD116-21
+
+GGAUCGAUGAUGACUUCCACAUAUACAUUCCUUGGAAAGCUGAACAAAAUGAGUGAAAACUCUAUACCGUCAUCCUCGUCGAACUGAGGUCC
+
+.((.(((.(((((((((((.............))))).............((((....))))......)))))).)))))............
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-22.png)
+```R
+>SNORD116-22
+
+GGAUCGAUGAUGACUUCCAUAUGUACAUUCCUUGGAAAGCUGAACAAAAUGAGUGAAAACUCUAUACCGUCAUCCUCGUCGAACUGAGGUCC
+
+.((.(((.(((((((((((.............))))).............((((....))))......)))))).)))))............
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-23.png)
+```R
+>SNORD116-23
+
+GGAUCGAUGAUGACCUCAAUACAUGCAUUCCUUGGAAAGCUGAACAAAAUGAGUGAAAACUCUAUACCGUCGUCCUCGUCAAACUGAGGUCC
+
+...........(((((((...((.((.(((....))).))))......(((((.((..((........))..))))))).....))))))).
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-24.png)
+```R
+>SNORD116-24
+
+GGAUCGAUGAUGACUUCCAUAUAUACAUUCCUUGGAAAGCUGAACAAAAUGAGUGAAAACUCUAUACCGUCAUUCUCGUCGAACUGAGGUCC
+
+((.((((((((((((((((.............))))).............((((....))))......))))...))))))).)).......
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-25.png)
+```R
+>SNORD116-25
+ GGAUCGAUGAUGACUUUAAAAUGGAUCUCAUCGGAAUCUGAACAAAAUGAGUGACCAAAUCACUUCUGUGCCACUUCUGUGAGCUGAGGUCC
+
+((((((((((.((((.......)).))))))))...............((((((.....))))))((..(((((....))).))..))))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-26.png)
+```R
+>SNORD116-26
+ GGAUCGAUGAUGACUAUAAAAAAAAUGGAUCUCAUCGGAAUCUGAACAAAAUGAGUGACCAAAUCAUUUCUGUGCCACUUCUGUGAGCUGAGGUCC
+
+((((((((((.((((((.......)))).))))))).........(((((((((.........)))))).)))(((((....))).))...)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-27.png)
+```R
+>SNORD116-27
+
+GGAUCGAUGAUGACUUAAAGAUUUAUCUAAUUUAAAUCUGAACAAAAUGAGUGACCAAAACACUUCUGUACCACUUCUGUGAGCUGAGGUCC
+
+((.(((...((.......(((((((.......))))))).......))...))))).....(((((.((..(((....))).)).)))))..
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-28.png)
+```R
+>SNORD116-28
+
+GGAUCGAUGAUGACUUAAAGAUUUAUCUAAUUUAAAUCUGAACAAAAUGAGUGACCAAAACACUUCUGUACCACUUCUGUGAGCUGAGGUCC
+
+((.(((...((.......(((((((.......))))))).......))...))))).....(((((.((..(((....))).)).)))))..
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-29.png)
+```R
+>SNORD116-29
+
+GGAUCGAUGAUGACUUAAAAAAAUGGAAACCUUGGAAAUCUGAACAAAAUGAGUGACCAAGACACUUCUGUGAGCUGAGGUCC
+
+...........(((((......((((((..(((((...((..........))....)))))....))))))......))))).
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD116/116-30.png)
+```R
+>SNORD116-30
+
+GGAUUGACGAUGACUUUAAAAAAAAAAAAUCUCAUUGAAAUCUGAAAAAAAUGAGUGACCAAACCACUUCUGUGAGCUGAGGUCC
+
+(((((..((((((..((..........))..)))))).))))).............((((....(((....)))......)))).
+```
+
 # References
 
 Barlow, D.P., Stoger, R., Herrmann, B.G., Saito, K. and Schweifer, N. (1991) 'The mouse insulin-like growth factor type-2 receptor is imprinted and closely linked to the Tme locus', Nature, 349(6304), pp. 84-87. doi: 10.1038/349084a0 [doi].
