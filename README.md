@@ -4088,12 +4088,12 @@ In cluster 14q(II), snoRNAs 19 and 20 (SNORD114-19 and SNORD114-20) were the one
 
 # SNRPN Human/Mice Analysis
 
-### Sequence retrieval
+## Sequence retrieval
 
 #### SNORD116 Homo sapiens
 
 snoRNAs belonging to the SNORD116 cluster from chromosome 15 (Homo sapiens) were identified and localized by accessing RF00108 from Rfam with Infernal. Only the 30 hits found over the inlcusion threshold were included for the analysis, coordinates for each sequence were gathered and compared to UCSC GRCh38 sequences. 
-```
+```R
 >SNORD116-1: hg38_dna range=chr15:25051477-25051571 5'pad=0 3'pad=0 strand=+ repeatMasking=none
 GGATCGATGATGAGTCCCCTATAAAAACATTCCTTGGAAAAGCTGAACAAAATGAGTGAGAACTCATAACGTCATTCTCATCGGAACTGAGGTCC
 
@@ -4256,7 +4256,7 @@ SNORD116-30          GGAUUGACGAUGACUUUa........aAAAAAAAAAAU.CUCAUUGAAA.UCUGAAAAA
 ```
 
 ### SNORD115 Homo sapiens
-```
+```R
 >SNORD115-1: hg38_dna range=chr15:25170723-25170804 5'pad=0 3'pad=0 strand=+ repeatMasking=none
 GTGTTGATGATGAGAACCTTATATTATCCTGAAGAGAGGTGATGACTTAA
 AAATCATGCTCAATAGGATTACGCTGAGGCCC
@@ -4450,7 +4450,7 @@ GGGTCAATGATGAGATGTTACCTTGAAGAGAAATGATGACGTAAAAATTA
 AGTTCAGTTGGATTACGCTGAGGCCC
 ```
 An alignment was carried out between the list of snoRNAs and the cm built from the RF00105 stockholm file from Rfam, the list includes 50 hits, all of them within the inclusion threshold. 
-```
+```R
 # STOCKHOLM 1.0
 #=GF AU Infernal 1.1.1
 
@@ -4553,6 +4553,438 @@ SNORD115-48         GGGUCAAUGAUGAGA------UGU....UACCUUGAAGAGAAAUGAUGACGUAAAAAU..
 #=GC SS_cons        <<<<<<-<<_______________....______________________________.._________...________>>->>-->>>>
 #=GC RF             GGGuCaAuGAUGAGAAccUUAUAU....UGUcuUGAAGAGAGgUGAUGACuUAAAAAU..cAUGCUCAA...UAGGAUUACgCuGAGgCCC
 //
+```
+# 2D RNA STRUCTURES
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-1.png)
+```R
+>SNORD115-1
+
+GUGUUGAUGAUGAGAACCUUAUAUUAUCCUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+................(((((....((((((..(((..(((((.........))))).)))..)))))).....)))))...
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-2.png)
+```R
+>SNORD115-2
+
+GGGUCGAUGAUGAGAAGCUUCUGUUUUCUUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUAUGCUGAGGCCC
+
+((((.(((..((((..((((((.(((....))).)))))).....))))...)))...((((.((......)).))))))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-3.png)
+```R
+>SNORD115-3
+
+GGGUCAAUGAUGAGAACCUUAUAUUGUCCUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUUAGUAGGAUUACGCUGAGGCCU
+
+(((.(((((.((((...))))))))).)))........(((((.........))))).((((((........))))))....
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-4.png)
+```R
+>SNORD115-4
+
+GGGUCGAUGAUGAGAACUUUAUAUUGUUCUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+(((((.......(((((........)))))...(((..(((((.........))))).)))................)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-5.png)
+```R
+>SNORD115-5
+
+GGAUCGAUGAUGAGAACCUUAUAUUGUCCUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+................(((((....((((((..(((..(((((.........))))).)))..)))))).....)))))...
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-6.png)
+```R
+>SNORD115-6
+
+GGGUCAAUGAUGAGAACCUUAUAUUGUUCUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+(((((....(((((...)))))...((((((..(((..(((((.........))))).)))..))))))........)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-7.png)
+```R
+>SNORD115-7
+
+GGGUCAAUGAGAACCUUAUAUUGUCCUGAAGAGAGGUGAUAACUUAAAAAUCAUGCUCAAUAAUAGGAUUACGCUGAGGCCC
+
+(((((.(((((...)))))...((((((....((((((((.........))))).))).....))))))........)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-8.png)
+```R
+>SNORD115-8
+
+GGGUCAAUGAUGAGAACCUUACAUUGUUCUGAAGAGAGAUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+(((((((((.((((...))))))))((((((..(((..(((((.........))))).)))..))))))........)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-9.png)
+```R
+>SNORD115-9
+
+GGGUCGAUGAUGAGAACCUUAUAUUGUCCUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+(((((....(((((...)))))...((((((..(((..(((((.........))))).)))..))))))........)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-10.png)
+```R
+>SNORD115-10
+
+GGGUCGAUGAUGAGAACCUUAUAUUGUCCUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+(((((....(((((...)))))...((((((..(((..(((((.........))))).)))..))))))........)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-11.png)
+```R
+>SNORD115-11
+
+GGGUCAAUGAUGAGAACCUUAUAUUGUCCUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+(((((....(((((...)))))...((((((..(((..(((((.........))))).)))..))))))........)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-12.png)
+```R
+>SNORD115-12
+
+GGGUCGAUGAUGAGAACCUUAUAUUGUCCUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+(((((....(((((...)))))...((((((..(((..(((((.........))))).)))..))))))........)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-13.png)
+```R
+>SNORD115-13
+
+GGGUCGAUGAUGAGAACCUUAUAUUAUCCUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+(((((....(((((...)))))...((((((..(((..(((((.........))))).)))..))))))........)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-14.png)
+```R
+>SNORD115-14
+
+GGGUCGAUGAUGAGAAACUUAUAUUGUCUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+(((((....(((((...)))))...((((...(((..(((((.........))))).)))....))))........)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-15.png)
+```R
+>SNORD115-15
+
+GGGUCGAUGAUGAGAACCUUAUAUGUUCUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+(((((....(((((...)))))..((((((..(((..(((((.........))))).)))..))))))........)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-16.png)
+```R
+>SNORD115-16
+
+GGGUCAAUGAUGAGAACCUUAUAUUAUCCUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+(((((....(((((...)))))...((((((..(((..(((((.........))))).)))..))))))........)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-17.png)
+```R
+>SNORD115-17
+
+GGGUCGAUGAUGAGAACCUUAUAUUGUCCUGAAGAGAGGUGAUGACUUAAAAAUCAUUCUCAAAAGGAUUAUGCUGAGGCCC
+
+(((((........)).((((((((.(((((...(((((.((((.........)))))))))...))))).))).))))))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-18.png)
+```R
+>SNORD115-18
+
+GGGUCGAUGAUGAGAACCUUAUAUUGUCCUGAAGAGAGGUGAUGACUUAAAAAUCAUUCUCAAAAGGAUUAUGCUGAGGCCC
+
+(((((........)).((((((((.(((((...(((((.((((.........)))))))))...))))).))).))))))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-19.png)
+```R
+>SNORD115-19
+
+GGGUCGAUGAUGAGAACCUUAUAUUGUCCUGAAGAGAGGUGAUGACUUAAAAAUCAUUCUCAAAAGGAUUAUGCUGAGGCCC
+
+(((((........)).((((((((.(((((...(((((.((((.........)))))))))...))))).))).))))))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-20.png)
+```R
+>SNORD115-20
+
+GGGUCGAUGAUGAGAACCUUAUAUUGUCCUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUAUGCUGAGGCCC
+
+(((((........)).((((((((.((((((..(((..(((((.........))))).)))..)))))).))).))))))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-21.png)
+```R
+>SNORD115-21
+
+GGGUCGAUGAUGAGAACCUUAUAUUUUCUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+(((((....(((((...)))))...(((((..(((..(((((.........))))).)))..))))).........)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-22.png)
+```R
+>SNORD115-22
+
+GGGUCAAUGAUGAGAACCUUAUAUUGUCCUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGUCCC
+
+(((.(((((.((((...))))))))).)))...(((..(((((.........))))).)))....(((((......))))).
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-23.png)
+```R
+>SNORD115-23
+
+GGGUCAAUGAUGAGAACCCUAUAUUGUGUUGAAGAGAGGUGAUGACUUAAAAUUACCAUGCUCAAUGAUUACGCUGAGGCCC
+
+(((((.((((((((....)).))))))((((.((...((((((........))))))...))))))...........)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-24.png)
+```R
+>SNORD115-24
+
+CAGUCAGUGUCGAGAACCUUAUAUUGUUCUGAAGAGAGGUGGUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+...(((((((..(((((........)))))...(((..(((((.........))))).))).........))))))).....
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-25.png)
+```R
+>SNORD115-25
+
+AGGUCGAUUAUGAGAACCUUAUAUUGUCCUGAAGAGAGGUGAUGACUUAAAAAUCAUGCCCAAUAGGAUUACGCUGAGGCCC
+
+(((.((((.(((((...))))))))).)))........(((((.........)))))(((...(((.......))).)))..
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-26.png)
+```R
+>SNORD115-26
+
+GGGUCAGUGAUGAGAACCUUAUAUUGUCCUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+((((((((((((((...)))))...((((((..(((..(((((.........))))).)))..))))))..)))))..))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-27.png)
+```R
+>SNORD115-27
+
+GGGCUGAUGAUGAGAACCUUAUAUUGUCCUGAAAAGAGGUGAUGACUUAACAAUCAUGCUCAAUAGGAUUACAUUGAAGCCC
+
+((((((((((((((...)))))...((((((....((((((((.........))))).)))..))))))..))))..)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-28.png)
+```R
+>SNORD115-28
+
+GGGUGGUGAUGAGAACCUUGUAUUCUUCUGAAGAGAGGUGAUGACUUAAAAACCAUGCUCAAUAGGAUUACACUUAGGCCG
+
+..(((((..((((.(((((...(((....)))..))))).....))))...)))))(((...((((......)))))))..
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-29.png)
+```R
+>SNORD115-29
+
+GGGUCAAUGAUGAGAACCUUAUAUUGUCCUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+(((((....(((((...)))))...((((((..(((..(((((.........))))).)))..))))))........)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-30.png)
+```R
+>SNORD115-30
+
+GGGUCAAUGAUGAGAACCUUAUAUUGUUCUGAAGAGAGGUGAUUAUUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+(((((....(((((...)))))...((((((..(((..((((((.......)))))).)))..))))))........)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-31.png)
+```R
+>SNORD115-31
+
+GGGUCAGUGAUGAGAACCUUAUAUUGUCCUGAAGAAAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACACUGAGGCCC
+
+((((((((((((((...)))))...((((((..((...(((((.........)))))..))..))))))..)))))..))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-32.png)
+```R
+>SNORD115-32
+
+GGGUCAAUGAUGAGAACCUGAUAUUGCCCUGAAGAGAGAUGAUGACUUAAAAAUCAUGUUCAAUAGGAUUACGCUGAGGCCU
+
+(((.((((.((.((...)).)))))))))......((.(((((.........))))).))......................
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-33.png)
+```R
+>SNORD115-33
+
+GGGUCAAUGAUGAGAACCGUAUAUUGUCCUGAAGAGCGGUGAUGACUUAAAAAUAAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+(((((............((((....((((((..(((((..................)))))..))))))))))....)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-34.png)
+```R
+>SNORD115-34
+
+GGGUCAAUGAUGAGAACCUUAUAAUGUUCUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+(((((....(((((...)))))...((((((..(((..(((((.........))))).)))..))))))........)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-35.png)
+```R
+>SNORD115-35
+
+GGGUCAAUGAUGAGAACCUUGUAUUAUCUUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACACUGAGGCCC
+
+(((((..............((((..((((((..(((..(((((.........))))).)))..))))))))))....)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-36.png)
+```R
+>SNORD115-36
+
+GGGUCAAUGAUGAGAACCUUAUAUUGUCCUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+(((((....(((((...)))))...((((((..(((..(((((.........))))).)))..))))))........)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-37.png)
+```R
+>SNORD115-37
+
+GGGCUGAUGAUGAGAACCUUAUAUUGUCCUGAAAAAAGGUGAUGACUUAAACAUCAUGCUUAAUAGUAUUAUGCUGAAGCCC
+
+(((((.((((((.........(((((.(((......)))))))).......))))))((.((((...)))).))...)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-38.png)
+```R
+>SNORD115-38
+
+GGGUCAAUGAUGAGAACCUUACAUUGUCCUGAAGAGAGAUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+(((((((((.((((...))))))))((((((..(((..(((((.........))))).)))..))))))........)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-39.png)
+```R
+>SNORD115-39
+
+GGGUCAAUGAUGAGAAUCUUAUAUUGUCCUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+(((((....(((((...)))))...((((((..(((..(((((.........))))).)))..))))))........)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-40.png)
+```R
+>SNORD115-40
+
+GGGUCGAUGAUGAGAACCUUAUAUUUUCCUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+(((((((..(((((...)))))..))(((((..(((..(((((.........))))).)))..))))).........)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-41.png)
+```R
+>SNORD115-41
+
+GGGUCAGUGAUGAGAACCUUCUAUUGUCCUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+(((((((((...(((....)))...((((((..(((..(((((.........))))).)))..))))))..)))))..))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-42.png)
+```R
+>SNORD115-42
+
+GGGUCGAUGAUGAGAACCUUAUAUUGUUCUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+(((((....(((((...)))))...((((((..(((..(((((.........))))).)))..))))))........)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-43.png)
+```R
+>SNORD115-43
+
+GGGUCAAUGAUGAGAACCUUAUAUUGUCCUGAAGAGAGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+(((((....(((((...)))))...((((((..(((..(((((.........))))).)))..))))))........)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-44.png)
+```R
+>SNORD115-44
+
+GGGUCAAUGAUGAGAACCUUAUAUUGUCCUGAAGAGCGGUGAUGACUUAAAAAUCAUGCUCAAUAGGAUUACGCUGAGGCCC
+
+(((((....(((((...)))))...((((((..(((((.((((.........)))))))))..))))))........)))))
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-45.png)
+```R
+>SNORD115-45
+
+GGGGCAAUAUGGAGAUGUUAUAUUGUCUUCGACAGGGAAGAUGACAUAAAAAUUAUGUUCAAUAGGAUUAUGUGGAGACUU
+
+.(((((((((((.....)))))))))))((.(((.......((((((((...))))).))).........))).)).....
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-46.png)
+```R
+>SNORD115-46
+
+UCAAUAAUGAAAUCUUCUGAUUUGGUGAGAAAUAAUGCCUUAAAAUUACACUCAAUAGGAUUAUGCUGAGG
+
+......((.(((((....))))).)).((..(((((.(((................)))))))).))....
+```
+
+![Alt text](images/2D_STRUCTURES/SNORD115/115-47.png)
+```R
+>SNORD115-47 
+
+AAGACAACGUAAAUAUAUGUAUAAAGAGUAUCUUCAGGAGACGUAAUAAUGUAAAAAUCAUGCUCAAUAGAAUUAAGCUGAGGCUC
+
+......(((((....))))).....((((((.........((((....)))).......))))))..........(((....))).
+```
+![Alt text](images/2D_STRUCTURES/SNORD115/115-48.png)
+```R
+>SNORD115-48
+
+GGGUCAAUGAUGAGAUGUUACCUUGAAGAGAAAUGAUGACGUAAAAAUUAAGUUCAGUUGGAUUACGCUGAGGCCC
+
+(((((..((((...((((((................))))))....))))...(((((........))))))))))
 ```
 # References
 
