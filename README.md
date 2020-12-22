@@ -1398,6 +1398,8 @@ TGGATCAATCATGACTACTGGTATTGGATGGGTCTTCGTCAGTGAATGCCTATCTGGAACTCTGAGGTCCA
 
 TGAGCAAGCGATGACAGCCGGTGGTGTGTGAGTCATGGAGGATGAATACTAAGTGCCTGGAACTCTGAGGTTCA
 ```
+### Mus musculus SNORD113/114 Family sequence analysis
+
 
 
 
@@ -4554,6 +4556,71 @@ SNORD115-48         GGGUCAAUGAUGAGA------UGU....UACCUUGAAGAGAAAUGAUGACGUAAAAAU..
 #=GC RF             GGGuCaAuGAUGAGAAccUUAUAU....UGUcuUGAAGAGAGgUGAUGACuUAAAAAU..cAUGCUCAA...UAGGAUUACgCuGAGgCCC
 //
 ```
+## Mus musculus SNORD115 sequence analysis
+### Rfam/Infernal sequence retrieval
+```
+| rank| E-value|score|bias|sequence| start|end| mdl| trunc| gc|description|
+|----| ---------|------|-----|-----------------------|------|------|---|-----|----|-----------|
+|(1) !| 6.1e-22| 94.4| 0.0|ENA AC221015 AC221015.2|140| 62 -|cm|no|0.43|Mus musculus BAC clone RP23-410L1 from chromosome 7, c|
+|(2) !| 6.1e-22| 94.4| 0.0|ENA AC221015 AC221015.2| 3883| 3805 -|cm|no|0.43|Mus musculus BAC clone RP23-410L1 from chromosome 7, c|
+|(3) !| 6.1e-22| 94.4| 0.0|ENA AC221015 AC221015.2| 5754| 5676 -|cm|no|0.43|Mus musculus BAC clone RP23-410L1 from chromosome 7, c|
+|(4) !| 6.1e-22| 94.4| 0.0|ENA AC221015 AC221015.2| 7622| 7544 -|cm|no|0.43|Mus musculus BAC clone RP23-410L1 from chromosome 7, c|
+|(5) !| 6.1e-22| 94.4| 0.0|ENA AC221015 AC221015.2| 9490| 9412 -|cm|no|0.43|Mus musculus BAC clone RP23-410L1 from chromosome 7, c|
+|(6) !| 2.8e-20| 88.0| 0.0|ENA AC221015 AC221015.2|10895|10817 -|cm|no|0.43|Mus musculus BAC clone RP23-410L1 from chromosome 7, c|
+|(7) !| 3.8e-18| 79.7| 0.0|ENA AC221015 AC221015.2| 2011| 1933 -|cm|no|0.42|Mus musculus BAC clone RP23-410L1 from chromosome 7, c|
+ ------ inclusion threshold ------
+|(8) ?| 5.2|9.8| 0.0|ENA AC221015 AC221015.2|34420|34394 -|cm|no|0.22|Mus musculus BAC clone RP23-410L1 from chromosome 7, c|
+|(9) ?| 6.4|9.5| 0.2|ENA AC221015 AC221015.2|17901|17876 -|cm|no|0.12|Mus musculus BAC clone RP23-410L1 from chromosome 7, c|
+```
+The coordinates were then used to retrieve sequences in R from AC221015.2, which was summoned using the ```read.GenBank()``` command. A fasta file was created and accessed by [start-end] coordinates.
+
+>SNORD115-1|AC221015|AC221015.2:140-62 Mus musculus BAC clone RP23-410L1 from chromosome 7, complete sequence.
+cccagttactactgttgggttacagtacttctttccactactgtattttaagtacgagttatcctaatgcgactccggg
+>SNORD115-2|AC221015|AC221015.2:2011-1933 Mus musculus BAC clone RP23-410L1 from chromosome 7, complete sequence.
+cccagttactactgttgggttacagtacttctttccactactgtattttaagtacgagttatcctaatgggactcctgg
+>SNORD115-3|AC221015|AC221015.2:3883-3895 Mus musculus BAC clone RP23-410L1 from chromosome 7, complete sequence.
+cccagttactactgttgggttacagtacttctttccactactgtattttaagtacgagttatcctaatgcgactccggg
+>SNORD115-4|AC221015|AC221015.2:5754-5676 Mus musculus BAC clone RP23-410L1 from chromosome 7, complete sequence.
+cccagttactactgttgggttacagtacttctttccactactgtattttaagtacgagttatcctaatgcgactccggg
+>SNORD115-5|AC221015|AC221015.2:7622-7544 Mus musculus BAC clone RP23-410L1 from chromosome 7, complete sequence.
+cccagttactactgttgggttacagtacttctttccactactgtattttaagtacgagttatcctaatgcgactccggg
+>SNORD115-6|AC221015|AC221015.2:9490-9412 Mus musculus BAC clone RP23-410L1 from chromosome 7, complete sequence.
+cccagttactactgttgggttacagtacttctttccactactgtattttaagtacgagttatcctaatgcgactccggg
+>SNORD115-7|AC221015|AC221015.2:10895-10817 Mus musculus BAC clone RP23-410L1 from chromosome 7, complete sequence.
+cccagttactactgttgggttacagtacttctccccactactttattttaagtacgagttatcctaatacgactccggg
+### cmalign with hit list
+```R
+# STOCKHOLM 1.0
+#=GF AU Infernal 1.1.1
+
+#=GS SNORD115-1|AC221015|AC221015.2:140-62      DE Mus musculus BAC clone RP23-410L1 from chromosome 7, complete sequence.
+#=GS SNORD115-2|AC221015|AC221015.2:2011-1933   DE Mus musculus BAC clone RP23-410L1 from chromosome 7, complete sequence.
+#=GS SNORD115-3|AC221015|AC221015.2:3883-3895   DE Mus musculus BAC clone RP23-410L1 from chromosome 7, complete sequence.
+#=GS SNORD115-4|AC221015|AC221015.2:5754-5676   DE Mus musculus BAC clone RP23-410L1 from chromosome 7, complete sequence.
+#=GS SNORD115-5|AC221015|AC221015.2:7622-7544   DE Mus musculus BAC clone RP23-410L1 from chromosome 7, complete sequence.
+#=GS SNORD115-6|AC221015|AC221015.2:9490-9412   DE Mus musculus BAC clone RP23-410L1 from chromosome 7, complete sequence.
+#=GS SNORD115-7|AC221015|AC221015.2:10895-10817 DE Mus musculus BAC clone RP23-410L1 from chromosome 7, complete sequence.
+
+SNORD115-1|AC221015|AC221015.2:140-62              ----------------------------------------------------------CCC----------aguuacuacuguuggguuacaguacuucuuuccacuacuguauuuuaaguacgaguuauccuaaugcgacuccggg-----------
+#=GR SNORD115-1|AC221015|AC221015.2:140-62      PP ..........................................................322..........2445666777777788888888888888888888888888888888888888888888888888888886666655...........
+SNORD115-2|AC221015|AC221015.2:2011-1933           ----------------------------------------------------------CCC----------aguuacuacuguuggguuacaguacuucuuuccacuacuguauuuuaaguacgaguuauccuaaugggacuccugg-----------
+#=GR SNORD115-2|AC221015|AC221015.2:2011-1933   PP ..........................................................333..........3445667777777788888888888888888888888888888888888888888888888888888888777666...........
+SNORD115-3|AC221015|AC221015.2:3883-3895           ----------------------------------------------------------CCC----------aguuacuacuguuggguuacaguacuucuuuccacuacuguauuuuaaguacgaguuauccuaaugcgacuccggg-----------
+#=GR SNORD115-3|AC221015|AC221015.2:3883-3895   PP ..........................................................322..........2445666777777788888888888888888888888888888888888888888888888888888886666655...........
+SNORD115-4|AC221015|AC221015.2:5754-5676           ----------------------------------------------------------CCC----------aguuacuacuguuggguuacaguacuucuuuccacuacuguauuuuaaguacgaguuauccuaaugcgacuccggg-----------
+#=GR SNORD115-4|AC221015|AC221015.2:5754-5676   PP ..........................................................322..........2445666777777788888888888888888888888888888888888888888888888888888886666655...........
+SNORD115-5|AC221015|AC221015.2:7622-7544           ----------------------------------------------------------CCC----------aguuacuacuguuggguuacaguacuucuuuccacuacuguauuuuaaguacgaguuauccuaaugcgacuccggg-----------
+#=GR SNORD115-5|AC221015|AC221015.2:7622-7544   PP ..........................................................322..........2445666777777788888888888888888888888888888888888888888888888888888886666655...........
+SNORD115-6|AC221015|AC221015.2:9490-9412           ----------------------------------------------------------CCC----------aguuacuacuguuggguuacaguacuucuuuccacuacuguauuuuaaguacgaguuauccuaaugcgacuccggg-----------
+#=GR SNORD115-6|AC221015|AC221015.2:9490-9412   PP ..........................................................322..........2445666777777788888888888888888888888888888888888888888888888888888886666655...........
+SNORD115-7|AC221015|AC221015.2:10895-10817         ----------------------------------------------------------CCC----------aguuacuacuguuggguuacaguacuucuccccacuacuuuauuuuaaguacgaguuauccuaauacgacuccggg-----------
+#=GR SNORD115-7|AC221015|AC221015.2:10895-10817 PP ..........................................................322..........2445666777777788888888888888888888888888888888888888888888888888888886666655...........
+#=GC SS_cons                                       <<<<<<-<<______________________________________________________________~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~>>->>-->>>>
+#=GC RF                                            GGGuCaAuGAUGAGAAccUUAUAUUGUcuUGAAGAGAGgUGAUGACuUAAAAAUcAUGCUCAAUAGGAUUA~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~CgCuGAGgCCC
+//
+```
+
+
 # 2D RNA STRUCTURES
 ## SNORD115
 
