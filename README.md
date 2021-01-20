@@ -5453,6 +5453,19 @@ GGAUUGACGAUGACUUUAAAAAAAAAAAAUCUCAUUGAAAUCUGAAAAAAAUGAGUGACCAAACCACUUCUGUGAGCUGA
 
 (((((..((((((..((..........))..)))))).))))).............((((....(((....)))......)))).
 ```
+## Clinker and Clustermap
+
+Clinker is a Python-based gene cluster comparison pipeline, and clustermap.js, a companion visualisation JavaScript library, which can automatically generate interactive, to-scale gene cluster comparison figures directly from sequence files. The clinker workflow is detailed in Figure 1a. clinker accepts GenBank files as input; multi-record GenBank files are treated as gene clusters with multiple loci.
+
+``` pip3 install clinker``` command to install clinker. As previously stated, Genbank files for each cluster had to be curated into a folder called ```Clusters```. In total, 146 snoRNA sequences were aligned: 9 from Homo sapiens SNORD113, 31 from Homo sapiens SNORD114, 18 from Mus musculus RIAN/SNORD113-114 family, 48 from Homo sapiens SNORD115, 30 from Homo sapiens SNORD116, 7 from Mus musculus SNORD115, and 1 from Mus musculus SNORD116.
+
+```clinker Clusters/* -p``` to plot alignments. 
+-p [PLOT], --plot [PLOT]
+                        Plot cluster alignments using clustermap.js. If a path
+                        is given, clinker will generate a portable HTML file
+                        at that path. Otherwise, the plot will be served
+                        dynamically using Python's HTTP server.
+
 
 # References
 
@@ -5475,6 +5488,8 @@ Edwards, C.A., Mungall, A.J., Matthews, L., Ryder, E., Gray, D.J., Pask, A.J., S
 Enterina, J.R., Enfield, K.S.S., Anderson, C., Marshall, E.A., Ng, K.W. and Lam, W.L. (2017) 'DLK1-DIO3 imprinted locus deregulation in development, respiratory disease, and cancer', Expert review of respiratory medicine, 11(9), pp. 749-761. doi: 10.1080/17476348.2017.1355241 [doi].
 
 Ferguson-Smith, A.C., Sasaki, H., Cattanach, B.M. and Surani, M.A. (1993) 'Parental-origin-specific epigenetic modification of the mouse H19 gene', Nature, 362(6422), pp. 751-755. doi: 10.1038/362751a0 [doi].
+
+Gilchrist, C.L.M., Chooi, Y.-H., 2020. clinker & clustermap.js: Automatic generation of gene cluster comparison figures. bioRxiv 2020.11.08.370650. https://doi.org/10.1101/2020.11.08.370650
 
 Griffiths-Jones, S., Bateman, A., Marshall, M., Khanna, A. and Eddy, S.R. (2003) 'Rfam: an RNA family database', Nucleic acids research, 31(1), pp. 439-441. doi: 10.1093/nar/gkg006 [doi].
 
