@@ -5204,7 +5204,183 @@ GGGUCAAUGAUGAGAUGUUACCUUGAAGAGAAAUGAUGACGUAAAAAUUAAGUUCAGUUGGAUUACGCUGAGGCCC
 
 (((((..((((...((((((................))))))....))))...(((((........))))))))))
 ```
+### 2D Structure Similarity Assessment
+Using ```RNAdistance```, the 2D bracket structures of the snoRNAs belonging to the Mus musculus SNORD116 cluster were compared to produce similarity matrices with the ```-Xm``` function.
+```Python
+................(((((....((((((..(((..(((((.........))))).)))..)))))).....)))))...
+((((.(((..((((..((((((.(((....))).)))))).....))))...)))...((((.((......)).))))))))
+(((.(((((.((((...))))))))).)))........(((((.........))))).((((((........))))))....
+(((((.......(((((........)))))...(((..(((((.........))))).)))................)))))
+................(((((....((((((..(((..(((((.........))))).)))..)))))).....)))))...
+(((((....(((((...)))))...((((((..(((..(((((.........))))).)))..))))))........)))))
+(((((.(((((...)))))...((((((....((((((((.........))))).))).....))))))........)))))
+(((((((((.((((...))))))))((((((..(((..(((((.........))))).)))..))))))........)))))
+(((((....(((((...)))))...((((((..(((..(((((.........))))).)))..))))))........)))))
+(((((....(((((...)))))...((((((..(((..(((((.........))))).)))..))))))........)))))
+(((((....(((((...)))))...((((((..(((..(((((.........))))).)))..))))))........)))))
+(((((....(((((...)))))...((((((..(((..(((((.........))))).)))..))))))........)))))
+(((((....(((((...)))))...((((((..(((..(((((.........))))).)))..))))))........)))))
+(((((....(((((...)))))...((((...(((..(((((.........))))).)))....))))........)))))
+(((((....(((((...)))))..((((((..(((..(((((.........))))).)))..))))))........)))))
+(((((....(((((...)))))...((((((..(((..(((((.........))))).)))..))))))........)))))
+(((((........)).((((((((.(((((...(((((.((((.........)))))))))...))))).))).))))))))
+(((((........)).((((((((.(((((...(((((.((((.........)))))))))...))))).))).))))))))
+(((((........)).((((((((.(((((...(((((.((((.........)))))))))...))))).))).))))))))
+(((((........)).((((((((.((((((..(((..(((((.........))))).)))..)))))).))).))))))))
+(((((....(((((...)))))...(((((..(((..(((((.........))))).)))..))))).........)))))
+(((.(((((.((((...))))))))).)))...(((..(((((.........))))).)))....(((((......))))).
+(((((.((((((((....)).))))))((((.((...((((((........))))))...))))))...........)))))
+...(((((((..(((((........)))))...(((..(((((.........))))).))).........))))))).....
+(((.((((.(((((...))))))))).)))........(((((.........)))))(((...(((.......))).)))..
+((((((((((((((...)))))...((((((..(((..(((((.........))))).)))..))))))..)))))..))))
+((((((((((((((...)))))...((((((....((((((((.........))))).)))..))))))..))))..)))))
+..(((((..((((.(((((...(((....)))..))))).....))))...)))))(((...((((......)))))))..
+(((((....(((((...)))))...((((((..(((..(((((.........))))).)))..))))))........)))))
+(((((....(((((...)))))...((((((..(((..((((((.......)))))).)))..))))))........)))))
+((((((((((((((...)))))...((((((..((...(((((.........)))))..))..))))))..)))))..))))
+(((.((((.((.((...)).)))))))))......((.(((((.........))))).))......................
+(((((............((((....((((((..(((((..................)))))..))))))))))....)))))
+(((((....(((((...)))))...((((((..(((..(((((.........))))).)))..))))))........)))))
+(((((..............((((..((((((..(((..(((((.........))))).)))..))))))))))....)))))
+(((((....(((((...)))))...((((((..(((..(((((.........))))).)))..))))))........)))))
+(((((.((((((.........(((((.(((......)))))))).......))))))((.((((...)))).))...)))))
+(((((((((.((((...))))))))((((((..(((..(((((.........))))).)))..))))))........)))))
+(((((....(((((...)))))...((((((..(((..(((((.........))))).)))..))))))........)))))
+(((((((..(((((...)))))..))(((((..(((..(((((.........))))).)))..))))).........)))))
+(((((((((...(((....)))...((((((..(((..(((((.........))))).)))..))))))..)))))..))))
+(((((....(((((...)))))...((((((..(((..(((((.........))))).)))..))))))........)))))
+(((((....(((((...)))))...((((((..(((..(((((.........))))).)))..))))))........)))))
+(((((....(((((...)))))...((((((..(((((.((((.........)))))))))..))))))........)))))
+.(((((((((((.....)))))))))))((.(((.......((((((((...))))).))).........))).)).....
+......((.(((((....))))).)).((..(((((.(((................)))))))).))....
+......(((((....))))).....((((((.........((((....)))).......))))))..........(((....))).
+(((((..((((...((((((................))))))....))))...(((((........))))))))))
+@
+> f   48
+64
+72 58
+52 64 60
+0 64 72 52
+38 58 62 28 38
+42 52 58 32 42 10
+38 58 56 38 38 14 18
+38 58 62 28 38 0 10 14
+38 58 62 28 38 0 10 14 0
+38 58 62 28 38 0 10 14 0 0
+38 58 62 28 38 0 10 14 0 0 0
+38 58 62 28 38 0 10 14 0 0 0 0
+45 57 55 23 45 7 11 21 7 7 7 7 7
+37 57 63 27 37 1 11 13 1 1 1 1 1 8
+38 58 62 28 38 0 10 14 0 0 0 0 0 7 1
+42 60 86 62 42 50 46 52 50 50 50 50 50 49 49 50
+42 60 86 62 42 50 46 52 50 50 50 50 50 49 49 50 0
+42 60 86 62 42 50 46 52 50 50 50 50 50 49 49 50 0 0
+32 66 84 58 32 40 46 44 40 40 40 40 40 47 41 40 10 10 10
+41 57 59 25 41 3 13 17 3 3 3 3 3 6 4 3 49 49 49 43
+70 62 20 50 70 52 54 44 52 52 52 52 52 49 51 52 78 78 78 74 49
+54 54 54 36 54 28 24 18 28 28 28 28 28 31 27 28 56 56 56 58 29 48
+50 68 60 24 50 34 38 40 34 34 34 34 34 33 33 34 62 62 62 58 33 50 40
+72 58 10 60 72 60 58 56 60 60 60 60 60 53 61 60 86 86 86 84 57 24 54 60
+40 60 72 48 40 20 24 26 20 20 20 20 20 27 21 20 46 46 46 36 23 62 42 40 72
+44 60 72 48 44 20 16 26 20 20 20 20 20 25 21 20 44 44 44 40 23 66 36 44 72 8
+61 31 61 63 61 61 61 61 61 61 61 61 61 62 60 61 67 67 67 71 58 53 67 63 57 69 67
+38 58 62 28 38 0 10 14 0 0 0 0 0 7 1 0 50 50 50 40 3 52 28 34 60 20 20 61
+42 54 66 32 42 4 14 18 4 4 4 4 4 11 5 4 50 50 50 44 7 56 26 38 64 24 24 65 4
+44 64 68 52 44 24 28 30 24 24 24 24 24 31 25 24 50 50 50 40 27 66 42 44 68 4 12 67 24 28
+68 60 32 44 68 56 50 50 56 56 56 56 56 49 57 56 76 76 76 76 53 32 46 48 32 66 66 59 56 60 66
+40 66 84 48 40 36 46 48 36 36 36 36 36 37 37 36 46 46 46 46 39 82 54 54 84 48 46 67 36 40 50 80
+38 58 62 28 38 0 10 14 0 0 0 0 0 7 1 0 50 50 50 40 3 52 28 34 60 20 20 61 0 4 24 56 36
+22 58 80 40 22 28 38 40 28 28 28 28 28 33 29 28 36 36 36 28 31 78 50 50 80 36 36 65 28 32 40 76 22 28
+38 58 62 28 38 0 10 14 0 0 0 0 0 7 1 0 50 50 50 40 3 52 28 34 60 20 20 61 0 4 24 56 36 0 28
+56 36 72 50 56 50 40 50 50 50 50 50 50 51 49 50 58 58 58 62 53 66 54 52 76 56 54 43 50 50 60 70 64 50 58 50
+38 58 56 38 38 14 18 0 14 14 14 14 14 21 13 14 52 52 52 44 17 44 18 40 56 26 26 61 14 18 30 50 48 14 40 14 50
+38 58 62 28 38 0 10 14 0 0 0 0 0 7 1 0 50 50 50 40 3 52 28 34 60 20 20 61 0 4 24 56 36 0 28 0 50 14
+42 58 56 30 42 10 16 10 10 10 10 10 10 13 9 10 48 48 48 42 7 44 24 34 54 26 26 59 10 14 30 52 46 10 38 10 54 10 10
+40 60 76 48 40 22 30 32 22 22 22 22 22 29 23 22 46 46 46 36 25 66 46 42 76 8 16 69 22 26 12 70 40 22 32 22 54 32 22 30
+38 58 62 28 38 0 10 14 0 0 0 0 0 7 1 0 50 50 50 40 3 52 28 34 60 20 20 61 0 4 24 56 36 0 28 0 50 14 0 10 22
+38 58 62 28 38 0 10 14 0 0 0 0 0 7 1 0 50 50 50 40 3 52 28 34 60 20 20 61 0 4 24 56 36 0 28 0 50 14 0 10 22 0
+44 54 68 32 44 6 12 20 6 6 6 6 6 13 7 6 44 44 44 46 9 58 28 36 66 26 22 61 6 6 30 60 38 6 34 6 48 20 6 16 28 6 6
+59 67 45 55 59 57 47 47 57 57 57 57 57 54 56 57 69 69 69 71 56 45 49 55 45 61 57 62 57 57 65 35 79 57 73 57 65 47 57 51 65 57 57 59
+49 63 59 45 49 43 49 47 43 43 43 43 43 42 42 43 57 57 57 57 42 47 49 49 61 51 51 54 43 47 53 53 43 43 47 43 63 47 43 43 51 43 43 41 48
+58 70 64 50 58 50 50 64 50 50 50 50 50 51 51 50 84 84 84 82 51 58 56 52 62 66 66 65 50 50 62 56 66 50 68 50 64 64 50 58 66 50 50 54 57 43
+58 36 70 46 58 52 46 52 52 52 52 52 52 45 51 52 62 62 62 62 49 60 44 52 70 56 52 47 52 52 56 68 48 52 50 52 44 52 52 50 56 52 52 52 69 61 62
+```
+The matrix was used to plot a correlation graph. In order to do so, packages ```ggplot2``` and ```ggcorrplot``` were installed.
+```R
+baseDir <-  "/home/aurilyconstantino/Cambridge_project"
+library("ggplot2")
+library("ggcorrplot")
+SNORD115.data <- "64
+72 58
+52 64 60
+0 64 72 52
+38 58 62 28 38
+42 52 58 32 42 10
+38 58 56 38 38 14 18
+38 58 62 28 38 0 10 14
+38 58 62 28 38 0 10 14 0
+38 58 62 28 38 0 10 14 0 0
+38 58 62 28 38 0 10 14 0 0 0
+38 58 62 28 38 0 10 14 0 0 0 0
+45 57 55 23 45 7 11 21 7 7 7 7 7
+37 57 63 27 37 1 11 13 1 1 1 1 1 8
+38 58 62 28 38 0 10 14 0 0 0 0 0 7 1
+42 60 86 62 42 50 46 52 50 50 50 50 50 49 49 50
+42 60 86 62 42 50 46 52 50 50 50 50 50 49 49 50 0
+42 60 86 62 42 50 46 52 50 50 50 50 50 49 49 50 0 0
+32 66 84 58 32 40 46 44 40 40 40 40 40 47 41 40 10 10 10
+41 57 59 25 41 3 13 17 3 3 3 3 3 6 4 3 49 49 49 43
+70 62 20 50 70 52 54 44 52 52 52 52 52 49 51 52 78 78 78 74 49
+54 54 54 36 54 28 24 18 28 28 28 28 28 31 27 28 56 56 56 58 29 48
+50 68 60 24 50 34 38 40 34 34 34 34 34 33 33 34 62 62 62 58 33 50 40
+72 58 10 60 72 60 58 56 60 60 60 60 60 53 61 60 86 86 86 84 57 24 54 60
+40 60 72 48 40 20 24 26 20 20 20 20 20 27 21 20 46 46 46 36 23 62 42 40 72
+44 60 72 48 44 20 16 26 20 20 20 20 20 25 21 20 44 44 44 40 23 66 36 44 72 8
+61 31 61 63 61 61 61 61 61 61 61 61 61 62 60 61 67 67 67 71 58 53 67 63 57 69 67
+38 58 62 28 38 0 10 14 0 0 0 0 0 7 1 0 50 50 50 40 3 52 28 34 60 20 20 61
+42 54 66 32 42 4 14 18 4 4 4 4 4 11 5 4 50 50 50 44 7 56 26 38 64 24 24 65 4
+44 64 68 52 44 24 28 30 24 24 24 24 24 31 25 24 50 50 50 40 27 66 42 44 68 4 12 67 24 28
+68 60 32 44 68 56 50 50 56 56 56 56 56 49 57 56 76 76 76 76 53 32 46 48 32 66 66 59 56 60 66
+40 66 84 48 40 36 46 48 36 36 36 36 36 37 37 36 46 46 46 46 39 82 54 54 84 48 46 67 36 40 50 80
+38 58 62 28 38 0 10 14 0 0 0 0 0 7 1 0 50 50 50 40 3 52 28 34 60 20 20 61 0 4 24 56 36
+22 58 80 40 22 28 38 40 28 28 28 28 28 33 29 28 36 36 36 28 31 78 50 50 80 36 36 65 28 32 40 76 22 28
+38 58 62 28 38 0 10 14 0 0 0 0 0 7 1 0 50 50 50 40 3 52 28 34 60 20 20 61 0 4 24 56 36 0 28
+56 36 72 50 56 50 40 50 50 50 50 50 50 51 49 50 58 58 58 62 53 66 54 52 76 56 54 43 50 50 60 70 64 50 58 50
+38 58 56 38 38 14 18 0 14 14 14 14 14 21 13 14 52 52 52 44 17 44 18 40 56 26 26 61 14 18 30 50 48 14 40 14 50
+38 58 62 28 38 0 10 14 0 0 0 0 0 7 1 0 50 50 50 40 3 52 28 34 60 20 20 61 0 4 24 56 36 0 28 0 50 14
+42 58 56 30 42 10 16 10 10 10 10 10 10 13 9 10 48 48 48 42 7 44 24 34 54 26 26 59 10 14 30 52 46 10 38 10 54 10 10
+40 60 76 48 40 22 30 32 22 22 22 22 22 29 23 22 46 46 46 36 25 66 46 42 76 8 16 69 22 26 12 70 40 22 32 22 54 32 22 30
+38 58 62 28 38 0 10 14 0 0 0 0 0 7 1 0 50 50 50 40 3 52 28 34 60 20 20 61 0 4 24 56 36 0 28 0 50 14 0 10 22
+38 58 62 28 38 0 10 14 0 0 0 0 0 7 1 0 50 50 50 40 3 52 28 34 60 20 20 61 0 4 24 56 36 0 28 0 50 14 0 10 22 0
+44 54 68 32 44 6 12 20 6 6 6 6 6 13 7 6 44 44 44 46 9 58 28 36 66 26 22 61 6 6 30 60 38 6 34 6 48 20 6 16 28 6 6
+59 67 45 55 59 57 47 47 57 57 57 57 57 54 56 57 69 69 69 71 56 45 49 55 45 61 57 62 57 57 65 35 79 57 73 57 65 47 57 51 65 57 57 59
+49 63 59 45 49 43 49 47 43 43 43 43 43 42 42 43 57 57 57 57 42 47 49 49 61 51 51 54 43 47 53 53 43 43 47 43 63 47 43 43 51 43 43 41 48
+58 70 64 50 58 50 50 64 50 50 50 50 50 51 51 50 84 84 84 82 51 58 56 52 62 66 66 65 50 50 62 56 66 50 68 50 64 64 50 58 66 50 50 54 57 43
+58 36 70 46 58 52 46 52 52 52 52 52 52 45 51 52 62 62 62 62 49 60 44 52 70 56 52 47 52 52 56 68 48 52 50 52 44 52 52 50 56 52 52 52 69 61 62"
+write.table(SNORD115.data, paste0(baseDir, "SNORD115.txt"), quote=F, row.names=F, col.names=F)
 
+# Create an empty matrix of the size of the data
+SNORD115.m <- matrix(0, 48, 48)
+
+# Read in the data to the empty matrix
+SNORD115.m[row(SNORD115.m) >= col(SNORD115.m)] <- scan(paste0(baseDir, "SNORD115.txt"), sep=" ")
+# Calcualte a correlation matrix from the distances
+SNORD115.m.cor <- cor(SNORD115.m)
+# Add snoRNA names to rows and columns
+colnames(SNORD115.m.cor)<-c("SNORD115-1_HS","SNORD115-2_HS",
+                            "SNORD115-3_HS","SNORD115-4_HS","SNORD115-5_HS","SNORD115-6_HS","SNORD115-7_HS","SNORD115-8_HS","SNORD115-9_HS","SNORD115-10_HS","SNORD115-11_HS","SNORD115-12_HS","SNORD115-13_HS","SNORD115-14_HS","SNORD115-15_HS","SNORD115-16_HS",
+                            "SNORD115-17_HS","SNORD115-18_HS","SNORD115-19_HS","SNORD115-20_HS","SNORD115-21_HS","SNORD115-22_HS","SNORD115-23_HS","SNORD115-24_HS","SNORD115-25_HS","SNORD115-26_HS","SNORD115-27_HS","SNORD115-28_HS","SNORD115-29_HS","SNORD115-30_HS",
+                            "SNORD115-31_HS","SNORD115-32_HS","SNORD115-33_HS","SNORD115-34_HS","SNORD115-35_HS","SNORD115-36_HS","SNORD115-37_HS","SNORD115-38_HS","SNORD115-39_HS","SNORD115-40_HS","SNORD115-41_HS","SNORD115-42_HS","SNORD115-43_HS","SNORD115-44_HS",
+                            "SNORD115-45_HS","SNORD115-46_HS","SNORD115-47_HS","SNORD115-48_HS")
+rownames(SNORD115.m.cor)<-c("SNORD115-1_HS","SNORD115-2_HS",
+                            "SNORD115-3_HS","SNORD115-4_HS","SNORD115-5_HS","SNORD115-6_HS","SNORD115-7_HS","SNORD115-8_HS","SNORD115-9_HS","SNORD115-10_HS","SNORD115-11_HS","SNORD115-12_HS","SNORD115-13_HS","SNORD115-14_HS","SNORD115-15_HS","SNORD115-16_HS",
+                            "SNORD115-17_HS","SNORD115-18_HS","SNORD115-19_HS","SNORD115-20_HS","SNORD115-21_HS","SNORD115-22_HS","SNORD115-23_HS","SNORD115-24_HS","SNORD115-25_HS","SNORD115-26_HS","SNORD115-27_HS","SNORD115-28_HS","SNORD115-29_HS","SNORD115-30_HS",
+                            "SNORD115-31_HS","SNORD115-32_HS","SNORD115-33_HS","SNORD115-34_HS","SNORD115-35_HS","SNORD115-36_HS","SNORD115-37_HS","SNORD115-38_HS","SNORD115-39_HS","SNORD115-40_HS","SNORD115-41_HS","SNORD115-42_HS","SNORD115-43_HS","SNORD115-44_HS",
+                            "SNORD115-45_HS","SNORD115-46_HS","SNORD115-47_HS","SNORD115-48_HS")
+# Plot the correlations
+ggcorrplot(SNORD115.m.cor, hc.order = TRUE, type = "lower", lab = TRUE)
+```
+![Alt text](images/2D_STRUCTURES/SNORD115/Distplot_SNO15_2DHS.jpg)
 ## SNORD116
 
 ![Alt text](images/2D_STRUCTURES/SNORD116/116-1.png)
@@ -5474,6 +5650,128 @@ GGAUUGACGAUGACUUUAAAAAAAAAAAAUCUCAUUGAAAUCUGAAAAAAAUGAGUGACCAAACCACUUCUGUGAGCUGA
 
 (((((..((((((..((..........))..)))))).))))).............((((....(((....)))......)))).
 ```
+### 2D Structure Similarity Assessment
+Using ```RNAdistance```, the 2D bracket structures of the snoRNAs belonging to the Mus musculus SNORD116 cluster were compared to produce similarity matrices with the ```-Xm``` function.
+```Python
+(((((..(((((((...((................))......(((.....((((((....))))))....)))..))))))).......)))))
+(((((..(((((((...((((............))))......(((.....((((((....))))))....)))..))))))).......)))))
+(((((..(((((((....(((.............)))...(((.((.....((((((....))))))....)))))))))))).......)))))
+(((((......)).)))...............((((((....(((((((...((((((....))))))...)).....)))))....))))))...
+(((((..(((((((....(((.............)))...(((.((.....((((((....))))))....)))))))))))).......)))))
+(((((..(((((((...(((((............))))).....(((.....((((((....))))))....)))..))))))).......)))))
+(((((..(((((((....(((.............)))...(((.((.....((((((....))))))....)))))))))))).......)))))
+(((((..(((((((...(((((...........)))))..(((.((.....((((((....))))))....)))))))))))).......)))))
+(((((..(((((((....(((.............)))...(((.((.....((((((....))))))....)))))))))))).......)))))
+.....(((((((...(((........((((.(((((((.....))))))).))))....(((((....)))))))).)))))))((((......))))....
+(((((.((((((.....))).))).))))).....((((((..((.......))...))))))..........((((........))))...
+......((((((..(((((.............))))).............((........)).....))))))(((((......)))))...
+(((((...(((((.(((((.............))))).............((((....)))).......)))))(((((...))))))))))
+((.((((((((((((((((.............))))).............((((....))))......))))...))))))).)).......
+.((.(((.(((((((((((.............))))).............((((....))))......)))))).)))))............
+.((.(((.((((((.......((.((.(((....))).))))........((((....))))......)))))).)))))............
+.((.(((.(((((((((((.............))))).............((((....))))......)))))).)))))............
+.((.(((.((((((((((...............)))).............((((....))))......)))))).)))))............
+.((.(((.(((((((((((.............))))).............((((....))))......)))))).)))))............
+.((.(((.(((((((((((.............))))).............((((....))))......)))))).)))))............
+.((.(((.(((((((((((.............))))).............((((....))))......)))))).)))))............
+.((.(((.(((((((((((.............))))).............((((....))))......)))))).)))))............
+...........(((((((...((.((.(((....))).))))......(((((.((..((........))..))))))).....))))))).
+((.((((((((((((((((.............))))).............((((....))))......))))...))))))).)).......
+((((((((((.((((.......)).))))))))...............((((((.....))))))((..(((((....))).))..))))))
+((((((((((.((((((.......)))).))))))).........(((((((((.........)))))).)))(((((....))).))...)))))
+((.(((...((.......(((((((.......))))))).......))...))))).....(((((.((..(((....))).)).)))))..
+((.(((...((.......(((((((.......))))))).......))...))))).....(((((.((..(((....))).)).)))))..
+...........(((((......((((((..(((((...((..........))....)))))....))))))......))))).
+(((((..((((((..((..........))..)))))).))))).............((((....(((....)))......)))).
+
+@
+
+> f   30
+8
+16 14
+67 73 67
+16 14 0 67
+11 3 15 76 15
+16 14 0 67 0 15
+22 14 8 75 8 11 8
+16 14 0 67 0 15 0 8
+77 77 77 84 77 76 77 75 77
+93 87 91 78 91 84 91 87 91 68
+59 53 61 78 61 52 61 59 61 64 62
+43 37 47 86 47 36 47 45 47 76 78 32
+47 41 51 76 51 40 51 49 51 70 80 44 34
+47 41 51 76 51 40 51 49 51 68 76 38 32 14
+59 53 59 82 59 54 59 57 59 46 72 62 58 42 28
+47 41 51 76 51 40 51 49 51 68 76 38 32 14 0 28
+43 41 51 76 51 44 51 53 51 70 80 42 36 18 4 28 4
+47 41 51 76 51 40 51 49 51 68 76 38 32 14 0 28 0 4
+47 41 51 76 51 40 51 49 51 68 76 38 32 14 0 28 0 4 0
+47 41 51 76 51 40 51 49 51 68 76 38 32 14 0 28 0 4 0 0
+47 41 51 76 51 40 51 49 51 68 76 38 32 14 0 28 0 4 0 0 0
+65 59 71 72 71 62 71 67 71 70 68 62 78 76 74 54 74 74 74 74 74 74
+47 41 51 76 51 40 51 49 51 70 80 44 34 0 14 42 14 18 14 14 14 14 76
+73 65 73 72 73 64 73 67 73 78 56 66 50 62 66 76 66 70 66 66 66 66 74 62
+71 63 73 78 73 62 73 67 73 76 46 72 60 70 74 74 74 78 74 74 74 74 54 70 30
+79 85 83 64 83 84 83 83 83 60 64 68 80 84 76 62 76 76 76 76 76 76 58 84 70 68
+79 85 83 64 83 84 83 83 83 60 64 68 80 84 76 62 76 76 76 76 76 76 58 84 70 68 0
+66 66 64 47 64 63 64 64 64 71 75 67 67 73 69 75 69 69 69 69 69 69 47 73 85 75 75 75
+76 74 78 61 78 73 78 76 78 81 59 65 67 69 67 75 67 69 67 67 67 67 79 69 57 59 47 47 72
+```
+Use ```ggcorrplot``` to build correlation graph to assess distance between each snoRNA within the cluster.
+
+```R
+## SNORD116 2D
+SNORD116.data <- "8
+16 14
+67 73 67
+16 14 0 67
+11 3 15 76 15
+16 14 0 67 0 15
+22 14 8 75 8 11 8
+16 14 0 67 0 15 0 8
+77 77 77 84 77 76 77 75 77
+93 87 91 78 91 84 91 87 91 68
+59 53 61 78 61 52 61 59 61 64 62
+43 37 47 86 47 36 47 45 47 76 78 32
+47 41 51 76 51 40 51 49 51 70 80 44 34
+47 41 51 76 51 40 51 49 51 68 76 38 32 14
+59 53 59 82 59 54 59 57 59 46 72 62 58 42 28
+47 41 51 76 51 40 51 49 51 68 76 38 32 14 0 28
+43 41 51 76 51 44 51 53 51 70 80 42 36 18 4 28 4
+47 41 51 76 51 40 51 49 51 68 76 38 32 14 0 28 0 4
+47 41 51 76 51 40 51 49 51 68 76 38 32 14 0 28 0 4 0
+47 41 51 76 51 40 51 49 51 68 76 38 32 14 0 28 0 4 0 0
+47 41 51 76 51 40 51 49 51 68 76 38 32 14 0 28 0 4 0 0 0
+65 59 71 72 71 62 71 67 71 70 68 62 78 76 74 54 74 74 74 74 74 74
+47 41 51 76 51 40 51 49 51 70 80 44 34 0 14 42 14 18 14 14 14 14 76
+73 65 73 72 73 64 73 67 73 78 56 66 50 62 66 76 66 70 66 66 66 66 74 62
+71 63 73 78 73 62 73 67 73 76 46 72 60 70 74 74 74 78 74 74 74 74 54 70 30
+79 85 83 64 83 84 83 83 83 60 64 68 80 84 76 62 76 76 76 76 76 76 58 84 70 68
+79 85 83 64 83 84 83 83 83 60 64 68 80 84 76 62 76 76 76 76 76 76 58 84 70 68 0
+66 66 64 47 64 63 64 64 64 71 75 67 67 73 69 75 69 69 69 69 69 69 47 73 85 75 75 75
+76 74 78 61 78 73 78 76 78 81 59 65 67 69 67 75 67 69 67 67 67 67 79 69 57 59 47 47 72"
+
+write.table(SNORD116.data, paste0(baseDir, "SNORD116.txt"), quote=F, row.names=F, col.names=F)
+
+# Create an empty matrix of the size of the data
+SNORD116.m <- matrix(0, 30, 30)
+# Read in the data to the empty matrix
+SNORD116.m[row(SNORD116.m) >= col(SNORD116.m)] <- scan(paste0(baseDir, "SNORD116.txt"), sep=" ")
+# Calcualte a correlation matrix from the distances
+SNORD116.m.cor <- cor(SNORD116.m)
+# Add snoRNA names to rows and columns
+colnames(SNORD116.m.cor)<-c("SNORD116-1_HS","SNORD116-2_HS","SNORD116-3_HS","SNORD116-4_HS","SNORD116-5_HS","SNORD116-6_HS","SNORD116-7_HS","SNORD116-8_HS","SNORD116-9_HS","SNORD116-10_HS",
+                            "SNORD116-11_HS","SNORD116-12_HS","SNORD116-13_HS","SNORD116-14_HS","SNORD116-15_HS","SNORD116-16_HS","SNORD116-17_HS","SNORD116-18_HS","SNORD116-19_HS","SNORD116-20_HS","SNORD116-21_HS","SNORD116-22_HS","SNORD116-23_HS","SNORD116-24_HS",
+                            "SNORD116-25_HS","SNORD116-26_HS","SNORD116-27_HS","SNORD116-28_HS","SNORD116-29_HS","SNORD116-30_HS")
+rownames(SNORD116.m.cor)<-c("SNORD116-1_HS","SNORD116-2_HS","SNORD116-3_HS","SNORD116-4_HS","SNORD116-5_HS","SNORD116-6_HS","SNORD116-7_HS","SNORD116-8_HS","SNORD116-9_HS","SNORD116-10_HS",
+                            "SNORD116-11_HS","SNORD116-12_HS","SNORD116-13_HS","SNORD116-14_HS","SNORD116-15_HS","SNORD116-16_HS","SNORD116-17_HS","SNORD116-18_HS","SNORD116-19_HS","SNORD116-20_HS","SNORD116-21_HS","SNORD116-22_HS","SNORD116-23_HS","SNORD116-24_HS",
+                            "SNORD116-25_HS","SNORD116-26_HS","SNORD116-27_HS","SNORD116-28_HS","SNORD116-29_HS","SNORD116-30_HS")
+
+# Plot the correlations
+ggcorrplot(SNORD116.m.cor, hc.order = TRUE, type = "lower", lab = TRUE)
+```
+![Alt text](images/2D_STRUCTURES/SNORD116/Distplot_SNO16_2DHS.jpg)
+
 ## Clinker and Clustermap
 
 Clinker is a Python-based gene cluster comparison pipeline, and clustermap.js, a companion visualisation JavaScript library, which can automatically generate interactive, to-scale gene cluster comparison figures directly from sequence files. The clinker workflow is detailed in Figure 1a. clinker accepts GenBank files as input; multi-record GenBank files are treated as gene clusters with multiple loci.
@@ -5684,57 +5982,264 @@ Heatmap(identities,cluster_rows=T,cluster_columns=T,column_km = 2,row_km = 2,col
 
 # Structure prediction in Mus musculus homologs for Dlk1-Dio3/SNRPN
 ## Rian/SNORD113-114 Homologs
-![Alt text](images/2D STRUCTURES/Mus_musculus/Rian_SNO1_2D.png)
+![Alt text](images/2D_STRUCTURES/Mus_musculus/Rian/Rian_SNO1_2D.png)
 ```R
 >Rian_snoRNA-1|AC121784: 41663-41736 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
 CGGGCCAAUGAUGACGAGGUUUCGGGAUUAUAAGUCACGGACGAUGACUACGUCACUAGAGGUCUGAGGUCCAU
 ((((((..((.(((((.(((((((.................))).)))).))))).))..))))))........
 ```
-![Alt text](images/2D STRUCTURES/Mus_musculus/Rian_SNO2_2D.png)
+![Alt text](images/2D_STRUCTURES/Mus_musculus/Rian/Rian_SNO2_2D.png)
 ```R
 >Rian_snoRNA-2|AC121784: 45151-45222 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
 UGGAUCAAUGAUGACUGUGGGUGCUGUAUGAGUCGUGUAUUAUGACUAUGCGUCUGAGAGUCUGAGGUUCAC
 ((((((......((((...((.((.((((.(((((((...)))))))))))))))...))))...)))))).
 ```
+![Alt text](images/2D_STRUCTURES/Mus_musculus/Rian/MBII-426_2D.png)
 ```R
 >MBII-426|AC121784: 46201-46274 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
 UGGAUCAAUGAUGAAUGUCUGUGAGCAUUCUUAGAGUCAUGAAUCAUGACGACAAAUUUAAUUCUGAGAUCAAC
 ..((((......((((((......))))))(((((((((((...))))))............)))))))))...
 ```
+![Alt text](images/2D_STRUCTURES/Mus_musculus/Rian/Rian_SNO4_2D.png)
 ```R
 >Rian_snoRNA-4|AC121784: 46958-47030 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
 UGGAUCAAUGAUGACCAGCGGUAGCCGUAUGAUUCAUGGAUCAUGACUACAGAUCUGGGAGUCUGAGUUCCAC
 ((((.....(((..((((..((((...(((((((....))))))).))))....))))..))).....)))).
 ```
+![Alt text](images/2D_STRUCTURES/Mus_musculus/Rian/Rian_SNO5_2D.png)
 ```R
 >Rian_snoRNA-5|AC121784: 48567-48638 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
 AGGGUUAGUCUUGACCUCUGGUAGCACACGAUUUGUGGAUGAUGGGUACAGGUCUGGAAGUCUGAAGUCUAU
 .((((((....))))))...((((.((..(((((.(((((..((....)).))))).)))))....))))))
 ```
+![Alt text](images/2D_STRUCTURES/Mus_musculus/Rian/MBII-343_2D.png)
 ```R
 >MBII-343|AC121784: 50161-50232 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
 UGGAUCUGUGAUGACAAAGGGUGGCGUAUGAGUUGUGGAUCAUGAGUACAUGUCUGGAAGUCUGAGAUUCAC
 (((((((..(((..((....(((((.(((((........))))).)).)))...))...)))..))))))).
 ```
+![Alt text](images/2D_STRUCTURES/Mus_musculus/Rian/Rian_SNO7_2D.png)
 ```R
 >Rian_snoRNA-7|AC121784: 51879-51950 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
 UGGAUCUAUGAUGACCUCUGGUGCCGUAUGAGUCGGGGAUCAUGAUCACAGGUCUGGGAGUCUGAGGUCCAC
 (((((((..(((..((.((.(((...(((((........)))))..))).))...))..)))..))))))).
 ```
+![Alt text](images/2D_STRUCTURES/Mus_musculus/Rian/Rian_SNO8_2D.png)
 ```R
 >Rian_snoRNA-8|AC121784: 52659-52730 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
 UGUAUUUGUGAUGAUCACUGGUGCCAGAUGAGUUAUGCAUCAUGGUCACAGGUCUGCGAGUCCGAGGUCCAC
 ........((.((((((.((((((............))))))))))))))((.((.((....)).)).))..
 ```
+![Alt text](images/2D_STRUCTURES/Mus_musculus/Rian/Rian_SNO9_2D.png)
+
 ```R
->Rian_snoRNA-9|AC121784: 53941-54012 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
+>RIan_snoRNA-9|AC121784: 53941-54012 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
 UGGAUCAGUGGUGACAUCUUGUUGGAGGUGAGCAGUGGAGCAGGAGAACAGGUCCGGAAGUCUGAGUCCCAU
 ((..(((.((....((((((....))))))..)).)))..))(((...((((........))))..)))...
 ```
+### 2D Structure Similarity Assessment
+
+Using ```RNAdistance```, the 2D bracket structures of the snoRNAs belonging to the Mus musculus SNORD116 cluster were compared to produce similarity matrices with the ```-Xm``` function.
+```Python
+((((((..((.(((((.(((((((.................))).)))).))))).))..))))))........
+..((((......((((((......))))))(((((((((((...))))))............)))))))))..
+..((((......((((((......))))))(((((((((((...))))))............)))))))))...
+((((.....(((..((((..((((...(((((((....))))))).))))....))))..))).....)))).
+.((((((....))))))...((((.((..(((((.(((((..((....)).))))).)))))....))))))
+(((((((..(((..((....(((((.(((((........))))).)).)))...))...)))..))))))).
+(((((((..(((..((.((.(((...(((((........)))))..))).))...))..)))..))))))).
+........((.((((((.((((((............))))))))))))))((.((.((....)).)).))..
+((..(((.((....((((((....))))))..)).)))..))(((...((((........))))..)))...
+
+@
+> f   9
+69
+68 1
+45 50 51
+52 51 52 43
+34 61 62 31 48
+36 63 64 31 46 10
+40 57 58 49 56 52 58
+58 57 56 53 48 58 60 40
+```
+The matrix was then used to plot a correlation graph.
+```R
+rian.data <- "69
+68 1
+45 50 51
+52 51 52 43
+34 61 62 31 48
+36 63 64 31 46 10
+40 57 58 49 56 52 58
+58 57 56 53 48 58 60 40"
+write.table(rian.data, paste0(baseDir, "rian.txt"), quote=F, row.names=F, col.names=F)
+
+rian.m <- matrix(0, 9, 9)
+# Read in the data to the empty matrix
+rian.m[row(rian.m) >= col(rian.m)] <- scan(paste0(baseDir, "rian.txt"), sep=" ")
+# Calcualte a correlation matrix from the distances
+rian.m.cor <- cor(rian.m)
+# Add snoRNA names to rows and columns
+colnames(rian.m.cor)<-c("rian-1","rian-2","MBII-426","rian-4","rian-5","MBII-343","rian-7","rian-8","rian-9")
+rownames(rian.m.cor)<-c("rian-1","rian-2","MBII-426","rian-4","rian-5","MBII-343","rian-7","rian-8","rian-9")
+# Plot the correlations
+ggcorrplot(rian.m.cor, hc.order = TRUE, type = "lower", lab = TRUE)
+```
+![Alt text](images/2D_STRUCTURES/Mus_musculus/Rian/distplot_rian_2D.jpg)
 ## SNORD115 Mus musculus
+```R
+>SNORD115-1|AC221015|AC221015.2:140-62 Mus musculus BAC clone RP23-410L1 from chromosome 7, complete sequence.
+CCCAGUUACUACUGUUGGGUUACAGUACUUCUUUCCACUACUGUAUUUUAAGUACGAGUUAUCCUAAUGCGACUCCGGG
+(((((((.....(((((((..((.((((((......((....)).....))))))..))...))))))).))))..)))
+```
+![Alt text](images/2D_STRUCTURES/Mus_musculus/SNORD115/SNO15-1_MM_2D.png)
+```R
+>SNORD115-2|AC221015|AC221015.2:2011-1933 Mus musculus BAC clone RP23-410L1 from chromosome 7, complete sequence.
+CCCAGUUACUACUGUUGGGUUACAGUACUUCUUUCCACUACUGUAUUUUAAGUACGAGUUAUCCUAAUGGGACUCCUGG
+.((((......((((((((..((.((((((......((....)).....))))))..))...)))))))).....))))
+```
+![Alt text](images/2D_STRUCTURES/Mus_musculus/SNORD115/SNO15-2_MM_2D.png)
+```R
+>SNORD115-3|AC221015|AC221015.2:3883-3895 Mus musculus BAC clone RP23-410L1 from chromosome 7, complete sequence.
+CCCAGUUACUACUGUUGGGUUACAGUACUUCUUUCCACUACUGUAUUUUAAGUACGAGUUAUCCUAAUGCGACUCCGGG
+(((((((.....(((((((..((.((((((......((....)).....))))))..))...))))))).))))..)))
+```
+![Alt text](images/2D_STRUCTURES/Mus_musculus/SNORD115/SNO15-3_MM_2D.png)
+```R
+>SNORD115-4|AC221015|AC221015.2:5754-5676 Mus musculus BAC clone RP23-410L1 from chromosome 7, complete sequence.
+CCCAGUUACUACUGUUGGGUUACAGUACUUCUUUCCACUACUGUAUUUUAAGUACGAGUUAUCCUAAUGCGACUCCGGG
+(((((((.....(((((((..((.((((((......((....)).....))))))..))...))))))).))))..)))
+```
+![Alt text](images/2D_STRUCTURES/Mus_musculus/SNORD115/SNO15-4_MM_2D.png)
+```R
+>SNORD115-5|AC221015|AC221015.2:7622-7544 Mus musculus BAC clone RP23-410L1 from chromosome 7, complete sequence.
+CCCAGUUACUACUGUUGGGUUACAGUACUUCUUUCCACUACUGUAUUUUAAGUACGAGUUAUCCUAAUGCGACUCCGGG
+(((((((.....(((((((..((.((((((......((....)).....))))))..))...))))))).))))..)))
+```
+![Alt text](images/2D_STRUCTURES/Mus_musculus/SNORD115/SNO15-5_MM_2D.png)
+```R
+>SNORD115-6|AC221015|AC221015.2:9490-9412 Mus musculus BAC clone RP23-410L1 from chromosome 7, complete sequence.
+CCCAGUUACUACUGUUGGGUUACAGUACUUCUUUCCACUACUGUAUUUUAAGUACGAGUUAUCCUAAUGCGACUCCGGG
+(((((((.....(((((((..((.((((((......((....)).....))))))..))...))))))).))))..)))
+```
+![Alt text](images/2D_STRUCTURES/Mus_musculus/SNORD115/SNO15-6_MM_2D.png)
+```R
+>SNORD115-7|AC221015|AC221015.2:10895-10817 Mus musculus BAC clone RP23-410L1 from chromosome 7, complete sequence.
+CCCAGUUACUACUGUUGGGUUACAGUACUUCUCCCCACUACUUUAUUUUAAGUACGAGUUAUCCUAAUACGACUCCGGG
+(((......((((((......))))))...........(((((......))))).(((((..........))))).)))
+```
+### 2D structure similarity assessment
+Using ```RNAdistance```, the 2D bracket structures of the snoRNAs belonging to the Mus musculus SNORD116 cluster were compared to produce similarity matrices with the ```-Xm``` function. 
+```Python
+(((((((.....(((((((..((.((((((......((....)).....))))))..))...))))))).))))..)))
+.((((......((((((((..((.((((((......((....)).....))))))..))...)))))))).....))))
+(((((((.....(((((((..((.((((((......((....)).....))))))..))...))))))).))))..)))
+(((((((.....(((((((..((.((((((......((....)).....))))))..))...))))))).))))..)))
+(((((((.....(((((((..((.((((((......((....)).....))))))..))...))))))).))))..)))
+(((((((.....(((((((..((.((((((......((....)).....))))))..))...))))))).))))..)))
+(((......((((((......))))))...........(((((......))))).(((((..........))))).)))
 
+> f   7
+16
+0 16
+0 16 0
+0 16 0 0
+0 16 0 0 0
+78 76 78 78 78 78
+```
+## SNORD116 Mus musculus
+```R
+>SNORD116-1|MBII-85|NC_000073.7:c59544459-59544370 Mus musculus strain C57BL/6J chromosome 7, GRCm39
+AUCUAUGAUGAUUCCCAGUCAAACAUUCCUUGGAAAAGCUGAACAAAAUGAGUGAAAACUCUGUACCGCCACUCUCAUCGGAACUGAGGU
+.............((((((.......(((.((((...((...(((....((((....)))))))...))...)).))..))))))).)).
+```
+![ALt text](images/2D_STRUCTURES/Mus_musculus/SNORD116/SNO16-1_MM_2D.png)
+```R
+>SNORD116-2|MBII-85|NC_000073.7:c59526772-59526683 Mus musculus strain C57BL/6J chromosome 7, GRCm39
+AUCUAUGAUGAUUCCCAGUCAAACAUUCCUUGGAAAAGCUGAACAAAAUGAGUGAAAACUCUGUACCGCCACUCUCAUCGGAACUGAGGU
+.............((((((.......(((.((((...((...(((....((((....)))))))...))...)).))..))))))).)).
+```
+![ALt text](images/2D_STRUCTURES/Mus_musculus/SNORD116/SNO16-2_MM_2D.png)
+```R
+>SNORD116-3|MBII-85|NC_000073.7:c59541952-59541859 Mus musculus strain C57BL/6J chromosome 7, GRCm39
+GGAUCUAUGAUGAUUCCCAGUCAAACAUUCCUUGGAAAAGCUGAACAAAAUGAGUGAAAACUCUGUACCGCCACUCUCAUCGGAACUGAGGUCC
+((((((.((((........))))..((((((.((((...((...(((....((((....)))))))...))...)).))..)))).))))))))
+```
+![ALt text](images/2D_STRUCTURES/Mus_musculus/SNORD116/SNO16-3_MM_2D.png)
+```R
+>SNORD116-4|MBII-85|NC_000073.7:c59539434-59539341 Mus musculus strain C57BL/6J chromosome 7, GRCm39
+GGAUCUAUGAUGAUUCCCAGUCAAACAUUCCUUGGAAAAGCUGAACAAAAUGAGUGAAAACUCUGUACCGCCACUCUCAUCGGAACUGAGGUCC
+((((((.((((........))))..((((((.((((...((...(((....((((....)))))))...))...)).))..)))).))))))))
+```
+![ALt text](images/2D_STRUCTURES/Mus_musculus/SNORD116/SNO16-4_MM_2D.png)
+```R
+>SNORD116-5|MBII-85|NC_000073.7:c59536898-59536805 Mus musculus strain C57BL/6J chromosome 7, GRCm39
+GGAUCUAUGAUGAUUCCCAGUCAAACAUUCCUUGGAAAAGCUGAACAAAAUGAGUGAAAACUCUGUACCGCCACUCUCAUCGGAACUGAGGUCC
+((((((.((((........))))..((((((.((((...((...(((....((((....)))))))...))...)).))..)))).))))))))
+```
+![ALt text](images/2D_STRUCTURES/Mus_musculus/SNORD116/SNO16-5_MM_2D.png)
+```R
+>SNORD116-6|MBII-85|NC_000073.7:c59534340-59534247 Mus musculus strain C57BL/6J chromosome 7, GRCm39
+GGAUCUAUGAUGAUUCCCAGUCAAACAUUCCUUGGAAAAGCUGAACAAAAUGAGUGAAAACUCUGUACCGCCACUCUCAUCGGAACUGAGGUCC
+((((((.((((........))))..((((((.((((...((...(((....((((....)))))))...))...)).))..)))).))))))))
+```
+![ALt text](images/2D_STRUCTURES/Mus_musculus/SNORD116/SNO16-6_MM_2D.png)
+```R
+>SNORD116-7|MBII-85|NC_000073.7:c59531830-59531737 Mus musculus strain C57BL/6J chromosome 7, GRCm39
+GGAUCUAUGAUGAUUCCCAGUCAAACAUUCCUUGGAAAAGCUGAACAAAAUGAGUGAAAACUCUGUACCGCCACUCUCAUCGGAACUGAGGUCC
+((((((.((((........))))..((((((.((((...((...(((....((((....)))))))...))...)).))..)))).))))))))
+```
+![ALt text](images/2D_STRUCTURES/Mus_musculus/SNORD116/SNO16-7_MM_2D.png)
+```R
+>SNORD116-8|MBII-85|NC_000073.7:c59529300-59529207 Mus musculus strain C57BL/6J chromosome 7, GRCm39
+GGAUCUAUGAUGAUUCCCAGUCAAACAUUCCUUGGAAAAGCUGAACAAAAUGAGUGAAAACUCUGUACCGCCACUCUCAUCGGAACUGAGGUCC
+((((((.((((........))))..((((((.((((...((...(((....((((....)))))))...))...)).))..)))).))))))))
+```
+### 2D Structure Similarity Assessment
+Using ```RNAdistance```, the 2D bracket structures of the snoRNAs belonging to the Mus musculus SNORD116 cluster were compared to produce similarity matrices with the ```-Xm``` function. 
+```Python
+.............((((((.......(((.((((...((...(((....((((....)))))))...))...)).))..))))))).)).
+.............((((((.......(((.((((...((...(((....((((....)))))))...))...)).))..))))))).)).
+((((((.((((........))))..((((((.((((...((...(((....((((....)))))))...))...)).))..)))).))))))))
+((((((.((((........))))..((((((.((((...((...(((....((((....)))))))...))...)).))..)))).))))))))
+((((((.((((........))))..((((((.((((...((...(((....((((....)))))))...))...)).))..)))).))))))))
+((((((.((((........))))..((((((.((((...((...(((....((((....)))))))...))...)).))..)))).))))))))
+((((((.((((........))))..((((((.((((...((...(((....((((....)))))))...))...)).))..)))).))))))))
+((((((.((((........))))..((((((.((((...((...(((....((((....)))))))...))...)).))..)))).))))))))
 
+@
+> f   8
+0
+34 34
+34 34 0
+34 34 0 0
+34 34 0 0 0
+34 34 0 0 0 0
+34 34 0 0 0 0 0
+```
+The matrix was then used to plot a correlation graph.
+```R
+SNORD116_MM.data <- "0
+34 34
+34 34 0
+34 34 0 0
+34 34 0 0 0
+34 34 0 0 0 0
+34 34 0 0 0 0 0"
+write.table(SNORD116_MM.data, paste0(baseDir, "SNORD116_MM.txt"), quote=F, row.names=F, col.names=F)
 
+SNORD116_MM.m <- matrix(0, 8, 8)
+# Read in the data to the empty matrix
+SNORD116_MM.m[row(SNORD116_MM.m) >= col(SNORD116_MM.m)] <- scan(paste0(baseDir, "SNORD116_MM.txt"), sep=" ")
+# Calcualte a correlation matrix from the distances
+SNORD116_MM.m.cor <- cor(SNORD116_MM.m)
+# Add snoRNA names to rows and columns
+colnames(SNORD116_MM.m.cor)<-c("SNORD116-1_MM","SNORD116-2_MM","SNORD116-3_MM","SNORD116-4_MM","SNORD116-5_MM","SNORD116-6_MM","SNORD116-7_MM","SNORD116-8_MM")
+rownames(SNORD116_MM.m.cor)<-c("SNORD116-1_MM","SNORD116-2_MM","SNORD116-3_MM","SNORD116-4_MM","SNORD116-5_MM","SNORD116-6_MM","SNORD116-7_MM","SNORD116-8_MM")
+# Plot the correlations
+ggcorrplot(SNORD116_MM.m.cor, hc.order = TRUE, type = "lower", lab = TRUE)
+```
+![Alt text](images/2D_STRUCTURES/Mus_musculus/SNORD116/Distplot_SNO116_MM_2D.jpg)
 # References
 
 Barlow, D.P., Stoger, R., Herrmann, B.G., Saito, K. and Schweifer, N. (1991) 'The mouse insulin-like growth factor type-2 receptor is imprinted and closely linked to the Tme locus', Nature, 349(6304), pp. 84-87. doi: 10.1038/349084a0 [doi].
