@@ -1468,6 +1468,27 @@ tgtatttgtgatgatcactggtgccagatgagttatgcatcatggtcacaggtctgcgagtccgaggtccac
 >SNORD113/114-18|AC121784: 53941-54012 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
 tggatcagtggtgacatcttgttggaggtgagcagtggagcaggagaacaggtccggaagtctgagtcccat
 ```
+18 sequences related to the SNORD113/114 were retrieved from Rfam, all of them above the threshold. Nevertheless, only 9 tandem repeats have been identified and documented in the Rian region in mice as snoRNA. Two of these snoRNAs have been speculated to be homologs to 14q(II) in humans, SNORD114 in DlK. All nine will be studied, assessing conservation, structure, and similarity within and between clusters. 
+```R
+>Rian_snoRNA-1|AC121784: 41663-41736 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
+cgggccaatgatgacgaggtttcgggattataagtcacggacgatgactacgtcactagaggtctgaggtccat
+>Rian_snoRNA-2|AC121784: 45151-45222 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
+tggatcaatgatgactgtgggtgctgtatgagtcgtgtattatgactatgcgtctgagagtctgaggttcac
+>MBII-426|AC121784: 46201-46274 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
+tggatcaatgatgaatgtctgtgagcattcttagagtcatgaatcatgacgacaaatttaattctgagatcaac
+>Rian_snoRNA-4|AC121784: 46958-47030 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
+tggatcaatgatgaccagcggtagccgtatgattcatggatcatgactacagatctgggagtctgagttccac
+>Rian_snoRNA-5|AC121784: 48567-48638 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
+agggttagtcttgacctctggtagcacacgatttgtggatgatgggtacaggtctggaagtctgaagtctat
+>MBII-343|AC121784: 50161-50232 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
+tggatctgtgatgacaaagggtggcgtatgagttgtggatcatgagtacatgtctggaagtctgagattcac
+>Rian_snoRNA-7|AC121784: 51879-51950 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
+tggatctatgatgacctctggtgccgtatgagtcggggatcatgatcacaggtctgggagtctgaggtccac
+>Rian_snoRNA-8|AC121784: 52659-52730 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
+tgtatttgtgatgatcactggtgccagatgagttatgcatcatggtcacaggtctgcgagtccgaggtccac
+>RIan_snoRNA-9|AC121784: 53941-54012 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
+tggatcagtggtgacatcttgttggaggtgagcagtggagcaggagaacaggtccggaagtctgagtcccat
+```
 ### cmalign with hit list of snoRNAs
 ```R
 # STOCKHOLM 1.0
@@ -5660,6 +5681,58 @@ min(identities)
 Heatmap(identities,cluster_rows=T,cluster_columns=T,column_km = 2,row_km = 2,col=col_fun)
 ```
 ![Alt text](images/Conservation_plots/global_conserv_plot.jpg)
+
+# Structure prediction in Mus musculus homologs for Dlk1-Dio3/SNRPN
+## Rian/SNORD113-114 Homologs
+![Alt text](images/2D STRUCTURES/Mus_musculus/Rian_SNO1_2D.png)
+```R
+>Rian_snoRNA-1|AC121784: 41663-41736 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
+CGGGCCAAUGAUGACGAGGUUUCGGGAUUAUAAGUCACGGACGAUGACUACGUCACUAGAGGUCUGAGGUCCAU
+((((((..((.(((((.(((((((.................))).)))).))))).))..))))))........
+```
+![Alt text](images/2D STRUCTURES/Mus_musculus/Rian_SNO2_2D.png)
+```R
+>Rian_snoRNA-2|AC121784: 45151-45222 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
+UGGAUCAAUGAUGACUGUGGGUGCUGUAUGAGUCGUGUAUUAUGACUAUGCGUCUGAGAGUCUGAGGUUCAC
+((((((......((((...((.((.((((.(((((((...)))))))))))))))...))))...)))))).
+```
+```R
+>MBII-426|AC121784: 46201-46274 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
+UGGAUCAAUGAUGAAUGUCUGUGAGCAUUCUUAGAGUCAUGAAUCAUGACGACAAAUUUAAUUCUGAGAUCAAC
+..((((......((((((......))))))(((((((((((...))))))............)))))))))...
+```
+```R
+>Rian_snoRNA-4|AC121784: 46958-47030 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
+UGGAUCAAUGAUGACCAGCGGUAGCCGUAUGAUUCAUGGAUCAUGACUACAGAUCUGGGAGUCUGAGUUCCAC
+((((.....(((..((((..((((...(((((((....))))))).))))....))))..))).....)))).
+```
+```R
+>Rian_snoRNA-5|AC121784: 48567-48638 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
+AGGGUUAGUCUUGACCUCUGGUAGCACACGAUUUGUGGAUGAUGGGUACAGGUCUGGAAGUCUGAAGUCUAU
+.((((((....))))))...((((.((..(((((.(((((..((....)).))))).)))))....))))))
+```
+```R
+>MBII-343|AC121784: 50161-50232 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
+UGGAUCUGUGAUGACAAAGGGUGGCGUAUGAGUUGUGGAUCAUGAGUACAUGUCUGGAAGUCUGAGAUUCAC
+(((((((..(((..((....(((((.(((((........))))).)).)))...))...)))..))))))).
+```
+```R
+>Rian_snoRNA-7|AC121784: 51879-51950 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
+UGGAUCUAUGAUGACCUCUGGUGCCGUAUGAGUCGGGGAUCAUGAUCACAGGUCUGGGAGUCUGAGGUCCAC
+(((((((..(((..((.((.(((...(((((........)))))..))).))...))..)))..))))))).
+```
+```R
+>Rian_snoRNA-8|AC121784: 52659-52730 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
+UGUAUUUGUGAUGAUCACUGGUGCCAGAUGAGUUAUGCAUCAUGGUCACAGGUCUGCGAGUCCGAGGUCCAC
+........((.((((((.((((((............))))))))))))))((.((.((....)).)).))..
+```
+```R
+>Rian_snoRNA-9|AC121784: 53941-54012 Mus_musculus BAC clone RP23-378G4 from 12, complete sequence
+UGGAUCAGUGGUGACAUCUUGUUGGAGGUGAGCAGUGGAGCAGGAGAACAGGUCCGGAAGUCUGAGUCCCAU
+((..(((.((....((((((....))))))..)).)))..))(((...((((........))))..)))...
+```
+## SNORD115 Mus musculus
+
 
 
 # References
