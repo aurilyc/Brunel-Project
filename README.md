@@ -4091,11 +4091,11 @@ SNORD114-31                                UGAGCAAGCGAUGACAG....................
 ##### Needle aligment
 EMBOSS Needle is a pairwise sequence alignment tool from EMBLE-EBI that was used to produce the alignments of the Rfam seeds with the respective snoRNA in a FASTA format, as OPENSEQ only the latter as input for the search. Both the Infernal and Needle alignments were used for the contact prediction study, to compare the results and ensure cosnsitent results. 
 
-##### CONTACT PREDICTION RESULTS
+## CONTACT PREDICTION RESULTS
 
 In order to improve the 3D structures from RNAVienna, GREMLIN was used to predict contacts for every sequence. In protein coding genes, when a residue mutates a compensatory mutation follows. These mutations accumulate in our DNA and tools like GREMLIN allow the study of this correlated mutations by analyzing homologous sequences in an MSA. 
 At first, an alignment of each cluster was introduced into OPENSEQ (GREMLIN server) to predict the contacts but, as the Rfam seeds and the snoRNA sequences were too similar, GREMLIN was not able to predict correlated mutations. In consequence, the Rfam seed alignment of the SNORD113/114 family consisting of 59 sequences was used unusuccessfully to predict contacts for each snoRNA. As both the sequences found within the clusters and the Rfam seed alignment were too similar, all the sequences belonging to the Rfam SNORD113/114 family (1,426 sequence regions) were aligned using Clustal and introduced into OPENSEQ with one of the 40 snoRNA each time, obatining GREMLIN results that could be used to improve the structures. A contact map was produced for each search, illustrating the position of the residues and the coordinates of the coupling with their pair residues.
-
+#### SNORD113/114 Family/RF00181 
 The file ```RF00181.fa``` was downloaded from Rfam, this file contains all the sequences from the SNORD113/114 family to which a snoRNA sequence was added to perform an MSA using Clustal Omega. Once there was an alignment for every snoRNA in FASTA format, these were introduced into OPENSEQ. 
 
 ![Alt text](images/GREMLIN/G_113-1.png)
@@ -4215,14 +4215,191 @@ i	j	i_id	j_id	r_sco	s_sco	prob
 39	43	39_A	43_A	0.1250	0.709	0.578
 24	40	24_C	40_C	0.1245	0.707	0.575
 ```
-#### DCA
+#### SNORD115/RF00105
+The file ```RF00105.fa``` was downloaded from Rfam, this file contains all the sequences from the SNORD115 family. The 1,216 sequence regions belonging to the SNORD115 family were aligned using CLustal Omega, Pearson/FASTA output was selected as this is the format accepted for Gremlin. 
+
+![Alt text](images/GREMLIN/Gremlin_graph_sno115_HS.png)
+
+```Contact predictions```
+
+```
+i	j	i_id	j_id	r_sco	s_sco	prob
+6	9	6_A	9_G	0.3270	2.591	1.000
+15	18	15_A	18_C	0.3048	2.415	1.000
+20	43	20_A	43_A	0.2554	2.024	0.998
+75	78	75_G	78_C	0.2327	1.844	0.996
+70	73	70_C	73_A	0.2048	1.623	0.987
+29	34	29_A	34_G	0.1929	1.528	0.979
+41	51	41_A	51_C	0.1807	1.432	0.965
+70	74	70_C	74_G	0.1786	1.415	0.962
+1	14	1_G	14_A	0.1709	1.354	0.947
+55	62	55_C	62_G	0.1665	1.319	0.937
+10	15	10_A	15_A	0.1664	1.319	0.937
+44	56	44_T	56_T	0.1659	1.315	0.936
+30	66	30_G	66_T	0.1652	1.309	0.934
+7	10	7_A	10_A	0.1649	1.307	0.933
+63	66	63_G	66_T	0.1641	1.300	0.931
+1	5	1_G	5_C	0.1590	1.260	0.916
+56	60	56_T	60_T	0.1578	1.251	0.912
+24	55	24_C	55_C	0.1573	1.246	0.910
+72	76	72_G	76_C	0.1542	1.222	0.899
+13	72	13_C	72_G	0.1514	1.200	0.887
+26	43	26_T	43_A	0.1510	1.197	0.886
+70	76	70_C	76_C	0.1488	1.179	0.876
+2	78	2_G	78_C	0.1465	1.161	0.865
+10	76	10_A	76_C	0.1428	1.131	0.845
+55	74	55_C	74_G	0.1422	1.127	0.842
+16	43	16_C	43_A	0.1392	1.103	0.824
+35	77	35_T	77_C	0.1388	1.100	0.822
+7	16	7_A	16_C	0.1382	1.095	0.818
+3	6	3_G	6_A	0.1373	1.088	0.812
+53	61	53_T	61_A	0.1366	1.083	0.808
+34	53	34_G	53_T	0.1351	1.071	0.798
+46	74	46_A	74_G	0.1335	1.058	0.786
+55	59	55_C	59_A	0.1326	1.050	0.779
+60	68	60_T	68_C	0.1320	1.046	0.775
+8	14	8_T	14_A	0.1317	1.043	0.772
+59	67	59_A	67_A	0.1315	1.042	0.772
+31	34	31_A	34_G	0.1314	1.041	0.771
+36	39	36_T	39_T	0.1311	1.038	0.768
+19	22	19_A	22_G	0.1292	1.024	0.754
+33	70	33_A	70_C	0.1278	1.012	0.742
+52	56	52_A	56_T	0.1277	1.012	0.742
+62	74	62_G	74_G	0.1275	1.010	0.740
+10	43	10_A	43_A	0.1269	1.005	0.735
+5	43	5_C	43_A	0.1257	0.996	0.725
+4	41	4_T	41_A	0.1247	0.988	0.716
+21	26	21_T	26_T	0.1239	0.982	0.710
+13	17	13_C	17_C	0.1230	0.975	0.702
+26	31	26_T	31_A	0.1227	0.972	0.699
+18	35	18_C	35_T	0.1217	0.964	0.690
+25	35	25_A	35_T	0.1198	0.949	0.672
+67	73	67_A	73_A	0.1189	0.942	0.664
+64	67	64_A	67_A	0.1185	0.939	0.660
+3	13	3_G	13_C	0.1182	0.936	0.657
+27	75	27_G	75_G	0.1177	0.932	0.652
+54	63	54_G	63_G	0.1175	0.931	0.650
+53	75	53_T	75_G	0.1164	0.922	0.639
+9	12	9_G	12_G	0.1161	0.920	0.637
+4	12	4_T	12_G	0.1137	0.901	0.613
+7	42	7_A	42_C	0.1119	0.887	0.595
+16	32	16_C	32_A	0.1112	0.881	0.587
+61	64	61_A	64_A	0.1111	0.880	0.586
+10	17	10_A	17_C	0.1111	0.880	0.586
+5	23	5_C	23_T	0.1107	0.877	0.582
+46	77	46_A	77_C	0.1107	0.877	0.582
+7	12	7_A	12_G	0.1102	0.873	0.577
+17	63	17_C	63_G	0.1099	0.871	0.574
+16	35	16_C	35_T	0.1095	0.868	0.570
+33	75	33_A	75_G	0.1091	0.864	0.565
+1	52	1_G	52_A	0.1086	0.860	0.560
+54	57	54_G	57_C	0.1085	0.860	0.560
+27	55	27_G	55_C	0.1082	0.858	0.557
+40	51	40_G	51_C	0.1080	0.856	0.554
+64	71	64_A	71_T	0.1078	0.854	0.552
+5	61	5_C	61_A	0.1075	0.852	0.549
+24	58	24_C	58_A	0.1074	0.851	0.548
+74	77	74_G	77_C	0.1073	0.850	0.546
+12	20	12_G	20_A	0.1072	0.849	0.545
+54	62	54_G	62_G	0.1071	0.849	0.545
+63	69	63_G	69_G	0.1070	0.848	0.544
+53	59	53_T	59_A	0.1069	0.847	0.542
+41	53	41_A	53_T	0.1063	0.842	0.536
+8	35	8_T	35_T	0.1052	0.834	0.525
+59	62	59_A	62_G	0.1051	0.833	0.524
+13	61	13_C	61_A	0.1047	0.830	0.520
+1	4	1_G	4_T	0.1041	0.825	0.513
+13	33	13_C	33_A	0.1029	0.816	0.501
+38	65	38_A	65_T	0.1025	0.812	0.496
+21	65	21_T	65_T	0.1017	0.806	0.488
+56	59	56_T	59_A	0.1015	0.805	0.486
+49	52	49_T	52_A	0.1013	0.803	0.484
+7	17	7_A	17_C	0.1011	0.801	0.481
+34	49	34_G	49_T	0.1008	0.798	0.477
+42	45	42_C	45_A	0.1004	0.796	0.474
+10	14	10_A	14_A	0.1003	0.795	0.473
+34	43	34_G	43_A	0.0998	0.791	0.468
+12	15	12_G	15_A	0.0993	0.787	0.462
+2	63	2_G	63_G	0.0985	0.781	0.454
+15	34	15_A	34_G	0.0982	0.778	0.450
+23	74	23_T	74_G	0.0979	0.776	0.448
+7	13	7_A	13_C	0.0977	0.774	0.445
+16	47	16_C	47_A	0.0972	0.770	0.440
+66	71	66_T	71_T	0.0972	0.770	0.440
+19	57	19_A	57_C	0.0972	0.770	0.440
+20	63	20_A	63_G	0.0963	0.763	0.430
+2	6	2_G	6_A	0.0956	0.758	0.424
+62	65	62_G	65_T	0.0940	0.745	0.407
+65	68	65_T	68_C	0.0940	0.745	0.407
+27	45	27_G	45_A	0.0939	0.744	0.406
+16	71	16_C	71_T	0.0937	0.742	0.403
+12	16	12_G	16_C	0.0937	0.742	0.403
+26	30	26_T	30_G	0.0935	0.741	0.402
+58	63	58_A	63_G	0.0934	0.740	0.400
+55	72	55_C	72_G	0.0927	0.735	0.394
+16	26	16_C	26_T	0.0926	0.734	0.393
+15	21	15_A	21_T	0.0923	0.731	0.389
+55	63	55_C	63_G	0.0921	0.730	0.388
+70	75	70_C	75_G	0.0920	0.729	0.386
+```
+Predictions with Scaled Score > 1 are listed. For all 3L/2 predictions, click on one of the links below.
+Prob = P(contact | scaled_score, seq/len).
+Scaled Score = (raw_score/average(raw_scores)). 
+```
+i	j	Scaled score	Prob
+6_A	9_G	2.591	1.00
+15_A	18_C	2.415	1.00
+20_A	43_A	2.024	1.00
+75_G	78_C	1.844	1.00
+70_C	73_A	1.623	0.99
+29_A	34_G	1.528	0.98
+41_A	51_C	1.432	0.96
+70_C	74_G	1.415	0.96
+1_G	14_A	1.354	0.95
+55_C	62_G	1.319	0.94
+10_A	15_A	1.319	0.94
+44_T	56_T	1.315	0.94
+30_G	66_T	1.309	0.93
+7_A	10_A	1.307	0.93
+63_G	66_T	1.300	0.93
+1_G	5_C	1.260	0.92
+56_T	60_T	1.251	0.91
+24_C	55_C	1.246	0.91
+72_G	76_C	1.222	0.90
+13_C	72_G	1.200	0.89
+26_T	43_A	1.197	0.89
+70_C	76_C	1.179	0.88
+2_G	78_C	1.161	0.86
+10_A	76_C	1.131	0.84
+55_C	74_G	1.127	0.84
+16_C	43_A	1.103	0.82
+35_T	77_C	1.100	0.82
+7_A	16_C	1.095	0.82
+3_G	6_A	1.088	0.81
+53_T	61_A	1.083	0.81
+34_G	53_T	1.071	0.80
+46_A	74_G	1.058	0.79
+55_C	59_A	1.050	0.78
+60_T	68_C	1.046	0.78
+8_T	14_A	1.043	0.77
+59_A	67_A	1.042	0.77
+31_A	34_G	1.041	0.77
+36_T	39_T	1.038	0.77
+19_A	22_G	1.024	0.75
+33_A	70_C	1.012	0.74
+52_A	56_T	1.012	0.74
+62_G	74_G	1.010	0.74
+10_A	43_A	1.005	0.73
+```
+
+### DCA
 Direct coupling analysis (DCA) is a statistical inference framework used to infer co-evolutionary coupling among residue pairs in multiple sequence alignments, which aims at disentangling direct from indirect correlation. For RNAs, the DCA-based methods first infer physical interactions, both secondary and tertiary, between nucleotides in an RNA molecule by analysing the co-evolutionary signals of nucleotides across sequences in the RNA family.
 Contratry to GREMLIN, DCA uses the Rfam database to identify which family the query sequence belongs to. Once identified, a MSA is performed with the sequences from the same family in order to calculate the direct-coupling information. The output is a list of DIs that can later be used in 3dRNA to optimize the structure. 
 Every snoRNA was input into DCA to obtain restraint predictions to improve their 3D structure. The structures were then visualized with Pymol.
 
 ![Alt text](images/DCA_fig.001.jpeg)
 
-#### R-chie
+## R-chie
 R-chie is a web-server for plotting RNA secondary structures, trans RNA-RNA, RNA-DNA and DNA-DNA interactions and genomic interactions. This package creates arc diagrams of RNA secondary structures, allowing for easy comparison and overlap of two structures, rank and dsiplay basepairs in colour and to also visualize corresponding MSAs and co-variation information. For our study, double covariance graphs were plotted to compare snoRNAs within the sama cluster and that had showcased high similarity in the distance matrices. Double covariance plots display multiple sequence alignments for two structures for easy comparison of the structures and/or alignments. The top offers information about conservation, on top of an alignment of homologues; whereas the bottom predicts percent canonical baspairs, below the same alignment. The latter allows us to locate G:A pairs and the percentage of non-canonical baspairs taking place, which is of great importance to our study as we want to identify Kink turn motifs. K-turn motifs are charecterized by G:A pairings so being able to find those in our structures is a sign of the presence of these conformations. 
 As can be seen below, all the structures appear to have G:A pairings, in higher or lower concentrations, but have them nonetheless. Taking these results into account, it could be speculated the structures contain K-turns but further assessment is necessary to confirm this hypothesis.
 
