@@ -4392,13 +4392,14 @@ i	j	Scaled score	Prob
 62_G	74_G	1.010	0.74
 10_A	43_A	1.005	0.73
 ```
-
 ```Sequence conservation```
 
-![Alt text](images/Sequence_conservation/seqcons_snord116.png)
+![Alt text](images/Sequence_conservation/Seq_cons_115_HS.png)
 
 #### SNORD116/RF00108
 The file ```RF00108.fa``` was downloaded from Rfam, this file contains all the sequences from the SNORD116 family. The 857 sequence regions belonging to the SNORD116 family were aligned using CLustal Omega, Pearson/FASTA output was selected as this is the format accepted for Gremlin. 
+
+![Alt text](images/GREMLIN/gremlin_graph_snord116.png)
 
 ```Contact Prediction```
 
@@ -4543,7 +4544,9 @@ i	j	i_id	j_id	r_sco	s_sco	prob
 13	67	13_C	67_C	0.0829	0.676	0.248
 ```
 
-![Alt text](images/GREMLIN/gremlin_graph_snord116.png)
+```Sequence conservation```
+
+![Alt text](images/Sequence_conservation/seqcons_snord116.png)
 
 ### DCA
 Direct coupling analysis (DCA) is a statistical inference framework used to infer co-evolutionary coupling among residue pairs in multiple sequence alignments, which aims at disentangling direct from indirect correlation. For RNAs, the DCA-based methods first infer physical interactions, both secondary and tertiary, between nucleotides in an RNA molecule by analysing the co-evolutionary signals of nucleotides across sequences in the RNA family.
