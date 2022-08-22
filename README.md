@@ -1,4 +1,4 @@
-# Brunel-Project
+# SnoRNA-Project
 
 RNA structure in health and disease - investigation of snoRNA cluster in the imprinted Dlk1-Dio3 region
 
